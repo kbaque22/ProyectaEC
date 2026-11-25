@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio Proyecta S - Planificador Curricular Ecuador</title>
-    <script src="base_datos.js"></script>
+    <title>Laboratorio ProyectaEC - Generador Curricular Inclusivo</title>
     <style>
         :root {
             --primary: #1e3a8a;
             --secondary: #0d9488;
             --accent: #f59e0b;
+            --purple: #6366f1;
             --bg: #f1f5f9;
             --card: #ffffff;
             --text: #1e293b;
         }
         * { box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; line-height: 1.5; }
-        .container { max-width: 1150px; margin: auto; }
+        body { background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; line-height: 1.55; }
+        .container { max-width: 1180px; margin: auto; }
+        
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white; padding: 28px; border-radius: 12px; text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 24px;
         }
-        header h1 { margin: 0 0 8px 0; font-size: 1.9rem; }
+        header h1 { margin: 0 0 8px 0; font-size: 2rem; letter-spacing: 0.5px; }
         .motto {
             background: rgba(255,255,255,0.18); display: inline-block;
-            padding: 6px 16px; border-radius: 20px; font-style: italic; font-size: 0.95rem;
+            padding: 6px 18px; border-radius: 20px; font-style: italic; font-size: 0.95rem;
         }
+
         .panel {
-            background: var(--card); padding: 25px; border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06); margin-bottom: 25px;
+            background: var(--card); padding: 24px; border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06); margin-bottom: 24px;
             border-top: 5px solid var(--primary);
         }
         .grid-config {
@@ -40,12 +42,11 @@
         select, input[type="number"] {
             padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; background: #fff;
         }
-        .checkbox-group { display: flex; flex-direction: column; gap: 6px; font-size: 0.92rem; }
+        .checkbox-group { display: flex; flex-direction: column; gap: 7px; font-size: 0.92rem; }
         .checkbox-group label { cursor: pointer; display: flex; align-items: center; gap: 8px; }
-        
-        /* Tabla de configuración de NEE por grupo */
+
         .nee-table-wrapper {
-            margin-top: 22px; border-top: 2px dashed #e2e8f0; padding-top: 18px;
+            margin-top: 20px; border-top: 2px dashed #e2e8f0; padding-top: 16px;
         }
         table.nee-matrix {
             width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem;
@@ -59,15 +60,15 @@
         .btn-generate {
             width: 100%; margin-top: 20px; background: var(--secondary); color: white; border: none;
             padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 8px;
-            cursor: pointer; transition: 0.2s;
+            cursor: pointer; transition: 0.2s; box-shadow: 0 3px 10px rgba(13, 148, 136, 0.3);
         }
-        .btn-generate:hover { background: #0f766e; }
+        .btn-generate:hover { background: #0f766e; transform: translateY(-1px); }
 
-        /* Resultados */
+        /* Contenedor de Resultados */
         #resultado { display: none; }
         .project-header {
             background: #ffffff; border-left: 6px solid var(--primary);
-            padding: 22px; border-radius: 10px; margin-bottom: 20px;
+            padding: 20px; border-radius: 10px; margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         .badges { margin-bottom: 10px; }
@@ -78,10 +79,10 @@
         .badge.inter { background: #7c3aed; }
         .badge.disc { background: #0284c7; }
         .title-selector-box {
-            background: #f8fafc; border: 1px solid #cbd5e1; padding: 14px;
+            background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px;
             border-radius: 8px; margin: 12px 0;
         }
-        .title-selector-box select { width: 100%; font-weight: bold; color: var(--primary); font-size: 1.05rem; }
+        .title-selector-box select { width: 100%; font-weight: bold; color: var(--primary); font-size: 1.02rem; }
         .dcd-box {
             background: #fefce8; border-left: 4px solid var(--accent);
             padding: 10px 14px; font-size: 0.9rem; color: #713f12; border-radius: 4px;
@@ -92,36 +93,59 @@
         .tab-btn {
             padding: 10px 18px; border: 2px solid var(--primary); background: white;
             color: var(--primary); font-weight: bold; border-radius: 8px; cursor: pointer;
-            display: flex; align-items: center; gap: 6px;
+            display: flex; align-items: center; gap: 6px; transition: 0.2s;
         }
         .tab-btn.active { background: var(--primary); color: white; }
         .nee-dot {
             background: #10b981; color: white; font-size: 0.75rem; padding: 2px 7px; border-radius: 10px;
         }
 
-        /* Tarjetas de Fases */
-        .phases-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;
-        }
+        /* Los 3 Bloques de la Metodología ProyectaEC */
         .phase-card {
-            background: var(--card); border-radius: 12px; padding: 20px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.06); border-top: 5px solid var(--secondary);
+            background: var(--card); border-radius: 12px; padding: 22px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06); border-top: 6px solid var(--secondary);
+            margin-bottom: 22px;
         }
         .phase-card.dev { border-top-color: var(--accent); }
-        .phase-card.soc { border-top-color: #6366f1; }
-        .phase-card h3 { margin-top: 0; color: var(--primary); }
+        .phase-card.soc { border-top-color: var(--purple); }
+        .phase-header {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+            border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 14px;
+        }
+        .phase-header h3 { margin: 0; color: var(--primary); font-size: 1.2rem; }
+        .phase-status {
+            font-size: 0.8rem; font-weight: bold; padding: 3px 10px; border-radius: 12px;
+            background: #ccfbf1; color: #0f766e;
+        }
 
+        .phases-bottom-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;
+        }
+
+        /* Estilos Guía Investigativa Fase 1 */
         .guia-preview {
             background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;
-            padding: 14px; margin-top: 12px; font-size: 0.88rem;
+            padding: 18px; font-size: 0.93rem;
         }
-        .guia-preview h4 { margin: 0 0 6px 0; color: #0f766e; font-size: 0.92rem; }
+        .guia-preview h4 { margin: 0 0 8px 0; color: #0f766e; font-size: 1.05rem; }
+        .lectura-box {
+            background: #ffffff; padding: 14px; border-radius: 6px;
+            border: 1px solid #e2e8f0; margin: 10px 0 14px 0;
+        }
+        .materia-block {
+            background: #ffffff; border-left: 4px solid var(--secondary);
+            padding: 12px 16px; border-radius: 6px; margin-top: 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .materia-block ul { margin: 6px 0 0 0; padding-left: 20px; }
+        .materia-block li { margin-bottom: 6px; }
+
         .sketch-box {
             background: #f1f5f9; border: 2px dashed #94a3b8; padding: 12px;
             border-radius: 8px; text-align: center; margin: 12px 0;
         }
         .script-box {
-            background: #eef2ff; border-left: 4px solid #6366f1;
+            background: #eef2ff; border-left: 4px solid var(--purple);
             padding: 12px; font-style: italic; border-radius: 4px; margin: 10px 0;
         }
         .inclusion-card {
@@ -129,20 +153,25 @@
             border-radius: 10px; margin-top: 20px;
         }
         .inclusion-card h4 { margin: 0 0 8px 0; color: #065f46; font-size: 1.05rem; }
-        .btn-action {
-            display: inline-block; background: var(--primary); color: white;
-            text-decoration: none; padding: 8px 14px; border-radius: 6px;
-            font-size: 0.88rem; margin-top: 10px; border: none; cursor: pointer;
+        
+        .rubrica-placeholder {
+            background: #f8fafc; border: 1px dashed #64748b; padding: 14px 18px;
+            border-radius: 8px; margin-top: 18px; font-size: 0.9rem; color: #334155;
         }
-        .btn-print { background: #475569; margin-left: 6px; }
+        .btn-print {
+            display: inline-block; background: var(--primary); color: white;
+            padding: 10px 18px; border-radius: 6px; font-size: 0.92rem;
+            margin-top: 14px; border: none; cursor: pointer; font-weight: 600;
+        }
+        .btn-print:hover { background: #1e40af; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>🔬 Laboratorio Metodológico: Proyecta S</h1>
-        <p>Generador Curricular y Repositorio Inclusivo (Subnivel Medio - Ecuador)</p>
+        <h1>🔬 Laboratorio Metodológico: ProyectaEC</h1>
+        <p>Generador Curricular Interdisciplinario y Repositorio Inclusivo (Subnivel Medio - Ecuador)</p>
         <div class="motto">"No midamos a los estudiantes por sus discapacidades, sino por las capacidades que tienen"</div>
     </header>
 
@@ -161,9 +190,9 @@
                 <label class="section-label">2. Asignatura(s) del Proyecto:</label>
                 <div class="checkbox-group">
                     <label><input type="checkbox" name="materia" value="Ciencias Naturales" checked> Ciencias Naturales</label>
-                    <label><input type="checkbox" name="materia" value="Lengua y Literatura"> Lengua y Literatura</label>
+                    <label><input type="checkbox" name="materia" value="Lengua y Literatura" checked> Lengua y Literatura</label>
+                    <label><input type="checkbox" name="materia" value="Matemática" checked> Matemática</label>
                     <label><input type="checkbox" name="materia" value="Ciencias Sociales"> Ciencias Sociales</label>
-                    <label><input type="checkbox" name="materia" value="Matemática"> Matemática</label>
                     <label><input type="checkbox" name="materia" value="Educación Cultural y Artística"> Educación Cultural y Artística</label>
                 </div>
             </div>
@@ -185,18 +214,14 @@
             </div>
         </div>
 
-        <!-- SECCIÓN 5: CONFIGURACIÓN INDIVIDUAL DE NEE POR GRUPO -->
         <div class="nee-table-wrapper">
-            <label class="section-label">5. Asignación de Necesidades Educativas Específicas (No asociadas a discapacidad) por Grupo:</label>
-            <p style="font-size:0.88rem; color:#475569; margin:0 0 10px 0;">
-                Indica por cada equipo si cuenta con estudiantes con NEE y la cantidad, para generar sus recursos y roles basados en capacidades:
-            </p>
+            <label class="section-label">5. Necesidades Educativas Específicas (No asociadas a discapacidad) por Equipo:</label>
             <table class="nee-matrix">
                 <thead>
                     <tr>
                         <th>Equipo</th>
                         <th>¿Tiene estudiante(s) con NEE?</th>
-                        <th>Tipo de Necesidad Educativa</th>
+                        <th>Necesidad Educativa</th>
                         <th>N.º de Estudiantes</th>
                     </tr>
                 </thead>
@@ -204,267 +229,800 @@
             </table>
         </div>
 
-        <button class="btn-generate" onclick="generarPlanificacion()">🚀 Generar Planificación Curricular Proyecta S</button>
+        <button class="btn-generate" onclick="generarPlanificacion()">🚀 Generar Planificación Curricular ProyectaEC</button>
     </section>
 
-    <!-- RESULTADOS -->
+    <!-- RESULTADOS: LOS 3 BLOQUES DE PROYECTAEC -->
     <section id="resultado">
         <div class="project-header">
             <div class="badges" id="badgesContainer"></div>
             <div class="title-selector-box">
-                <label for="selectorTitulo" style="font-size:0.85rem; color:#475569; font-weight:bold;">
-                    📌 Banco de Proyectos Sugeridos (Selecciona una opción de la base de datos):
+                <label for="selectorTitulo" style="font-size:0.88rem; color:#475569; font-weight:bold;">
+                    📌 Propuestas de Título del Proyecto (Selecciona una opción de la base de datos curricular):
                 </label>
                 <select id="selectorTitulo" onchange="actualizarEnfoqueProyecto()"></select>
             </div>
             <div class="dcd-box" id="dcdTexto"></div>
         </div>
 
-        <h3>Selecciona un equipo para visualizar su ruta de 3 fases y guía investigativa:</h3>
+        <h3>Selecciona el grupo de trabajo para visualizar sus 3 Fases Metodológicas:</h3>
         <div class="group-tabs" id="tabsContainer"></div>
         <div id="contenidoGrupo"></div>
     </section>
 </div>
 
 <script>
-    let configuracionNEEActual = [];
-    let proyectosDisponibles = [];
-    let esInterdisciplinario = false;
-
-    // Inicializar tabla de grupos al cargar
-    window.onload = function() {
-        actualizarMatrizGrupos();
-    };
-
-    function actualizarMatrizGrupos() {
-        const num = parseInt(document.getElementById('numGrupos').value);
-        const tbody = document.getElementById('tablaNEEBody');
-        tbody.innerHTML = "";
-        const letras = ["Grupo A", "Grupo B", "Grupo C", "Grupo D", "Grupo E"];
-
-        for (let i = 0; i < num; i++) {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td><strong>${letras[i]}</strong></td>
-                <td>
-                    <select id="tieneNEE_${i}" onchange="toggleFilaNEE(${i})">
-                        <option value="no">No (Ninguno)</option>
-                        <option value="si" ${i === 0 ? 'selected' : ''}>Sí</option>
-                    </select>
-                </td>
-                <td>
-                    <select id="tipoNEE_${i}" ${i === 0 ? '' : 'disabled'}>
-                        <option value="dislexia">Dislexia</option>
-                        <option value="discalculia">Discalculia</option>
-                        <option value="disgrafia">Disgrafía</option>
-                        <option value="tdah">TDAH</option>
-                        <option value="altas_capacidades">Dotación Superior / Altas Capacidades</option>
-                    </select>
-                </td>
-                <td>
-                    <input type="number" id="cantNEE_${i}" min="0" max="5" value="${i === 0 ? 1 : 0}" ${i === 0 ? '' : 'disabled'} style="width:70px;">
-                </td>
-            `;
-            tbody.appendChild(tr);
+// ============================================================================
+// BASE DE DATOS CURRICULAR INTEGRADA - PROYECTAEC (ECUADOR 5.º, 6.º Y 7.º EGB)
+// ============================================================================
+const BANCO_CURRICULAR = {
+    individuales: {
+        "Ciencias Naturales": {
+            dcd: {
+                "5to": "CN.3.1.9. Indagar las características de los ecosistemas y sus clases, interpretar las interrelaciones de los seres vivos.",
+                "6to": "CN.3.3.1. Explorar y demostrar las propiedades específicas de la materia y experimentar sus transformaciones.",
+                "7mo": "CN.3.1.11. Indagar y explicar las adaptaciones de plantas y animales a las condiciones ambientales de diferentes ecosistemas y relacionarlas con su supervivencia."
+            },
+            titulos: [
+                "Ecomundo: Buscando las Riquezas Naturales del Ecuador",
+                "Guardianes del Estuario y los Manglares Costeros",
+                "Ciclos de Vida: Del Laboratorio Natural al Ecosistema",
+                "Bio-Detectives: Adaptaciones de la Fauna Ecuatoriana",
+                "Agua y Vida: Conservación de Cuencas y Humedales",
+                "Alerta Climática: Microclimas de Nuestras Regiones",
+                "Cadenas Tróficas y Equilibrio Ecológico en Acción",
+                "Suelos Fértiles y Agricultura Sostenible",
+                "Energías Limpias para Proteger Nuestra Biodiversidad",
+                "Expedición Científica por los Cuatro Mundos"
+            ]
+        },
+        "Lengua y Literatura": {
+            dcd: {
+                "5to": "LL.3.4.10. Expresar sus ideas con precisión e integrar en las producciones escritas los diferentes tipos de sustantivo, pronombre, adjetivo y verbo.",
+                "6to": "LL.3.2.2. Proponer intervenciones orales con una intención comunicativa y organizar el discurso según las estructuras básicas de la lengua oral.",
+                "7mo": "LL.3.5.1. Reconocer en un texto literario (poesía y narrativa) los elementos característicos que le dan sentido, recursos literarios y figuras retóricas."
+            },
+            titulos: [
+                "Versos de Mi Tierra: Antología Poética de los Cuatro Mundos",
+                "El Guardián del Estuario: Poesía y Tradición Costera",
+                "Crónicas de Nuestra Gente: Periodismo Escolar Vivo",
+                "Voces Ancestrales: Leyendas y Coplas del Ecuador",
+                "Poemario Gigante: Palabras que Pintan el Territorio",
+                "Relatos del Mar y la Montaña: Cuentos Ilustrados",
+                "Oradores del Futuro: Discursos por la Naturaleza",
+                "Revista Cultural ProyectaEC: Letras e Identidad",
+                "Teatro de Sombras: Historias de Nuestros Pueblos",
+                "Diccionario Poético de la Biodiversidad Ecuatoriana"
+            ]
+        },
+        "Matemática": {
+            dcd: {
+                "5to": "M.3.1.11. Reconocer términos y realizar divisiones entre números naturales con residuo en contextos productivos reales.",
+                "6to": "M.3.2.15. Reconocer el metro cuadrado como unidad de medida de superficie y resolver problemas de áreas en terrenos.",
+                "7mo": "M.3.3.2. Analizar e interpretar el significado de calcular medidas de tendencia central (media, mediana y moda) de datos estadísticos reales y operaciones con decimales."
+            },
+            titulos: [
+                "Matemática Productiva: Áreas, Decimales y Exportación",
+                "Estadística Viva: Cifras Reales del Ecuador",
+                "Arquitectos a Escala: Geometría y Superficies",
+                "El Reto de los Decimales: Nutrición y Producción",
+                "Topógrafos Escolares: Planos, Perímetros y Áreas",
+                "Datos que Hablan: Gráficos y Promedios Nacionales",
+                "Presupuestos y Comercio Justo en Nuestra Región",
+                "Proporciones Exactas: Ciencia y Medición",
+                "Olimpiadas Lógicas: Juegos Matemáticos del Ecuador",
+                "Ingeniería en el Aula: Estructuras y Medidas"
+            ]
+        },
+        "Ciencias Sociales": {
+            dcd: {
+                "5to": "CS.3.2.1. Describir el territorio del Ecuador, destacando sus características principales como parte integrante del espacio andino.",
+                "6to": "CS.3.2.4. Describir relieves, cordilleras y hoyas, sistemas fluviales, espacios agrícolas, pecuarios y selváticos de cada región.",
+                "7mo": "CS.3.2.10. Identificar la gran diversidad de la población del Ecuador como riqueza y oportunidad para el desarrollo y crecimiento del país."
+            },
+            titulos: [
+                "Ecuador en Acción: Geografía, Historia y Producción",
+                "Mapa Vivo: Zonas Productivas y Regiones Naturales",
+                "Rutas del Desarrollo: De lo Artesanal a la Exportación",
+                "Pueblos, Oficios y Tradiciones de Nuestro País",
+                "Guardianes del Patrimonio Natural y Cultural",
+                "Economía y Trabajo en las Cuatro Regiones",
+                "Viajeros por el Ecuador: Cartografía Interactiva",
+                "Identidad y Convivencia Armónica en la Diversidad",
+                "Historia Viva de Nuestras Comunidades",
+                "Conectando Regiones: Comercio e Interculturalidad"
+            ]
+        },
+        "Educación Cultural y Artística": {
+            dcd: {
+                "5to": "ECA.3.1.12. Crear documentos sencillos o catálogos con información visual sobre la riqueza cultural del país.",
+                "6to": "ECA.3.2.11. Inventar piezas o estructuras artísticas construidas con materiales naturales y objetos reciclados.",
+                "7mo": "ECA.3.3.7. Recopilar imágenes y crear obras tridimensionales sobre acontecimientos y oficios relevantes de la comunidad."
+            },
+            titulos: [
+                "Arte con Identidad: Maquetas y Esculturas Vivas",
+                "Colores y Texturas de los Cuatro Mundos",
+                "Museo Portátil de la Producción y Cultura",
+                "Galería Comunitaria: Rostros y Oficios del Ecuador",
+                "Libros Objeto y Poemarios Gigantes Ilustrados",
+                "Cartografía Artística en Relieve",
+                "Escenografías de Nuestra Tierra",
+                "Diseño Sostenible con Material Reciclado",
+                "Murales de la Biodiversidad Ecuatoriana",
+                "Expresión Plástica e Identidad Regional"
+            ]
         }
+    },
+
+    interdisciplinarios: [
+        {
+            titulo: "Ecuador en Acción: Ciencia, Poesía y Producción Regional",
+            enfoque: "Conecta el estudio científico de los ecosistemas y cadenas productivas con el cálculo matemático real (áreas, decimales y estadística) y la creación literaria (poesía) según el año básico.",
+            dcd: "Articulación Curricular Mineduc: Ecosistemas y ciclos de vida (CN) + Creación poética y textos descriptivos (LL) + Áreas, decimales y promedio con datos reales (M) + Cartografía productiva (CS)."
+        },
+        {
+            titulo: "Guardianes de Nuestros Recursos: Estadística, Naturaleza y Palabra",
+            enfoque: "Analiza la riqueza productiva y ecológica de cada región integrando resolución de problemas reales y producción literaria.",
+            dcd: "Articulación Curricular Mineduc: Conservación ambiental (CN) + Análisis de datos reales (M) + Expresión escrita y oral (LL)."
+        },
+        {
+            titulo: "Museo Vivo del Ecuador: Territorio, Arte y Matemática a Escala",
+            enfoque: "Transforma los hallazgos investigativos en productos tridimensionales a escala con respaldo estadístico y literario.",
+            dcd: "Articulación Curricular Mineduc: Geografía económica (CS) + Geometría y escalas (M) + Diseño artístico (ECA) + Guiones expositivos (LL)."
+        },
+        {
+            titulo: "Saberes y Cosechas: Producción Sostenible en los Cuatro Mundos",
+            enfoque: "Explora cómo cada región produce alimentos clave, calculando su impacto económico y expresando su valor cultural.",
+            dcd: "Articulación Curricular Mineduc: Recursos naturales (CN/CS) + Operaciones decimales y porcentajes (M) + Antología poética (LL)."
+        },
+        {
+            titulo: "Bio-Crónicas del Ecuador: Investigación Científica y Creación Literaria",
+            enfoque: "Une la indagación rigurosa sobre especies emblemáticas con la sensibilidad artística y el pensamiento lógico.",
+            dcd: "Articulación Curricular Mineduc: Biodiversidad (CN) + Géneros literarios (LL) + Medición y estadística (M)."
+        }
+    ]
+};
+
+// Función que construye la información de cada grupo adaptada al Año Básico (5to, 6to, 7mo)
+function obtenerDatosGruposPorGrado(grado) {
+    // Ajuste de nivel de complejidad según año básico
+    const nivelTexto = grado === "5to" ? "Básico-Exploratorio (5.º EGB)" : (grado === "6to" ? "Intermedio-Aplicado (6.º EGB)" : "Avanzado-Analítico (7.º EGB)");
+    
+    // Título creativo específico del Grupo A según grado (Ejemplo del usuario: en 7mo ven poesía -> "El Poemario al Camarón")
+    const tituloGrupoA = grado === "7mo" 
+        ? "El Poemario al Camarón: El Guardián del Estuario (Costa)" 
+        : (grado === "6to" ? "Ruta Productiva del Camarón y los Manglares (Costa)" : "Exploradores del Camarón y la Vida Marina (Costa)");
+
+    const tituloGrupoB = grado === "7mo"
+        ? "Antología Poética de los Andes y Cosechas de Altura (Sierra)"
+        : "Pisos Climáticos y Riqueza Agrícola Andina (Sierra)";
+
+    return [
+        {
+            letra: "Grupo A",
+            nombreCreativo: tituloGrupoA,
+            enfoque: `Región Litoral o Costa | Nivel: ${nivelTexto}`,
+            productoFinal: grado === "7mo" 
+                ? "Maqueta del Criadero Sostenible + Poemario Ilustrado 'El Guardián del Estuario'" 
+                : "Maqueta Topográfica: Ciclo de Vida y Criadero de Camarón",
+            guiaInvestigacion: {
+                tituloGuia: `GUÍA DE INVESTIGACIÓN PRELIMINAR - GRUPO A (${grado.toUpperCase()} EGB)`,
+                objetivo: "Investigar el proceso de crianza del camarón en la Costa ecuatoriana, vinculando su importancia económica y ecológica con ejercicios matemáticos y creación poética.",
+                lecturaBase: `<strong>Conociendo el Camarón y su Importancia en la Costa Ecuatoriana:</strong><br>
+                El camarón es un crustáceo que vive en ambientes marinos y de agua dulce. En la Costa ecuatoriana (principalmente en <em>Guayas, El Oro, Manabí, Santa Elena y Esmeraldas</em>), su cultivo comenzó a desarrollarse en las décadas de 1960 y 1970, evolucionando hasta convertir al Ecuador en uno de los principales exportadores mundiales. Su crianza requiere cuidar el equilibrio de los manglares y garantizar buenas condiciones de trabajo en las granjas.`,
+                porMateria: {
+                    "Ciencias Naturales": `
+                        <strong>🔬 Ciencias Naturales (Ciclo de Vida y Ecosistema de Manglar):</strong>
+                        <ul>
+                            <li><strong>Etapas de desarrollo:</strong> Investiga y describe las 5 etapas del ciclo de vida del camarón (desde larva hasta adulto) y realiza un esquema gráfico.</li>
+                            <li><strong>Hábitat y agua:</strong> ¿Qué temperatura y salinidad necesita un estanque artificial para recrear el hábitat natural del camarón?</li>
+                            <li><strong>Cuidado ambiental:</strong> Menciona 2 impactos ambientales de los criaderos en los manglares y 2 medidas de prevención.</li>
+                        </ul>`,
+                    "Lengua y Literatura": grado === "7mo" ? `
+                        <strong>✍️ Lengua y Literatura (Poesía - Creación del Poemario al Camarón):</strong>
+                        <ul>
+                            <li><strong>Poemario Colectivo "El Guardián del Estuario":</strong> Como en 7.º año trabajamos el género lírico, cada integrante escribirá una estrofa (4 versos con rima y metáforas) sobre el camarón, la vida en el manglar y el esfuerzo de los pescadores costeros.</li>
+                            <li>Unan todas las estrofas para armar el <strong>Poemario al Camarón</strong> que acompañará su maqueta.</li>
+                        </ul>` : `
+                        <strong>✍️ Lengua y Literatura (Texto Descriptivo y Coplas Costeras):</strong>
+                        <ul>
+                            <li>Redacta un párrafo informativo sobre el trabajo de los pescadores en la Costa y crea 2 coplas o amorfinos sobre el mar y el camarón.</li>
+                        </ul>`,
+                    "Matemática": grado === "5to" ? `
+                        <strong>📐 Matemática (Divisiones y Cálculo en el Criadero - 5.º EGB):</strong>
+                        <ul>
+                            <li><strong>Reparto de alimento:</strong> En un estanque se tienen <strong>9.720 gramos</strong> de alimento balanceado para repartir en partes iguales durante <strong>4 días</strong>. ¿Cuántos gramos se usan por día?</li>
+                            <li><strong>Cosecha:</strong> Si se cosechan 2.450 camarones en la mañana y 3.180 en la tarde, ¿cuántos camarones se recolectaron en total?</li>
+                        </ul>` : (grado === "6to" ? `
+                        <strong>📐 Matemática (Superficie y Áreas - 6.º EGB):</strong>
+                        <ul>
+                            <li><strong>Área del criadero:</strong> Un terreno camaronero rectangular mide <strong>60 m de ancho por 30 m de alto</strong>. Calcula su área total en metros cuadrados ($m^2$).</li>
+                            <li>Si dentro se colocan dos piscinas cuadradas de larvas de <strong>10 m de lado</strong> cada una, ¿qué área libre queda alrededor?</li>
+                        </ul>` : `
+                        <strong>📐 Matemática (Áreas, Decimales y Estadística Real - 7.º EGB):</strong>
+                        <ul>
+                            <li><strong>Caso 1 (Área):</strong> Un criadero rectangular mide <strong>60 m × 30 m</strong> y contiene dos piscinas de larvas de <strong>10 m × 10 m</strong> cada una. Calcula el área libre alrededor de las piscinas.</li>
+                            <li><strong>Caso 2 (Decimales):</strong> Cada camarón consume <strong>0,15 g</strong> de alimento al día. Si hay <strong>12.350 camarones</strong>, ¿cuántos gramos se necesitan al día y cuánto cuesta si cada gramo vale <strong>$0,02</strong>?</li>
+                            <li><strong>Caso 3 (Media Aritmética):</strong> Calcula el promedio de toneladas exportadas entre 2020 (<em>688.489</em>), 2021 (<em>847.982</em>) y 2022 (<em>1.068.961</em>).</li>
+                        </ul>`),
+                    "Ciencias Sociales": `
+                        <strong>🌎 Ciencias Sociales (Historia y Cartografía Productiva):</strong>
+                        <ul>
+                            <li>¿En qué décadas inició el auge camaronero en Ecuador y qué desafíos sociales enfrentan los trabajadores del sector?</li>
+                            <li>Dibuja el mapa de la Costa ecuatoriana y ubica con leyenda las 5 provincias camaroneras: <em>Guayas, El Oro, Manabí, Santa Elena y Esmeraldas</em>.</li>
+                        </ul>`,
+                    "Educación Cultural y Artística": `
+                        <strong>🎨 Educación Cultural y Artística (Diseño Editorial y Maquetación):</strong>
+                        <ul>
+                            <li>Diseña la portada ilustrada del <em>Poemario al Camarón</em> y elabora íconos visuales para señalizar las zonas de la maqueta.</li>
+                        </ul>`
+                }
+            },
+            fase2: {
+                formato: "Maqueta Productiva (60 × 40 cm) + Libreto Poético Ilustrado",
+                medidas: "Base de 60 cm × 40 cm (Escala 1:100 del terreno de 60m × 30m). Altura máxima: 15 cm.",
+                bocetoSVG: `<svg width="240" height="110" viewBox="0 0 240 110">
+                    <rect x="10" y="10" width="220" height="90" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+                    <rect x="20" y="20" width="60" height="35" fill="#bae6fd" stroke="#0369a1"/>
+                    <text x="50" y="41" font-size="8" text-anchor="middle" fill="#0c4a6e">Piscina 1</text>
+                    <rect x="90" y="20" width="60" height="35" fill="#bae6fd" stroke="#0369a1"/>
+                    <text x="120" y="41" font-size="8" text-anchor="middle" fill="#0c4a6e">Piscina 2</text>
+                    <rect x="160" y="20" width="60" height="35" fill="#fef3c7" stroke="#b45309"/>
+                    <text x="190" y="41" font-size="8" text-anchor="middle" fill="#78350f">Empacadora</text>
+                    <path d="M 10 72 Q 120 60 230 72 L 230 100 L 10 100 Z" fill="#0d9488"/>
+                    <text x="120" y="90" font-size="9" text-anchor="middle" fill="white" font-weight="bold">Manglar y Estuario (60 × 40 cm)</text>
+                </svg>`,
+                instrucciones: "Construir las piscinas a escala con cartón reciclado y ubicar junto a la maqueta el Poemario al Camarón abierto en atril."
+            },
+            fase3: {
+                guion: "«Buenos días. Somos el Grupo A con nuestro proyecto 'El Poemario al Camarón'. En esta maqueta de 60×40 cm les explicaremos el ciclo de vida del camarón, los cálculos matemáticos de su alimentación y recitaremos nuestros versos al estuario...»",
+                dinamica: "Un integrante explica la maqueta biológica/matemática y el equipo realiza una lectura poética coral de cierre."
+            }
+        },
+        {
+            letra: "Grupo B",
+            nombreCreativo: tituloGrupoB,
+            enfoque: `Región Interandina o Sierra | Nivel: ${nivelTexto}`,
+            productoFinal: "Poemario Gigante Ilustrado en Relieve (Voces y Cosechas Andinas)",
+            guiaInvestigacion: {
+                tituloGuia: `GUÍA DE INVESTIGACIÓN PRELIMINAR - GRUPO B (${grado.toUpperCase()} EGB)`,
+                objetivo: "Relacionar la agricultura de altura de la Sierra ecuatoriana con cálculos matemáticos de cultivos y creación literaria.",
+                lecturaBase: `<strong>Agricultura de Altura y Cultura en la Sierra Ecuatoriana:</strong><br>
+                La Región Interandina se ubica a lo largo de la cordillera de los Andes. Sus pisos climáticos permiten cultivar papa, maíz, quinua y hortalizas entre los 2.500 y 3.500 m s. n. m., sosteniendo la alimentación del país e inspirando festividades como el Inti Raymi.`,
+                porMateria: {
+                    "Ciencias Naturales": `
+                        <strong>🔬 Ciencias Naturales:</strong>
+                        <ul>
+                            <li>Clasifica 4 cultivos andinos según su altitud y explica cómo las terrazas agrícolas evitan la erosión del suelo.</li>
+                        </ul>`,
+                    "Lengua y Literatura": `
+                        <strong>✍️ Lengua y Literatura:</strong>
+                        <ul>
+                            <li>Crea 3 estrofas poéticas o coplas andinas dedicadas a la cosecha de la papa, el maíz y la Pachamama.</li>
+                        </ul>`,
+                    "Matemática": `
+                        <strong>📐 Matemática:</strong>
+                        <ul>
+                            <li>Una parcela andina mide <strong>50 m × 40 m</strong>. Calcula su área en $m^2$. Si cada metro cuadrado produce <strong>2,5 kg</strong> de papa, ¿cuántos kilogramos se cosechan en total?</li>
+                        </ul>`,
+                    "Ciencias Sociales": `
+                        <strong>🌎 Ciencias Sociales:</strong>
+                        <ul>
+                            <li>Ubica en el mapa de la Sierra las provincias productoras de cereales y tubérculos, y explica el valor cultural del Inti Raymi.</li>
+                        </ul>`,
+                    "Educación Cultural y Artística": `
+                        <strong>🎨 Educación Cultural y Artística:</strong>
+                        <ul>
+                            <li>Decora las páginas del Poemario Gigante usando texturas reales (granos secos de maíz, quinua y lana).</li>
+                        </ul>`
+                }
+            },
+            fase2: {
+                formato: "Libro Gigante (Big Book) Articulado",
+                medidas: "Formato A2 abierto (59.4 cm × 42 cm). 6 páginas ilustradas.",
+                bocetoSVG: `<svg width="240" height="110" viewBox="0 0 240 110">
+                    <rect x="25" y="10" width="90" height="90" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+                    <rect x="115" y="10" width="90" height="90" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+                    <polygon points="40,70 70,25 100,70" fill="#78716c"/>
+                    <polygon points="60,40 70,25 80,40" fill="white"/>
+                    <line x1="125" y1="35" x2="190" y2="35" stroke="#92400e" stroke-width="2"/>
+                    <line x1="125" y1="55" x2="180" y2="55" stroke="#92400e" stroke-width="2"/>
+                    <text x="115" y="108" font-size="9" text-anchor="middle" fill="#451a03">Libro Gigante (59.4 × 42 cm)</text>
+                </svg>`,
+                instrucciones: "Integrar en cada doble página el poema ilustrado junto con la ficha matemática de la cosecha."
+            },
+            fase3: {
+                guion: "«Desde los valles y montañas de la Sierra presentamos nuestro Poemario Gigante, donde los números de nuestras cosechas se transforman en poesía...»",
+                dinamica: "Lectura coral sincronizada mientras dos compañeros pasan las páginas gigantes."
+            }
+        },
+        {
+            letra: "Grupo C",
+            nombreCreativo: "La Boa Gigante: Versos y Secretos de la Selva (Amazonía)",
+            enfoque: `Región Amazónica | Nivel: ${nivelTexto}`,
+            productoFinal: "Escultura Articulada: La Boa Gigante (2.50 m) con Escamas Informativas",
+            guiaInvestigacion: {
+                tituloGuia: `GUÍA DE INVESTIGACIÓN PRELIMINAR - GRUPO C (${grado.toUpperCase()} EGB)`,
+                objetivo: "Investigar la biodiversidad amazónica, medicina ancestral y calcular medidas modulares de conservación.",
+                lecturaBase: `<strong>Biodiversidad y Saberes de la Amazonía Ecuatoriana:</strong><br>
+                La Amazonía alberga miles de especies de flora y fauna. Sus nacionalidades indígenas (Kichwa, Shuar, Achuar, Waorani) custodian conocimientos ancestrales sobre plantas medicinales y el equilibrio de los bosques húmedos.`,
+                porMateria: {
+                    "Ciencias Naturales": `
+                        <strong>🔬 Ciencias Naturales:</strong>
+                        <ul>
+                            <li>Explica el rol de la boa/anaconda en la cadena alimenticia e investiga 3 plantas medicinales amazónicas.</li>
+                        </ul>`,
+                    "Lengua y Literatura": `
+                        <strong>✍️ Lengua y Literatura:</strong>
+                        <ul>
+                            <li>Escribe 5 adivinanzas poéticas o micro-poemas sobre animales de la selva para esconderlos bajo las escamas de la boa.</li>
+                        </ul>`,
+                    "Matemática": `
+                        <strong>📐 Matemática:</strong>
+                        <ul>
+                            <li>Si nuestra Boa Gigante mide <strong>2,50 metros (250 cm)</strong> y tiene <strong>5 módulos iguales</strong>, ¿cuántos centímetros mide cada módulo?</li>
+                        </ul>`,
+                    "Ciencias Sociales": `
+                        <strong>🌎 Ciencias Sociales:</strong>
+                        <ul>
+                            <li>Identifica las 6 provincias amazónicas del Ecuador y ubica 3 nacionalidades indígenas en el mapa.</li>
+                        </ul>`,
+                    "Educación Cultural y Artística": `
+                        <strong>🎨 Educación Cultural y Artística:</strong>
+                        <ul>
+                            <li>Construye el cuerpo articulado de la boa con material reciclado y escamas abatibles de colores.</li>
+                        </ul>`
+                }
+            },
+            fase2: {
+                formato: "Escultura Modular con Escamas Abatibles",
+                medidas: "Largo total: 2.50 metros (5 módulos de 50 cm). Diámetro: 25 cm.",
+                bocetoSVG: `<svg width="240" height="110" viewBox="0 0 240 110">
+                    <path d="M 20 55 Q 65 15, 120 55 T 220 55" fill="none" stroke="#15803d" stroke-width="18" stroke-linecap="round"/>
+                    <circle cx="20" cy="55" r="11" fill="#166534"/>
+                    <circle cx="17" cy="52" r="2" fill="#facc15"/>
+                    <text x="120" y="95" font-size="9" text-anchor="middle" fill="#14532d">Boa Articulada: 2.50 m</text>
+                </svg>`,
+                instrucciones: "Cada escama del lomo debe levantarse para revelar un poema corto o un dato científico/matemático."
+            },
+            fase3: {
+                guion: "«Bienvenidos a la Amazonía. Nuestra Boa Gigante de 2,50 metros guarda en cada escama un poema y un dato científico sobre nuestra selva...»",
+                dinamica: "Los visitantes levantan escamas al azar para descubrir los mensajes ocultos."
+            }
+        },
+        {
+            letra: "Grupo D",
+            nombreCreativo: "Museo Portátil de las Islas Encantadas (Galápagos)",
+            enfoque: `Región Insular | Nivel: ${nivelTexto}`,
+            productoFinal: "Diorama Tríptico de Mesa: Laboratorio Natural del Mundo",
+            guiaInvestigacion: {
+                tituloGuia: `GUÍA DE INVESTIGACIÓN PRELIMINAR - GRUPO D (${grado.toUpperCase()} EGB)`,
+                objetivo: "Diferenciar especies endémicas de Galápagos y analizar datos de turismo sostenible.",
+                lecturaBase: `<strong>Archipiélago de Galápagos:</strong><br>
+                Situadas a 1.000 km de la costa continental, las islas Galápagos son un laboratorio natural de evolución con especies únicas en el mundo como la tortuga gigante, el piquero de patas azules y la iguana marina.`,
+                porMateria: {
+                    "Ciencias Naturales": `
+                        <strong>🔬 Ciencias Naturales:</strong>
+                        <ul>
+                            <li>Diferencia entre especie <em>endémica</em> e <em>introducida</em>, y propón 2 acciones para evitar especies invasoras.</li>
+                        </ul>`,
+                    "Lengua y Literatura": `
+                        <strong>✍️ Lengua y Literatura:</strong>
+                        <ul>
+                            <li>Redacta una oda o poema breve dedicado a las tortugas gigantes y escribe el decálogo del turista responsable.</li>
+                        </ul>`,
+                    "Matemática": `
+                        <strong>📐 Matemática:</strong>
+                        <ul>
+                            <li>Calcula el promedio diario de visitantes si en 5 días ingresaron: 420, 380, 510, 490 y 600 turistas.</li>
+                        </ul>`,
+                    "Ciencias Sociales": `
+                        <strong>🌎 Ciencias Sociales:</strong>
+                        <ul>
+                            <li>Investiga por qué la UNESCO declaró a Galápagos Patrimonio Natural de la Humanidad.</li>
+                        </ul>`,
+                    "Educación Cultural y Artística": `
+                        <strong>🎨 Educación Cultural y Artística:</strong>
+                        <ul>
+                            <li>Modela 3 especies endémicas en relieve para el diorama tríptico.</li>
+                        </ul>`
+                }
+            },
+            fase2: {
+                formato: "Diorama Tríptico Plegable",
+                medidas: "Panel central: 50 × 40 cm. Dos alas laterales: 25 × 40 cm cada una.",
+                bocetoSVG: `<svg width="240" height="110" viewBox="0 0 240 110">
+                    <polygon points="20,25 60,15 60,95 20,85" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+                    <rect x="60" y="15" width="120" height="80" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+                    <polygon points="180,15 220,25 220,85 180,95" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+                    <text x="120" y="58" font-size="9" text-anchor="middle" fill="#115e59">Tríptico abierto: 100 × 40 cm</text>
+                </svg>`,
+                instrucciones: "Distribuir el relieve volcánico en el centro y los poemas/cálculos estadísticos en los paneles laterales."
+            },
+            fase3: {
+                guion: "«Bienvenidos al Museo Portátil de Galápagos. Descubran con nosotros cómo proteger el laboratorio natural más famoso del planeta...»",
+                dinamica: "Ronda de preguntas 'Verdadero o Falso' con el público visitante."
+            }
+        },
+        {
+            letra: "Grupo E",
+            nombreCreativo: "Travesía por los 4 Mundos: Juego Interactivo Nacional",
+            enfoque: `Integración Nacional | Nivel: ${nivelTexto}`,
+            productoFinal: "Tablero de Piso Gigante (1.20 × 1.20 m) + Dado de Retos",
+            guiaInvestigacion: {
+                tituloGuia: `GUÍA DE INVESTIGACIÓN PRELIMINAR - GRUPO E (${grado.toUpperCase()} EGB)`,
+                objetivo: "Integrar el intercambio comercial, cultural y literario entre las 4 regiones del Ecuador.",
+                lecturaBase: `<strong>Un País, Cuatro Mundos Conectados:</strong><br>
+                Ecuador integra la riqueza exportadora de la Costa, la agricultura andina de la Sierra, la biodiversidad de la Amazonía y la conservación de Galápagos en un territorio intercultural.`,
+                porMateria: {
+                    "Ciencias Naturales": `
+                        <strong>🔬 Ciencias Naturales:</strong>
+                        <ul>
+                            <li>Redacta 4 tarjetas de preguntas sobre los ecosistemas de cada región del Ecuador.</li>
+                        </ul>`,
+                    "Lengua y Literatura": `
+                        <strong>✍️ Lengua y Literatura:</strong>
+                        <ul>
+                            <li>Escribe el reglamento del juego y 4 tarjetas de reto donde los jugadores deban completar rimas sobre el Ecuador.</li>
+                        </ul>`,
+                    "Matemática": `
+                        <strong>📐 Matemática:</strong>
+                        <ul>
+                            <li>Calcula el área y perímetro del tablero cuadrado de <strong>1,20 m × 1,20 m</strong> y crea 4 tarjetas de cálculo rápido.</li>
+                        </ul>`,
+                    "Ciencias Sociales": `
+                        <strong>🌎 Ciencias Sociales:</strong>
+                        <ul>
+                            <li>Identifica qué productos viajan de la Sierra a la Costa y viceversa, y crea 4 preguntas de geografía nacional.</li>
+                        </ul>`,
+                    "Educación Cultural y Artística": `
+                        <strong>🎨 Educación Cultural y Artística:</strong>
+                        <ul>
+                            <li>Diseña el tablero colorido de piso y construye un dado gigante de 20 × 20 cm.</li>
+                        </ul>`
+                }
+            },
+            fase2: {
+                formato: "Tablero de Piso + Dado Gigante",
+                medidas: "Tablero de 1.20 m × 1.20 m. Dado de 20 × 20 cm.",
+                bocetoSVG: `<svg width="240" height="110" viewBox="0 0 240 110">
+                    <rect x="75" y="10" width="90" height="90" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+                    <line x1="75" y1="40" x2="165" y2="40" stroke="#ca8a04"/>
+                    <line x1="75" y1="70" x2="165" y2="70" stroke="#ca8a04"/>
+                    <line x1="105" y1="10" x2="105" y2="100" stroke="#ca8a04"/>
+                    <line x1="135" y1="10" x2="135" y2="100" stroke="#ca8a04"/>
+                    <text x="120" y="108" font-size="9" text-anchor="middle" fill="#854d0e">Tablero 1.20 m × 1.20 m</text>
+                </svg>`,
+                instrucciones: "Crear casillas por colores representando cada región y tarjetas de retos interdisciplinarios."
+            },
+            fase3: {
+                guion: "«Ecuador es un solo corazón con cuatro mundos. Lancen nuestro dado gigante y pongan a prueba todo lo investigado por el curso...»",
+                dinamica: "Los integrantes del Grupo E moderan el juego con los visitantes."
+            }
+        }
+    ];
+}
+
+const ADAPTACIONES_CAPACIDADES = {
+    dislexia: {
+        nombre: "Dislexia",
+        capacidadClave: "Pensamiento Visual, Comprensión Global y Oralidad",
+        rol: "Director/a de Diseño Visual y Vocero/a Principal",
+        recursosNecesarios: "Guía impresa con tipografía limpia (Arial/Verdana 14pt), interlineado amplio, código de colores y apoyo de lectura compartida.",
+        fases: [
+            "Fase 1: Accede a la lectura base mediante audio o lectura compartida con un par tutor, subrayando palabras clave con colores.",
+            "Fase 2: Lidera el armado tridimensional de la maqueta o producto visual.",
+            "Fase 3: Expone señalando directamente las piezas de la maqueta o recitando su estrofa memorizada sin lectura improvisada."
+        ]
+    },
+    discalculia: {
+        nombre: "Discalculia",
+        capacidadClave: "Narrativa Verbal, Creatividad Poética y Síntesis",
+        rol: "Guionista Principal y Editor/a Literario",
+        recursosNecesarios: "Calculadora básica de apoyo para verificación de decimales y plantillas de cartón pre-medidas para la maqueta.",
+        fases: [
+            "Fase 1: Lidera la creación de los versos del Poemario y la síntesis histórica, resolviendo los ejercicios matemáticos con apoyo de material concreto y calculadora.",
+            "Fase 2: Utiliza reglas con códigos de color y plantillas físicas pre-cortadas.",
+            "Fase 3: Lidera la narración del guion de bienvenida y cierre del grupo."
+        ]
+    },
+    disgrafia: {
+        nombre: "Disgrafía",
+        capacidadClave: "Agilidad Mental, Oratoria y Manejo Digital",
+        rol: "Coordinador/a de Rotulación Digital y Oratoria",
+        recursosNecesarios: "Acceso a computadora/tablet para digitar versos y etiquetas, o grabadora de voz.",
+        fases: [
+            "Fase 1: Registra sus respuestas y estrofas poéticas en formato digital o mediante notas de voz.",
+            "Fase 2: Diseña, imprime y ubica las etiquetas del proyecto.",
+            "Fase 3: Modera la ronda de preguntas del público visitante."
+        ]
+    },
+    tdah: {
+        nombre: "TDAH",
+        capacidadClave: "Energía Dinámica, Resolución Rápida y Liderazgo Activo",
+        rol: "Jefe/a de Logística, Ensamblaje y Demostración en Vivo",
+        recursosNecesarios: "Lista de verificación (checklist) dividida en micro-metas de 15 minutos y materiales táctiles.",
+        fases: [
+            "Fase 1: Resuelve la guía en bloques cortos alternando lectura, cálculo y creación.",
+            "Fase 2: Gestiona los materiales y ensambla las piezas estructurales.",
+            "Fase 3: Dirige la demostración práctica frente al público."
+        ]
+    },
+    altas_capacidades: {
+        nombre: "Dotación Superior / Altas Capacidades",
+        capacidadClave: "Pensamiento Sistémico, Conexión Interdisciplinaria y Mentoría",
+        rol: "Arquitecto/a de Retos Avanzados y Mentor/a de Equipo",
+        recursosNecesarios: "Reto de profundización estadística y rol de tutoría entre pares.",
+        fases: [
+            "Fase 1: Analiza tendencias completas de datos y apoya como mentor de sus compañeros.",
+            "Fase 2: Diseña un elemento de escala o interactividad adicional en la maqueta.",
+            "Fase 3: Responde las preguntas de profundización de los docentes visitantes."
+        ]
+    }
+};
+
+let configuracionNEEActual = [];
+let gruposGeneradosActuales = [];
+let esInterdisciplinario = false;
+
+window.onload = function() {
+    actualizarMatrizGrupos();
+};
+
+function actualizarMatrizGrupos() {
+    const num = parseInt(document.getElementById('numGrupos').value);
+    const tbody = document.getElementById('tablaNEEBody');
+    tbody.innerHTML = "";
+    const letras = ["Grupo A", "Grupo B", "Grupo C", "Grupo D", "Grupo E"];
+
+    for (let i = 0; i < num; i++) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><strong>${letras[i]}</strong></td>
+            <td>
+                <select id="tieneNEE_${i}" onchange="toggleFilaNEE(${i})">
+                    <option value="no">No (Ninguno)</option>
+                    <option value="si" ${i === 0 ? 'selected' : ''}>Sí</option>
+                </select>
+            </td>
+            <td>
+                <select id="tipoNEE_${i}" ${i === 0 ? '' : 'disabled'}>
+                    <option value="dislexia">Dislexia</option>
+                    <option value="discalculia">Discalculia</option>
+                    <option value="disgrafia">Disgrafía</option>
+                    <option value="tdah">TDAH</option>
+                    <option value="altas_capacidades">Dotación Superior / Altas Capacidades</option>
+                </select>
+            </td>
+            <td>
+                <input type="number" id="cantNEE_${i}" min="0" max="5" value="${i === 0 ? 1 : 0}" ${i === 0 ? '' : 'disabled'} style="width:70px;">
+            </td>
+        `;
+        tbody.appendChild(tr);
+    }
+}
+
+function toggleFilaNEE(index) {
+    const tiene = document.getElementById(`tieneNEE_${index}`).value === "si";
+    document.getElementById(`tipoNEE_${index}`).disabled = !tiene;
+    const cantInput = document.getElementById(`cantNEE_${index}`);
+    cantInput.disabled = !tiene;
+    cantInput.value = tiene ? 1 : 0;
+}
+
+function generarPlanificacion() {
+    const grado = document.getElementById('grado').value;
+    const duracion = document.getElementById('duracion').value;
+    const numGrupos = parseInt(document.getElementById('numGrupos').value);
+    const materias = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
+
+    if (materias.length === 0) {
+        alert("Por favor, selecciona al menos una asignatura.");
+        return;
     }
 
-    function toggleFilaNEE(index) {
-        const tiene = document.getElementById(`tieneNEE_${index}`).value === "si";
-        document.getElementById(`tipoNEE_${index}`).disabled = !tiene;
-        const cantInput = document.getElementById(`cantNEE_${index}`);
-        cantInput.disabled = !tiene;
-        cantInput.value = tiene ? 1 : 0;
+    // Cargar datos de grupos ajustados al año básico seleccionado
+    gruposGeneradosActuales = obtenerDatosGruposPorGrado(grado);
+
+    // Guardar configuración NEE
+    configuracionNEEActual = [];
+    for (let i = 0; i < numGrupos; i++) {
+        const tiene = document.getElementById(`tieneNEE_${i}`).value === "si";
+        const tipo = document.getElementById(`tipoNEE_${i}`).value;
+        const cant = parseInt(document.getElementById(`cantNEE_${i}`).value) || 0;
+        configuracionNEEActual.push({
+            tiene: tiene && cant > 0,
+            tipo: tipo,
+            cantidad: tiene ? cant : 0
+        });
     }
 
-    function generarPlanificacion() {
-        const grado = document.getElementById('grado').value;
-        const duracion = document.getElementById('duracion').value;
-        const numGrupos = parseInt(document.getElementById('numGrupos').value);
-        const materias = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
+    const badgesDiv = document.getElementById('badgesContainer');
+    const selectorTitulo = document.getElementById('selectorTitulo');
+    selectorTitulo.innerHTML = "";
 
-        if (materias.length === 0) {
-            alert("Por favor, selecciona al menos una asignatura.");
-            return;
-        }
+    if (materias.length === 1) {
+        esInterdisciplinario = false;
+        const mat = materias[0];
+        const dataMat = BANCO_CURRICULAR.individuales[mat];
+        
+        badgesDiv.innerHTML = `
+            <span class="badge">${grado} Año EGB</span>
+            <span class="badge disc">Proyecto Disciplinar: ${mat}</span>
+            <span class="badge" style="background:#0d9488;">${duracion}</span>
+        `;
 
-        // Guardar configuración NEE de cada grupo
-        configuracionNEEActual = [];
-        for (let i = 0; i < numGrupos; i++) {
-            const tiene = document.getElementById(`tieneNEE_${i}`).value === "si";
-            const tipo = document.getElementById(`tipoNEE_${i}`).value;
-            const cant = parseInt(document.getElementById(`cantNEE_${i}`).value) || 0;
-            configuracionNEEActual.push({
-                tiene: tiene && cant > 0,
-                tipo: tipo,
-                cantidad: tiene ? cant : 0
-            });
-        }
+        dataMat.titulos.forEach((tit, idx) => {
+            const opt = document.createElement('option');
+            opt.value = idx;
+            opt.innerText = `Opción ${idx + 1}: ${tit}`;
+            selectorTitulo.appendChild(opt);
+        });
 
-        // Determinar si es proyecto disciplinar (1 materia) o interdisciplinario (2+ materias)
-        const badgesDiv = document.getElementById('badgesContainer');
-        const selectorTitulo = document.getElementById('selectorTitulo');
-        selectorTitulo.innerHTML = "";
-
-        if (materias.length === 1) {
-            esInterdisciplinario = false;
-            const mat = materias[0];
-            const dataMat = BANCO_PROYECTOS.individuales[mat];
-            
-            badgesDiv.innerHTML = `
-                <span class="badge">${grado} Año EGB</span>
-                <span class="badge disc">Proyecto Disciplinar: ${mat}</span>
-                <span class="badge" style="background:#0d9488;">${duracion}</span>
-            `;
-
-            // Cargar las 10 opciones de esa materia
-            dataMat.titulos.forEach((tit, idx) => {
-                const opt = document.createElement('option');
-                opt.value = idx;
-                opt.innerText = `Opción ${idx + 1}: ${tit}`;
-                selectorTitulo.appendChild(opt);
-            });
-
-            document.getElementById('dcdTexto').innerHTML = `
-                <strong>Currículo Mineduc Ecuador (${grado} EGB - ${mat}):</strong><br>
-                ${dataMat.dcd[grado]}
-            `;
-        } else {
-            esInterdisciplinario = true;
-            badgesDiv.innerHTML = `
-                <span class="badge">${grado} Año EGB</span>
-                <span class="badge inter">Proyecto Interdisciplinario (${materias.length} Asignaturas)</span>
-                <span class="badge" style="background:#0d9488;">${duracion}</span>
-            `;
-
-            BANCO_PROYECTOS.interdisciplinarios.forEach((proy, idx) => {
-                const opt = document.createElement('option');
-                opt.value = idx;
-                opt.innerText = `Propuesta Interdisciplinaria ${idx + 1}: ${proy.titulo}`;
-                selectorTitulo.appendChild(opt);
-            });
-
-            actualizarEnfoqueProyecto();
-        }
-
-        // Renderizar pestañas de grupos
-        const tabsContainer = document.getElementById('tabsContainer');
-        tabsContainer.innerHTML = "";
-        for (let i = 0; i < numGrupos; i++) {
-            const neeInfo = configuracionNEEActual[i];
-            const badgeNEE = neeInfo.tiene ? `<span class="nee-dot">+${neeInfo.cantidad} NEE</span>` : "";
-            const btn = document.createElement('button');
-            btn.className = "tab-btn" + (i === 0 ? " active" : "");
-            btn.innerHTML = `${ESTRUCTURA_GRUPOS[i].letra} ${badgeNEE}`;
-            btn.onclick = () => mostrarGrupo(i);
-            tabsContainer.appendChild(btn);
-        }
-
-        document.getElementById('resultado').style.display = "block";
-        mostrarGrupo(0);
-    }
-
-    function actualizarEnfoqueProyecto() {
-        if (!esInterdisciplinario) return;
-        const idx = document.getElementById('selectorTitulo').value;
-        const proy = BANCO_PROYECTOS.interdisciplinarios[idx];
-        const materias = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
         document.getElementById('dcdTexto').innerHTML = `
-            <strong>Articulación Curricular (${materias.join(" + ")}):</strong> ${proy.enfoque}<br>
-            <em>${proy.dcd_integrada}</em>
+            <strong>Destreza con Criterio de Desempeño - Mineduc Ecuador (${grado} EGB - ${mat}):</strong><br>
+            ${dataMat.dcd[grado]}
         `;
+    } else {
+        esInterdisciplinario = true;
+        badgesDiv.innerHTML = `
+            <span class="badge">${grado} Año EGB</span>
+            <span class="badge inter">Proyecto Interdisciplinario (${materias.join(" + ")})</span>
+            <span class="badge" style="background:#0d9488;">${duracion}</span>
+        `;
+
+        BANCO_CURRICULAR.interdisciplinarios.forEach((proy, idx) => {
+            const opt = document.createElement('option');
+            opt.value = idx;
+            opt.innerText = `Propuesta Interdisciplinaria ${idx + 1}: ${proy.titulo}`;
+            selectorTitulo.appendChild(opt);
+        });
+
+        actualizarEnfoqueProyecto();
     }
 
-    function mostrarGrupo(index) {
-        const botones = document.querySelectorAll('.tab-btn');
-        botones.forEach((b, idx) => b.classList.toggle('active', idx === index));
+    // Pestañas de grupos
+    const tabsContainer = document.getElementById('tabsContainer');
+    tabsContainer.innerHTML = "";
+    for (let i = 0; i < numGrupos; i++) {
+        const neeInfo = configuracionNEEActual[i];
+        const badgeNEE = neeInfo.tiene ? `<span class="nee-dot">+${neeInfo.cantidad} NEE</span>` : "";
+        const btn = document.createElement('button');
+        btn.className = "tab-btn" + (i === 0 ? " active" : "");
+        btn.innerHTML = `${gruposGeneradosActuales[i].letra} ${badgeNEE}`;
+        btn.onclick = () => mostrarGrupo(i);
+        tabsContainer.appendChild(btn);
+    }
 
-        const g = ESTRUCTURA_GRUPOS[index];
-        const neeGrupo = configuracionNEEActual[index];
+    const resSection = document.getElementById('resultado');
+    resSection.style.display = "block";
+    mostrarGrupo(0);
+    resSection.scrollIntoView({ behavior: 'smooth' });
+}
 
-        let bloqueInclusion = "";
-        if (neeGrupo.tiene) {
-            const ad = ADAPTACIONES_CAPACIDADES[neeGrupo.tipo];
-            bloqueInclusion = `
-                <div class="inclusion-card">
-                    <h4>🌟 Plan de Inclusión por Capacidades - ${g.letra} (${neeGrupo.cantidad} estudiante/s con ${ad.nombre})</h4>
-                    <p><strong>Potencialidad clave que aprovechamos:</strong> ${ad.capacidadClave}</p>
-                    <p><strong>Rol asignado en el equipo:</strong> ${ad.rol}</p>
-                    <p><strong>Recursos diferenciados requeridos para este grupo:</strong> ${ad.recursosNecesarios}</p>
-                    <ul>
-                        ${ad.fases.map(f => `<li>${f}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-        } else {
-            bloqueInclusion = `
-                <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:12px 16px; border-radius:8px; margin-top:20px; font-size:0.9rem; color:#475569;">
-                    ℹ️ <strong>${g.letra}:</strong> Este equipo no registra estudiantes con NEE específicas asignadas. Se aplica la ruta estándar del Diseño Universal para el Aprendizaje (DUA).
-                </div>
-            `;
+function actualizarEnfoqueProyecto() {
+    if (!esInterdisciplinario) return;
+    const idx = document.getElementById('selectorTitulo').value;
+    const proy = BANCO_CURRICULAR.interdisciplinarios[idx];
+    const materias = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
+    document.getElementById('dcdTexto').innerHTML = `
+        <strong>Articulación Curricular (${materias.join(" + ")}):</strong> ${proy.enfoque}<br>
+        <em>${proy.dcd}</em>
+    `;
+}
+
+function mostrarGrupo(index) {
+    const botones = document.querySelectorAll('.tab-btn');
+    botones.forEach((b, idx) => b.classList.toggle('active', idx === index));
+
+    const g = gruposGeneradosActuales[index];
+    const neeGrupo = configuracionNEEActual[index];
+    const materiasSeleccionadas = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
+
+    // Generar actividades conectadas a las materias seleccionadas
+    let bloquesMateriasHTML = "";
+    materiasSeleccionadas.forEach(mat => {
+        if (g.guiaInvestigacion.porMateria[mat]) {
+            bloquesMateriasHTML += `<div class="materia-block">${g.guiaInvestigacion.porMateria[mat]}</div>`;
         }
+    });
 
-        document.getElementById('contenidoGrupo').innerHTML = `
-            <div style="background:white; padding:15px 20px; border-radius:8px; margin-bottom:20px; border:1px solid #e2e8f0;">
-                <span style="color:#0d9488; font-weight:bold; font-size:0.9rem;">${g.subtema}</span>
-                <h3 style="margin:4px 0 0 0; color:var(--primary);">🎯 Producto Final: ${g.producto}</h3>
+    let bloqueInclusion = "";
+    if (neeGrupo.tiene) {
+        const ad = ADAPTACIONES_CAPACIDADES[neeGrupo.tipo];
+        bloqueInclusion = `
+            <div class="inclusion-card">
+                <h4>🌟 Plan de Inclusión por Capacidades - ${g.letra} (${neeGrupo.cantidad} estudiante/s con ${ad.nombre})</h4>
+                <p><strong>Capacidad clave que potenciamos:</strong> ${ad.capacidadClave}</p>
+                <p><strong>Rol asignado en el equipo:</strong> ${ad.rol}</p>
+                <p><strong>Recursos diferenciados necesarios:</strong> ${ad.recursosNecesarios}</p>
+                <ul>
+                    ${ad.fases.map(f => `<li>${f}</li>`).join('')}
+                </ul>
             </div>
-
-            <div class="phases-grid">
-                <!-- FASE 1: INVESTIGACIÓN Y GUÍA -->
-                <div class="phase-card">
-                    <h3>🔍 Fase 1: Investigación</h3>
-                    <div class="guia-preview" id="guiaImprimible_${index}">
-                        <h4>📄 ${g.guiaInvestigacion.tituloGuia}</h4>
-                        <p><strong>Objetivo:</strong> ${g.guiaInvestigacion.objetivo}</p>
-                        <p style="background:#fff; padding:8px; border-radius:6px; border:1px solid #e2e8f0;">
-                            <strong>Texto Base Preliminar (Sin formato institucional):</strong><br>
-                            ${g.guiaInvestigacion.lecturaBase}
-                        </p>
-                        <strong>Preguntas orientadoras para el equipo:</strong>
-                        <ul style="padding-left:18px; margin:6px 0;">
-                            ${g.guiaInvestigacion.preguntasGuia.map(p => `<li>${p}</li>`).join('')}
-                        </ul>
-                    </div>
-                    <button class="btn-action btn-print" onclick="imprimirGuia(${index})">🖨️ Imprimir / Guardar Guía en PDF</button>
-                </div>
-
-                <!-- FASE 2: DESARROLLO -->
-                <div class="phase-card dev">
-                    <h3>🛠️ Fase 2: Desarrollo</h3>
-                    <p><strong>Producto:</strong> ${g.fase2.formato}</p>
-                    <p><strong>Dimensiones técnicas:</strong> ${g.fase2.medidas}</p>
-                    <div class="sketch-box">
-                        <strong>Boceto Referencial:</strong><br>
-                        ${g.fase2.bocetoSVG}
-                    </div>
-                    <p><strong>Orientación de construcción:</strong> ${g.fase2.instrucciones}</p>
-                </div>
-
-                <!-- FASE 3: SOCIALIZACIÓN -->
-                <div class="phase-card soc">
-                    <h3>🎤 Fase 3: Socialización</h3>
-                    <p><strong>Guion sugerido de apertura:</strong></p>
-                    <div class="script-box">${g.fase3.guion}</div>
-                    <p><strong>Estrategia de exposición:</strong> ${g.fase3.dinamica}</p>
-                </div>
+        `;
+    } else {
+        bloqueInclusion = `
+            <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:12px 16px; border-radius:8px; margin-top:20px; font-size:0.9rem; color:#475569;">
+                ℹ️ <strong>${g.letra}:</strong> Este equipo no registra estudiantes con NEE específicas asignadas. Se aplica la ruta estándar del Diseño Universal para el Aprendizaje (DUA).
             </div>
-
-            ${bloqueInclusion}
         `;
     }
 
-    function imprimirGuia(index) {
-        const contenido = document.getElementById(`guiaImprimible_${index}`).innerHTML;
-        const ventana = window.open('', '', 'height=650,width=800');
-        ventana.document.write('<html><head><title>Guía de Investigación - Proyecta S</title>');
-        ventana.document.write('<style>body{font-family:Arial,sans-serif;padding:30px;line-height:1.6;} h4{color:#1e3a8a;border-bottom:2px solid #0d9488;padding-bottom:6px;}</style>');
-        ventana.document.write('</head><body>');
-        ventana.document.write(contenido);
-        ventana.document.write('</body></html>');
-        ventana.document.close();
-        ventana.print();
-    }
+    document.getElementById('contenidoGrupo').innerHTML = `
+        <div style="background:white; padding:16px 20px; border-radius:10px; margin-bottom:20px; border:1px solid #cbd5e1; border-left: 6px solid #0d9488;">
+            <span style="color:#0d9488; font-weight:bold; font-size:0.88rem;">${g.enfoque}</span>
+            <h3 style="margin:4px 0; color:var(--primary); font-size:1.25rem;">🏷️ Denominación del ${g.letra}: "${g.nombreCreativo}"</h3>
+            <p style="margin:4px 0 0 0; font-size:0.95rem;"><strong>🎯 Producto Final Esperado:</strong> ${g.productoFinal}</p>
+        </div>
+
+        <!-- BLOQUE 1: FASE DE INVESTIGACIÓN -->
+        <div class="phase-card">
+            <div class="phase-header">
+                <h3>🔍 Fase 1: Investigación Preliminar Articulada</h3>
+                <span class="phase-status">Etapa 1 de Evaluación</span>
+            </div>
+            <div class="guia-preview" id="guiaImprimible_${index}">
+                <h4>📄 ${g.guiaInvestigacion.tituloGuia} — "${g.nombreCreativo}"</h4>
+                <p><strong>Objetivo de aprendizaje:</strong> ${g.guiaInvestigacion.objetivo}</p>
+                <div class="lectura-box">
+                    ${g.guiaInvestigacion.lecturaBase}
+                </div>
+                <p style="margin:8px 0 4px 0; font-weight:bold; color:#1e3a8a;">
+                    Actividades interdisciplinarias vinculadas (${materiasSeleccionadas.join(" + ")}):
+                </p>
+                ${bloquesMateriasHTML}
+            </div>
+            <button class="btn-print" onclick="imprimirGuia(${index})">🖨️ Descargar / Imprimir Guía de Investigación Limpia (PDF)</button>
+            
+            <div class="rubrica-placeholder">
+                📊 <strong>Módulo de Rúbrica de Evaluación (Fase 1):</strong> <em>Estructura lista. En el siguiente paso configuraremos los criterios e indicadores de evaluación para esta guía.</em>
+            </div>
+        </div>
+
+        <!-- BLOQUES 2 Y 3: FASE DE DESARROLLO Y FASE DE SOCIALIZACIÓN -->
+        <div class="phases-bottom-grid">
+            <div class="phase-card dev">
+                <div class="phase-header">
+                    <h3>🛠️ Fase 2: Desarrollo</h3>
+                    <span class="phase-status" style="background:#fef3c7; color:#92400e;">Etapa 2</span>
+                </div>
+                <p><strong>Formato del Producto:</strong> ${g.fase2.formato}</p>
+                <p><strong>Dimensiones sugeridas:</strong> ${g.fase2.medidas}</p>
+                <div class="sketch-box">
+                    <strong>Boceto Referencial:</strong><br>
+                    ${g.fase2.bocetoSVG}
+                </div>
+                <p><strong>Orientación creativa:</strong> ${g.fase2.instrucciones}</p>
+            </div>
+
+            <div class="phase-card soc">
+                <div class="phase-header">
+                    <h3>🎤 Fase 3: Socialización</h3>
+                    <span class="phase-status" style="background:#e0e7ff; color:#3730a3;">Etapa 3</span>
+                </div>
+                <p><strong>Guion base de presentación:</strong></p>
+                <div class="script-box">${g.fase3.guion}</div>
+                <p><strong>Dinámica de exposición:</strong> ${g.fase3.dinamica}</p>
+            </div>
+        </div>
+
+        ${bloqueInclusion}
+    `;
+}
+
+function imprimirGuia(index) {
+    const contenido = document.getElementById(`guiaImprimible_${index}`).innerHTML;
+    const ventana = window.open('', '', 'height=700,width=850');
+    ventana.document.write('<html><head><title>Guía de Investigación - ProyectaEC</title>');
+    ventana.document.write('<style>body{font-family:Arial,sans-serif;padding:30px;line-height:1.5;color:#1e293b;} h4{color:#1e3a8a;border-bottom:2px solid #0d9488;padding-bottom:6px;} .materia-block{border-left:3px solid #0d9488;padding-left:12px;margin-bottom:14px;}</style>');
+    ventana.document.write('</head><body>');
+    ventana.document.write('<p style="font-size:12px;color:#64748b;">Nombre del estudiante: ___________________________ | Año Básico: ________ | Fecha: __________</p>');
+    ventana.document.write(contenido);
+    ventana.document.write('</body></html>');
+    ventana.document.close();
+    ventana.print();
+}
 </script>
 
 </body>
