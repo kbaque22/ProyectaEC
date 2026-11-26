@@ -1,220 +1,264 @@
 // ============================================================================
-// ARCHIVO 2: CURRICULO.JS - MATRIZ MINEDUC ECUADOR Y ADAPTACIONES DUA
+// ARCHIVO 2: CURRICULO.JS - PROGRESIÓN POR GRADO, SESIONES Y RECURSOS DE APOYO
 // ============================================================================
 
-const DESTREZAS_MINEDUC = {
+const ENFOQUE_POR_GRADO = {
     "Lengua y Literatura": {
-        "5to": "LL.3.3.4. Autorregular la comprensión de textos mediante el uso de estrategias cognitivas de comprensión y producción escrita.",
-        "6to": "LL.3.4.10. Expresar sus ideas con precisión e integrar en las producciones escritas descripciones y relatos.",
-        "7mo": "LL.3.5.1. Reconocer en un texto literario (poesía, mito, leyenda) los elementos característicos y producir textos creativos con intención comunicativa."
+        "5to": "Comprensión literal e inferencial básica, ampliación de vocabulario contextual y redacción de párrafos descriptivos guiados.",
+        "6to": "Identificación de ideas principales, contraste de dos fuentes informativas y producción de textos explicativos con conectores.",
+        "7mo": "Lectura crítica, inferencia compleja, contraste de perspectivas y argumentación escrita fundamentada en evidencias."
     },
     "Matemática": {
-        "5to": "M.3.1.11. Resolver divisiones y operaciones combinadas en problemas reales de producción y distribución.",
-        "6to": "M.3.2.15. Calcular el área de figuras geométricas (cuadrado, rectángulo, círculo) en diseños reales.",
-        "7mo": "M.3.3.2. Calcular medidas de tendencia central (media aritmética) de datos estadísticos reales y resolver operaciones con decimales y áreas."
+        "5to": "Lectura de tablas estadísticas simples, operaciones con números naturales/decimales básicos y perímetros/áreas elementales.",
+        "6to": "Cálculo de promedios sencillos, operaciones con decimales en contextos reales y áreas de cuadrados y rectángulos.",
+        "7mo": "Cálculo e interpretación de media aritmética, porcentajes, áreas compuestas/circulares y análisis de costos y presupuestos."
     },
     "Ciencias Naturales": {
-        "5to": "CN.3.1.9. Indagar las características de los ecosistemas del Ecuador y las interrelaciones de los seres vivos.",
-        "6to": "CN.3.1.11. Explicar las adaptaciones de plantas y animales a las condiciones ambientales de cada región.",
-        "7mo": "CN.3.5.5. Planificar y realizar indagaciones sobre recursos naturales del Ecuador, su uso sostenible e impacto ambiental."
+        "5to": "Observación de características de seres vivos y ecosistemas locales, identificando necesidades básicas y cuidados.",
+        "6to": "Relación entre factores ambientales y adaptaciones de organismos, analizando causas de alteración ecológica.",
+        "7mo": "Análisis sistémico de interacciones ecológicas, aprovechamiento sostenible de recursos y evaluación de impacto ambiental."
     },
     "Ciencias Sociales": {
-        "5to": "CS.3.2.1. Describir el territorio del Ecuador y sus regiones naturales.",
-        "6to": "CS.3.2.4. Describir relieves, sistemas fluviales y espacios agrícolas/productivos de cada región.",
-        "7mo": "CS.3.2.10. Identificar la diversidad cultural, económica y productiva de las regiones del Ecuador."
+        "5to": "Ubicación geográfica en el mapa del Ecuador y reconocimiento de actividades productivas y culturales de la región.",
+        "6to": "Relación entre relieve, clima y desarrollo económico regional, identificando actores sociales.",
+        "7mo": "Análisis de procesos históricos, comparación de cambios en el tiempo y argumentación de causas y consecuencias socioambientales."
     },
     "Educación Cultural y Artística": {
-        "5to": "ECA.3.1.12. Crear catálogos o piezas visuales sobre la riqueza natural y cultural del país.",
-        "6to": "ECA.3.2.11. Construir piezas tridimensionales con materiales naturales y reciclados.",
-        "7mo": "ECA.3.3.7. Diseñar obras artísticas representativas de las tradiciones y oficios de cada región."
+        "5to": "Exploración de formas, colores y materiales tradicionales de la región mediante bocetos descriptivos.",
+        "6to": "Análisis de referentes culturales y simbología local para planificar diseños tridimensionales.",
+        "7mo": "Investigación estética y patrimonial de técnicas artesanales, fundamentando bocetos a escala con identidad cultural."
     }
 };
 
 function generarPropuestasCurriculares(materias, grado) {
     const key = [...materias].sort().join("+");
-    const dcdLista = materias.map(m => `<strong>${m}:</strong> ${DESTREZAS_MINEDUC[m][grado]}`).join("<br>");
+    const enfoqueLista = materias.map(m => `<strong>${m} (${grado}):</strong> ${ENFOQUE_POR_GRADO[m][grado]}`).join("<br>");
 
-    // Caso 1: Exclusivamente Lengua y Literatura + Matemática
     if (key === "Lengua y Literatura+Matemática") {
         return {
-            porQue: "Se vinculan Lengua y Literatura y Matemática para que el estudiante desarrolle comprensión lectora crítica sobre realidades productivas y culturales del Ecuador, traduciendo esa información textual en modelos matemáticos (áreas, presupuestos, decimales y promedios) y en producciones escritas argumentadas.",
-            queQuiere: "Lograr que los estudiantes lean, analicen datos reales de cada región del Ecuador, resuelvan problemas geométricos/estadísticos contextualizados y redacten textos literarios o informativos respaldados por cifras exactas.",
-            estrategias: "Lectura comprensiva con cuestionarios de opción múltiple, resolución de casos matemáticos aplicados a la producción real, comparación de tablas de costos y creación literaria guiada (poesía, leyendas y entrevistas).",
-            dcd: dcdLista,
+            porQue: "Articula la comprensión crítica de textos informativos y culturales con el análisis cuantitativo de datos reales del Ecuador, evitando que los números se trabajen aislados de su contexto social.",
+            queQuiere: "Que el alumnado comprenda fuentes escritas, contraste datos estadísticos y geométricos, y redacte conclusiones fundamentadas con evidencias.",
+            estrategias: "Lectura por apartados con glosario, registro en tablas comparativas, resolución de problemas paso a paso y argumentación escrita.",
+            dcd: enfoqueLista,
             titulos: [
                 "Ecuador en Cifras y Letras: Comprensión Lectora y Matemática Regional",
                 "Del Texto al Cálculo: Producción, Cultura y Estadística del Ecuador",
                 "Palabras y Números de Mi Tierra: Crónicas y Datos Reales",
                 "Detectives de Datos y Relatos: Explorando las Cuatro Regiones",
-                "Versos y Proporciones: Literatura y Geometría en el Ecuador"
+                "Lectura Crítica y Geometría Aplicada en el Ecuador"
             ]
         };
     }
 
-    // Caso 2: Ciencias Naturales + Matemática (con o sin Lengua/Sociales, sin ECA)
-    if (materias.includes("Ciencias Naturales") && materias.includes("Matemática") && !materias.includes("Educación Cultural y Artística")) {
-        return {
-            porQue: "Se articulan Ciencias Naturales y Matemática (junto con las áreas seleccionadas) para cuantificar fenómenos biológicos, ecológicos y productivos del Ecuador mediante estadística, áreas y operaciones decimales.",
-            queQuiere: "Que el estudiante comprenda el ciclo de vida, hábitat e impacto ambiental de los recursos emblemáticos de cada región y calcule superficies, costos de producción y promedios reales.",
-            estrategias: "Indagación científica guiada, análisis de tablas estadísticas reales, cálculo de áreas y decimales en cuadrícula de trabajo y comprensión lectora.",
-            dcd: dcdLista,
-            titulos: [
-                "Ecuador en Acción: Ciencia, Producción y Cálculo Estadístico",
-                "Bio-Matemática Regional: Ecosistemas, Datos y Conservación",
-                "Laboratorio Natural y Numérico de las Regiones del Ecuador",
-                "Recursos Vivos del Ecuador: Indagación Científica y Análisis Matemático",
-                "Sostenibilidad en Cifras: Naturaleza y Producción Ecuatoriana"
-            ]
-        };
-    }
-
-    // Caso 3: Una sola asignatura (10 propuestas específicas)
     if (materias.length === 1) {
         const m = materias[0];
-        const bancos10 = {
+        const bancos = {
             "Lengua y Literatura": [
-                "Versos y Relatos de los Cuatro Mundos del Ecuador",
-                "El Guardián del Estuario: Poesía y Tradición Costera",
-                "Leyendas de Tigua y los Andes: Narrativa Ancestral",
-                "Crónicas de la Selva: Mitos y Saberes Amazónicos",
-                "Voces de Galápagos: Entrevistas y Reportajes Naturales",
-                "Antología Poética de Nuestra Biodiversidad",
-                "Periodistas Escolares: Boletín Cultural del Ecuador",
-                "Cuentacuentos Regionales: Oralidad y Escritura Creativa",
-                "Palabras que Protegen la Naturaleza Ecuatoriana",
-                "Taller de Lectura Crítica y Creación Literaria Regional"
+                "Voces y Relatos de las Cuatro Regiones del Ecuador",
+                "Lectores Críticos: Territorio, Memoria y Tradición Oral",
+                "Crónicas y Leyendas de Nuestra Biodiversidad",
+                "Periodistas Escolares: Investigación y Reportaje Regional",
+                "Palabras que Explican Nuestro Entorno Natural y Cultural"
             ],
             "Matemática": [
-                "Matemática Productiva: Áreas, Decimales y Exportación",
-                "Estadística Viva: Promedios Reales del Ecuador",
-                "Geometría en Nuestra Cultura: Diseños, Círculos y Superficies",
-                "Presupuestos y Costos: Comparando Materiales y Producción",
-                "Topógrafos Escolares: Cálculo de Áreas en Regiones Naturales",
-                "El Reto de los Decimales en la Producción Nacional",
-                "Datos Sísmicos y Turísticos: Análisis Estadístico en Galápagos",
-                "Números del Campo y el Mar: Cosechas y Exportaciones",
-                "Olimpiadas de Resolución de Casos Reales",
-                "Matemática Aplicada a la Conservación Ambiental"
+                "Matemática Aplicada: Datos, Áreas y Presupuestos del Ecuador",
+                "Estadística Real: Promedios y Producción en las Cuatro Regiones",
+                "Geometría en Contexto: Superficies, Círculos y Escalas",
+                "Análisis Numérico de Recursos y Costos Regionales",
+                "Resolución de Problemas Reales del Territorio Ecuatoriano"
             ],
             "Ciencias Naturales": [
-                "Ecomundo: Riquezas Naturales y Biodiversidad del Ecuador",
-                "Ciclos de Vida y Ecosistemas: Del Manglar al Páramo",
-                "Botánica Medicinal y Conservación de Bosques",
-                "Geología y Volcanes: El Laboratorio Natural de Galápagos",
-                "Guardianes del Ambiente: Impacto y Prevención Ecológica",
-                "Tintes Naturales y Recursos Renovables de la Sierra",
-                "Fauna Endémica y Adaptaciones en las Cuatro Regiones",
-                "Acuicultura Sostenible y Protección de Estuarios",
-                "Suelos, Climas y Cultivos del Ecuador",
-                "Expedición Científica por los Ecosistemas Ecuatorianos"
+                "Ecosistemas del Ecuador: Observación, Evidencias y Sostenibilidad",
+                "Biodiversidad Regional: Ciclos Vitales e Impacto Ambiental",
+                "Recursos Naturales y Conservación en los Cuatro Mundos",
+                "Indagación Científica sobre Flora, Fauna y Geología Local",
+                "Guardianes de los Ecosistemas Ecuatorianos"
             ],
             "Ciencias Sociales": [
-                "Ecuador en Acción: Geografía, Historia y Producción",
-                "Cartografía Viva: Zonas Productivas de las Regiones",
-                "Identidad Cultural: Festividades y Tradiciones Ancestrales",
-                "Rutas Comerciales y Desarrollo Económico Regional",
-                "Patrimonio Natural y Cultural de la Humanidad",
-                "Pueblos, Oficios y Saberes de Nuestro Territorio",
-                "Líneas de Tiempo y Memoria Histórica Regional",
-                "Economía Local y Trabajo en el Ecuador",
-                "Mapa Físico y Humano de los Cuatro Mundos",
-                "Interculturalidad y Sostenibilidad en el Ecuador"
+                "Ecuador en el Tiempo: Territorio, Procesos Históricos y Producción",
+                "Cartografía y Cambios Socioeconómicos Regionales",
+                "Patrimonio, Identidad y Desarrollo Sostenible en el Ecuador",
+                "Causas y Consecuencias de la Actividad Humana en Nuestras Regiones",
+                "Historia Viva y Geografía Humana del Ecuador"
             ],
             "Educación Cultural y Artística": [
-                "Arte con Identidad: Máscaras, Maquetas y Tradición",
-                "Colores de Tigua: Simbología y Geometría Andina",
-                "Libros Objeto y Poemarios Ilustrados",
-                "Esculturas Vivas de la Biodiversidad Ecuatoriana",
-                "Dioramas y Museos Portátiles Regionales",
-                "Tintes Naturales y Expresión Plástica",
-                "Cartografía Artística en Relieve",
-                "Diseño Sostenible con Material Reciclado",
-                "Galería Visual de los Cuatro Mundos",
-                "Artesanía y Cultura Viva del Ecuador"
+                "Patrimonio Visual y Artesanía Viva del Ecuador",
+                "Referentes Culturales, Simbología y Diseño con Identidad",
+                "Arte, Territorio y Técnicas Tradicionales Regionales",
+                "Bocetos Fundamentados de la Diversidad Cultural Ecuatoriana",
+                "Estética y Memoria Material de las Cuatro Regiones"
             ]
         };
         return {
-            porQue: `Enfoque disciplinar profundo en ${m} para ${grado} Año EGB, aplicando los contenidos del currículo nacional a las 4 regiones del Ecuador.`,
-            queQuiere: `Desarrollar dominio conceptual y procedimental en ${m} mediante lecturas base, cuestionarios estructurados y resolución de actividades por equipos regionales.`,
-            estrategias: `Aprendizaje cooperativo por regiones, análisis de casos reales y guías de trabajo estructuradas paso a paso.`,
-            dcd: dcdLista,
-            titulos: bancos10[m]
+            porQue: `Profundización disciplinar en ${m} para ${grado} Año EGB, conectando las habilidades propias del área con problemáticas reales de cada región ecuatoriana.`,
+            queQuiere: `Desarrollar autonomía investigativa en ${m} mediante fuentes estructuradas, registro de hallazgos y síntesis aplicables.`,
+            estrategias: "Secuencia investigativa en sesiones progresivas: exploración previa, análisis de fuentes, contrastación y síntesis.",
+            dcd: enfoqueLista,
+            titulos: bancos[m]
         };
     }
 
-    // Caso 4: Combinación general de varias materias
     return {
-        porQue: `Se integran ${materias.join(", ")} para abordar las realidades naturales, culturales y económicas del Ecuador desde múltiples lenguajes sin fragmentar el aprendizaje.`,
-        queQuiere: `Que cada equipo investigue una región del Ecuador resolviendo actividades específicas de ${materias.join(", ")} en sus respectivas guías de trabajo.`,
-        estrategias: `Aprendizaje Basado en Proyectos (ABP), comprensión lectora con ítems de opción múltiple, resolución de problemas matemáticos reales y producción creativa.`,
-        dcd: dcdLista,
+        porQue: `Integra ${materias.join(", ")} alrededor de un fenómeno regional real para que cada asignatura aporte herramientas específicas sin repetir tareas.`,
+        queQuiere: `Que cada equipo distribuya el tiempo de investigación entre ${materias.join(", ")} y consolide hallazgos verificables.`,
+        estrategias: "Investigación colaborativa por sesiones, contraste de fuentes, análisis de evidencias y síntesis interdisciplinaria.",
+        dcd: enfoqueLista,
         titulos: [
-            `Ecuador en Acción: Integración de ${materias.join(" y ")}`,
+            `Ecuador en Acción: Indagación en ${materias.join(" y ")}`,
             `Exploradores de los Cuatro Mundos (${materias.join(" + ")})`,
             `Ciencia, Cultura y Datos Reales del Ecuador`,
-            `Saberes, Territorio y Producción Regional`,
-            `Laboratorio Interdisciplinario ProyectaEC: Ecuador Vivo`
+            `Territorio, Evidencias y Saberes Regionales`,
+            `Laboratorio Investigativo ProyectaEC: Ecuador Vivo`
         ]
     };
 }
 
 // ============================================================================
-// ADAPTACIONES BASADAS EN CAPACIDADES (ENFOQUE DUA)
+// DISTRIBUCIÓN DE SESIONES DE INVESTIGACIÓN (SIN DUPLICAR CARGA)
 // ============================================================================
-const ADAPTACIONES_CAPACIDADES = {
-    dislexia: {
-        nombre: "Dislexia",
-        capacidadClave: "Pensamiento Visual, Comprensión Global y Oralidad",
-        rol: "Director/a de Diseño Visual y Vocero/a Principal",
-        recursosNecesarios: "Guía impresa con letra grande (14pt), interlineado amplio, código de colores y lectura compartida.",
-        fases: [
-            "Fase 1: Realiza la lectura base en pareja con apoyo auditivo/visual y responde las preguntas de opción múltiple con resaltador de colores.",
-            "Fase 2: Lidera el armado tridimensional de la maqueta o máscara.",
-            "Fase 3: Expone explicando directamente las piezas visuales del producto sin lectura improvisada."
-        ]
-    },
-    discalculia: {
-        nombre: "Discalculia",
-        capacidadClave: "Narrativa Verbal, Creatividad Literaria y Síntesis",
-        rol: "Guionista Principal y Editor/a Literario",
-        recursosNecesarios: "Calculadora básica de apoyo para verificación de decimales y plantillas físicas pre-medidas para la maqueta.",
-        fases: [
-            "Fase 1: Lidera la guía de Lengua y Literatura (comprensión lectora y creación de poemas/leyendas) y usa apoyo visual/calculadora en los casos numéricos.",
-            "Fase 2: Usa reglas con códigos de color y plantillas de cartón pre-cortadas.",
-            "Fase 3: Lidera la narración del guion de bienvenida y cierre."
-        ]
-    },
-    disgrafia: {
-        nombre: "Disgrafía",
-        capacidadClave: "Agilidad Mental, Oratoria y Manejo Digital",
-        rol: "Coordinador/a de Rotulación Digital y Oratoria",
-        recursosNecesarios: "Acceso a computadora/tablet para digitar respuestas o notas de voz.",
-        fases: [
-            "Fase 1: Marca las opciones múltiples y digita su texto literario en dispositivo.",
-            "Fase 2: Diseña e imprime las etiquetas del proyecto.",
-            "Fase 3: Modera la ronda de preguntas del público."
-        ]
-    },
-    tdah: {
-        nombre: "TDAH",
-        capacidadClave: "Energía Dinámica, Resolución Rápida y Liderazgo Activo",
-        rol: "Jefe/a de Logística, Ensamblaje y Demostración en Vivo",
-        recursosNecesarios: "Lista de verificación en bloques cortos de 15 minutos y materiales táctiles.",
-        fases: [
-            "Fase 1: Alterna bloques cortos entre las preguntas de opción múltiple y los casos prácticos.",
-            "Fase 2: Gestiona los materiales y ensambla las piezas estructurales.",
-            "Fase 3: Dirige la demostración práctica frente al público."
-        ]
-    },
-    altas_capacidades: {
-        nombre: "Dotación Superior / Altas Capacidades",
-        capacidadClave: "Pensamiento Sistémico, Conexión Interdisciplinaria y Mentoría",
-        rol: "Arquitecto/a de Retos Avanzados y Mentor/a de Equipo",
-        recursosNecesarios: "Reto de profundización estadística y rol de tutoría entre pares.",
-        fases: [
-            "Fase 1: Completa los cálculos avanzados y apoya como mentor de sus compañeros.",
-            "Fase 2: Diseña un elemento de escala o interactividad adicional.",
-            "Fase 3: Responde las preguntas de profundización de los docentes visitantes."
-        ]
+function construirCronogramaSesiones(numSesiones, minPorSesion, materias, grupo) {
+    const sesiones = [];
+    for (let i = 0; i < numSesiones; i++) {
+        const num = i + 1;
+        const mat = materias[i % materias.length];
+        const ciclo = Math.floor(i / materias.length);
+
+        if (ciclo === 0) {
+            sesiones.push({
+                numero: num,
+                asignatura: mat,
+                minutos: minPorSesion,
+                titulo: `Exploración inicial y comprensión de fuentes (${mat})`,
+                proposito: `Activar conocimientos previos, acordar roles de equipo y analizar la fuente base de ${mat}.`,
+                actividades: `1) Conformación de roles elegibles (5 min). 2) Exploración de conocimientos previos y lectura con glosario (${Math.round(minPorSesion * 0.45)} min). 3) Resolución de comprensión literal e inferencial (${Math.round(minPorSesion * 0.4)} min).`,
+                evidenciaCorta: "Cuestionario de comprensión y glosario",
+                evidencia: `Apartados 1, 2, 3 y 4 de la guía de ${mat} completados con acuerdos de equipo.`
+            });
+        } else if (ciclo === 1) {
+            sesiones.push({
+                numero: num,
+                asignatura: mat,
+                minutos: minPorSesion,
+                titulo: `Contraste de fuentes, análisis crítico y aplicación (${mat})`,
+                proposito: `Comparar dos fuentes de información, resolver la aplicación disciplinar y redactar una conclusión fundamentada en evidencias.`,
+                actividades: `1) Registro de datos en tabla comparativa de dos fuentes (${Math.round(minPorSesion * 0.35)} min). 2) Resolución de actividad aplicada de ${mat} (${Math.round(minPorSesion * 0.4)} min). 3) Redacción de juicio fundamentado con evidencias (${Math.round(minPorSesion * 0.25)} min).`,
+                evidenciaCorta: "Tabla comparativa y juicio crítico",
+                evidencia: `Apartados 5, 6 y 7 de ${mat}: tabla de contraste, ejercicio aplicado y conclusión argumentada.`
+            });
+        } else {
+            sesiones.push({
+                numero: num,
+                asignatura: mat,
+                minutos: minPorSesion,
+                titulo: `Revisión, síntesis para Fase 2 y autoevaluación (${mat})`,
+                proposito: `Verificar la calidad de los hallazgos, consolidar la ficha de transferencia para la Fase 2 y completar la lista de comprobación.`,
+                actividades: `1) Revisión cruzada entre pares con lista de comprobación (${Math.round(minPorSesion * 0.3)} min). 2) Redacción de la síntesis de hallazgos para el producto de Fase 2 (${Math.round(minPorSesion * 0.45)} min). 3) Autoevaluación del equipo (${Math.round(minPorSesion * 0.25)} min).`,
+                evidenciaCorta: "Síntesis final y autoevaluación",
+                evidencia: `Apartado 8 de ${mat}: ficha de síntesis de hallazgos validada y autoevaluación completada.`
+            });
+        }
     }
-};
+    return sesiones;
+}
+
+// ============================================================================
+// GENERADOR DE RECURSOS UTILIZABLES DE APOYO (SIN DIAGNÓSTICOS)
+// ============================================================================
+function generarHtmlApoyosConcretos(apoyosGrupo, materia) {
+    if (!apoyosGrupo || apoyosGrupo.length === 0) return "";
+
+    const bloques = apoyosGrupo.map(ap => {
+        let recursoEspecifico = "";
+
+        if (ap.tipo === "lectura") {
+            recursoEspecifico = `
+                <div style="margin-top:6px;">
+                    <strong>Organizador previo de lectura (para usar durante el Apartado 3):</strong>
+                    <table class="work-table" style="margin-top:5px;">
+                        <tr>
+                            <th>1. ¿De qué trata este apartado?</th>
+                            <th>2. Palabra clave del glosario</th>
+                            <th>3. Dato o evidencia importante</th>
+                        </tr>
+                        <tr>
+                            <td style="height:34px;"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div style="font-size:11pt; margin-top:4px;"><em>Instrucción paso a paso: Lee un apartado corto a la vez, subraya el dato principal y compáralo con tu compañero/a de lectura antes de responder.</em></div>
+                </div>
+            `;
+        } else if (ap.tipo === "escritura") {
+            recursoEspecifico = `
+                <div style="margin-top:6px;">
+                    <strong>Banco de palabras e iniciadores de frases (para usar en Apartados 6, 7 y 8):</strong>
+                    <div style="border:1px solid #000; padding:6px; margin:5px 0; font-size:11pt;">
+                        <strong>Conectores útiles:</strong> <em>En primer lugar, Por otra parte, Según los datos revisados, Esto demuestra que, En conclusión.</em>
+                    </div>
+                    <div style="font-size:11pt;">
+                        • <strong>Para explicar un hallazgo:</strong> "A partir de la información revisada, observamos que ________________________________________."<br>
+                        • <strong>Para defender una conclusión:</strong> "Consideramos que ______________________________ porque la evidencia muestra que ______________________________."
+                    </div>
+                </div>
+            `;
+        } else if (ap.tipo === "calculo") {
+            recursoEspecifico = `
+                <div style="margin-top:6px;">
+                    <strong>Tabla de valor posicional y secuencia de resolución (para usar en Apartado 7):</strong>
+                    <table class="work-table" style="margin-top:5px; text-align:center;">
+                        <tr>
+                            <th>Centenas (C)</th><th>Decenas (D)</th><th>Unidades (U)</th><th>,</th><th>Décimas (d)</th><th>Centésimas (c)</th>
+                        </tr>
+                        <tr>
+                            <td style="height:26px;"></td><td></td><td></td><td>,</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td style="height:26px;"></td><td></td><td></td><td>,</td><td></td><td></td>
+                        </tr>
+                    </table>
+                    <div style="font-size:11pt; margin-top:4px;">
+                        <strong>Ejemplo resuelto de referencia (4 pasos):</strong><br>
+                        <em>Problema modelo:</em> Si 100 camarones consumen 0,15 g cada uno, ¿cuánto consumen en total?<br>
+                        Paso 1 (Datos): 100 camarones y 0,15 g/camarón. &rarr; Paso 2 (Operación): Multiplicación (100 &times; 0,15). &rarr; Paso 3 (Cálculo): 15,00 g. &rarr; Paso 4 (Verificación): Puedes usar calculadora para comprobar el resultado final cuando el objetivo sea resolver el problema y no el cálculo mental aislado.
+                    </div>
+                </div>
+            `;
+        } else {
+            recursoEspecifico = `
+                <div style="margin-top:6px;">
+                    <strong>Lista de pasos y metas visibles (para marcar al avanzar en la guía):</strong>
+                    <div style="font-size:11pt; margin-top:4px;">
+                        [ &nbsp; ] Meta 1: Elegí mi rol en la tabla inicial y respondí los conocimientos previos.<br>
+                        [ &nbsp; ] Meta 2: Leí los apartados con el glosario y respondí la comprensión literal e inferencial.<br>
+                        [ &nbsp; ] Meta 3: Completé la tabla de comparación entre Fuente A y Fuente B.<br>
+                        [ &nbsp; ] Meta 4: Redacté la conclusión con evidencias, la aplicación y la autoevaluación.
+                    </div>
+                </div>
+            `;
+        }
+
+        return `
+            <div style="border:1.5px solid #000; padding:9px 11px; margin-bottom:10px; break-inside:avoid;">
+                <div style="font-weight:bold; font-size:12pt; border-bottom:1px solid #000; padding-bottom:3px;">
+                    Apoyos para realizar la actividad — ${ap.alias}
+                </div>
+                <div style="font-size:11pt; margin-top:4px;">
+                    <strong>Fortaleza observada:</strong> ${ap.fortaleza} &nbsp;|&nbsp;
+                    <strong>Forma de respuesta acordada:</strong> ${ap.respuesta} &nbsp;|&nbsp;
+                    <strong>Objetivo:</strong> ${ap.modObj ? 'Ajustado explícitamente por el docente' : 'Objetivo compartido del equipo'}
+                </div>
+                ${recursoEspecifico}
+            </div>
+        `;
+    }).join('');
+
+    return `
+        <div style="margin-bottom:12px;">
+            <div style="font-weight:bold; font-size:12.5pt; text-transform:uppercase; margin-bottom:5px;">
+                Apoyos para realizar la actividad
+            </div>
+            ${bloques}
+        </div>
+    `;
+}
