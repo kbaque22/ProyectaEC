@@ -120,49 +120,25 @@
             background: #ccfbf1; color: #0f766e;
         }
 
-        .materia-guia-card {
-            background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px;
-            padding: 18px; margin-bottom: 18px;
+        /* Vista Previa Compacta por Asignatura en Pantalla */
+        .materia-preview-card {
+            background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid var(--primary);
+            border-radius: 10px; padding: 16px 20px; margin-bottom: 14px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;
         }
-        .materia-guia-header {
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
-            gap: 10px; border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-bottom: 14px;
+        .materia-preview-info { flex: 1; min-width: 260px; }
+        .materia-preview-info h4 { margin: 0 0 6px 0; color: var(--primary); font-size: 1.06rem; }
+        .materia-preview-info p { margin: 0; font-size: 0.9rem; color: #334155; }
+        .pill-3c {
+            display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.78rem;
+            font-weight: 700; padding: 2px 9px; border-radius: 12px; margin-top: 8px; margin-right: 5px;
         }
-        .materia-guia-header h4 { margin: 0; color: var(--primary); font-size: 1.08rem; }
         .btn-download-mat {
-            background: var(--primary); color: white; border: none; padding: 8px 14px;
-            border-radius: 6px; font-size: 0.86rem; font-weight: 600; cursor: pointer;
-            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--primary); color: white; border: none; padding: 11px 16px;
+            border-radius: 8px; font-size: 0.9rem; font-weight: 700; cursor: pointer;
+            display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 2px 6px rgba(30,58,138,0.25);
         }
         .btn-download-mat:hover { background: #1e40af; }
-
-        .reading-passage {
-            background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #0284c7;
-            padding: 14px; border-radius: 6px; margin-bottom: 14px; font-size: 0.92rem;
-        }
-        .mcq-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 10px;
-        }
-        .mcq-item {
-            background: #ffffff; border: 1px solid #cbd5e1; padding: 10px 12px; border-radius: 6px; font-size: 0.88rem;
-        }
-        .mcq-item p { margin: 0 0 6px 0; font-weight: 700; color: #0f172a; }
-        .mcq-options { list-style: none; padding: 0; margin: 0; }
-        .mcq-options li { margin-bottom: 3px; }
-        
-        .write-lines { border-bottom: 1px dashed #94a3b8; height: 24px; margin: 6px 0; width: 100%; }
-        .math-grid-box {
-            background-image: linear-gradient(#cbd5e1 1px, transparent 1px), linear-gradient(90deg, #cbd5e1 1px, transparent 1px);
-            background-size: 18px 18px; background-color: #ffffff;
-            border: 1px solid #94a3b8; height: 90px; border-radius: 4px; margin: 8px 0 14px 0;
-        }
-        table.work-table {
-            width: 100%; border-collapse: collapse; margin: 10px 0; background: #fff; font-size: 0.86rem;
-        }
-        table.work-table th, table.work-table td {
-            border: 1px solid #94a3b8; padding: 6px 8px; text-align: left;
-        }
-        table.work-table th { background: #e2e8f0; color: #1e293b; }
 
         .phases-bottom-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;
@@ -264,13 +240,12 @@
             <div class="justificacion-grid" id="justificacionBox"></div>
         </div>
 
-        <h3>Selecciona el equipo de trabajo para descargar sus Guías de Trabajo (Fase 1) y ver Fases 2 y 3:</h3>
+        <h3>Selecciona el equipo de trabajo para descargar sus Guías Completas (PDF) y ver Fases 2 y 3:</h3>
         <div class="group-tabs" id="tabsContainer"></div>
         <div id="contenidoGrupo"></div>
     </section>
 </div>
 
-<!-- Archivos modulares externos -->
 <script src="curriculo.js"></script>
 <script src="datos_grupos.js"></script>
 
@@ -326,7 +301,7 @@ function toggleFilaNEE(index) {
 
 function generarPlanificacion() {
     if (typeof generarPropuestasCurriculares === "undefined" || typeof obtenerDatosGrupos === "undefined") {
-        alert("Asegúrate de haber creado los archivos 'curriculo.js' y 'datos_grupos.js' en tu repositorio de GitHub.");
+        alert("Asegúrate de tener los archivos 'curriculo.js' y 'datos_grupos.js' en tu repositorio.");
         return;
     }
 
@@ -424,20 +399,27 @@ function mostrarGrupo(index) {
     const neeGrupo = configuracionNEEActual[index];
     const materiasSeleccionadas = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
 
-    let guiasHTML = "";
-    materiasSeleccionadas.forEach((mat, mIdx) => {
-        const contenidoMat = g.guiasPorMateria[mat];
-        if (contenidoMat) {
-            const idGuiaMat = `guia_${index}_${mIdx}`;
-            guiasHTML += `
-                <div class="materia-guia-card">
-                    <div class="materia-guia-header">
-                        <h4>📘 Guía de Investigación: ${mat} — ${g.letra} (${g.enfoque})</h4>
-                        <button class="btn-download-mat" onclick="imprimirGuiaMateria('${idGuiaMat}', '${mat}', '${g.letra}')">
-                            📥 Descargar / Imprimir Guía de ${mat} (PDF)
-                        </button>
+    // Vista previa corta en pantalla; el contenido extenso se despliega al descargar/imprimir PDF
+    let guiasPreviewHTML = "";
+    materiasSeleccionadas.forEach((mat) => {
+        const guiaData = g.guiasPorMateria[mat];
+        if (guiaData) {
+            const resumen = guiaData.resumenCorto || `Guía completa de ${mat} con lectura base, preguntas de opción múltiple, análisis crítico y taller creativo.`;
+            guiasPreviewHTML += `
+                <div class="materia-preview-card">
+                    <div class="materia-preview-info">
+                        <h4>📘 ${mat} — ${g.letra} (${g.enfoque})</h4>
+                        <p>${resumen}</p>
+                        <div>
+                            <span class="pill-3c">🤝 Colaboración (Roles)</span>
+                            <span class="pill-3c">🧠 Criticidad</span>
+                            <span class="pill-3c">🎨 Creatividad</span>
+                            ${neeGrupo.tiene ? '<span class="pill-3c" style="background:#dcfce7; color:#065f46;">♿ Adaptación DUA Incluida</span>' : ''}
+                        </div>
                     </div>
-                    <div id="${idGuiaMat}">${contenidoMat}</div>
+                    <button class="btn-download-mat" onclick="imprimirGuiaMateria(${index}, '${mat}')">
+                        📥 Imprimir Guía de ${mat} (PDF)
+                    </button>
                 </div>
             `;
         }
@@ -450,8 +432,8 @@ function mostrarGrupo(index) {
             <div class="inclusion-card">
                 <h4>🌟 Plan de Inclusión por Capacidades - ${g.letra} (${neeGrupo.cantidad} estudiante/s con ${ad.nombre})</h4>
                 <p><strong>Capacidad clave que potenciamos:</strong> ${ad.capacidadClave}</p>
-                <p><strong>Rol asignado en el equipo:</strong> ${ad.rol}</p>
-                <p><strong>Recursos diferenciados necesarios:</strong> ${ad.recursosNecesarios}</p>
+                <p><strong>Sugerencia de rol (elección libre del equipo):</strong> ${ad.rol}</p>
+                <p><strong>Ajustes automáticos en la Guía PDF:</strong> ${ad.recursosNecesarios}</p>
                 <ul>${ad.fases.map(f => `<li>${f}</li>`).join('')}</ul>
             </div>
         `;
@@ -472,10 +454,10 @@ function mostrarGrupo(index) {
 
         <div class="phase-card">
             <div class="phase-header">
-                <h3>🔍 Fase 1: Investigación Preliminar (Guías de Trabajo por Asignatura)</h3>
-                <span class="phase-status">Etapa 1 de Evaluación</span>
+                <h3>🔍 Fase 1: Investigación Preliminar (Vista Previa por Asignatura)</h3>
+                <span class="phase-status">Haz clic en el botón de cada materia para abrir la guía extensa en PDF</span>
             </div>
-            ${guiasHTML}
+            ${guiasPreviewHTML}
             <div class="rubrica-placeholder">
                 📊 <strong>Módulo de Rúbrica de Evaluación (Fase 1):</strong> <em>Estructura reservada para la siguiente etapa.</em>
             </div>
@@ -508,45 +490,130 @@ function mostrarGrupo(index) {
     `;
 }
 
-function imprimirGuiaMateria(elementId, materia, grupo) {
-    const contenido = document.getElementById(elementId).innerHTML;
+function imprimirGuiaMateria(groupIndex, materia) {
+    const g = gruposGeneradosActuales[groupIndex];
+    const neeGrupo = configuracionNEEActual[groupIndex];
+    const guiaData = g.guiasPorMateria[materia];
+    const contenidoExtenso = typeof guiaData === "string" ? guiaData : guiaData.contenidoCompleto;
+    const rolesSugeridos = guiaData.rolesEquipo || [
+        { rol: "Lector/a Guía", tarea: "Dirige la lectura comprensiva en voz alta y verifica el vocabulario clave." },
+        { rol: "Analista de Comprensión", tarea: "Modera el debate para responder las preguntas de opción múltiple." },
+        { rol: "Investigador/a Crítico/a", tarea: "Argumenta las preguntas de análisis profundo y casos reales." },
+        { rol: "Director/a Creativo/a", tarea: "Coordina la creación literaria, el diseño geométrico o el boceto final." }
+    ];
+
     const grado = document.getElementById('grado').options[document.getElementById('grado').selectedIndex].text;
-    const ventana = window.open('', '', 'height=750,width=880');
+    const tituloProyecto = document.getElementById('selectorTitulo').options[document.getElementById('selectorTitulo').selectedIndex].text;
+
+    // Ajuste tipográfico si hay dislexia y recuadro de apoyo inclusivo integrado
+    const esDislexia = neeGrupo.tiene && neeGrupo.tipo === "dislexia";
+    let bloqueInclusivoPDF = "";
+    if (neeGrupo.tiene) {
+        const ad = ADAPTACIONES_CAPACIDADES[neeGrupo.tipo];
+        bloqueInclusivoPDF = `
+            <div class="inclusion-pdf-box">
+                <strong>🌟 Acuerdo de Accesibilidad y Apoyo Mutuo del Equipo (Enfoque DUA - ${ad.nombre}):</strong><br>
+                <em>El equipo elige libremente sus roles según sus fortalezas. Para garantizar que todos participen en igualdad de condiciones, este documento aplica:</em>
+                <ul>
+                    <li><strong>Apoyo de acceso:</strong> ${ad.recursosNecesarios}</li>
+                    <li><strong>Fortaleza que potencia el equipo:</strong> ${ad.capacidadClave}.</li>
+                    <li><strong>Orientación práctica:</strong> ${ad.fases[0]}</li>
+                </ul>
+            </div>
+        `;
+    }
+
+    const ventana = window.open('', '', 'height=820,width=920');
     ventana.document.write(`
         <html>
         <head>
-            <title>Guía de Trabajo - ${materia} (${grupo})</title>
+            <title>Guía de Investigación - ${materia} (${g.letra})</title>
             <style>
-                body { font-family: Arial, sans-serif; padding: 30px; line-height: 1.5; color: #1e293b; }
-                .header-ficha { border: 1px solid #94a3b8; padding: 12px; margin-bottom: 18px; border-radius: 6px; font-size: 13px; }
-                h2 { color: #1e3a8a; margin: 0 0 6px 0; font-size: 18px; border-bottom: 2px solid #0d9488; padding-bottom: 4px; }
-                .reading-passage { background: #f8fafc; border-left: 4px solid #0284c7; padding: 12px; margin-bottom: 14px; }
-                .mcq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-                .mcq-item { border: 1px solid #cbd5e1; padding: 8px; border-radius: 4px; font-size: 12px; }
-                .mcq-options { list-style: none; padding: 0; margin: 4px 0 0 0; }
-                .write-lines { border-bottom: 1px dashed #64748b; height: 24px; margin: 6px 0; }
+                body {
+                    font-family: Arial, sans-serif;
+                    padding: 28px 34px;
+                    line-height: ${esDislexia ? '1.85' : '1.55'};
+                    font-size: ${esDislexia ? '14.5px' : '13px'};
+                    letter-spacing: ${esDislexia ? '0.4px' : 'normal'};
+                    color: #1e293b;
+                }
+                .header-ficha { border: 1.5px solid #1e3a8a; padding: 14px; margin-bottom: 16px; border-radius: 6px; background: #f8fafc; }
+                .header-ficha h2 { color: #1e3a8a; margin: 0 0 6px 0; font-size: 18px; border-bottom: 2px solid #0d9488; padding-bottom: 4px; }
+                .meta-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 8px; font-size: 12.5px; }
+                
+                .roles-box { border: 1.5px solid #0d9488; background: #f0fdfa; padding: 12px; border-radius: 6px; margin-bottom: 16px; }
+                .roles-box h3 { margin: 0 0 6px 0; color: #0f766e; font-size: 14px; }
+                table.roles-table { width: 100%; border-collapse: collapse; background: #ffffff; font-size: 12px; }
+                table.roles-table th, table.roles-table td { border: 1px solid #99f6e4; padding: 6px 8px; text-align: left; }
+                table.roles-table th { background: #ccfbf1; color: #115e59; }
+
+                .inclusion-pdf-box { border: 1.5px solid #10b981; background: #ecfdf5; padding: 11px 14px; border-radius: 6px; margin-bottom: 16px; font-size: 12.5px; color: #064e3b; }
+                .inclusion-pdf-box ul { margin: 5px 0 0 18px; padding: 0; }
+
+                .sec-3c { margin-top: 18px; border-top: 2px solid #1e3a8a; padding-top: 8px; }
+                .badge-3c { display: inline-block; background: #1e3a8a; color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 8px; }
+
+                .reading-passage { background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4px solid #0284c7; padding: 12px 14px; margin-bottom: 14px; }
+                .mcq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+                .mcq-item { border: 1px solid #cbd5e1; padding: 9px; border-radius: 4px; break-inside: avoid; }
+                .mcq-item p { margin: 0 0 5px 0; font-weight: bold; }
+                .mcq-options { list-style: none; padding: 0; margin: 0; }
+                .write-lines { border-bottom: 1px dashed #64748b; height: 25px; margin: 6px 0; }
                 .math-grid-box {
                     background-image: linear-gradient(#cbd5e1 1px, transparent 1px), linear-gradient(90deg, #cbd5e1 1px, transparent 1px);
-                    background-size: 16px 16px; border: 1px solid #64748b; height: 95px; margin: 8px 0 14px 0;
+                    background-size: 16px 16px; border: 1px solid #64748b; height: 105px; margin: 8px 0 14px 0; break-inside: avoid;
                 }
-                table.work-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12px; }
-                table.work-table th, table.work-table td { border: 1px solid #64748b; padding: 6px; }
+                table.work-table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+                table.work-table th, table.work-table td { border: 1px solid #64748b; padding: 6px 8px; }
                 table.work-table th { background: #e2e8f0; }
+                @media print {
+                    body { padding: 15px; }
+                    .no-print { display: none; }
+                }
             </style>
         </head>
         <body>
             <div class="header-ficha">
-                <h2>Proyecto Interdisciplinario — ${materia} (${grupo})</h2>
-                <strong>Nombre y Apellido:</strong> _______________________________________ &nbsp;&nbsp;
-                <strong>Año Básico:</strong> ${grado} &nbsp;&nbsp;
-                <strong>Fecha:</strong> ______________
+                <h2>Guía de Investigación Preliminar — ${materia} (${g.letra}: ${g.enfoque})</h2>
+                <div><strong>Proyecto:</strong> ${tituloProyecto}</div>
+                <div class="meta-row">
+                    <span><strong>Año Básico:</strong> ${grado}</span>
+                    <span><strong>Fecha:</strong> ______________________</span>
+                    <span><strong>Calificación:</strong> _______ / 10</span>
+                </div>
             </div>
-            ${contenido}
+
+            <div class="roles-box">
+                <h3>🤝 Organización Colaborativa del Equipo (Elijan libremente sus roles antes de iniciar)</h3>
+                <table class="roles-table">
+                    <thead>
+                        <tr>
+                            <th style="width:28%;">Rol Investigativo</th>
+                            <th style="width:28%;">Estudiante Responsable</th>
+                            <th style="width:44%;">Aporte Principal en esta Guía</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rolesSugeridos.map(r => `
+                            <tr>
+                                <td><strong>${r.rol}</strong></td>
+                                <td>___________________________</td>
+                                <td>${r.tarea}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+
+            ${bloqueInclusivoPDF}
+
+            ${contenidoExtenso}
         </body>
         </html>
     `);
     ventana.document.close();
-    ventana.print();
+    ventana.focus();
+    setTimeout(() => { ventana.print(); }, 300);
 }
 </script>
 
