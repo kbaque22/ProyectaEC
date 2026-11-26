@@ -3,63 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio ProyectaEC - Generador Curricular Inclusivo</title>
+    <title>Laboratorio ProyectaEC - Fase 1: Investigación Curricular Inclusiva</title>
     <style>
         :root {
             --primary: #1e3a8a;
             --secondary: #0d9488;
-            --accent: #f59e0b;
-            --purple: #6366f1;
+            --accent: #b45309;
+            --purple: #4f46e5;
             --bg: #f1f5f9;
             --card: #ffffff;
-            --text: #1e293b;
+            --text: #0f172a;
         }
         * { box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
         body { background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; line-height: 1.55; }
-        .container { max-width: 1200px; margin: auto; }
+        .container { max-width: 1240px; margin: auto; }
         
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white; padding: 26px; border-radius: 12px; text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 24px;
+            color: white; padding: 24px; border-radius: 12px; text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 22px;
         }
-        header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+        header h1 { margin: 0 0 6px 0; font-size: 1.9rem; }
         .motto {
             background: rgba(255,255,255,0.18); display: inline-block;
-            padding: 6px 18px; border-radius: 20px; font-style: italic; font-size: 0.95rem;
+            padding: 5px 16px; border-radius: 20px; font-style: italic; font-size: 0.92rem;
         }
 
         .panel {
-            background: var(--card); padding: 24px; border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06); margin-bottom: 24px;
+            background: var(--card); padding: 22px; border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06); margin-bottom: 22px;
             border-top: 5px solid var(--primary);
         }
         .grid-config {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 18px;
         }
         .form-group { display: flex; flex-direction: column; }
-        label.section-label { font-weight: 700; margin-bottom: 8px; color: var(--primary); font-size: 0.95rem; }
-        select, input[type="number"] {
-            padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; background: #fff;
+        label.section-label { font-weight: 700; margin-bottom: 7px; color: var(--primary); font-size: 0.94rem; }
+        select, input[type="number"], input[type="text"], textarea {
+            padding: 9px 10px; border: 1px solid #cbd5e1; border-radius: 7px; font-size: 0.92rem; background: #fff;
         }
-        .checkbox-group { display: flex; flex-direction: column; gap: 7px; font-size: 0.92rem; }
+        .checkbox-group { display: flex; flex-direction: column; gap: 6px; font-size: 0.92rem; }
         .checkbox-group label { cursor: pointer; display: flex; align-items: center; gap: 8px; }
 
-        .nee-table-wrapper {
-            margin-top: 20px; border-top: 2px dashed #e2e8f0; padding-top: 16px;
+        .time-box {
+            background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; margin-top: 10px;
         }
-        table.nee-matrix {
-            width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem;
+        .time-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+
+        /* Gestión de Perfiles de Apoyo Anónimos */
+        .apoyos-wrapper {
+            margin-top: 20px; border-top: 2px dashed #cbd5e1; padding-top: 16px;
         }
-        table.nee-matrix th {
-            background: #eff6ff; color: var(--primary); text-align: left; padding: 10px; border-bottom: 2px solid #bfdbfe;
+        .apoyo-builder {
+            background: #f8fafc; border: 1px solid #cbd5e1; padding: 14px; border-radius: 8px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; align-items: end;
         }
-        table.nee-matrix td {
-            padding: 8px 10px; border-bottom: 1px solid #e2e8f0;
+        .btn-add-apoyo {
+            background: var(--primary); color: white; border: none; padding: 10px 14px;
+            border-radius: 7px; font-weight: 700; cursor: pointer;
         }
+        .btn-add-apoyo:hover { background: #1e40af; }
+        .apoyos-list-cards {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin-top: 12px;
+        }
+        .apoyo-chip {
+            background: #ecfdf5; border: 1px solid #6ee7b7; border-left: 4px solid #059669;
+            padding: 10px 12px; border-radius: 7px; font-size: 0.86rem; position: relative;
+        }
+        .btn-del-chip {
+            position: absolute; top: 8px; right: 8px; background: #fee2e2; color: #991b1b;
+            border: none; border-radius: 4px; padding: 2px 7px; cursor: pointer; font-weight: bold;
+        }
+
         .btn-generate {
             width: 100%; margin-top: 20px; background: var(--secondary); color: white; border: none;
-            padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 8px;
+            padding: 14px; font-size: 1.08rem; font-weight: bold; border-radius: 8px;
             cursor: pointer; transition: 0.2s; box-shadow: 0 3px 10px rgba(13, 148, 136, 0.3);
         }
         .btn-generate:hover { background: #0f766e; }
@@ -67,40 +85,45 @@
         #resultado { display: none; }
         .project-header {
             background: #ffffff; border-left: 6px solid var(--primary);
-            padding: 22px; border-radius: 10px; margin-bottom: 22px;
+            padding: 20px; border-radius: 10px; margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        .badges { margin-bottom: 12px; }
+        .badges { margin-bottom: 10px; }
         .badge {
             display: inline-block; background: var(--primary); color: #fff;
-            padding: 4px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: bold; margin-right: 6px;
+            padding: 4px 11px; border-radius: 6px; font-size: 0.82rem; font-weight: bold; margin-right: 6px; margin-bottom: 4px;
         }
-        .badge.inter { background: #7c3aed; }
-        .badge.disc { background: #0284c7; }
+        .badge.inter { background: #6d28d9; }
+        .badge.disc { background: #0369a1; }
         
         .title-selector-box {
-            background: #f8fafc; border: 1px solid #cbd5e1; padding: 14px;
-            border-radius: 8px; margin-bottom: 16px;
+            background: #f8fafc; border: 1px solid #cbd5e1; padding: 13px; border-radius: 8px; margin-bottom: 14px;
         }
-        .title-selector-box select { width: 100%; font-weight: bold; color: var(--primary); font-size: 1.04rem; margin-top: 6px; }
+        .title-selector-box select { width: 100%; font-weight: bold; color: var(--primary); font-size: 1.02rem; margin-top: 5px; }
 
         .justificacion-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px;
             background: #fffbeb; border: 1px solid #fde68a; border-left: 5px solid var(--accent);
-            padding: 16px; border-radius: 8px; font-size: 0.9rem;
+            padding: 14px; border-radius: 8px; font-size: 0.89rem;
         }
-        .just-item h4 { margin: 0 0 5px 0; color: #92400e; font-size: 0.92rem; }
+        .just-item h4 { margin: 0 0 4px 0; color: #92400e; font-size: 0.9rem; }
         .just-item p { margin: 0; color: #451a03; }
 
-        .group-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        /* Barra de opciones de impresión accesible */
+        .print-config-bar {
+            background: #e0f2fe; border: 1px solid #7dd3fc; padding: 12px 16px; border-radius: 8px;
+            margin-bottom: 18px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; font-size: 0.9rem;
+        }
+
+        .group-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
         .tab-btn {
-            padding: 10px 18px; border: 2px solid var(--primary); background: white;
+            padding: 10px 16px; border: 2px solid var(--primary); background: white;
             color: var(--primary); font-weight: bold; border-radius: 8px; cursor: pointer;
             display: flex; align-items: center; gap: 6px;
         }
         .tab-btn.active { background: var(--primary); color: white; }
         .nee-dot {
-            background: #10b981; color: white; font-size: 0.75rem; padding: 2px 7px; border-radius: 10px;
+            background: #059669; color: white; font-size: 0.75rem; padding: 2px 7px; border-radius: 10px;
         }
 
         .phase-card {
@@ -108,58 +131,63 @@
             box-shadow: 0 3px 12px rgba(0,0,0,0.06); border-top: 6px solid var(--secondary);
             margin-bottom: 22px;
         }
-        .phase-card.dev { border-top-color: var(--accent); }
-        .phase-card.soc { border-top-color: var(--purple); }
         .phase-header {
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
             border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 16px;
         }
-        .phase-header h3 { margin: 0; color: var(--primary); font-size: 1.22rem; }
-        .phase-status {
-            font-size: 0.8rem; font-weight: bold; padding: 3px 10px; border-radius: 12px;
-            background: #ccfbf1; color: #0f766e;
-        }
+        .phase-header h3 { margin: 0; color: var(--primary); font-size: 1.2rem; }
 
-        /* Vista Previa Compacta por Asignatura en Pantalla */
-        .materia-preview-card {
-            background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid var(--primary);
-            border-radius: 10px; padding: 16px 20px; margin-bottom: 14px;
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;
+        /* Acordeones desplegables por sesión */
+        details.session-accordion {
+            border: 1px solid #cbd5e1; border-radius: 8px; margin-bottom: 12px; background: #fff; overflow: hidden;
         }
-        .materia-preview-info { flex: 1; min-width: 260px; }
-        .materia-preview-info h4 { margin: 0 0 6px 0; color: var(--primary); font-size: 1.06rem; }
-        .materia-preview-info p { margin: 0; font-size: 0.9rem; color: #334155; }
-        .pill-3c {
-            display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.78rem;
-            font-weight: 700; padding: 2px 9px; border-radius: 12px; margin-top: 8px; margin-right: 5px;
+        details.session-accordion summary {
+            background: #f8fafc; padding: 12px 16px; font-weight: 700; color: var(--primary);
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
         }
-        .btn-download-mat {
-            background: var(--primary); color: white; border: none; padding: 11px 16px;
-            border-radius: 8px; font-size: 0.9rem; font-weight: 700; cursor: pointer;
-            display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 2px 6px rgba(30,58,138,0.25);
+        details.session-accordion[open] summary {
+            border-bottom: 1px solid #cbd5e1; background: #eff6ff;
         }
-        .btn-download-mat:hover { background: #1e40af; }
+        .session-body { padding: 16px; font-size: 0.93rem; }
 
-        .phases-bottom-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;
+        /* Tarjetas de Guías por Asignatura */
+        .materia-card {
+            border: 1px solid #cbd5e1; border-left: 5px solid var(--primary); border-radius: 9px;
+            padding: 16px; margin-bottom: 16px; background: #f8fafc;
         }
-        .sketch-box {
-            background: #f1f5f9; border: 2px dashed #94a3b8; padding: 12px;
-            border-radius: 8px; text-align: center; margin: 12px 0;
+        .materia-card-top {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+            margin-bottom: 10px;
         }
-        .script-box {
-            background: #eef2ff; border-left: 4px solid var(--purple);
-            padding: 12px; font-style: italic; border-radius: 4px; margin: 10px 0;
+        .materia-card-top h4 { margin: 0; color: var(--primary); font-size: 1.05rem; }
+        .btn-group-print { display: flex; gap: 8px; flex-wrap: wrap; }
+        .btn-print {
+            background: var(--primary); color: white; border: none; padding: 8px 13px;
+            border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
         }
-        .inclusion-card {
-            background: #ecfdf5; border: 2px solid #10b981; padding: 18px;
-            border-radius: 10px; margin-top: 20px;
+        .btn-print:hover { background: #1e40af; }
+        .btn-print.sec { background: #0f766e; }
+        .btn-print.sec:hover { background: #115e59; }
+        .btn-print.rub { background: #4f46e5; }
+        .btn-print.rub:hover { background: #4338ca; }
+
+        /* Estilos de Rúbrica Interactiva */
+        .rubrica-box {
+            background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 18px; margin-top: 20px;
         }
-        .inclusion-card h4 { margin: 0 0 8px 0; color: #065f46; font-size: 1.05rem; }
-        .rubrica-placeholder {
-            background: #f8fafc; border: 1px dashed #64748b; padding: 14px 18px;
-            border-radius: 8px; margin-top: 14px; font-size: 0.9rem; color: #334155;
+        table.rubrica-table {
+            width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 12px;
         }
+        table.rubrica-table th, table.rubrica-table td {
+            border: 1px solid #cbd5e1; padding: 8px; vertical-align: top;
+        }
+        table.rubrica-table th { background: #eff6ff; color: var(--primary); text-align: left; }
+        .nota-panel {
+            background: #f8fafc; border: 2px solid var(--primary); padding: 14px; border-radius: 8px;
+            margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+        }
+        .nota-valor { font-size: 1.25rem; font-weight: 800; color: var(--primary); }
+        .nota-pendiente { color: #b45309; font-weight: 700; font-size: 0.95rem; }
     </style>
 </head>
 <body>
@@ -167,7 +195,7 @@
 <div class="container">
     <header>
         <h1>🔬 Laboratorio Metodológico: ProyectaEC</h1>
-        <p>Generador Curricular Interdisciplinario y Repositorio Inclusivo (Subnivel Medio - Ecuador)</p>
+        <p>Planificador Curricular Interdisciplinario — Fase 1: Investigación (Subnivel Medio - Ecuador)</p>
         <div class="motto">"No midamos a los estudiantes por sus discapacidades, sino por las capacidades que tienen"</div>
     </header>
 
@@ -180,52 +208,103 @@
                     <option value="6to">6.º Año de Básica (EGB Media)</option>
                     <option value="7mo" selected>7.º Año de Básica (EGB Media)</option>
                 </select>
+
+                <label class="section-label" for="numGrupos" style="margin-top:12px;">2. Equipos en el Aula:</label>
+                <select id="numGrupos" onchange="actualizarSelectorGrupoApoyo()">
+                    <option value="3">3 Equipos (A, B, C)</option>
+                    <option value="4">4 Equipos (A, B, C, D)</option>
+                    <option value="5" selected>5 Equipos (A, B, C, D, E)</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <label class="section-label">2. Asignatura(s) a Vincular:</label>
+                <label class="section-label">3. Asignatura(s) a Vincular:</label>
                 <div class="checkbox-group">
                     <label><input type="checkbox" name="materia" value="Lengua y Literatura" checked> Lengua y Literatura</label>
                     <label><input type="checkbox" name="materia" value="Matemática" checked> Matemática</label>
                     <label><input type="checkbox" name="materia" value="Ciencias Naturales"> Ciencias Naturales</label>
-                    <label><input type="checkbox" name="materia" value="Ciencias Sociales"> Ciencias Sociales</label>
+                    <label><input type="checkbox" name="materia" value="Ciencias Sociales"> Estudios Sociales</label>
                     <label><input type="checkbox" name="materia" value="Educación Cultural y Artística"> Educación Cultural y Artística</label>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="section-label" for="duracion">3. Duración del Proyecto:</label>
-                <select id="duracion">
-                    <option value="2 Semanas (10 días)">2 Semanas (10 días)</option>
-                    <option value="3 Semanas (15 días)" selected>3 Semanas (15 días)</option>
-                    <option value="4 Semanas (20 días)">4 Semanas (20 días)</option>
+                <label class="section-label" for="duracion">4. Duración Total y Tiempo de Fase 1:</label>
+                <select id="duracion" onchange="sugerirSesionesPorDuracion()">
+                    <option value="2 Semanas">2 Semanas (Total Proyecto)</option>
+                    <option value="3 Semanas" selected>3 Semanas (Total Proyecto)</option>
+                    <option value="4 Semanas">4 Semanas (Total Proyecto)</option>
                 </select>
 
-                <label class="section-label" for="numGrupos" style="margin-top:14px;">4. Número de Grupos por Salón:</label>
-                <select id="numGrupos" onchange="actualizarMatrizGrupos()">
-                    <option value="3">3 Grupos (A, B, C)</option>
-                    <option value="4">4 Grupos (A, B, C, D)</option>
-                    <option value="5" selected>5 Grupos (A, B, C, D, E)</option>
-                </select>
+                <div class="time-box">
+                    <span style="font-size:0.84rem; font-weight:700; color:#0f766e;">⏱️ Tiempo exclusivo para Fase 1 (Editable):</span>
+                    <div class="time-row">
+                        <div>
+                            <label for="numSesiones" style="font-size:0.8rem; font-weight:600;">Sesiones Fase 1:</label>
+                            <input type="number" id="numSesiones" min="2" max="16" value="6" style="width:100%;">
+                        </div>
+                        <div>
+                            <label for="minPorSesion" style="font-size:0.8rem; font-weight:600;">Minutos / sesión:</label>
+                            <input type="number" id="minPorSesion" min="30" max="120" step="5" value="45" style="width:100%;">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="nee-table-wrapper">
-            <label class="section-label">5. Necesidades Educativas Específicas (No asociadas a discapacidad) por Equipo:</label>
-            <table class="nee-matrix">
-                <thead>
-                    <tr>
-                        <th>Equipo</th>
-                        <th>¿Tiene estudiante(s) con NEE?</th>
-                        <th>Necesidad Educativa</th>
-                        <th>N.º de Estudiantes</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaNEEBody"></tbody>
-            </table>
+        <!-- CONFIGURACIÓN DE PERFILES DE APOYO ANÓNIMOS -->
+        <div class="apoyos-wrapper">
+            <label class="section-label">5. Perfiles de Apoyo por Equipo (Identificadores anónimos — Sin etiquetas diagnósticas en fichas):</label>
+            <div class="apoyo-builder">
+                <div>
+                    <label style="font-size:0.82rem; font-weight:600;">Equipo:</label>
+                    <select id="apoyoGrupo" style="width:100%;"></select>
+                </div>
+                <div>
+                    <label style="font-size:0.82rem; font-weight:600;">ID Anónimo (ej. Est. A1):</label>
+                    <input type="text" id="apoyoAlias" placeholder="Ej. Estudiante A1" style="width:100%;">
+                </div>
+                <div>
+                    <label style="font-size:0.82rem; font-weight:600;">Barrera observada:</label>
+                    <select id="apoyoBarrera" style="width:100%;">
+                        <option value="lectura">Decodificación / comprensión lectora</option>
+                        <option value="escritura">Expresión escrita / grafomotricidad</option>
+                        <option value="calculo">Valor posicional / cálculo secuencial</option>
+                        <option value="atencion">Sostenimiento de atención / organización</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="font-size:0.82rem; font-weight:600;">Recurso de apoyo a generar:</label>
+                    <select id="apoyoTipo" style="width:100%;">
+                        <option value="lectura">Lectura: fragmentos breves + glosario + organizador</option>
+                        <option value="escritura">Escritura: banco de palabras + iniciadores de frases</option>
+                        <option value="calculo">Cálculo: tabla posicional + ejemplo resuelto por pasos</option>
+                        <option value="organizacion">Organización: tareas segmentadas + lista de pasos</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="font-size:0.82rem; font-weight:600;">Fortaleza observada:</label>
+                    <input type="text" id="apoyoFortaleza" placeholder="Ej. Razonamiento oral / dibujo" style="width:100%;">
+                </div>
+                <div>
+                    <label style="font-size:0.82rem; font-weight:600;">Forma de respuesta:</label>
+                    <select id="apoyoRespuesta" style="width:100%;">
+                        <option value="Estándar con apoyos visuales">Estándar con apoyos visuales</option>
+                        <option value="Esquema gráfico o dictado al par">Esquema gráfico o dictado al par</option>
+                        <option value="Explicación oral verificada">Explicación oral verificada</option>
+                    </select>
+                </div>
+                <div style="grid-column: 1 / -1; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                    <label style="font-size:0.85rem; color:#92400e; font-weight:600;">
+                        <input type="checkbox" id="apoyoModObj"> ¿El docente autoriza explícitamente ajustar el alcance del objetivo para este perfil? (Por defecto se mantiene el objetivo compartido)
+                    </label>
+                    <button type="button" class="btn-add-apoyo" onclick="agregarPerfilApoyo()">+ Añadir Perfil de Apoyo</button>
+                </div>
+            </div>
+            <div class="apoyos-list-cards" id="listaPerfilesApoyo"></div>
         </div>
 
-        <button class="btn-generate" onclick="generarPlanificacion()">🚀 Generar Planificación Curricular ProyectaEC</button>
+        <button class="btn-generate" onclick="generarPlanificacion()">🚀 Generar Fase 1: Guías, Cronograma por Sesiones y Rúbrica</button>
     </section>
 
     <section id="resultado">
@@ -233,14 +312,33 @@
             <div class="badges" id="badgesContainer"></div>
             <div class="title-selector-box">
                 <label for="selectorTitulo" style="font-size:0.9rem; color:#1e3a8a; font-weight:bold;">
-                    📌 Propuestas de Título del Proyecto (Filtradas exactamente para las asignaturas elegidas):
+                    📌 Propuestas de Título del Proyecto (Filtradas según asignaturas seleccionadas):
                 </label>
                 <select id="selectorTitulo" onchange="actualizarJustificacionCurricular()"></select>
             </div>
             <div class="justificacion-grid" id="justificacionBox"></div>
         </div>
 
-        <h3>Selecciona el equipo de trabajo para descargar sus Guías Completas (PDF) y ver Fases 2 y 3:</h3>
+        <!-- Configuración de Accesibilidad para Impresión PDF -->
+        <div class="print-config-bar">
+            <strong>🖨️ Formato de Impresión PDF (A4, Times New Roman, Negro):</strong>
+            <label><input type="checkbox" id="pdfAccesible"> Activar Versión Accesible (Letra grande e interlineado amplio)</label>
+            <label>Tamaño letra accesible:
+                <select id="pdfFontSize">
+                    <option value="14">14 pt</option>
+                    <option value="16">16 pt</option>
+                </select>
+            </label>
+            <label>Interlineado:
+                <select id="pdfLineHeight">
+                    <option value="1.5">1.5</option>
+                    <option value="1.8" selected>1.8</option>
+                    <option value="2.0">2.0</option>
+                </select>
+            </label>
+        </div>
+
+        <h3>Selecciona el equipo de trabajo:</h3>
         <div class="group-tabs" id="tabsContainer"></div>
         <div id="contenidoGrupo"></div>
     </section>
@@ -248,65 +346,101 @@
 
 <script src="curriculo.js"></script>
 <script src="datos_grupos.js"></script>
+<script src="rubricas.js"></script>
 
 <script>
-let configuracionNEEActual = [];
+let perfilesApoyo = [];
 let gruposGeneradosActuales = [];
 let propuestaActual = null;
+let estadoEvaluacionPorGrupo = {};
 
 window.onload = function() {
-    actualizarMatrizGrupos();
+    actualizarSelectorGrupoApoyo();
+    sugerirSesionesPorDuracion();
 };
 
-function actualizarMatrizGrupos() {
-    const num = parseInt(document.getElementById('numGrupos').value);
-    const tbody = document.getElementById('tablaNEEBody');
-    tbody.innerHTML = "";
-    const letras = ["Grupo A", "Grupo B", "Grupo C", "Grupo D", "Grupo E"];
-
-    for (let i = 0; i < num; i++) {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td><strong>${letras[i]}</strong></td>
-            <td>
-                <select id="tieneNEE_${i}" onchange="toggleFilaNEE(${i})">
-                    <option value="no">No (Ninguno)</option>
-                    <option value="si" ${i === 0 ? 'selected' : ''}>Sí</option>
-                </select>
-            </td>
-            <td>
-                <select id="tipoNEE_${i}" ${i === 0 ? '' : 'disabled'}>
-                    <option value="dislexia">Dislexia</option>
-                    <option value="discalculia">Discalculia</option>
-                    <option value="disgrafia">Disgrafía</option>
-                    <option value="tdah">TDAH</option>
-                    <option value="altas_capacidades">Dotación Superior / Altas Capacidades</option>
-                </select>
-            </td>
-            <td>
-                <input type="number" id="cantNEE_${i}" min="0" max="5" value="${i === 0 ? 1 : 0}" ${i === 0 ? '' : 'disabled'} style="width:70px;">
-            </td>
-        `;
-        tbody.appendChild(tr);
-    }
+function sugerirSesionesPorDuracion() {
+    const dur = document.getElementById('duracion').value;
+    const inputSes = document.getElementById('numSesiones');
+    if (dur === "2 Semanas") inputSes.value = 4;
+    else if (dur === "3 Semanas") inputSes.value = 6;
+    else inputSes.value = 8;
 }
 
-function toggleFilaNEE(index) {
-    const tiene = document.getElementById(`tieneNEE_${index}`).value === "si";
-    document.getElementById(`tipoNEE_${index}`).disabled = !tiene;
-    const cantInput = document.getElementById(`cantNEE_${index}`);
-    cantInput.disabled = !tiene;
-    cantInput.value = tiene ? 1 : 0;
+function actualizarSelectorGrupoApoyo() {
+    const num = parseInt(document.getElementById('numGrupos').value);
+    const sel = document.getElementById('apoyoGrupo');
+    sel.innerHTML = "";
+    const letras = ["Grupo A", "Grupo B", "Grupo C", "Grupo D", "Grupo E"];
+    for (let i = 0; i < num; i++) {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.innerText = letras[i];
+        sel.appendChild(opt);
+    }
+    renderizarListaApoyos();
+}
+
+function agregarPerfilApoyo() {
+    const grupoIdx = parseInt(document.getElementById('apoyoGrupo').value);
+    const alias = document.getElementById('apoyoAlias').value.trim() || `Estudiante ${["A","B","C","D","E"][grupoIdx]}${perfilesApoyo.length + 1}`;
+    const barrera = document.getElementById('apoyoBarrera').options[document.getElementById('apoyoBarrera').selectedIndex].text;
+    const tipo = document.getElementById('apoyoTipo').value;
+    const fortaleza = document.getElementById('apoyoFortaleza').value.trim() || "Participación colaborativa y análisis oral";
+    const respuesta = document.getElementById('apoyoRespuesta').value;
+    const modObj = document.getElementById('apoyoModObj').checked;
+
+    perfilesApoyo.push({
+        id: Date.now(),
+        grupoIdx,
+        alias,
+        barrera,
+        tipo,
+        fortaleza,
+        respuesta,
+        modObj
+    });
+
+    document.getElementById('apoyoAlias').value = "";
+    document.getElementById('apoyoFortaleza').value = "";
+    document.getElementById('apoyoModObj').checked = false;
+    renderizarListaApoyos();
+}
+
+function eliminarPerfilApoyo(id) {
+    perfilesApoyo = perfilesApoyo.filter(p => p.id !== id);
+    renderizarListaApoyos();
+}
+
+function renderizarListaApoyos() {
+    const cont = document.getElementById('listaPerfilesApoyo');
+    const letras = ["Grupo A", "Grupo B", "Grupo C", "Grupo D", "Grupo E"];
+    if (perfilesApoyo.length === 0) {
+        cont.innerHTML = `<p style="font-size:0.85rem; color:#64748b; margin:6px 0 0 0;">No hay perfiles de apoyo registrados aún. Todos los equipos trabajarán con la guía estándar.</p>`;
+        return;
+    }
+    cont.innerHTML = perfilesApoyo.map(p => `
+        <div class="apoyo-chip">
+            <button type="button" class="btn-del-chip" onclick="eliminarPerfilApoyo(${p.id})">✕</button>
+            <strong>${letras[p.grupoIdx]} — ${p.alias}</strong><br>
+            <span>• Barrera: ${p.barrera}</span><br>
+            <span>• Apoyo: <strong>${p.tipo.toUpperCase()}</strong> | Respuesta: ${p.respuesta}</span><br>
+            <span>• Fortaleza: ${p.fortaleza}</span><br>
+            <span>• Objetivo: ${p.modObj ? 'Ajustado explícitamente por docente' : 'Objetivo compartido (sin reducción de nota)'}</span>
+        </div>
+    `).join('');
 }
 
 function generarPlanificacion() {
-    if (typeof generarPropuestasCurriculares === "undefined" || typeof obtenerDatosGrupos === "undefined") {
-        alert("Asegúrate de tener los archivos 'curriculo.js' y 'datos_grupos.js' en tu repositorio.");
+    if (typeof generarPropuestasCurriculares === "undefined" || typeof obtenerDatosGrupos === "undefined" || typeof obtenerRubricaFase1 === "undefined") {
+        alert("Verifica que los 4 archivos (index.html, curriculo.js, datos_grupos.js, rubricas.js) estén cargados en tu repositorio.");
         return;
     }
 
     const grado = document.getElementById('grado').value;
     const duracion = document.getElementById('duracion').value;
+    const numSesiones = parseInt(document.getElementById('numSesiones').value) || 6;
+    const minPorSesion = parseInt(document.getElementById('minPorSesion').value) || 45;
     const numGrupos = parseInt(document.getElementById('numGrupos').value);
     const materias = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
 
@@ -316,28 +450,14 @@ function generarPlanificacion() {
     }
 
     gruposGeneradosActuales = obtenerDatosGrupos(grado);
-
-    configuracionNEEActual = [];
-    for (let i = 0; i < numGrupos; i++) {
-        const tiene = document.getElementById(`tieneNEE_${i}`).value === "si";
-        const tipo = document.getElementById(`tipoNEE_${i}`).value;
-        const cant = parseInt(document.getElementById(`cantNEE_${i}`).value) || 0;
-        configuracionNEEActual.push({
-            tiene: tiene && cant > 0,
-            tipo: tipo,
-            cantidad: tiene ? cant : 0
-        });
-    }
-
     propuestaActual = generarPropuestasCurriculares(materias, grado);
 
-    const badgesDiv = document.getElementById('badgesContainer');
-    badgesDiv.innerHTML = `
+    const totalMin = numSesiones * minPorSesion;
+    document.getElementById('badgesContainer').innerHTML = `
         <span class="badge">${grado} Año EGB</span>
-        <span class="badge ${materias.length > 1 ? 'inter' : 'disc'}">
-            ${materias.length > 1 ? 'Articulación: ' + materias.join(' + ') : 'Área: ' + materias[0]}
-        </span>
-        <span class="badge" style="background:#0d9488;">${duracion}</span>
+        <span class="badge ${materias.length > 1 ? 'inter' : 'disc'}">${materias.join(' + ')}</span>
+        <span class="badge" style="background:#0d9488;">Proyecto Total: ${duracion}</span>
+        <span class="badge" style="background:#b45309;">Fase 1: ${numSesiones} sesiones × ${minPorSesion} min (${totalMin} min)</span>
     `;
 
     const selectorTitulo = document.getElementById('selectorTitulo');
@@ -354,11 +474,11 @@ function generarPlanificacion() {
     const tabsContainer = document.getElementById('tabsContainer');
     tabsContainer.innerHTML = "";
     for (let i = 0; i < numGrupos; i++) {
-        const neeInfo = configuracionNEEActual[i];
-        const badgeNEE = neeInfo.tiene ? `<span class="nee-dot">+${neeInfo.cantidad} NEE</span>` : "";
+        const cantApoyos = perfilesApoyo.filter(p => p.grupoIdx === i).length;
+        const badgeApoyo = cantApoyos > 0 ? `<span class="nee-dot">${cantApoyos} apoyo(s)</span>` : "";
         const btn = document.createElement('button');
         btn.className = "tab-btn" + (i === 0 ? " active" : "");
-        btn.innerHTML = `${gruposGeneradosActuales[i].letra} ${badgeNEE}`;
+        btn.innerHTML = `${gruposGeneradosActuales[i].letra} ${badgeApoyo}`;
         btn.onclick = () => mostrarGrupo(i);
         tabsContainer.appendChild(btn);
     }
@@ -373,11 +493,11 @@ function actualizarJustificacionCurricular() {
     if (!propuestaActual) return;
     document.getElementById('justificacionBox').innerHTML = `
         <div class="just-item">
-            <h4>🔗 ¿Por qué se vinculan estas asignaturas?</h4>
+            <h4>🔗 Vinculación Curricular:</h4>
             <p>${propuestaActual.porQue}</p>
         </div>
         <div class="just-item">
-            <h4>🎯 ¿Qué se busca lograr?</h4>
+            <h4>🎯 Propósito de la Fase 1:</h4>
             <p>${propuestaActual.queQuiere}</p>
         </div>
         <div class="just-item">
@@ -385,7 +505,7 @@ function actualizarJustificacionCurricular() {
             <p>${propuestaActual.estrategias}</p>
         </div>
         <div class="just-item">
-            <h4>📚 Destrezas Mineduc (DCD):</h4>
+            <h4>📚 Enfoque del Subnivel Medio:</h4>
             <p>${propuestaActual.dcd}</p>
         </div>
     `;
@@ -396,224 +516,77 @@ function mostrarGrupo(index) {
     botones.forEach((b, idx) => b.classList.toggle('active', idx === index));
 
     const g = gruposGeneradosActuales[index];
-    const neeGrupo = configuracionNEEActual[index];
+    const apoyosDelGrupo = perfilesApoyo.filter(p => p.grupoIdx === index);
     const materiasSeleccionadas = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
+    const numSesiones = parseInt(document.getElementById('numSesiones').value) || 6;
+    const minPorSesion = parseInt(document.getElementById('minPorSesion').value) || 45;
 
-    // Vista previa corta en pantalla; el contenido extenso se despliega al descargar/imprimir PDF
-    let guiasPreviewHTML = "";
-    materiasSeleccionadas.forEach((mat) => {
-        const guiaData = g.guiasPorMateria[mat];
-        if (guiaData) {
-            const resumen = guiaData.resumenCorto || `Guía completa de ${mat} con lectura base, preguntas de opción múltiple, análisis crítico y taller creativo.`;
-            guiasPreviewHTML += `
-                <div class="materia-preview-card">
-                    <div class="materia-preview-info">
-                        <h4>📘 ${mat} — ${g.letra} (${g.enfoque})</h4>
-                        <p>${resumen}</p>
-                        <div>
-                            <span class="pill-3c">🤝 Colaboración (Roles)</span>
-                            <span class="pill-3c">🧠 Criticidad</span>
-                            <span class="pill-3c">🎨 Creatividad</span>
-                            ${neeGrupo.tiene ? '<span class="pill-3c" style="background:#dcfce7; color:#065f46;">♿ Adaptación DUA Incluida</span>' : ''}
-                        </div>
+    // 1. Generar cronograma distribuido por sesiones (desplegables)
+    const cronograma = construirCronogramaSesiones(numSesiones, minPorSesion, materiasSeleccionadas, g);
+    let sesionesHTML = cronograma.map((ses, sIdx) => `
+        <details class="session-accordion" ${sIdx === 0 ? 'open' : ''}>
+            <summary>
+                <span>📅 Sesión ${ses.numero}: ${ses.titulo} (${ses.asignatura})</span>
+                <span style="font-size:0.82rem; color:#0f766e;">⏱️ ${ses.minutos} min | Evidencia: ${ses.evidenciaCorta}</span>
+            </summary>
+            <div class="session-body">
+                <p><strong>Propósito de la sesión:</strong> ${ses.proposito}</p>
+                <p><strong>Actividades paso a paso:</strong> ${ses.actividades}</p>
+                <p><strong>Evidencia esperada:</strong> ${ses.evidencia}</p>
+                <button class="btn-print sec" onclick="imprimirSesionIndividual(${index}, ${sIdx})">🖨️ Imprimir Ficha de Sesión ${ses.numero} (PDF)</button>
+            </div>
+        </details>
+    `).join('');
+
+    // 2. Tarjetas de Guías Completas por Asignatura
+    let guiasHTML = materiasSeleccionadas.map(mat => {
+        const guia = g.guiasPorMateria[mat];
+        if (!guia) return "";
+        return `
+            <div class="materia-card">
+                <div class="materia-card-top">
+                    <h4>📘 Guía Completa: ${mat} — ${g.letra} (${g.enfoque})</h4>
+                    <div class="btn-group-print">
+                        <button class="btn-print" onclick="imprimirGuiaCompleta(${index}, '${mat}')">📥 Imprimir Guía Completa ${mat} (PDF)</button>
                     </div>
-                    <button class="btn-download-mat" onclick="imprimirGuiaMateria(${index}, '${mat}')">
-                        📥 Imprimir Guía de ${mat} (PDF)
-                    </button>
                 </div>
-            `;
-        }
-    });
+                <p style="margin:0 0 6px 0; font-size:0.9rem;"><strong>Pregunta central:</strong> ${guia.preguntaCentral}</p>
+                <p style="margin:0; font-size:0.86rem; color:#475569;"><strong>Estructura incluida:</strong> Lectura por apartados + glosario, conocimientos previos, comprensión literal e inferencial, tabla de registro, comparación de 2 fuentes, juicio fundamentado, aplicación, síntesis e instrumento de autoevaluación.</p>
+            </div>
+        `;
+    }).join('');
 
-    let bloqueInclusion = "";
-    if (neeGrupo.tiene) {
-        const ad = ADAPTACIONES_CAPACIDADES[neeGrupo.tipo];
-        bloqueInclusion = `
-            <div class="inclusion-card">
-                <h4>🌟 Plan de Inclusión por Capacidades - ${g.letra} (${neeGrupo.cantidad} estudiante/s con ${ad.nombre})</h4>
-                <p><strong>Capacidad clave que potenciamos:</strong> ${ad.capacidadClave}</p>
-                <p><strong>Sugerencia de rol (elección libre del equipo):</strong> ${ad.rol}</p>
-                <p><strong>Ajustes automáticos en la Guía PDF:</strong> ${ad.recursosNecesarios}</p>
-                <ul>${ad.fases.map(f => `<li>${f}</li>`).join('')}</ul>
-            </div>
-        `;
-    } else {
-        bloqueInclusion = `
-            <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:12px 16px; border-radius:8px; margin-top:20px; font-size:0.9rem; color:#475569;">
-                ℹ️ <strong>${g.letra}:</strong> Este equipo no registra estudiantes con NEE específicas asignadas. Se aplica la ruta estándar del Diseño Universal para el Aprendizaje (DUA).
-            </div>
-        `;
-    }
+    // 3. Bloque de Rúbrica Interactiva y Solucionario Docente
+    const rubricaHTML = renderizarModuloRubrica(index, g, materiasSeleccionadas);
 
     document.getElementById('contenidoGrupo').innerHTML = `
         <div style="background:white; padding:16px 20px; border-radius:10px; margin-bottom:20px; border:1px solid #cbd5e1; border-left: 6px solid #0d9488;">
             <span style="color:#0d9488; font-weight:bold; font-size:0.88rem;">${g.enfoque}</span>
-            <h3 style="margin:4px 0; color:var(--primary); font-size:1.25rem;">🏷️ ${g.letra}: "${g.nombreCreativo}"</h3>
-            <p style="margin:4px 0 0 0; font-size:0.95rem;"><strong>🎯 Producto Final Esperado:</strong> ${g.productoFinal}</p>
+            <h3 style="margin:4px 0; color:var(--primary); font-size:1.22rem;">🏷️ ${g.letra}: "${g.nombreCreativo}"</h3>
+            <p style="margin:4px 0 0 0; font-size:0.92rem;"><strong>Insumo que prepara para la Fase 2 (Desarrollo):</strong> ${g.productoFinal}</p>
+            ${apoyosDelGrupo.length > 0 ? `<p style="margin:6px 0 0 0; font-size:0.88rem; color:#065f46; font-weight:600;">✅ Este equipo tiene ${apoyosDelGrupo.length} perfil(es) de apoyo configurados. Sus recursos concretos se insertarán automáticamente en las guías impresas bajo el título "Apoyos para realizar la actividad".</p>` : ''}
         </div>
 
         <div class="phase-card">
             <div class="phase-header">
-                <h3>🔍 Fase 1: Investigación Preliminar (Vista Previa por Asignatura)</h3>
-                <span class="phase-status">Haz clic en el botón de cada materia para abrir la guía extensa en PDF</span>
+                <h3>🗓️ Distribución de Sesiones de Investigación (${numSesiones} sesiones × ${minPorSesion} min)</h3>
+                <div class="btn-group-print">
+                    <button class="btn-print rub" onclick="imprimirRubrica(${index})">📊 Imprimir Rúbrica (PDF)</button>
+                    <button class="btn-print sec" onclick="imprimirSolucionario(${index})">🔑 Imprimir Solucionario Docente (PDF)</button>
+                </div>
             </div>
-            ${guiasPreviewHTML}
-            <div class="rubrica-placeholder">
-                📊 <strong>Módulo de Rúbrica de Evaluación (Fase 1):</strong> <em>Estructura reservada para la siguiente etapa.</em>
-            </div>
+            ${sesionesHTML}
         </div>
 
-        <div class="phases-bottom-grid">
-            <div class="phase-card dev">
-                <div class="phase-header">
-                    <h3>🛠️ Fase 2: Desarrollo</h3>
-                    <span class="phase-status" style="background:#fef3c7; color:#92400e;">Etapa 2</span>
-                </div>
-                <p><strong>Formato del Producto:</strong> ${g.fase2.formato}</p>
-                <p><strong>Dimensiones sugeridas:</strong> ${g.fase2.medidas}</p>
-                <div class="sketch-box"><strong>Boceto Referencial:</strong><br>${g.fase2.bocetoSVG}</div>
-                <p><strong>Orientación creativa:</strong> ${g.fase2.instrucciones}</p>
+        <div class="phase-card">
+            <div class="phase-header">
+                <h3>📚 Guías de Investigación por Asignatura Seleccionada</h3>
             </div>
-
-            <div class="phase-card soc">
-                <div class="phase-header">
-                    <h3>🎤 Fase 3: Socialización</h3>
-                    <span class="phase-status" style="background:#e0e7ff; color:#3730a3;">Etapa 3</span>
-                </div>
-                <p><strong>Guion base de presentación:</strong></p>
-                <div class="script-box">${g.fase3.guion}</div>
-                <p><strong>Dinámica de exposición:</strong> ${g.fase3.dinamica}</p>
-            </div>
+            ${guiasHTML}
         </div>
 
-        ${bloqueInclusion}
+        ${rubricaHTML}
     `;
-}
-
-function imprimirGuiaMateria(groupIndex, materia) {
-    const g = gruposGeneradosActuales[groupIndex];
-    const neeGrupo = configuracionNEEActual[groupIndex];
-    const guiaData = g.guiasPorMateria[materia];
-    const contenidoExtenso = typeof guiaData === "string" ? guiaData : guiaData.contenidoCompleto;
-    const rolesSugeridos = guiaData.rolesEquipo || [
-        { rol: "Lector/a Guía", tarea: "Dirige la lectura comprensiva en voz alta y verifica el vocabulario clave." },
-        { rol: "Analista de Comprensión", tarea: "Modera el debate para responder las preguntas de opción múltiple." },
-        { rol: "Investigador/a Crítico/a", tarea: "Argumenta las preguntas de análisis profundo y casos reales." },
-        { rol: "Director/a Creativo/a", tarea: "Coordina la creación literaria, el diseño geométrico o el boceto final." }
-    ];
-
-    const grado = document.getElementById('grado').options[document.getElementById('grado').selectedIndex].text;
-    const tituloProyecto = document.getElementById('selectorTitulo').options[document.getElementById('selectorTitulo').selectedIndex].text;
-
-    // Ajuste tipográfico si hay dislexia y recuadro de apoyo inclusivo integrado
-    const esDislexia = neeGrupo.tiene && neeGrupo.tipo === "dislexia";
-    let bloqueInclusivoPDF = "";
-    if (neeGrupo.tiene) {
-        const ad = ADAPTACIONES_CAPACIDADES[neeGrupo.tipo];
-        bloqueInclusivoPDF = `
-            <div class="inclusion-pdf-box">
-                <strong>🌟 Acuerdo de Accesibilidad y Apoyo Mutuo del Equipo (Enfoque DUA - ${ad.nombre}):</strong><br>
-                <em>El equipo elige libremente sus roles según sus fortalezas. Para garantizar que todos participen en igualdad de condiciones, este documento aplica:</em>
-                <ul>
-                    <li><strong>Apoyo de acceso:</strong> ${ad.recursosNecesarios}</li>
-                    <li><strong>Fortaleza que potencia el equipo:</strong> ${ad.capacidadClave}.</li>
-                    <li><strong>Orientación práctica:</strong> ${ad.fases[0]}</li>
-                </ul>
-            </div>
-        `;
-    }
-
-    const ventana = window.open('', '', 'height=820,width=920');
-    ventana.document.write(`
-        <html>
-        <head>
-            <title>Guía de Investigación - ${materia} (${g.letra})</title>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    padding: 28px 34px;
-                    line-height: ${esDislexia ? '1.85' : '1.55'};
-                    font-size: ${esDislexia ? '14.5px' : '13px'};
-                    letter-spacing: ${esDislexia ? '0.4px' : 'normal'};
-                    color: #1e293b;
-                }
-                .header-ficha { border: 1.5px solid #1e3a8a; padding: 14px; margin-bottom: 16px; border-radius: 6px; background: #f8fafc; }
-                .header-ficha h2 { color: #1e3a8a; margin: 0 0 6px 0; font-size: 18px; border-bottom: 2px solid #0d9488; padding-bottom: 4px; }
-                .meta-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 8px; font-size: 12.5px; }
-                
-                .roles-box { border: 1.5px solid #0d9488; background: #f0fdfa; padding: 12px; border-radius: 6px; margin-bottom: 16px; }
-                .roles-box h3 { margin: 0 0 6px 0; color: #0f766e; font-size: 14px; }
-                table.roles-table { width: 100%; border-collapse: collapse; background: #ffffff; font-size: 12px; }
-                table.roles-table th, table.roles-table td { border: 1px solid #99f6e4; padding: 6px 8px; text-align: left; }
-                table.roles-table th { background: #ccfbf1; color: #115e59; }
-
-                .inclusion-pdf-box { border: 1.5px solid #10b981; background: #ecfdf5; padding: 11px 14px; border-radius: 6px; margin-bottom: 16px; font-size: 12.5px; color: #064e3b; }
-                .inclusion-pdf-box ul { margin: 5px 0 0 18px; padding: 0; }
-
-                .sec-3c { margin-top: 18px; border-top: 2px solid #1e3a8a; padding-top: 8px; }
-                .badge-3c { display: inline-block; background: #1e3a8a; color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 8px; }
-
-                .reading-passage { background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4px solid #0284c7; padding: 12px 14px; margin-bottom: 14px; }
-                .mcq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
-                .mcq-item { border: 1px solid #cbd5e1; padding: 9px; border-radius: 4px; break-inside: avoid; }
-                .mcq-item p { margin: 0 0 5px 0; font-weight: bold; }
-                .mcq-options { list-style: none; padding: 0; margin: 0; }
-                .write-lines { border-bottom: 1px dashed #64748b; height: 25px; margin: 6px 0; }
-                .math-grid-box {
-                    background-image: linear-gradient(#cbd5e1 1px, transparent 1px), linear-gradient(90deg, #cbd5e1 1px, transparent 1px);
-                    background-size: 16px 16px; border: 1px solid #64748b; height: 105px; margin: 8px 0 14px 0; break-inside: avoid;
-                }
-                table.work-table { width: 100%; border-collapse: collapse; margin: 10px 0; }
-                table.work-table th, table.work-table td { border: 1px solid #64748b; padding: 6px 8px; }
-                table.work-table th { background: #e2e8f0; }
-                @media print {
-                    body { padding: 15px; }
-                    .no-print { display: none; }
-                }
-            </style>
-        </head>
-        <body>
-            <div class="header-ficha">
-                <h2>Guía de Investigación Preliminar — ${materia} (${g.letra}: ${g.enfoque})</h2>
-                <div><strong>Proyecto:</strong> ${tituloProyecto}</div>
-                <div class="meta-row">
-                    <span><strong>Año Básico:</strong> ${grado}</span>
-                    <span><strong>Fecha:</strong> ______________________</span>
-                    <span><strong>Calificación:</strong> _______ / 10</span>
-                </div>
-            </div>
-
-            <div class="roles-box">
-                <h3>🤝 Organización Colaborativa del Equipo (Elijan libremente sus roles antes de iniciar)</h3>
-                <table class="roles-table">
-                    <thead>
-                        <tr>
-                            <th style="width:28%;">Rol Investigativo</th>
-                            <th style="width:28%;">Estudiante Responsable</th>
-                            <th style="width:44%;">Aporte Principal en esta Guía</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${rolesSugeridos.map(r => `
-                            <tr>
-                                <td><strong>${r.rol}</strong></td>
-                                <td>___________________________</td>
-                                <td>${r.tarea}</td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            </div>
-
-            ${bloqueInclusivoPDF}
-
-            ${contenidoExtenso}
-        </body>
-        </html>
-    `);
-    ventana.document.close();
-    ventana.focus();
-    setTimeout(() => { ventana.print(); }, 300);
 }
 </script>
 
