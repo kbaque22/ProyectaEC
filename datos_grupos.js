@@ -1,5 +1,5 @@
 // ============================================================================
-// ARCHIVO 3: DATOS_GRUPOS.JS - GUÍAS DE TRABAJO POR REGIÓN Y MATERIA
+// ARCHIVO 3: DATOS_GRUPOS.JS - GUÍAS EXTENSAS CON ENFOQUE 3C Y ROLES DE EQUIPO
 // ============================================================================
 
 function obtenerDatosGrupos(grado) {
@@ -13,102 +13,183 @@ function obtenerDatosGrupos(grado) {
             enfoque: "Región Litoral o Costa",
             productoFinal: "Maqueta del Criadero Sostenible + Poemario Colectivo 'El Guardián del Estuario'",
             guiasPorMateria: {
-                "Lengua y Literatura": `
-                    <div class="reading-passage">
-                        <strong>📖 Lectura Base: Conociendo el Camarón y su Importancia en la Costa Ecuatoriana</strong><br><br>
-                        El camarón es uno de los productos más valiosos en la economía de la Costa ecuatoriana. Esta pequeña criatura marina no solo es una fuente importante de alimento, sino también un pilar fundamental para muchas familias y comunidades en la región. El camarón es un tipo de crustáceo que vive en ambientes marinos y de agua dulce; en las zonas costeras de Ecuador se cría principalmente en estanques y granjas especializadas.<br><br>
-                        <strong>Desarrollo Histórico y Desafíos:</strong> La industria camaronera en Ecuador comenzó a desarrollarse significativamente en los años 60 y 70. Inicialmente se cultivaba de manera artesanal, pero evolucionó hacia métodos más avanzados hasta convertir al país en uno de los mayores exportadores del mundo. Sin embargo, enfrenta desafíos importantes como las condiciones laborales en las granjas, la gestión sostenible de los recursos naturales y el cuidado de los manglares.
-                    </div>
-                    <p><strong>1. Comprensión Lectora (Marca con una X la respuesta correcta):</strong></p>
-                    <div class="mcq-grid">
-                        <div class="mcq-item">
-                            <p>1.1. ¿Qué es el camarón según la lectura?</p>
-                            <ul class="mcq-options">
-                                <li>A) Un tipo de mamífero marino</li>
-                                <li>B) Un crustáceo que vive en ambientes marinos y de agua dulce</li>
-                                <li>C) Un tipo de pez que vive en agua salada</li>
-                                <li>D) Un molusco que se encuentra en las playas</li>
-                            </ul>
+                "Lengua y Literatura": {
+                    resumenCorto: "Lectura sobre la industria camaronera, 5 ítems de comprensión lectora, debate crítico sobre sostenibilidad y creación de mito/poema colectivo.",
+                    rolesEquipo: [
+                        { rol: "Lector/a Guía del Estuario", tarea: "Dirige la lectura expresiva del texto base e identifica términos clave." },
+                        { rol: "Analista de Comprensión", tarea: "Coordina la discusión de las 5 preguntas de opción múltiple." },
+                        { rol: "Investigador/a Crítico/a", tarea: "Redacta los argumentos sobre sostenibilidad y condiciones laborales." },
+                        { rol: "Poeta y Narrador/a Principal", tarea: "Lidera la creación del mito costero y los versos del poemario colectivo." }
+                    ],
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN Y COMPRENSIÓN LECTORA</span>
+                            <div class="reading-passage">
+                                <strong>📖 Lectura Base: Conociendo el Camarón y su Importancia en la Costa Ecuatoriana</strong><br><br>
+                                El camarón es uno de los productos más valiosos en la economía de la Costa ecuatoriana. Esta pequeña criatura marina no solo es una fuente importante de alimento, sino también un pilar fundamental para muchas familias y comunidades en la región. El camarón es un tipo de crustáceo que vive en ambientes marinos y de agua dulce; en las zonas costeras de Ecuador se cría principalmente en estanques y granjas especializadas.<br><br>
+                                <strong>Desarrollo Histórico y Desafíos:</strong> La industria camaronera en Ecuador comenzó a desarrollarse significativamente en los años 60 y 70. Inicialmente se cultivaba de manera artesanal, pero evolucionó hacia métodos más avanzados hasta convertir al país en uno de los mayores exportadores del mundo. Sin embargo, enfrenta desafíos importantes como las condiciones laborales en las granjas, la gestión sostenible de los recursos naturales y el cuidado de los manglares.
+                            </div>
+                            <p><strong>Responde en equipo marcando con una X la opción correcta:</strong></p>
+                            <div class="mcq-grid">
+                                <div class="mcq-item">
+                                    <p>1.1. ¿Qué es el camarón según la lectura?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Un tipo de mamífero marino</li>
+                                        <li>B) Un crustáceo que vive en ambientes marinos y de agua dulce</li>
+                                        <li>C) Un tipo de pez que vive en agua salada</li>
+                                        <li>D) Un molusco que se encuentra en las playas</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.2. ¿Dónde se cultiva principalmente el camarón en Ecuador?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) En los ríos de la Amazonía</li>
+                                        <li>B) En estanques y granjas especializadas en la Costa</li>
+                                        <li>C) En las montañas de la Sierra</li>
+                                        <li>D) En las islas Galápagos</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.3. ¿Cuándo comenzó a desarrollarse significativamente esta industria?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) En los años 40 &nbsp;&nbsp; B) En los años 50</li>
+                                        <li>C) En los años 60 y 70 &nbsp;&nbsp; D) En los años 80</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.4. ¿Cuál es uno de los desafíos que enfrenta la industria camaronera?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Escasez de tierra para el cultivo</li>
+                                        <li>B) Condiciones laborales en las granjas y gestión sostenible</li>
+                                        <li>C) Reducción en la demanda internacional</li>
+                                        <li>D) Escasez de agua en las zonas urbanas</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.5. ¿Qué ha permitido a Ecuador destacarse en la industria camaronera?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Reducción de precios &nbsp;&nbsp; B) Uso de métodos avanzados de cultivo</li>
+                                        <li>C) Falta de regulación &nbsp;&nbsp; D) Baja competencia internacional</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mcq-item">
-                            <p>1.2. ¿Dónde se cultiva principalmente el camarón en Ecuador?</p>
-                            <ul class="mcq-options">
-                                <li>A) En los ríos de la Amazonía</li>
-                                <li>B) En estanques y granjas especializadas en la Costa</li>
-                                <li>C) En las montañas de la Sierra</li>
-                                <li>D) En las islas Galápagos</li>
-                            </ul>
-                        </div>
-                        <div class="mcq-item">
-                            <p>1.3. ¿Cuándo comenzó a desarrollarse significativamente esta industria?</p>
-                            <ul class="mcq-options">
-                                <li>A) En los años 40 &nbsp;&nbsp; B) En los años 50</li>
-                                <li>C) En los años 60 y 70 &nbsp;&nbsp; D) En los años 80</li>
-                            </ul>
-                        </div>
-                        <div class="mcq-item">
-                            <p>1.4. ¿Cuál es uno de los desafíos que enfrenta la industria camaronera?</p>
-                            <ul class="mcq-options">
-                                <li>A) Escasez de tierra para el cultivo</li>
-                                <li>B) Condiciones laborales en las granjas y gestión sostenible</li>
-                                <li>C) Reducción en la demanda internacional</li>
-                                <li>D) Escasez de agua en las zonas urbanas</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="margin-top:14px;"><strong>2. Producción Escrita - Poema Colectivo "El Guardián del Estuario":</strong><br>
-                    Escribe una estrofa de 4 versos con imágenes poéticas que reflejen el trabajo de los pescadores, la vida en el estuario y la importancia del camarón:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Matemática": `
-                    <p><strong>1. Análisis Estadístico - Exportaciones Ecuatorianas de Camarón (Toneladas):</strong></p>
-                    <table class="work-table">
-                        <thead>
-                            <tr>
-                                <th>Año</th><th>2017</th><th>2018</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Toneladas</strong></td><td>441.539</td><td>512.108</td><td>645.043</td><td>688.489</td><td>847.982</td><td>1.068.961</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p>• ¿En qué año se obtuvo la menor y la mayor exportación en toneladas? ________________________________________</p>
-                    <p>• <strong>Media Aritmética:</strong> Calcula el promedio de exportación de camarón de estos últimos 6 años (realiza el procedimiento en la cuadrícula):</p>
-                    <div class="math-grid-box"></div>
 
-                    <p><strong>2. Caso Geométrico - Área de un Criadero Artificial:</strong><br>
-                    Un criadero rectangular mide <strong>60 m de ancho por 30 m de alto</strong>. Dentro se colocan dos piscinas cuadradas para larvas de <strong>10 m de lado</strong> cada una. Calcula el área libre (región exterior a las piscinas):</p>
-                    <div class="math-grid-box"></div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD (ANÁLISIS Y ARGUMENTACIÓN)</span>
+                            <p><strong>2.1.</strong> Si Ecuador es uno de los mayores exportadores de camarón del mundo, ¿por qué crees que es indispensable proteger los ecosistemas de manglar mientras se produce? Argumenta tu respuesta en 3 líneas:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                            <p><strong>2.2.</strong> ¿Qué mejoras propondrías para garantizar el bienestar de las familias trabajadoras en las granjas camaroneras?</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
 
-                    <p><strong>3. Operaciones con Decimales - Alimentación Diaria:</strong><br>
-                    a) Cada camarón consume <strong>0,15 gramos</strong> de alimento al día. Si el criadero tiene <strong>12.350 camarones</strong>, ¿cuántos gramos se necesitan al día y cuánto costará si cada gramo cuesta <strong>$0,02</strong>?<br>
-                    b) Si en otro estanque se tienen <strong>9.720 gramos</strong> de alimento para repartir uniformemente entre <strong>3.240 camarones</strong>, ¿cuántos gramos recibe cada uno?</p>
-                    <div class="math-grid-box"></div>
-                `,
-                "Ciencias Naturales": `
-                    <p><strong>1. Ciclo de Vida del Camarón:</strong> Investiga y describe las 5 etapas del desarrollo del camarón (desde huevo/larva hasta adulto):</p>
-                    <p>1. _____________________ 2. _____________________ 3. _____________________ 4. _____________________ 5. _____________________</p>
-                    <p><strong>2. Hábitat y Criadero Artificial:</strong> ¿Qué temperatura y nivel de salinidad debe tener el agua para que los camarones crezcan saludables?</p>
-                    <div class="write-lines"></div>
-                    <p><strong>3. Impacto Ambiental y Prevención:</strong> Describe un efecto ambiental de los criaderos en los manglares y una medida de prevención:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Ciencias Sociales": `
-                    <p><strong>1. Cartografía de Zonas Camaroneras:</strong> Ubica en un mapa físico de la Costa ecuatoriana con símbolos y leyenda las 5 provincias principales: <em>Guayas, El Oro, Esmeraldas, Manabí y Santa Elena</em>.</p>
-                    <p><strong>2. Análisis Socioeconómico:</strong> Explica por qué la industria camaronera es vital para el empleo rural en la Costa y qué mejoras laborales requiere:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Educación Cultural y Artística": `
-                    <p><strong>1. Diseño Gráfico y Simbología:</strong> Dibuja 3 íconos originales (camarón, manglar, estanque) que servirán como leyenda visual en tu maqueta y poemario ilustrado:</p>
-                    <div class="math-grid-box"></div>
-                `
+                        <div class="sec-3c">
+                            <span class="badge-3c">3. CREATIVIDAD (MITO COSTERO Y POEMA COLECTIVO)</span>
+                            <p><strong>3.1. Mito o Leyenda del Manglar:</strong> Inventa un breve mito costero sobre un espíritu protector del estuario que cuida a los pescadores y a las crías de camarón:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                            <p><strong>3.2. Estrofa para el Poemario "El Guardián del Estuario":</strong> Redacta 2 estrofas de 4 versos con metáforas y rimas sobre la vida en la Costa y el camarón:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                    `
+                },
+                "Matemática": {
+                    resumenCorto: "Tabla histórica de exportaciones (2013-2022), cálculo de media aritmética, área de criadero con piscinas y problemas de alimentación con decimales.",
+                    rolesEquipo: [
+                        { rol: "Analista de Datos Estadísticos", tarea: "Interpreta la tabla histórica de exportaciones y verifica el promedio." },
+                        { rol: "Calculista de Decimales", tarea: "Resuelve las multiplicaciones y divisiones de alimentación diaria." },
+                        { rol: "Diseñador/a Geométrico/a", tarea: "Calcula el área total del criadero y el área libre de las piscinas." },
+                        { rol: "Verificador/a de Resultados", tarea: "Comprueba cada operación en la cuadrícula y redacta las respuestas." }
+                    ],
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN Y ESTADÍSTICA REAL (2013 - 2022)</span>
+                            <p><strong>Observa la tabla oficial de exportaciones ecuatorianas de camarón (en toneladas):</strong></p>
+                            <table class="work-table">
+                                <thead>
+                                    <tr><th>Año</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th><th>2017</th><th>2018</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Ton.</strong></td><td>224.222</td><td>299.726</td><td>342.501</td><td>372.660</td><td>441.539</td><td>512.108</td><td>645.043</td><td>688.489</td><td>847.982</td><td>1.068.961</td></tr>
+                                </tbody>
+                            </table>
+                            <p><strong>1.1.</strong> ¿En qué año se obtuvo la menor y la mayor exportación en toneladas? ___________________________</p>
+                            <p><strong>1.2. Media Aritmética:</strong> Calcula el promedio de exportación de camarón de los <strong>últimos 6 años (2017 - 2022)</strong>:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD Y RESOLUCIÓN DE PROBLEMAS CON DECIMALES</span>
+                            <p><strong>2.1.</strong> Cada camarón en un criadero consume en promedio <strong>0,15 gramos</strong> de alimento al día. Si el criadero tiene <strong>12.350 camarones</strong>, ¿cuántos gramos de alimento se necesitan al día? Si cada gramo cuesta <strong>$0,02</strong>, ¿cuál es el costo diario?</p>
+                            <div class="math-grid-box"></div>
+                            <p><strong>2.2.</strong> En otro estanque se tienen <strong>9.720 gramos</strong> de alimento para repartir de manera uniforme entre <strong>3.240 camarones</strong>. ¿Cuántos gramos recibe cada camarón? Si el alimento dura 3 días, ¿cuánto consume cada uno al día?</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+
+                        <div class="sec-3c">
+                            <span class="badge-3c">3. CREATIVIDAD Y DISEÑO GEOMÉTRICO DEL CRIADERO</span>
+                            <p><strong>3.1.</strong> Se diseña un criadero rectangular de <strong>60 m de ancho por 30 m de alto</strong>. Dentro se colocan dos piscinas cuadradas para larvas de <strong>10 m de lado</strong> cada una. Calcula el área total del terreno y el <strong>área libre</strong> (zona exterior a las piscinas) donde irán los senderos y vegetación de manglar:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+                    `
+                },
+                "Ciencias Naturales": {
+                    resumenCorto: "Ciclo de vida del camarón en 5 etapas, condiciones físico-químicas del estanque, tabla comparativa de costos de maqueta e impacto en el manglar.",
+                    rolesEquipo: [
+                        { rol: "Biólogo/a de Ciclo Vital", tarea: "Investiga y ordena las 5 etapas de crecimiento del camarón." },
+                        { rol: "Especialista en Hábitat", tarea: "Define la temperatura, salinidad y cuidados del agua." },
+                        { rol: "Auditor/a Ambiental", tarea: "Analiza el impacto en los manglares y propone medidas de prevención." },
+                        { rol: "Coordinador/a de Materiales", tarea: "Elabora la lista de materiales para la maqueta del ciclo de vida." }
+                    ],
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN E INDAGACIÓN BIOLÓGICA</span>
+                            <p><strong>1.1. Ciclo de Vida del Camarón:</strong> Describe las 5 etapas principales de su desarrollo (desde el huevo hasta la etapa adulta):</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                            <p><strong>1.2. Hábitat y Criadero Artificial:</strong> ¿Qué temperatura, oxígeno y nivel de salinidad necesita el agua para mantener saludables a los camarones?</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD E IMPACTO AMBIENTAL</span>
+                            <p><strong>2.1.</strong> Explora los efectos ambientales ocasionados por la tala de manglares para construir piscinas camaroneras y escribe 2 medidas de prevención que aplicarías en la Costa ecuatoriana:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">3. CREATIVIDAD Y DISEÑO DE MAQUETA ECOLÓGICA</span>
+                            <p><strong>3.1.</strong> Dibuja el boceto de tu maqueta mostrando las 5 etapas del ciclo de vida del camarón y el ecosistema de manglar:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+                    `
+                },
+                "Ciencias Sociales": {
+                    resumenCorto: "Cartografía de las 5 provincias camaroneras, análisis histórico desde los años 60 y propuesta de comercio justo.",
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN Y CARTOGRAFÍA</span>
+                            <p><strong>1.1.</strong> Ubica y describe la producción camaronera en las 5 provincias costeras: Guayas, El Oro, Esmeraldas, Manabí y Santa Elena:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD SOCIOECONÓMICA</span>
+                            <p><strong>2.1.</strong> Analiza cómo ha evolucionado el trabajo artesanal hacia la exportación industrial desde los años 60 hasta hoy:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">3. CREATIVIDAD Y SIMBOLOGÍA</span>
+                            <p><strong>3.1.</strong> Diseña 3 símbolos cartográficos originales para representar zonas de manglar, granjas acuícolas y puertos de exportación:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+                    `
+                },
+                "Educación Cultural y Artística": {
+                    resumenCorto: "Diseño visual de portada del poemario colectivo y simbología marina en relieve.",
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. CREATIVIDAD ARTÍSTICA</span>
+                            <p><strong>1.1.</strong> Boceta la portada ilustrada del Poemario 'El Guardián del Estuario' integrando texturas naturales:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+                    `
+                }
             },
             fase2: {
                 formato: "Maqueta Topográfica (60 × 40 cm) + Poemario Ilustrado",
@@ -141,98 +222,172 @@ function obtenerDatosGrupos(grado) {
             enfoque: "Región Interandina o Sierra",
             productoFinal: "Máscara de Tigua en Relieve + Leyenda Andina Ilustrada",
             guiasPorMateria: {
-                "Lengua y Literatura": `
-                    <div class="reading-passage">
-                        <strong>📖 Lectura Base: Las Máscaras de Tigua, un Tesoro Cultural Andino</strong><br><br>
-                        Las máscaras de Tigua son una de las formas más destacadas de expresión artística y cultural de la Sierra ecuatoriana, originarias de la parroquia Tigua, en la provincia de Cotopaxi. Conocidas por su vibrante colorido y sus intrincadas representaciones de la fauna local (cóndor, puma, serpiente) y figuras míticas, reflejan la cosmovisión andina y el vínculo espiritual entre los seres humanos y la naturaleza.<br><br>
-                        Se utilizan principalmente durante el <strong>Inti Raymi (Fiesta del Sol)</strong> y celebraciones comunitarias que agradecen por el ciclo agrícola y las cosechas. Los artesanos las elaboran tallando madera blanda (como pino o pucará) o modelando papel maché, pintándolas luego con colores brillantes y patrones geométricos.
-                    </div>
-                    <p><strong>1. Comprensión Lectora (Marca con una X la respuesta correcta):</strong></p>
-                    <div class="mcq-grid">
-                        <div class="mcq-item">
-                            <p>1.1. ¿Qué representa principalmente una máscara de Tigua?</p>
-                            <ul class="mcq-options">
-                                <li>A) Personajes históricos modernos</li>
-                                <li>B) Figuras mitológicas y animales de la fauna local</li>
-                                <li>C) Elementos urbanos</li>
-                                <li>D) Comida típica</li>
-                            </ul>
+                "Lengua y Literatura": {
+                    resumenCorto: "Lectura sobre el origen de las máscaras de Tigua e Inti Raymi, 5 preguntas de opción múltiple, reflexión cultural y creación de mito/leyenda andina.",
+                    rolesEquipo: [
+                        { rol: "Narrador/a Cultural Andino", tarea: "Lee en voz alta la historia y simbolismo de las máscaras de Tigua." },
+                        { rol: "Analista de Comprensión", tarea: "Dirige la resolución de los 5 ítems de selección múltiple." },
+                        { rol: "Crítico/a de Patrimonio", tarea: "Argumenta la importancia de preservar las tradiciones indígenas." },
+                        { rol: "Creador/a de Mitos y Leyendas", tarea: "Redacta la leyenda protagonizada por el cóndor, el puma o la serpiente." }
+                    ],
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN Y COMPRENSIÓN LECTORA</span>
+                            <div class="reading-passage">
+                                <strong>📖 Lectura Base: Las Máscaras de Tigua, un Tesoro Cultural Andino</strong><br><br>
+                                Las máscaras de Tigua son una de las formas más destacadas de expresión artística y cultural de la Sierra ecuatoriana. Originarias de la parroquia Tigua, en la provincia de Cotopaxi, son conocidas por su vibrante colorido y sus intrincadas representaciones de la fauna local (el cóndor, el puma o la serpiente) y figuras míticas que reflejan la cosmovisión andina.<br><br>
+                                <strong>Uso en Festividades y Proceso Artístico:</strong> Se utilizan principalmente durante la Fiesta del <strong>Inti Raymi (Fiesta del Sol)</strong>, que celebra el solsticio de verano y agradece por las cosechas, así como en el Carnaval y celebraciones comunitarias. Los artesanos modelan la base con madera o papel maché, pintan con colores brillantes y detallan patrones geométricos transmitidos de generación en generación.
+                            </div>
+                            <div class="mcq-grid">
+                                <div class="mcq-item">
+                                    <p>1.1. ¿Qué representa principalmente una máscara de Tigua?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Personajes históricos modernos</li>
+                                        <li>B) Figuras mitológicas y animales de la fauna local</li>
+                                        <li>C) Elementos urbanos &nbsp;&nbsp; D) Comida típica</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.2. ¿Cuál es un elemento común en estas máscaras?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Colores apagados y grises</li>
+                                        <li>B) Colores vibrantes y representaciones de la fauna local</li>
+                                        <li>C) Materiales sintéticos &nbsp;&nbsp; D) Personajes de películas</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.3. ¿En qué festividades tradicionales se utilizan?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Navidad y Año Nuevo</li>
+                                        <li>B) Carnaval y Fiesta del Inti Raymi</li>
+                                        <li>C) Día de la Madre &nbsp;&nbsp; D) Feria del Libro</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.4. ¿Qué materiales se utilizan tradicionalmente?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Plástico y metal &nbsp;&nbsp; B) Papel y madera</li>
+                                        <li>C) Tela y vidrio &nbsp;&nbsp; D) Cerámica y piedra</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.5. ¿Cuál es el propósito de las máscaras en las festividades?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Decorar el hogar únicamente</li>
+                                        <li>B) Representar personajes míticos y conectar con la espiritualidad</li>
+                                        <li>C) Hacer regalos &nbsp;&nbsp; D) Crear souvenirs</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mcq-item">
-                            <p>1.2. ¿Cuál es un elemento visual característico de estas máscaras?</p>
-                            <ul class="mcq-options">
-                                <li>A) Colores apagados y tonos grises</li>
-                                <li>B) Colores vibrantes y representaciones de la fauna local</li>
-                                <li>C) Materiales metálicos</li>
-                                <li>D) Formas abstractas sin color</li>
-                            </ul>
-                        </div>
-                        <div class="mcq-item">
-                            <p>1.3. ¿En qué festividades tradicionales se utilizan?</p>
-                            <ul class="mcq-options">
-                                <li>A) Navidad y Año Nuevo</li>
-                                <li>B) Carnaval y Fiesta del Inti Raymi</li>
-                                <li>C) Día de la Madre</li>
-                                <li>D) Feria del Libro</li>
-                            </ul>
-                        </div>
-                        <div class="mcq-item">
-                            <p>1.4. ¿Qué materiales se utilizan tradicionalmente para hacerlas?</p>
-                            <ul class="mcq-options">
-                                <li>A) Plástico y metal &nbsp;&nbsp; B) Papel maché y madera</li>
-                                <li>C) Tela y vidrio &nbsp;&nbsp; D) Cerámica y piedra</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="margin-top:14px;"><strong>2. Creación Literaria - Leyenda o Mito sobre las Máscaras de Tigua:</strong><br>
-                    Escribe un relato corto o leyenda protagonizado por uno de los animales sagrados de las máscaras (el cóndor, el puma o el lobo de páramo) durante el Inti Raymi:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Matemática": `
-                    <p><strong>1. Presupuesto y Comparación de Distribuidores:</strong><br>
-                    Completa y compara los costos estimados de materiales entre dos distribuidores:</p>
-                    <table class="work-table">
-                        <thead>
-                            <tr><th>Material</th><th>Distribuidor 1 ($)</th><th>Distribuidor 2 ($)</th><th>Diferencia ($)</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1. Base de madera / cartón prensado</td><td>$ 3,50</td><td>$ 2,90</td><td></td></tr>
-                            <tr><td>2. Pinturas acrílicas / pigmentos (set)</td><td>$ 4,80</td><td>$ 5,20</td><td></td></tr>
-                            <tr><td>3. Pinceles finos y lija</td><td>$ 2,25</td><td>$ 1,95</td><td></td></tr>
-                            <tr><td><strong>TOTAL ($)</strong></td><td></td><td></td><td></td></tr>
-                        </tbody>
-                    </table>
 
-                    <p><strong>2. Estadística - Tiempo Promedio de Elaboración (Media Aritmética):</strong><br>
-                    Cinco artesanos registraron los días que tardaron en tallar y pintar una máscara: <strong>María: 10,5 días | Carlos: 20,8 días | Ana: 18,2 días | Pablo: 27,8 días | Sofía: 16,5 días</strong>. Calcula el tiempo promedio:</p>
-                    <div class="math-grid-box"></div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD (IDENTIDAD Y PRESERVACIÓN CULTURAL)</span>
+                            <p><strong>2.1.</strong> ¿Por qué crees que las máscaras de Tigua son mucho más que simples adornos turísticos y cómo pueden los jóvenes ayudar a preservar este arte ancestral?</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
 
-                    <p><strong>3. Geometría - Área de la Máscara y los Ojos:</strong><br>
-                    a) La base cuadrada de una máscara mide <strong>12,5 cm de lado</strong>. Calcula su área total ($A = l \times l$). Si se pinta solo el <strong>75%</strong> de la base, ¿cuántos $cm^2$ quedan sin pintar?<br>
-                    b) Cada ojo circular tiene un radio de <strong>2,8 cm</strong>. Calcula el área de un ojo ($A = \pi \times r^2$):</p>
-                    <div class="math-grid-box"></div>
-                `,
-                "Ciencias Naturales": `
-                    <p><strong>1. Recursos Forestales y Tintes Naturales:</strong><br>
-                    • ¿Qué características tiene la madera de pino y qué beneficios aporta este árbol al suelo de la Sierra?<br>
-                    • Investiga 2 plantas o minerales locales de los que se extraen tintes naturales y explica su diferencia con los tintes sintéticos:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Ciencias Sociales": `
-                    <p><strong>1. Patrimonio Cultural y Cosmovisión Andina:</strong><br>
-                    Explica el significado histórico de la parroquia Tigua (Cotopaxi) y el rol de las máscaras durante el solsticio de verano (Inti Raymi):</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Educación Cultural y Artística": `
-                    <p><strong>1. Boceto Geométrico de la Máscara de Tigua:</strong><br>
-                    Dibuja el diseño preliminar de tu máscara integrando simetría, patrones geométricos y fauna andina:</p>
-                    <div class="math-grid-box"></div>
-                `
+                        <div class="sec-3c">
+                            <span class="badge-3c">3. CREATIVIDAD (LEYENDA O MITO SOBRE LAS MÁSCARAS DE TIGUA)</span>
+                            <p><strong>3.1.</strong> Escribe un cuento o leyenda inspirada en los animales representados en las máscaras de Tigua (cóndor, puma o serpiente) explorando la conexión entre la naturaleza, la espiritualidad andina y el Inti Raymi:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                    `
+                },
+                "Matemática": {
+                    resumenCorto: "Tabla comparativa de costos entre 2 distribuidores, promedio de días de elaboración de 5 artesanos, área de base cuadrada (12,5 cm) y ojos circulares (r=2,8 cm).",
+                    rolesEquipo: [
+                        { rol: "Cotizador/a de Materiales", tarea: "Completa y compara los precios entre el Distribuidor 1 y el Distribuidor 2." },
+                        { rol: "Analista de Tiempos", tarea: "Calcula la media aritmética de los días de trabajo de los 5 artesanos." },
+                        { rol: "Geómetra de Superficies", tarea: "Calcula el área de la base cuadrada, los ojos circulares y el porcentaje pintado." },
+                        { rol: "Auditor/a de Cálculos", tarea: "Verifica cada paso en la cuadrícula y redacta las conclusiones." }
+                    ],
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN Y PRESUPUESTO COMPARATIVO</span>
+                            <p><strong>1.1.</strong> Completa la tabla comparando los precios de 2 distribuidores para fabricar la máscara y calcula la diferencia total:</p>
+                            <table class="work-table">
+                                <thead>
+                                    <tr><th>Materiales</th><th>Distribuidor 1 ($)</th><th>Distribuidor 2 ($)</th><th>Diferencia ($)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1. Pieza de madera / base prensada</td><td>$ 3,50</td><td>$ 2,90</td><td></td></tr>
+                                    <tr><td>2. Set de pigmentos / pinturas acrílicas</td><td>$ 4,80</td><td>$ 5,20</td><td></td></tr>
+                                    <tr><td>3. Pinceles finos y lija de madera</td><td>$ 2,25</td><td>$ 1,95</td><td></td></tr>
+                                    <tr><td>4. Barniz protector ecológico</td><td>$ 3,10</td><td>$ 3,45</td><td></td></tr>
+                                    <tr><td><strong>VALOR TOTAL ($)</strong></td><td></td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD Y MEDIA ARITMÉTICA DE PRODUCCIÓN</span>
+                            <p><strong>2.1.</strong> Cinco artesanos han registrado el tiempo (en días) que les tomó tallar y pintar una máscara de Tigua: <strong>María: 10,5 días | Carlos: 20,8 días | Ana: 18,2 días | Pablo: 27,8 días | Sofía: 16,5 días</strong>. Calcula el tiempo promedio (media aritmética):</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+
+                        <div class="sec-3c">
+                            <span class="badge-3c">3. CREATIVIDAD Y GEOMETRÍA DE LA MÁSCARA DE TIGUA</span>
+                            <p><strong>3.1.</strong> La base de la máscara tiene forma cuadrada, con cada lado midiendo <strong>12,5 cm</strong>. ¿Cuál es el área total de la base? Si los estudiantes deciden pintar solo el <strong>75%</strong> del área total, ¿cuántos $cm^2$ quedarán sin pintar?</p>
+                            <div class="math-grid-box"></div>
+                            <p><strong>3.2.</strong> Los ojos de la máscara se representarán como dos círculos idénticos, cada uno con un radio de <strong>2,8 cm</strong>. Calcula el área de un ojo ($A = \pi \times r^2$):</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+                    `
+                },
+                "Ciencias Naturales": {
+                    resumenCorto: "Árboles de la Sierra (madera de pino), extracción de tintes naturales vs. sintéticos y prevención de la deforestación.",
+                    rolesEquipo: [
+                        { rol: "Botánico/a Forestal", tarea: "Investiga las características de la madera de pino y árboles nativos." },
+                        { rol: "Químico/a de Tintes", tarea: "Compara la extracción de tintes naturales frente a los sintéticos." },
+                        { rol: "Defensor/a Ambiental", tarea: "Analiza el impacto de la deforestación en la Sierra ecuatoriana." },
+                        { rol: "Diseñador/a de Boceto", tarea: "Dibuja el primer boceto ecológico de la máscara." }
+                    ],
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN: ÁRBOLES DE LA SIERRA Y TINTES NATURALES</span>
+                            <p><strong>1.1.</strong> ¿Qué tipo de árboles encontramos en la Sierra ecuatoriana y cuáles son las características y beneficios ambientales del pino?</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                            <p><strong>1.2. Tintes Naturales:</strong> ¿Qué plantas o minerales locales se utilizan para obtener tintes naturales y cuál es su diferencia frente a un tinte sintético?</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD: IMPACTO AMBIENTAL Y PREVENCIÓN</span>
+                            <p><strong>2.1.</strong> Explora los efectos ambientales ocasionados por la deforestación en la Sierra ecuatoriana y escribe 2 medidas de prevención que tomarías para disminuir este impacto:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">3. CREATIVIDAD: BOCETO DE LA MÁSCARA DE TIGUA</span>
+                            <p><strong>3.1.</strong> Dibuja el primer boceto de tu máscara empleando colores vivos y figuras geométricas:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+                    `
+                },
+                "Ciencias Sociales": {
+                    resumenCorto: "Significado histórico de la fiesta del Inti Raymi en la región andina y creación de máscara en miniatura.",
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN E HISTORIA ANDINA</span>
+                            <p><strong>1.1.</strong> Investiga cómo las máscaras de Tigua se utilizan en festividades como el Inti Raymi y su significado cultural en Cotopaxi:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD CULTURAL</span>
+                            <p><strong>2.1.</strong> ¿Cómo fortalece esta tradición el sentido de identidad comunitaria en los pueblos indígenas de la Sierra?</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                    `
+                },
+                "Educación Cultural y Artística": {
+                    resumenCorto: "Diseño simétrico y paleta cromática tradicional de las máscaras de Tigua.",
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. CREATIVIDAD PLÁSTICA</span>
+                            <p><strong>1.1.</strong> Traza la estructura simétrica de tu máscara de Tigua detallando los patrones geométricos:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+                    `
+                }
             },
             fase2: {
                 formato: "Máscara Tradicional en Relieve + Libreto de Leyenda Andina",
@@ -252,7 +407,7 @@ function obtenerDatosGrupos(grado) {
                 dinamica: "Dramatización breve de la leyenda usando la máscara y exposición de los cálculos de área."
             }
         },
-      // --------------------------------------------------------------------
+        // --------------------------------------------------------------------
         // GRUPO C: REGIÓN AMAZÓNICA (LA UÑA DE GATO - UNCARIA TOMENTOSA)
         // --------------------------------------------------------------------
         {
@@ -261,85 +416,174 @@ function obtenerDatosGrupos(grado) {
             enfoque: "Región Amazónica",
             productoFinal: "Maqueta del Hábitat Amazónico + Relato Ancestral Ilustrado",
             guiasPorMateria: {
-                "Lengua y Literatura": `
-                    <div class="reading-passage">
-                        <strong>📖 Lectura Base: La Uña de Gato, un Regalo Medicinal de la Amazonía</strong><br><br>
-                        La uña de gato (<em>Uncaria tomentosa</em>) es una planta trepadora medicinal originaria de los bosques tropicales de América del Sur, muy valorada en la Amazonía ecuatoriana. Su nombre proviene de las espinas curvas en forma de garras que adornan sus tallos. Durante siglos, los pueblos indígenas han transmitido mediante relatos orales el conocimiento sobre sus propiedades antiinflamatorias y antioxidantes para fortalecer el sistema inmunológico.<br><br>
-                        Actualmente es reconocida a nivel internacional, lo que representa una oportunidad económica, pero también exige una recolección sostenible para evitar la deforestación y la sobreexplotación de la especie.
-                    </div>
-                    <p><strong>1. Comprensión Lectora (Marca con una X la respuesta correcta):</strong></p>
-                    <div class="mcq-grid">
-                        <div class="mcq-item">
-                            <p>1.1. ¿Cuál es el nombre científico de la uña de gato?</p>
-                            <ul class="mcq-options">
-                                <li>A) Uncaria tomentosa &nbsp;&nbsp; B) Uncaria guianensis</li>
-                                <li>C) Uncaria montana &nbsp;&nbsp; D) Uncaria peruensis</li>
-                            </ul>
+                "Lengua y Literatura": {
+                    resumenCorto: "Lectura sobre la Uña de Gato (Uncaria tomentosa), 5 ítems de opción múltiple, análisis de conservación y redacción de mito/relato amazónico.",
+                    rolesEquipo: [
+                        { rol: "Lector/a de Saberes Ancestrales", tarea: "Lee en voz alta la historia y usos medicinales de la uña de gato." },
+                        { rol: "Analista de Comprensión", tarea: "Coordina el debate para responder las 5 preguntas de opción múltiple." },
+                        { rol: "Crítico/a de Sostenibilidad", tarea: "Argumenta sobre el comercio internacional y el cuidado de la biodiversidad." },
+                        { rol: "Narrador/a de Mitos Amazónicos", tarea: "Redacta el relato corto sobre las creencias indígenas y la selva." }
+                    ],
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN Y COMPRENSIÓN LECTORA</span>
+                            <div class="reading-passage">
+                                <strong>📖 Lectura Base: La Uña de Gato, un Regalo Medicinal de la Amazonía</strong><br><br>
+                                La uña de gato (<em>Uncaria tomentosa</em>) es una planta trepadora medicinal originaria de los bosques tropicales de América del Sur, muy valorada en la Amazonía ecuatoriana. Su nombre hace referencia a las espinas en forma de garras que adornan sus tallos. Durante siglos, los pueblos indígenas han transmitido mediante relatos orales y prácticas comunitarias el conocimiento sobre sus propiedades antiinflamatorias y antioxidantes para fortalecer el sistema inmunológico y aliviar dolores articulares.<br><br>
+                                Actualmente es reconocida a nivel internacional por la medicina natural, lo que representa una oportunidad económica, pero exige una recolección sostenible para evitar la deforestación y la sobreexplotación de la especie.
+                            </div>
+                            <div class="mcq-grid">
+                                <div class="mcq-item">
+                                    <p>1.1. ¿Cuál es el nombre científico de la uña de gato?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Uncaria tomentosa &nbsp;&nbsp; B) Uncaria guianensis</li>
+                                        <li>C) Uncaria montana &nbsp;&nbsp; D) Uncaria peruensis</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.2. ¿Cómo se transmite el conocimiento sobre esta planta en las culturas indígenas?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) A través de contratos comerciales</li>
+                                        <li>B) Mediante charlas y relatos orales entre generaciones</li>
+                                        <li>C) Únicamente por manuales impresos</li>
+                                        <li>D) Con la ayuda de videos digitales</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.3. ¿Cómo está siendo reconocida la uña de gato a nivel internacional?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Como planta ornamental sin valor medicinal</li>
+                                        <li>B) Como planta medicinal beneficiosa para el sistema inmunológico</li>
+                                        <li>C) Como especie invasora &nbsp;&nbsp; D) Como madera industrial</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.4. ¿Qué desafío enfrentan las comunidades amazónicas con esta planta?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) La falta de interés medicinal</li>
+                                        <li>B) La deforestación y la explotación insostenible</li>
+                                        <li>C) El crecimiento excesivo &nbsp;&nbsp; D) El clima frío</li>
+                                    </ul>
+                                </div>
+                                <div class="mcq-item">
+                                    <p>1.5. ¿Qué impacto negativo puede tener el comercio internacional sin control?</p>
+                                    <ul class="mcq-options">
+                                        <li>A) Fomenta la conservación automáticamente</li>
+                                        <li>B) Incrementa el riesgo de sobreexplotación y afecta la biodiversidad</li>
+                                        <li>C) No tiene ningún impacto &nbsp;&nbsp; D) Mejora la calidad del suelo</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mcq-item">
-                            <p>1.2. ¿Cómo se transmite este conocimiento en las culturas indígenas?</p>
-                            <ul class="mcq-options">
-                                <li>A) A través de contratos comerciales</li>
-                                <li>B) Mediante charlas y relatos orales entre generaciones</li>
-                                <li>C) Únicamente por manuales impresos</li>
-                                <li>D) Por redes sociales</li>
-                            </ul>
-                        </div>
-                        <div class="mcq-item">
-                            <p>1.3. ¿Cómo es reconocida la uña de gato a nivel internacional?</p>
-                            <ul class="mcq-options">
-                                <li>A) Como planta ornamental sin valor</li>
-                                <li>B) Como planta medicinal beneficiosa para el sistema inmunológico</li>
-                                <li>C) Como especie invasora</li>
-                                <li>D) Como madera para muebles</li>
-                            </ul>
-                        </div>
-                        <div class="mcq-item">
-                            <p>1.4. ¿Qué riesgo genera el comercio internacional sin control?</p>
-                            <ul class="mcq-options">
-                                <li>A) Mejora automática del suelo</li>
-                                <li>B) Riesgo de explotación insostenible y pérdida de biodiversidad</li>
-                                <li>C) No tiene ningún impacto</li>
-                                <li>D) Exceso de lluvias</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="margin-top:14px;"><strong>2. Relato Corto sobre Mitos y Saberes de la Selva:</strong><br>
-                    Redacta un relato breve sobre un sabio o curandero amazónico que enseña a los jóvenes a recolectar la corteza de la uña de gato sin dañar el bosque:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Matemática": `
-                    <p><strong>1. Estadística - Tiempo de Madurez y Producción Diaria (Media Aritmética):</strong><br>
-                    a) Se registró el tiempo de madurez (en años) de 5 plantas de uña de gato: <strong>3,8 | 4,5 | 4,2 | 5,1 | 3,9</strong>. Calcula la media aritmética:<br>
-                    b) Una planta procesadora registró la producción diaria (en kg) durante 6 días: <strong>142,5 kg | 155,8 kg | 168,3 kg | 140,2 kg | 170,7 kg | 160,4 kg</strong>. Calcula el promedio diario:</p>
-                    <div class="math-grid-box"></div>
 
-                    <p><strong>2. Caso Geométrico y Financiero - Plantación y Exportación:</strong><br>
-                    a) Se delimita una sección rectangular del bosque de <strong>120 metros de largo por 85 metros de ancho</strong> para cultivo sostenible. Calcula su área total en $m^2$.<br>
-                    b) Una asociación exporta <strong>8.750 kg</strong> a <strong>$9,25 por kg</strong>, con un costo de producción de <strong>$3,40 por kg</strong>. Calcula: 1) Ingreso total, 2) Costo total y 3) Ganancia neta:</p>
-                    <div class="math-grid-box"></div>
-                `,
-                "Ciencias Naturales": `
-                    <p><strong>1. Morfología, Beneficios y Conservación:</strong><br>
-                    • Describe las características físicas de la planta (espinas, tallo trepador, corteza) y menciona 3 beneficios medicinales.<br>
-                    • ¿Qué medidas de prevención propones para evitar la deforestación en la Amazonía ecuatoriana?</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Ciencias Sociales": `
-                    <p><strong>1. Mapa de Cultivo y Rutas Comerciales:</strong><br>
-                    Ubica las provincias amazónicas productoras (Napo, Pastaza, Orellana, Sucumbíos, Morona Santiago, Zamora Chinchipe) y explica cómo el comercio justo beneficia a las comunidades locales:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Educación Cultural y Artística": `
-                    <p><strong>1. Boceto de Maqueta del Hábitat Amazónico:</strong><br>
-                    Dibuja la estructura de la planta trepadora <em>Uncaria tomentosa</em> junto a los árboles del bosque húmedo:</p>
-                    <div class="math-grid-box"></div>
-                `
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD (SABERES ANCESTRALES Y COMERCIO JUSTO)</span>
+                            <p><strong>2.1.</strong> ¿Por qué es fundamental respetar la tradición oral y los métodos de cosecha sostenible de los pueblos indígenas amazónicos frente a la demanda farmacéutica internacional?</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+
+                        <div class="sec-3c">
+                            <span class="badge-3c">3. CREATIVIDAD (RELATO CORTO SOBRE MITOS Y CREENCIAS)</span>
+                            <p><strong>3.1.</strong> Redacta un relato corto basado en una leyenda o mito amazónico donde un sabio o curandero enseña el respeto hacia la planta uña de gato y la selva:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                    `
+                },
+                "Matemática": {
+                    resumenCorto: "Tabla de costos de maqueta (2 distribuidores), media aritmética de madurez (años) y producción diaria (kg), área de bosque (120×85 m) y ganancia neta de exportación.",
+                    rolesEquipo: [
+                        { rol: "Cotizador/a de Materiales", tarea: "Compara los precios entre el Distribuidor 1 y el Distribuidor 2." },
+                        { rol: "Analista de Promedios", tarea: "Calcula la media aritmética del tiempo de madurez y producción diaria." },
+                        { rol: "Topógrafo/a del Bosque", tarea: "Calcula el área rectangular delimitada para la plantación (120 × 85 m)." },
+                        { rol: "Contador/a de Exportación", tarea: "Determina ingresos, costos y ganancia neta de la empresa exportadora." }
+                    ],
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN Y COSTOS DE FABRICACIÓN DE MAQUETAS</span>
+                            <p><strong>1.1.</strong> Completa los precios de dos distribuidores para elaborar la maqueta del hábitat y ciclo de vida, y calcula la diferencia total:</p>
+                            <table class="work-table">
+                                <thead>
+                                    <tr><th>Materiales para Maqueta</th><th>Distribuidor 1 ($)</th><th>Distribuidor 2 ($)</th><th>Diferencia ($)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1. Base de madera / cartón prensado (60×40 cm)</td><td>$ 3,20</td><td>$ 2,85</td><td></td></tr>
+                                    <tr><td>2. Plastilina / masa moldeable y alambre</td><td>$ 2,90</td><td>$ 3,15</td><td></td></tr>
+                                    <tr><td>3. Follaje artificial, musgo y pintura acrílica</td><td>$ 4,10</td><td>$ 3,75</td><td></td></tr>
+                                    <tr><td><strong>VALOR TOTAL ($)</strong></td><td></td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD Y EJERCICIOS DE MEDIA ARITMÉTICA</span>
+                            <p><strong>2.1.</strong> Se han recopilado datos sobre el tiempo de madurez (en años) de cinco plantas "uña de gato": <strong>Planta 1: 3,8 años | Planta 2: 4,5 años | Planta 3: 4,2 años | Planta 4: 5,1 años | Planta 5: 3,9 años</strong>. Calcula la media aritmética:</p>
+                            <div class="math-grid-box"></div>
+                            <p><strong>2.2.</strong> En una planta procesadora se registró la producción diaria (en kg) durante seis días: <strong>Día 1: 142,5 kg | Día 2: 155,8 kg | Día 3: 168,3 kg | Día 4: 140,2 kg | Día 5: 170,7 kg | Día 6: 160,4 kg</strong>. Calcula el promedio diario:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+
+                        <div class="sec-3c">
+                            <span class="badge-3c">3. CREATIVIDAD Y CASOS DE ÁREA Y EXPORTACIÓN</span>
+                            <p><strong>3.1.</strong> Se ha delimitado un área rectangular dentro del bosque para plantar "uña de gato" de <strong>120 metros de longitud por 85 metros de ancho</strong>. Calcula el área total en $m^2$:</p>
+                            <div class="math-grid-box"></div>
+                            <p><strong>3.2.</strong> Una empresa exportadora produjo <strong>8.750 kg</strong> durante el mes. El precio de exportación es de <strong>$9,25 por kg</strong> y el costo de producción es de <strong>$3,40 por kg</strong>. Calcula: a) Ingreso total, b) Costo total y c) Ganancia neta:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+                    `
+                },
+                "Ciencias Naturales": {
+                    resumenCorto: "Morfología de Uncaria tomentosa, componentes activos, 5 beneficios medicinales, contraindicaciones y medidas contra la deforestación amazónica.",
+                    rolesEquipo: [
+                        { rol: "Botánico/a Amazónico/a", tarea: "Describe la morfología, hábitat y proceso paso a paso de cosecha." },
+                        { rol: "Especialista Medicinal", tarea: "Identifica 5 propiedades curativas, compuestos activos y contraindicaciones." },
+                        { rol: "Defensor/a de la Selva", tarea: "Analiza los efectos de la deforestación y propone medidas preventivas." },
+                        { rol: "Diseñador/a del Ciclo Vital", tarea: "Dibuja el primer boceto de la maqueta del hábitat y ciclo de vida." }
+                    ],
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN: ASPECTOS BOTÁNICOS Y MEDICINALES</span>
+                            <p><strong>1.1.</strong> Describe las características físicas de la "uña de gato" (<em>Uncaria tomentosa</em>), su hábitat y cómo se recolecta paso a paso sin destruir la raíz:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                            <p><strong>1.2. Aspectos Medicinales:</strong> Escribe 5 beneficios medicinales, sus formas de consumo (infusiones, extractos) y si existen contraindicaciones o riesgos:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD: IMPACTO AMBIENTAL EN LA AMAZONÍA</span>
+                            <p><strong>2.1.</strong> Explora los efectos ambientales ocasionados por la deforestación en la Amazonía ecuatoriana y responde: ¿Qué medidas de prevención tomarías para disminuir este impacto?</p>
+                            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">3. CREATIVIDAD: BOCETO DE MAQUETA DEL HÁBITAT</span>
+                            <p><strong>3.1.</strong> Dibuja el primer boceto de la maqueta sobre el hábitat y ciclo de vida de la planta uña de gato:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+                    `
+                },
+                "Ciencias Sociales": {
+                    resumenCorto: "Mapa de distribución de cultivos en la Amazonía ecuatoriana y análisis de rutas de exportación internacional.",
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. COLABORACIÓN Y CARTOGRAFÍA COMERCIAL</span>
+                            <p><strong>1.1.</strong> Identifica las provincias amazónicas donde se cultiva la uña de gato y los mercados internacionales que la importan:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                        <div class="sec-3c">
+                            <span class="badge-3c">2. CRITICIDAD ECONÓMICA</span>
+                            <p><strong>2.1.</strong> Discute cómo el comercio de la uña de gato beneficia o afecta a las comunidades locales amazónicas:</p>
+                            <div class="write-lines"></div><div class="write-lines"></div>
+                        </div>
+                    `
+                },
+                "Educación Cultural y Artística": {
+                    resumenCorto: "Ilustración botánica de las espinas y hojas de Uncaria tomentosa.",
+                    contenidoCompleto: `
+                        <div class="sec-3c">
+                            <span class="badge-3c">1. CREATIVIDAD BOTÁNICA</span>
+                            <p><strong>1.1.</strong> Realiza una lámina artística detallando las espinas en forma de garra y las hojas de la planta:</p>
+                            <div class="math-grid-box"></div>
+                        </div>
+                    `
+                }
             },
             fase2: {
                 formato: "Maqueta del Hábitat Amazónico (60 × 40 cm) + Ficha Botánica",
@@ -361,194 +605,3 @@ function obtenerDatosGrupos(grado) {
         },
 
         // --------------------------------------------------------------------
-        // GRUPO D: REGIÓN INSULAR GALÁPAGOS (EL VOLCÁN SIERRA NEGRA)
-        // --------------------------------------------------------------------
-        {
-            letra: "Grupo D",
-            nombreCreativo: "El Rugido del Volcán Sierra Negra: Geología y Vida (Galápagos)",
-            enfoque: "Región Insular (Galápagos)",
-            productoFinal: "Maqueta Volcánica con Caldera a Escala + Entrevista Simulada",
-            guiasPorMateria: {
-                "Lengua y Literatura": `
-                    <div class="reading-passage">
-                        <strong>📖 Lectura Base: El Volcán Sierra Negra en la Isla Isabela</strong><br><br>
-                        El volcán Sierra Negra está ubicado al sur de la isla Isabela, la más grande del archipiélago de Galápagos. Con una altitud aproximada de <strong>1.093 metros</strong> sobre el nivel del mar, posee una de las calderas volcánicas más grandes del mundo, con un diámetro de aproximadamente <strong>9 kilómetros</strong>. Es uno de los volcanes más activos de Galápagos, destacando sus erupciones recientes de <strong>2005</strong> (cuando flujos de lava llegaron al océano) y <strong>2018</strong>.<br><br>
-                        El Instituto Charles Darwin y las autoridades ambientales realizan un monitoreo constante y mantienen planes de emergencia para proteger tanto a las comunidades como a las especies endémicas que habitan en sus alrededores.
-                    </div>
-                    <p><strong>1. Comprensión Lectora (Marca con una X la respuesta correcta):</strong></p>
-                    <div class="mcq-grid">
-                        <div class="mcq-item">
-                            <p>1.1. ¿En qué isla se encuentra ubicado el Volcán Sierra Negra?</p>
-                            <ul class="mcq-options">
-                                <li>A) Isla Santa Cruz &nbsp;&nbsp; B) Isla Española</li>
-                                <li>C) Isla Isabela &nbsp;&nbsp; D) Isla Floreana</li>
-                            </ul>
-                        </div>
-                        <div class="mcq-item">
-                            <p>1.2. ¿Cuál es una característica destacada de su caldera?</p>
-                            <ul class="mcq-options">
-                                <li>A) Tiene un diámetro de 5 km</li>
-                                <li>B) Es una de las más grandes del mundo con ~9 km de diámetro</li>
-                                <li>C) Está sumergida bajo el mar</li>
-                                <li>D) Es la más pequeña de Galápagos</li>
-                            </ul>
-                        </div>
-                        <div class="mcq-item">
-                            <p>1.3. ¿Qué organización realiza el monitoreo volcánico constante?</p>
-                            <ul class="mcq-options">
-                                <li>A) Agencia Espacial Europea</li>
-                                <li>B) El Instituto Charles Darwin</li>
-                                <li>C) Fundación Nacional de Ciencias</li>
-                                <li>D) Ninguna organización</li>
-                            </ul>
-                        </div>
-                        <div class="mcq-item">
-                            <p>1.4. ¿Qué impacto tienen las erupciones en la flora y fauna?</p>
-                            <ul class="mcq-options">
-                                <li>A) Solo afectan especies marinas</li>
-                                <li>B) Alteran hábitats existentes y crean nuevos para especies pioneras</li>
-                                <li>C) No producen ningún cambio</li>
-                                <li>D) Congelan el suelo</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="margin-top:14px;"><strong>2. Guion de Entrevista Simulada (Científico/a y Habitante de Isabela):</strong><br>
-                    Redacta 3 preguntas con sus respuestas simuladas sobre los riesgos sísmicos y medidas de protección tras la erupción de 2018:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Matemática": `
-                    <p><strong>1. Estadística - Magnitud Sísmica y Visitantes (Media Aritmética):</strong><br>
-                    a) Durante la erupción de 2018 se registraron 7 sismos de magnitudes: <strong>5,1 | 4,8 | 4,2 | 3,9 | 4,0 | 3,7 | 5,3</strong>. Calcula la magnitud promedio.<br>
-                    b) Visitantes anuales al volcán Sierra Negra: <strong>2019: 18.600 | 2020: 25.200 | 2021: 34.850 | 2022: 36.750 | 2023: 38.100</strong>. Calcula la media aritmética de turistas:</p>
-                    <div class="math-grid-box"></div>
-
-                    <p><strong>2. Geometría Circular y Turismo - Caldera de 9 km:</strong><br>
-                    a) La caldera del Sierra Negra tiene un <strong>diámetro de 9 km</strong> (radio = 4,5 km). Calcula la longitud de su circunferencia ($C = \pi \times d$) y el área del cráter ($A = \pi \times r^2$).<br>
-                    b) En 2023 llegaron <strong>267.688 turistas</strong> a Galápagos: <strong>150.000 internacionales</strong> (gastaron $300/día por 5 días) y el resto <strong>nacionales</strong> (gastaron $150/día por 3 días). ¿Cuántos turistas nacionales llegaron y cuánto gastó en total cada tipo de turista?</p>
-                    <div class="math-grid-box"></div>
-                `,
-                "Ciencias Naturales": `
-                    <p><strong>1. Geología Volcánica y Especies Endémicas:</strong><br>
-                    • Explica cómo se formaron las Islas Galápagos y qué diferencia al volcán Sierra Negra de otros volcanes de Isabela (Wolf o Cerro Azul).<br>
-                    • ¿Cómo beneficia el suelo volcánico al crecimiento de especies pioneras tras una erupción?</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Ciencias Sociales": `
-                    <p><strong>1. Línea de Tiempo de Erupciones y Planes de Emergencia:</strong><br>
-                    Construye una línea de tiempo con los eventos volcánicos de 2005 y 2018 y describe los planes de evacuación de la población de Puerto Villamil:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Educación Cultural y Artística": `
-                    <p><strong>1. Mapa Topográfico de Volcanes Activos de Galápagos:</strong><br>
-                    Dibuja la silueta de la Isla Isabela destacando la gran caldera circular del Sierra Negra:</p>
-                    <div class="math-grid-box"></div>
-                `
-            },
-            fase2: {
-                formato: "Maqueta Topográfica del Volcán Sierra Negra con Caldera Circular",
-                medidas: "Base de 50 cm × 50 cm. Diámetro de caldera a escala: 22,5 cm (Escala 1 cm = 0,4 km).",
-                bocetoSVG: `<svg width="240" height="110" viewBox="0 0 240 110">
-                    <rect x="15" y="10" width="210" height="90" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-                    <polygon points="45,90 90,30 150,30 195,90" fill="#57534e"/>
-                    <ellipse cx="120" cy="30" rx="30" ry="8" fill="#ea580c" stroke="#fef08a" stroke-width="1.5"/>
-                    <text x="120" y="65" font-size="9" text-anchor="middle" fill="white" font-weight="bold">Caldera 9 km (Escala)</text>
-                    <text x="120" y="96" font-size="8" text-anchor="middle" fill="#0c4a6e">Base 50 × 50 cm (Isla Isabela)</text>
-                </svg>`,
-                instrucciones: "Representar la caldera expansiva de 9 km de diámetro, flujos de lava de 2005/2018 y zonas de monitoreo."
-            },
-            fase3: {
-                guion: "«Bienvenidos a la Isla Isabela en Galápagos. Presentamos nuestra maqueta del Volcán Sierra Negra, calculando el área de su inmensa caldera de 9 km y realizando una entrevista en vivo...»",
-                dinamica: "Entrevista simulada entre un periodista, un vulcanólogo del Instituto Charles Darwin y un habitante."
-            }
-        },
-
-        // --------------------------------------------------------------------
-        // GRUPO E: INTEGRACIÓN NACIONAL (LOS 4 MUNDOS DEL ECUADOR)
-        // --------------------------------------------------------------------
-        {
-            letra: "Grupo E",
-            nombreCreativo: "Travesía por los 4 Mundos: Integración y Comercio Nacional",
-            enfoque: "Integración Nacional e Interculturalidad",
-            productoFinal: "Tablero Interactivo de los 4 Mundos (1.20 × 1.20 m) + Banco de Retos",
-            guiasPorMateria: {
-                "Lengua y Literatura": `
-                    <div class="reading-passage">
-                        <strong>📖 Lectura Base: Ecuador Intercultural, Cuatro Regiones Conectadas</strong><br><br>
-                        El Ecuador integra en un mismo territorio la riqueza exportadora de la Costa, la tradición agrícola y artesanal de la Sierra, la megadiversidad medicinal de la Amazonía y el laboratorio natural de Galápagos. El intercambio constante de alimentos, saberes ancestrales y expresiones literarias fortalece nuestra identidad nacional.
-                    </div>
-                    <p><strong>1. Comprensión Lectora (Marca con una X la respuesta correcta):</strong></p>
-                    <div class="mcq-grid">
-                        <div class="mcq-item">
-                            <p>1.1. ¿Qué une económicamente a las cuatro regiones del Ecuador?</p>
-                            <ul class="mcq-options">
-                                <li>A) El aislamiento comercial</li>
-                                <li>B) El intercambio constante de alimentos, recursos y saberes</li>
-                                <li>C) El uso de un solo cultivo</li>
-                                <li>D) La eliminación del transporte</li>
-                            </ul>
-                        </div>
-                        <div class="mcq-item">
-                            <p>1.2. ¿Qué característica define la identidad del Ecuador?</p>
-                            <ul class="mcq-options">
-                                <li>A) Monocultivo uniforme</li>
-                                <li>B) Interculturalidad y diversidad regional</li>
-                                <li>C) Clima idéntico en todo el país</li>
-                                <li>D) Ausencia de tradiciones orales</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="margin-top:14px;"><strong>2. Redacción de Reglamento y Tarjetas Literarias:</strong><br>
-                    Redacta 4 instrucciones claras para el juego de mesa nacional y 2 acertijos poéticos sobre el Ecuador:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Matemática": `
-                    <p><strong>1. Geometría y Comercio Interregional:</strong><br>
-                    a) Calcula el perímetro y el área de nuestro tablero cuadrado de piso de <strong>1,20 m × 1,20 m</strong>.<br>
-                    b) Un transporte lleva <strong>2.450 kg</strong> de productos de la Sierra a la Costa. Descarga <strong>1.125,75 kg</strong> en Guayaquil y el resto en Machala. ¿Cuántos kilogramos llegaron a Machala?</p>
-                    <div class="math-grid-box"></div>
-                `,
-                "Ciencias Naturales": `
-                    <p><strong>1. Comparativa de Ecosistemas:</strong><br>
-                    Escribe 1 especie emblemática y 1 acción de conservación para cada una de las 4 regiones del Ecuador:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Ciencias Sociales": `
-                    <p><strong>1. Intercambio Comercial entre Regiones:</strong><br>
-                    Completa qué productos viajan de la Costa a la Sierra y de la Sierra a la Costa:</p>
-                    <div class="write-lines"></div>
-                    <div class="write-lines"></div>
-                `,
-                "Educación Cultural y Artística": `
-                    <p><strong>1. Diseño del Tablero de 4 Colores:</strong><br>
-                    Bosqueja el recorrido de casillas representando Costa (amarillo), Sierra (azul), Amazonía (verde) y Galápagos (turquesa):</p>
-                    <div class="math-grid-box"></div>
-                `
-            },
-            fase2: {
-                formato: "Tablero de Piso Interactivo + Dado Gigante",
-                medidas: "Tablero de 1.20 m × 1.20 m (Área: 1.44 m²). Dado de 20 × 20 cm.",
-                bocetoSVG: `<svg width="240" height="110" viewBox="0 0 240 110">
-                    <rect x="75" y="10" width="90" height="90" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
-                    <line x1="75" y1="40" x2="165" y2="40" stroke="#ca8a04"/>
-                    <line x1="75" y1="70" x2="165" y2="70" stroke="#ca8a04"/>
-                    <line x1="105" y1="10" x2="105" y2="100" stroke="#ca8a04"/>
-                    <line x1="135" y1="10" x2="135" y2="100" stroke="#ca8a04"/>
-                    <text x="120" y="108" font-size="8" text-anchor="middle" fill="#854d0e">Tablero 1.20 × 1.20 m</text>
-                </svg>`,
-                instrucciones: "Construir casillas por región con tarjetas de preguntas de comprensión lectora y cálculo rápido."
-            },
-            fase3: {
-                guion: "«Ecuador es un solo corazón con cuatro mundos. Los invitamos a lanzar nuestro dado gigante y superar los retos de cada región...»",
-                dinamica: "Los estudiantes del Grupo E dirigen el juego con los docentes y visitantes."
-            }
-        }
-    ];
-}
