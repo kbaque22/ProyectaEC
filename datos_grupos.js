@@ -259,3 +259,89 @@ function obtenerDatosGrupos(grado) {
                     preguntasMcq: [
                         { enunciado: "1. (Literal) ¿En qué provincia ecuatoriana se originaron los primeros estanques camaroneros a finales de los años 60?", opciones: ["A) Esmeraldas", "B) El Oro", "C) Carchi", "D) Sucumbíos"] },
                         { enunciado: "2. (Inferencial) ¿Por qué existen distintas perspectivas entre exportadores y recolectores tradicionales?", opciones: ["A) Porque usan distintos idiomas", "B) Porque compiten por el uso y conservación del espacio costero", "C) Porque no trabajan en la misma región
+// ====================================================================
+        // GRUPO C: REGIÓN AMAZÓNICA (UÑA DE GATO Y BIODIVERSIDAD)
+        // ====================================================================
+        {
+            letra: "Grupo C",
+            nombreCreativo: "Saberes Ancestrales, Botánica y Cálculos en la Selva (Región Amazonía)",
+            enfoque: "Región Amazónica u Oriente",
+            productoFinal: "Herbario Técnico Tridimensional y Ficha Etnobotánica",
+            guiasPorMateria: {
+                "Lengua y Literatura": armarGuiaCompleta({
+                    asignatura: "Lengua y Literatura",
+                    objetivo: "Comprender textos expositivos sobre la biodiversidad amazónica y los saberes ancestrales, contrastar información y redactar textos informativos con rigor.",
+                    preguntaCentral: "¿Cómo protegen y transmiten los pueblos originarios de la Amazonía ecuatoriana los conocimientos sobre plantas medicinales como la uña de gato?",
+                    materiales: "Guía impresa, lápiz y resaltadores.",
+                    previos: [
+                        "¿Qué plantas medicinales utilizan en sus hogares o comunidades y para qué sirven?",
+                        "¿Qué nacionalidades indígenas de la Amazonía ecuatoriana conocen?"
+                    ],
+                    lecturaApartados: `
+                        <p><strong>Apartado 1. Etnobotánica amazónica:</strong> La Amazonía ecuatoriana alberga una de las mayores biodiversidades del planeta. Nacionalidades como la Kichwa, Shuar y Waorani han transmitido por generaciones el conocimiento sobre plantas medicinales como la <em>uña de gato</em> (<em>Uncaria tomentosa</em>), una liana trepadora de espinas curvas utilizada tradicionalmente por sus propiedades antiinflamatorias.</p>
+                        <p><strong>Apartado 2. Conservación del saber y del bosque:</strong> La recolección responsable corta únicamente segmentos de la liana madura sin arrancar la raíz, permitiendo que la planta vuelva a brotar y evitando la deforestación.</p>
+                    `,
+                    glosario: [
+                        { term: "Etnobotánica", def: "Ciencia que estudia la relación tradicional entre los grupos humanos y las plantas de su entorno." },
+                        { term: "Liana trepadora", def: "Planta de tallo largo y leñoso que se apoya en árboles altos para alcanzar la luz del dosel." }
+                    ],
+                    preguntasMcq: [
+                        { enunciado: "1. (Literal) ¿Por qué recibe su nombre común la planta Uncaria tomentosa?", opciones: ["A) Por el color de sus flores", "B) Por sus espinas curvas semejantes a uñas de gato", "C) Por el tamaño de sus semillas", "D) Por el olor de su raíz"] },
+                        { enunciado: "2. (Inferencial) ¿Qué diferencia existe entre cortar un segmento de liana madura y arrancar la raíz completa?", opciones: ["A) Ninguna", "B) Cortar la liana permite la regeneración natural sin matar la planta", "C) Arrancar la raíz produce más hojas", "D) Cortar la liana seca el suelo"] }
+                    ],
+                    inferencial: "¿Por qué la pérdida de lenguas y tradiciones orales amazónicas pondría también en riesgo el conocimiento médico sobre la selva?",
+                    fuenteB: "Boletín de investigación fitoterapéutica (Ecuador): Los estudios científicos confirman compuestos bioactivos en la corteza de Uncaria tomentosa, pero advierten que la sobreexplotación comercial sin cultivo controlado amenaza las poblaciones silvestres.",
+                    criteriosComparacion: ["Valor reconocido de la planta", "Riesgo identificado", "Práctica de cuidado sugerida"],
+                    pensamientoCritico: "Redacta una conclusión fundamentada en las Fuentes A y B sobre por qué el conocimiento científico moderno necesita dialogar con los saberes ancestrales amazónicos.",
+                    rolesEquipo: [
+                        { rol: "Lector/a de Etnobotánica", tarea: "Lee los apartados y explica los términos del glosario." },
+                        { rol: "Analista de Comprensión", tarea: "Coordina las respuestas literales e inferenciales." },
+                        { rol: "Contrastador/a de Fuentes", tarea: "Completa la comparación entre saberes tradicionales y ciencia." },
+                        { rol: "Redactor/a de Ficha", tarea: "Escribe el artículo informativo de aplicación." }
+                    ],
+                    aplicacionHtml: `
+                        <p><strong>Artículo divulgativo escolar:</strong> Escribe un texto informativo de 2 párrafos titulado <em>"La farmacia viva de la Amazonía y su cuidado"</em>, empleando las dos palabras del glosario:</p>
+                        <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                    `
+                }),
+                "Matemática": armarGuiaCompleta({
+                    asignatura: "Matemática",
+                    objetivo: "Resolver problemas de proporcionalidad, porcentajes, costos de dosificación y áreas circulares aplicadas a la conservación amazónica.",
+                    preguntaCentral: "¿Cómo calcular costos de extractos naturales, porcentajes de distribución y áreas circulares de reserva botánica?",
+                    materiales: "Guía impresa, compás, regla y calculadora (si consta como apoyo autorizado).",
+                    previos: ["¿Cómo calculamos el 25% o el 50% de una cantidad?", "¿Cuál es la fórmula del área del círculo ($A = \pi \cdot r^2$)?"],
+                    lecturaApartados: `
+                        <p><strong>Apartado 1. Datos de recolección y costo:</strong> En una parcela comunitaria se cosechan <strong>125 kg de corteza</strong>. El costo de procesamiento es de <strong>$0,50 por kilogramo</strong> y el precio de venta justa es de <strong>$0,80 por kilogramo</strong>.</p>
+                        <p><strong>Apartado 2. Distribución en frascos y área de reserva:</strong> Si 15 litros de extracto se envasan en frascos de 0,25 litros, y el jardín botánico circular tiene un <strong>radio de 4 m</strong>, podemos modelar la producción exacta.</p>
+                    `,
+                    glosario: [
+                        { term: "Ganancia neta", def: "Diferencia obtenida al restar el costo total de producción al ingreso total por ventas." }
+                    ],
+                    preguntasMcq: [
+                        { enunciado: "1. (Literal) ¿Cuántos kilogramos de corteza se cosechan en la parcela comunitaria?", opciones: ["A) 50 kg", "B) 125 kg", "C) 250 kg", "D) 80 kg"] },
+                        { enunciado: "2. (Inferencial) Si el costo por kg es $0,50 y la venta es $0,80, ¿cuánto se gana por cada kilogramo vendido?", opciones: ["A) $1,30", "B) $0,30", "C) $0,50", "D) $0,80"] }
+                    ],
+                    inferencial: "¿Qué ocurre con la ganancia neta si aumenta el costo de transporte en $12,50?",
+                    fuenteB: "Registro de distribución comunitaria: De 200 unidades procesadas, el 45% se destina a centros de salud comunitarios, el 35% a comercio justo nacional y el resto a reserva educativa.",
+                    criteriosComparacion: ["Datos de producción", "Porcentajes de destino", "Beneficio comunitario"],
+                    pensamientoCritico: "Justifica matemáticamente por qué conocer el costo unitario y la ganancia neta permite a una asociación comunitaria fijar precios justos.",
+                    rolesEquipo: [
+                        { rol: "Calculista de Costos", tarea: "Determina costo total, ingreso y ganancia neta." },
+                        { rol: "Analista de Capacidad", tarea: "Calcula cuántos frascos de 0,25 L se llenan con 15 L." },
+                        { rol: "Geómetra Circular", tarea: "Calcula el área del jardín botánico circular ($r = 4\text{ m}$)." },
+                        { rol: "Analista de Porcentajes", tarea: "Calcula las cantidades exactas de 45%, 35% y 20%." }
+                    ],
+                    aplicacionHtml: `
+                        <p><strong>1. Costo y ganancia neta:</strong> Con <strong>125 kg</strong> (costo $0,50/kg y venta $0,80/kg), calcula: a) Costo total, b) Ingreso por venta y c) Ganancia neta:</p>
+                        <div class="math-grid-box"></div>
+                        <p><strong>2. Envasado y porcentaje:</strong> ¿Cuántos frascos de <strong>0,25 L</strong> se obtienen de <strong>15 L</strong>? Además, calcula cuántas unidades equivalen al <strong>45%</strong> de 200 unidades:</p>
+                        <div class="math-grid-box"></div>
+                        <p><strong>3. Área circular de reserva:</strong> Calcula el área de un jardín botánico circular de <strong>4 m de radio</strong> ($\pi \approx 3,14$):</p>
+                        <div class="math-grid-box"></div>
+                    `
+                }),
+                "Ciencias Naturales": armarGuiaCompleta({
+                    asignatura: "Ciencias Naturales",
+                    objetivo: "Identificar las partes anatómicas de la planta, las condiciones climáticas del bosque húmedo tropical y las amenazas de la deforestación.",
+                    preguntaCentral: "¿Qué factores abióticos del bosque húmedo tropical permiten el desarrollo de la biodiversidad amazónica y qué ocurre al talar el bosque?",
+                    materiales: "Guía impresa y esquema
