@@ -17,7 +17,6 @@
         * { box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
         body { background-color: var(--bg); color: var(--text); margin: 0; padding: 18px; line-height: 1.5; }
         .container { max-width: 1220px; margin: auto; }
-        
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white; padding: 22px; border-radius: 12px; text-align: center;
@@ -28,7 +27,6 @@
             background: rgba(255,255,255,0.18); display: inline-block;
             padding: 4px 16px; border-radius: 20px; font-style: italic; font-size: 0.9rem;
         }
-
         .panel {
             background: var(--card); padding: 20px; border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px;
@@ -44,15 +42,11 @@
         }
         .checkbox-group { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; }
         .checkbox-group label { cursor: pointer; display: flex; align-items: center; gap: 8px; }
-
         .time-box {
             background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px; border-radius: 8px; margin-top: 8px;
         }
         .time-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
-
-        .apoyos-wrapper {
-            margin-top: 18px; border-top: 2px dashed #cbd5e1; padding-top: 14px;
-        }
+        .apoyos-wrapper { margin-top: 18px; border-top: 2px dashed #cbd5e1; padding-top: 14px; }
         .apoyo-builder {
             background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px;
             display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 10px; align-items: end;
@@ -73,14 +67,12 @@
             position: absolute; top: 7px; right: 7px; background: #fee2e2; color: #991b1b;
             border: none; border-radius: 4px; padding: 2px 7px; cursor: pointer; font-weight: bold;
         }
-
         .btn-generate {
             width: 100%; margin-top: 18px; background: var(--secondary); color: white; border: none;
             padding: 13px; font-size: 1.05rem; font-weight: bold; border-radius: 8px;
             cursor: pointer; transition: 0.2s;
         }
         .btn-generate:hover { background: #0f766e; }
-
         #resultado { display: none; }
         .project-header {
             background: #ffffff; border-left: 6px solid var(--primary);
@@ -94,12 +86,10 @@
         }
         .badge.inter { background: #6d28d9; }
         .badge.disc { background: #0369a1; }
-        
         .title-selector-box {
             background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; margin-bottom: 12px;
         }
         .title-selector-box select { width: 100%; font-weight: bold; color: var(--primary); font-size: 1rem; margin-top: 5px; }
-
         .justificacion-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;
             background: #fffbeb; border: 1px solid #fde68a; border-left: 5px solid var(--accent);
@@ -107,12 +97,10 @@
         }
         .just-item h4 { margin: 0 0 4px 0; color: #92400e; font-size: 0.89rem; }
         .just-item p { margin: 0; color: #451a03; }
-
         .print-config-bar {
             background: #e0f2fe; border: 1px solid #7dd3fc; padding: 11px 15px; border-radius: 8px;
             margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; font-size: 0.88rem;
         }
-
         .group-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
         .tab-btn {
             padding: 9px 15px; border: 2px solid var(--primary); background: white;
@@ -123,7 +111,6 @@
         .nee-dot {
             background: #059669; color: white; font-size: 0.74rem; padding: 2px 7px; border-radius: 10px;
         }
-
         .phase-card {
             background: var(--card); border-radius: 12px; padding: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-top: 6px solid var(--secondary);
@@ -134,7 +121,6 @@
             border-bottom: 1px solid #e2e8f0; padding-bottom: 9px; margin-bottom: 14px;
         }
         .phase-header h3 { margin: 0; color: var(--primary); font-size: 1.15rem; }
-
         details.session-accordion {
             border: 1px solid #cbd5e1; border-radius: 8px; margin-bottom: 10px; background: #fff; overflow: hidden;
         }
@@ -142,11 +128,8 @@
             background: #f8fafc; padding: 11px 15px; font-weight: 700; color: var(--primary);
             cursor: pointer; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
         }
-        details.session-accordion[open] summary {
-            border-bottom: 1px solid #cbd5e1; background: #eff6ff;
-        }
+        details.session-accordion[open] summary { border-bottom: 1px solid #cbd5e1; background: #eff6ff; }
         .session-body { padding: 14px; font-size: 0.91rem; }
-
         .materia-card {
             border: 1px solid #cbd5e1; border-left: 5px solid var(--primary); border-radius: 9px;
             padding: 15px; margin-bottom: 14px; background: #f8fafc;
@@ -166,7 +149,6 @@
         .btn-print.sec:hover { background: #115e59; }
         .btn-print.rub { background: #4f46e5; }
         .btn-print.rub:hover { background: #4338ca; }
-
         .rubrica-box {
             background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 18px; margin-top: 18px;
         }
@@ -247,7 +229,6 @@
             </div>
         </div>
 
-        <!-- CONFIGURACIÓN DE PERFILES DE APOYO ANÓNIMOS -->
         <div class="apoyos-wrapper">
             <label class="section-label">5. Perfiles de Apoyo por Equipo (Identificadores anónimos — Sin etiquetas diagnósticas en fichas):</label>
             <div class="apoyo-builder">
@@ -338,15 +319,128 @@
     </section>
 </div>
 
-<script src="curriculo.js"></script>
-<script src="datos_grupos.js"></script>
-<script src="rubricas.js"></script>
-
 <script>
 let perfilesApoyo = [];
 let gruposGeneradosActuales = [];
 let propuestaActual = null;
 let estadoEvaluacionPorGrupo = {};
+
+const ENFOQUE_POR_GRADO = {
+    "Lengua y Literatura": {
+        "5to": "Comprensión literal e inferencial básica, ampliación de vocabulario contextual y redacción de párrafos descriptivos guiados.",
+        "6to": "Identificación de ideas principales, contraste de dos fuentes informativas y producción de textos explicativos con conectores.",
+        "7mo": "Lectura crítica, inferencia compleja, contraste de perspectivas y argumentación escrita fundamentada en evidencias."
+    },
+    "Matemática": {
+        "5to": "Lectura de tablas estadísticas simples, operaciones con números naturales/decimales básicos y perímetros/áreas elementales.",
+        "6to": "Cálculo de promedios sencillos, operaciones con decimales en contextos reales y áreas de cuadrados y rectángulos.",
+        "7mo": "Cálculo e interpretación de media aritmética, porcentajes, áreas compuestas/circulares y análisis de costos y presupuestos."
+    },
+    "Ciencias Naturales": {
+        "5to": "Observación de características de seres vivos y ecosistemas locales, identificando necesidades básicas y cuidados.",
+        "6to": "Relación entre factores ambientales y adaptaciones de organismos, analizando causas de alteración ecológica.",
+        "7mo": "Análisis sistémico de interacciones ecológicas, aprovechamiento sostenible de recursos y evaluación de impacto ambiental."
+    },
+    "Ciencias Sociales": {
+        "5to": "Ubicación geográfica en el mapa del Ecuador y reconocimiento de actividades productivas y culturales de la región.",
+        "6to": "Relación entre relieve, clima y desarrollo económico regional, identificando actores sociales.",
+        "7mo": "Análisis de procesos históricos, comparación de cambios en el tiempo y argumentación de causas y consecuencias socioambientales."
+    },
+    "Educación Cultural y Artística": {
+        "5to": "Exploración de formas, colores y materiales tradicionales de la región mediante bocetos descriptivos.",
+        "6to": "Análisis de referentes culturales y simbología local para planificar diseños tridimensionales.",
+        "7mo": "Investigación estética y patrimonial de técnicas artesanales, fundamentando bocetos a escala con identidad cultural."
+    }
+};
+
+const CRITERIOS_RUBRICA_FASE1 = [
+    {
+        id: "c1", nombre: "Comprensión del tema y conceptos", peso: 20,
+        evidenciaVinculada: "Apartados 2, 3 y 4 (Conocimientos previos, glosario, comprensión literal e inferencial)",
+        n4: "Explica con precisión todos los conceptos del glosario y responde con rigor tanto las preguntas literales como las inferenciales.",
+        n3: "Comprende los conceptos principales del texto y responde adecuadamente la mayoría de preguntas literales e inferenciales.",
+        n2: "Identifica datos literales básicos, pero presenta dificultad para deducir relaciones implícitas o usar el glosario.",
+        n1: "Muestra comprensión fragmentada del tema y confunde conceptos centrales de la lectura."
+    },
+    {
+        id: "c2", nombre: "Búsqueda, selección y registro de fuentes", peso: 15,
+        evidenciaVinculada: "Apartado 5 (Tabla de registro y comparación entre Fuente A y Fuente B)",
+        n4: "Registra datos verificables de ambas fuentes en todos los criterios solicitados, distinguiendo claramente su procedencia.",
+        n3: "Completa la tabla comparativa con datos pertinentes de la Fuente A y la Fuente B.",
+        n2: "Registra información incompleta o copia fragmentos sin contrastar ambas fuentes.",
+        n1: "Anota ideas sueltas sin relación con las fuentes proporcionadas."
+    },
+    {
+        id: "c3", nombre: "Análisis y argumentación con evidencias", peso: 25,
+        evidenciaVinculada: "Apartado 6 (Pensamiento crítico: juicio o conclusión fundamentada)",
+        n4: "Formula una conclusión clara y sostiene su postura con al menos dos evidencias concretas extraídas de las fuentes.",
+        n3: "Formula una conclusión coherente apoyada en al menos una evidencia verificable del texto o los cálculos.",
+        n2: "Expresa una opinión personal válida, pero con escaso respaldo en las evidencias investigadas.",
+        n1: "Escribe afirmaciones generales sin justificación ni conexión con los datos del equipo."
+    },
+    {
+        id: "c4", nombre: "Organización y aplicación de hallazgos", peso: 20,
+        evidenciaVinculada: "Apartado 7 (Aplicación disciplinar: producción escrita, cálculos, esquemas o bocetos)",
+        n4: "Aplica con exactitud los hallazgos investigados en el producto disciplinar (procedimientos completos, unidades o estructura textual).",
+        n3: "Resuelve la actividad aplicada integrando correctamente los hallazgos de la investigación.",
+        n2: "Aplica parcialmente los datos investigados o presenta errores de procedimiento/estructura.",
+        n1: "La actividad aplicada no incorpora los datos obtenidos en la fase de investigación."
+    },
+    {
+        id: "c5", nombre: "Participación y cumplimiento de acuerdos", peso: 10,
+        evidenciaVinculada: "Tabla de roles elegibles y Lista de comprobación (Apartado 8)",
+        n4: "Cumple responsablemente su rol asignado, aporta evidencias al equipo y respeta los acuerdos de apoyo inclusivo.",
+        n3: "Cumple su rol y colabora en la mayoría de las sesiones de investigación.",
+        n2: "Participa de manera intermitente o requiere recordatorios constantes para cumplir su tarea.",
+        n1: "No asume el rol acordado ni aporta al trabajo colectivo del equipo."
+    },
+    {
+        id: "c6", nombre: "Comunicación de conclusiones", peso: 10,
+        evidenciaVinculada: "Apartado 8 (Ficha de síntesis de hallazgos para Fase 2)",
+        n4: "Sintetiza con claridad, orden y vocabulario preciso los 3 insumos clave que orientarán la Fase 2 (Desarrollo).",
+        n3: "Comunica de forma comprensible las conclusiones principales para continuar a la Fase 2.",
+        n2: "Presenta ideas poco estructuradas que requieren aclaración antes de iniciar la Fase 2.",
+        n1: "Las conclusiones son confusas o no guardan relación con la pregunta central."
+    }
+];
+
+const SOLUCIONARIO_DOCENTE = {
+    "Grupo A": {
+        "Lengua y Literatura": "MCQ: 1-B (Años 60 y 70), 2-C (El Oro, Guayas, Manabí, Esmeraldas y Santa Elena), 3-B (Combina agua dulce y salada rica en nutrientes). Inferencial: Se espera que identifique prácticas de protección del manglar, control de calidad del agua y respeto laboral. Juicio crítico: Debe articular la generación de divisas/empleo (Fuente A) con la protección de hectáreas de manglar como barrera ante inundaciones (Fuente B).",
+        "Matemática": "MCQ: 1-D (2022), 2-B (Más de 600.000 t: 1.068.961 - 441.539 = 627.422 t), 3-C (Se duplica). Media aritmética (2017-2022): Suma = 4.074.122 t ÷ 6 = 679.020,33 t. Decimales: 12.350 × 0,15 g = 1.852,5 g/día; Costo: 1.852,5 × $0,02 = $37,05/día. Área libre: Área total = 60 × 30 = 1.800 m²; Dos piscinas = 2 × (10 × 10) = 200 m²; Área libre = 1.800 - 200 = 1.600 m².",
+        "Ciencias Naturales": "MCQ: 1-B (Nauplio), 2-B (Se perdería el biofiltro natural). Respuesta abierta: El oxígeno disuelto y la temperatura (28-30 °C) regulan el metabolismo y previenen hipoxia.",
+        "Ciencias Sociales": "MCQ: 1-B (El Oro), 2-B (Compiten por el uso y conservación del espacio costero). Hitos: 1968 (inicios en Santa Rosa), 1985 (expansión agroexportadora), Actualidad (acuerdos de uso sustentable).",
+        "Educación Cultural y Artística": "MCQ: 1-B (Madera balsa, fibras naturales y conchas). Boceto: Diferenciar cromáticamente estanques, estuario y raíces de mangle."
+    },
+    "Grupo B": {
+        "Lengua y Literatura": "MCQ: 1-B (Cotopaxi), 2-A (Inti Raymi), 3-B (Simbolizan fuerzas de la naturaleza y espiritualidad andina).",
+        "Matemática": "MCQ: 1-B (María 10,5 días), 2-B (25%). Presupuesto: Distribuidor 1 = $10,55; Distribuidor 2 = $10,05 (Ahorro de $0,50 con Distribuidor 2). Media aritmética: 93,8 ÷ 5 = 18,76 días. Geometría: Área cuadrado = 156,25 cm²; Área sin pintar (25%) = 39,06 cm²; Área ojo circular = 3,14 × (2,8)² = 24,62 cm².",
+        "Ciencias Naturales": "MCQ: 1-A (Chilca), 2-A (Biodegradable).",
+        "Ciencias Sociales": "MCQ: 1-B (Ciclo agrícola).",
+        "Educación Cultural y Artística": "MCQ: 1-B (Simetría bilateral)."
+    },
+    "Grupo C": {
+        "Lengua y Literatura": "MCQ: 1-B (Espinas curvas), 2-B (Permite regeneración natural).",
+        "Matemática": "MCQ: 1-B (125 kg), 2-B ($0,30). Costos: Costo = $62,50; Ingreso = $100,00; Ganancia neta = $37,50. Envasado: 15 ÷ 0,25 = 60 frascos. Porcentaje: 45% de 200 = 90 unidades. Área circular: 3,14 × 4² = 50,24 m².",
+        "Ciencias Naturales": "MCQ: 1-B (24 °C a 28 °C).",
+        "Ciencias Sociales": "MCQ: 1-B (6 provincias: Sucumbíos, Orellana, Napo, Pastaza, Morona Santiago, Zamora Chinchipe).",
+        "Educación Cultural y Artística": "MCQ: 1-B (Nervaduras, tallos, espinas y proporciones)."
+    },
+    "Grupo D": {
+        "Lengua y Literatura": "MCQ: 1-B (1.000 km), 2-A (Evolucionaron sin depredadores externos).",
+        "Matemática": "MCQ: 1-B (16 visitantes), 2-B (2.400 m). Población: 35% de 400 = 140 tortugas nuevas; Total = 540 tortugas. Nidos: 85% de 1.200 = 1.020 nidos. Capacidad diaria: 6 × 16 = 96 turistas/día.",
+        "Ciencias Naturales": "MCQ: 1-B (Silla de montar).",
+        "Ciencias Sociales": "MCQ: 1-C (97%).",
+        "Educación Cultural y Artística": "MCQ: 1-B (Fondo en perspectiva y primer plano 3D)."
+    },
+    "Grupo E": {
+        "Lengua y Literatura": "MCQ: 1-B (Cordillera, corrientes y cuenca amazónica), 2-A (Pisos climáticos distintos).",
+        "Matemática": "MCQ: 1-C (8.500 kg), 2-C (7 horas: 420 ÷ 60). Distribución: Papas = 3.400 kg; Hortalizas = 2.975 kg; Frutas = 2.125 kg. Flete: 8,5 × $18,50 = $157,25; Con 10% descuento = $141,52.",
+        "Ciencias Naturales": "MCQ: 1-C (3.000 a 4.500 m).",
+        "Ciencias Sociales": "MCQ: 1-B (1908).",
+        "Educación Cultural y Artística": "MCQ: 1-B (Representar productos, rutas o lugares de forma clara)."
+    }
+};
 
 window.onload = function() {
     actualizarSelectorGrupoApoyo();
@@ -415,12 +509,167 @@ function renderizarListaApoyos() {
     `).join('');
 }
 
-function generarPlanificacion() {
-    if (typeof generarPropuestasCurriculares === "undefined" || typeof obtenerDatosGrupos === "undefined" || typeof obtenerRubricaFase1 === "undefined") {
-        alert("Asegúrate de tener los 4 archivos (index.html, curriculo.js, datos_grupos.js, rubricas.js) en tu repositorio.");
-        return;
+function generarPropuestasCurriculares(materias, grado) {
+    const key = [...materias].sort().join("+");
+    const enfoqueLista = materias.map(m => `<strong>${m} (${grado}):</strong> ${ENFOQUE_POR_GRADO[m][grado]}`).join("<br>");
+
+    if (key === "Lengua y Literatura+Matemática") {
+        return {
+            porQue: "Articula la comprensión crítica de textos informativos y culturales con el análisis cuantitativo de datos reales del Ecuador.",
+            queQuiere: "Que el alumnado comprenda fuentes escritas, contraste datos estadísticos y geométricos, y redacte conclusiones fundamentadas con evidencias.",
+            estrategias: "Lectura por apartados con glosario, registro en tablas comparativas, resolución de problemas paso a paso y argumentación escrita.",
+            dcd: enfoqueLista,
+            titulos: [
+                "Ecuador en Cifras y Letras: Comprensión Lectora y Matemática Regional",
+                "Del Texto al Cálculo: Producción, Cultura y Estadística del Ecuador",
+                "Palabras y Números de Mi Tierra: Crónicas y Datos Reales",
+                "Detectives de Datos y Relatos: Explorando las Cuatro Regiones",
+                "Lectura Crítica y Geometría Aplicada en el Ecuador"
+            ]
+        };
     }
 
+    if (materias.length === 1) {
+        const m = materias[0];
+        const bancos = {
+            "Lengua y Literatura": ["Voces y Relatos de las Cuatro Regiones del Ecuador", "Lectores Críticos: Territorio, Memoria y Tradición Oral", "Crónicas y Leyendas de Nuestra Biodiversidad"],
+            "Matemática": ["Matemática Aplicada: Datos, Áreas y Presupuestos del Ecuador", "Estadística Real: Promedios y Producción en las Cuatro Regiones", "Geometría en Contexto: Superficies, Círculos y Escalas"],
+            "Ciencias Naturales": ["Ecosistemas del Ecuador: Observación, Evidencias y Sostenibilidad", "Biodiversidad Regional: Ciclos Vitales e Impacto Ambiental", "Recursos Naturales y Conservación en los Cuatro Mundos"],
+            "Ciencias Sociales": ["Ecuador en el Tiempo: Territorio, Procesos Históricos y Producción", "Cartografía y Cambios Socioeconómicos Regionales", "Patrimonio, Identidad y Desarrollo Sostenible en el Ecuador"],
+            "Educación Cultural y Artística": ["Patrimonio Visual y Artesanía Viva del Ecuador", "Referentes Culturales, Simbología y Diseño con Identidad", "Arte, Territorio y Técnicas Tradicionales Regionales"]
+        };
+        return {
+            porQue: `Profundización disciplinar en ${m} para ${grado} Año EGB, conectando las habilidades del área con problemáticas reales de cada región ecuatoriana.`,
+            queQuiere: `Desarrollar autonomía investigativa en ${m} mediante fuentes estructuradas, registro de hallazgos y síntesis aplicables.`,
+            estrategias: "Secuencia investigativa en sesiones progresivas: exploración previa, análisis de fuentes, contrastación y síntesis.",
+            dcd: enfoqueLista,
+            titulos: bancos[m]
+        };
+    }
+
+    return {
+        porQue: `Integra ${materias.join(", ")} alrededor de un fenómeno regional real para que cada asignatura aporte herramientas específicas sin repetir tareas.`,
+        queQuiere: `Que cada equipo distribuya el tiempo de investigación entre ${materias.join(", ")} y consolide hallazgos verificables.`,
+        estrategias: "Investigación colaborativa por sesiones, contraste de fuentes, análisis de evidencias y síntesis interdisciplinaria.",
+        dcd: enfoqueLista,
+        titulos: [
+            `Ecuador en Acción: Indagación en ${materias.join(" y ")}`,
+            `Exploradores de los Cuatro Mundos (${materias.join(" + ")})`,
+            `Ciencia, Cultura y Datos Reales del Ecuador`
+        ]
+    };
+}
+
+function construirCronogramaSesiones(numSesiones, minPorSesion, materias) {
+    const sesiones = [];
+    for (let i = 0; i < numSesiones; i++) {
+        const num = i + 1;
+        const mat = materias[i % materias.length];
+        const ciclo = Math.floor(i / materias.length);
+
+        if (ciclo === 0) {
+            sesiones.push({
+                numero: num, asignatura: mat, minutos: minPorSesion,
+                titulo: `Exploración inicial y comprensión de fuentes (${mat})`,
+                proposito: `Activar conocimientos previos, acordar roles de equipo y analizar la fuente base de ${mat}.`,
+                actividades: `1) Conformación de roles elegibles (5 min). 2) Exploración de conocimientos previos y lectura con glosario (${Math.round(minPorSesion * 0.45)} min). 3) Resolución de comprensión literal e inferencial (${Math.round(minPorSesion * 0.4)} min).`,
+                evidenciaCorta: "Cuestionario de comprensión y glosario",
+                evidencia: `Apartados 1, 2, 3 y 4 de la guía de ${mat} completados con acuerdos de equipo.`
+            });
+        } else if (ciclo === 1) {
+            sesiones.push({
+                numero: num, asignatura: mat, minutos: minPorSesion,
+                titulo: `Contraste de fuentes, análisis crítico y aplicación (${mat})`,
+                proposito: `Comparar dos fuentes de información, resolver la aplicación disciplinar y redactar una conclusión fundamentada en evidencias.`,
+                actividades: `1) Registro de datos en tabla comparativa de dos fuentes (${Math.round(minPorSesion * 0.35)} min). 2) Resolución de actividad aplicada de ${mat} (${Math.round(minPorSesion * 0.4)} min). 3) Redacción de juicio fundamentado con evidencias (${Math.round(minPorSesion * 0.25)} min).`,
+                evidenciaCorta: "Tabla comparativa y juicio crítico",
+                evidencia: `Apartados 5, 6 y 7 de ${mat}: tabla de contraste, ejercicio aplicado y conclusión argumentada.`
+            });
+        } else {
+            sesiones.push({
+                numero: num, asignatura: mat, minutos: minPorSesion,
+                titulo: `Revisión, síntesis para Fase 2 y autoevaluación (${mat})`,
+                proposito: `Verificar la calidad de los hallazgos, consolidar la ficha de transferencia para la Fase 2 y completar la lista de comprobación.`,
+                actividades: `1) Revisión cruzada entre pares con lista de comprobación (${Math.round(minPorSesion * 0.3)} min). 2) Redacción de la síntesis de hallazgos para el producto de Fase 2 (${Math.round(minPorSesion * 0.45)} min). 3) Autoevaluación del equipo (${Math.round(minPorSesion * 0.25)} min).`,
+                evidenciaCorta: "Síntesis final y autoevaluación",
+                evidencia: `Apartado 8 de ${mat}: ficha de síntesis de hallazgos validada y autoevaluación completada.`
+            });
+        }
+    }
+    return sesiones;
+}
+
+function generarHtmlApoyosConcretos(apoyosGrupo) {
+    if (!apoyosGrupo || apoyosGrupo.length === 0) return "";
+    const bloques = apoyosGrupo.map(ap => {
+        let recursoEspecifico = "";
+        if (ap.tipo === "lectura") {
+            recursoEspecifico = `
+                <div style="margin-top:6px;">
+                    <strong>Organizador previo de lectura (para usar durante el Apartado 3):</strong>
+                    <table class="work-table" style="margin-top:5px;">
+                        <tr><th>1. ¿De qué trata este apartado?</th><th>2. Palabra clave del glosario</th><th>3. Dato o evidencia importante</th></tr>
+                        <tr><td style="height:34px;"></td><td></td><td></td></tr>
+                    </table>
+                    <div style="font-size:11pt; margin-top:4px;"><em>Instrucción paso a paso: Lee un apartado corto a la vez, subraya el dato principal y compáralo con tu compañero/a de lectura antes de responder.</em></div>
+                </div>`;
+        } else if (ap.tipo === "escritura") {
+            recursoEspecifico = `
+                <div style="margin-top:6px;">
+                    <strong>Banco de palabras e iniciadores de frases (para usar en Apartados 6, 7 y 8):</strong>
+                    <div style="border:1px solid #000; padding:6px; margin:5px 0; font-size:11pt;">
+                        <strong>Conectores útiles:</strong> <em>En primer lugar, Por otra parte, Según los datos revisados, Esto demuestra que, En conclusión.</em>
+                    </div>
+                    <div style="font-size:11pt;">
+                        • <strong>Para explicar un hallazgo:</strong> "A partir de la información revisada, observamos que ________________________________________."<br>
+                        • <strong>Para defender una conclusión:</strong> "Consideramos que ______________________________ porque la evidencia muestra que ______________________________."
+                    </div>
+                </div>`;
+        } else if (ap.tipo === "calculo") {
+            recursoEspecifico = `
+                <div style="margin-top:6px;">
+                    <strong>Tabla de valor posicional y secuencia de resolución (para usar en Apartado 7):</strong>
+                    <table class="work-table" style="margin-top:5px; text-align:center;">
+                        <tr><th>Centenas (C)</th><th>Decenas (D)</th><th>Unidades (U)</th><th>,</th><th>Décimas (d)</th><th>Centésimas (c)</th></tr>
+                        <tr><td style="height:26px;"></td><td></td><td></td><td>,</td><td></td><td></td></tr>
+                        <tr><td style="height:26px;"></td><td></td><td></td><td>,</td><td></td><td></td></tr>
+                    </table>
+                    <div style="font-size:11pt; margin-top:4px;">
+                        <strong>Ejemplo resuelto de referencia (4 pasos):</strong> Si 100 camarones consumen 0,15 g cada uno: Paso 1 (Datos: 100 y 0,15 g) &rarr; Paso 2 (Operación: 100 &times; 0,15) &rarr; Paso 3 (Resultado: 15,00 g) &rarr; Paso 4 (Verificación: puedes usar calculadora para comprobar el resultado final).
+                    </div>
+                </div>`;
+        } else {
+            recursoEspecifico = `
+                <div style="margin-top:6px;">
+                    <strong>Lista de pasos y metas visibles (para marcar al avanzar en la guía):</strong>
+                    <div style="font-size:11pt; margin-top:4px;">
+                        [ &nbsp; ] Meta 1: Elegí mi rol en la tabla inicial y respondí los conocimientos previos.<br>
+                        [ &nbsp; ] Meta 2: Leí los apartados con el glosario y respondí la comprensión literal e inferencial.<br>
+                        [ &nbsp; ] Meta 3: Completé la tabla de comparación entre Fuente A y Fuente B.<br>
+                        [ &nbsp; ] Meta 4: Redacté la conclusión con evidencias, la aplicación y la autoevaluación.
+                    </div>
+                </div>`;
+        }
+        return `
+            <div style="border:1.5px solid #000; padding:9px 11px; margin-bottom:10px; break-inside:avoid;">
+                <div style="font-weight:bold; font-size:12pt; border-bottom:1px solid #000; padding-bottom:3px;">
+                    Apoyos para realizar la actividad — ${ap.alias}
+                </div>
+                <div style="font-size:11pt; margin-top:4px;">
+                    <strong>Fortaleza observada:</strong> ${ap.fortaleza} &nbsp;|&nbsp;
+                    <strong>Forma de respuesta acordada:</strong> ${ap.respuesta} &nbsp;|&nbsp;
+                    <strong>Objetivo:</strong> ${ap.modObj ? 'Ajustado explícitamente por el docente' : 'Objetivo compartido del equipo'}
+                </div>
+                ${recursoEspecifico}
+            </div>`;
+    }).join('');
+    return `<div style="margin-bottom:12px;"><div style="font-weight:bold; font-size:12.5pt; text-transform:uppercase; margin-bottom:5px;">Apoyos para realizar la actividad</div>${bloques}</div>`;
+}
+    // ============================================================================
+// MOTOR DE RENDERIZADO, RÚBRICA PONDERADA, IMPRESIÓN A4 Y BANCO DE 5 EQUIPOS
+// ============================================================================
+
+function generarPlanificacion() {
     const grado = document.getElementById('grado').value;
     const duracion = document.getElementById('duracion').value;
     const numSesiones = parseInt(document.getElementById('numSesiones').value) || 6;
@@ -476,22 +725,10 @@ function generarPlanificacion() {
 function actualizarJustificacionCurricular() {
     if (!propuestaActual) return;
     document.getElementById('justificacionBox').innerHTML = `
-        <div class="just-item">
-            <h4>🔗 Vinculación Curricular:</h4>
-            <p>${propuestaActual.porQue}</p>
-        </div>
-        <div class="just-item">
-            <h4>🎯 Propósito de la Fase 1:</h4>
-            <p>${propuestaActual.queQuiere}</p>
-        </div>
-        <div class="just-item">
-            <h4>🧭 Estrategias Metodológicas:</h4>
-            <p>${propuestaActual.estrategias}</p>
-        </div>
-        <div class="just-item">
-            <h4>📚 Enfoque del Subnivel Medio:</h4>
-            <p>${propuestaActual.dcd}</p>
-        </div>
+        <div class="just-item"><h4>🔗 Vinculación Curricular:</h4><p>${propuestaActual.porQue}</p></div>
+        <div class="just-item"><h4>🎯 Propósito de la Fase 1:</h4><p>${propuestaActual.queQuiere}</p></div>
+        <div class="just-item"><h4>🧭 Estrategias Metodológicas:</h4><p>${propuestaActual.estrategias}</p></div>
+        <div class="just-item"><h4>📚 Enfoque del Subnivel Medio:</h4><p>${propuestaActual.dcd}</p></div>
     `;
 }
 
@@ -505,7 +742,7 @@ function mostrarGrupo(index) {
     const numSesiones = parseInt(document.getElementById('numSesiones').value) || 6;
     const minPorSesion = parseInt(document.getElementById('minPorSesion').value) || 45;
 
-    const cronograma = construirCronogramaSesiones(numSesiones, minPorSesion, materiasSeleccionadas, g);
+    const cronograma = construirCronogramaSesiones(numSesiones, minPorSesion, materiasSeleccionadas);
     let sesionesHTML = cronograma.map((ses, sIdx) => `
         <details class="session-accordion" ${sIdx === 0 ? 'open' : ''}>
             <summary>
@@ -538,7 +775,7 @@ function mostrarGrupo(index) {
         `;
     }).join('');
 
-    const rubricaHTML = renderizarModuloRubrica(index, g, materiasSeleccionadas);
+    const rubricaHTML = renderizarModuloRubrica(index, g);
 
     document.getElementById('contenidoGrupo').innerHTML = `
         <div style="background:white; padding:15px 18px; border-radius:10px; margin-bottom:18px; border:1px solid #cbd5e1; border-left: 6px solid #0d9488;">
@@ -568,6 +805,703 @@ function mostrarGrupo(index) {
 
         ${rubricaHTML}
     `;
+}
+
+function inicializarEstadoGrupo(grupoIdx) {
+    if (!estadoEvaluacionPorGrupo[grupoIdx]) {
+        estadoEvaluacionPorGrupo[grupoIdx] = {
+            niveles: { c1: "pendiente", c2: "pendiente", c3: "pendiente", c4: "pendiente", c5: "pendiente", c6: "pendiente" },
+            evidenciaGrupal: "", participacionIndividual: "", fortalezas: "", siguientePaso: ""
+        };
+    }
+    return estadoEvaluacionPorGrupo[grupoIdx];
+}
+
+function renderizarModuloRubrica(grupoIdx, grupoObj) {
+    const est = inicializarEstadoGrupo(grupoIdx);
+    const filas = CRITERIOS_RUBRICA_FASE1.map(c => {
+        const val = est.niveles[c.id];
+        return `
+            <tr>
+                <td><strong>${c.nombre}</strong><br><span style="color:#0f766e; font-size:0.78rem;">Peso: ${c.peso}% | Evidencia: ${c.evidenciaVinculada}</span></td>
+                <td>${c.n4}</td><td>${c.n3}</td><td>${c.n2}</td><td>${c.n1}</td>
+                <td>
+                    <select onchange="actualizarNivelCriterio(${grupoIdx}, '${c.id}', this.value)" style="width:100%; font-size:0.82rem;">
+                        <option value="pendiente" ${val === 'pendiente' ? 'selected' : ''}>⏳ Pendiente de evaluar</option>
+                        <option value="4" ${val === '4' ? 'selected' : ''}>4 - Logrado con profundidad</option>
+                        <option value="3" ${val === '3' ? 'selected' : ''}>3 - Logrado</option>
+                        <option value="2" ${val === '2' ? 'selected' : ''}>2 - En proceso</option>
+                        <option value="1" ${val === '1' ? 'selected' : ''}>1 - Inicial</option>
+                        <option value="0" ${val === '0' ? 'selected' : ''}>0 - Sin evidencia</option>
+                    </select>
+                </td>
+            </tr>`;
+    }).join('');
+    const calculo = calcularNotaSobreDiez(est.niveles);
+    return `
+        <div class="rubrica-box">
+            <div class="phase-header">
+                <h3>📊 Rúbrica Analítica de Evaluación — Fase 1 (${grupoObj.letra})</h3>
+                <span style="font-size:0.82rem; color:#475569;">Nota: El uso de apoyos autorizados no reduce la calificación; se evalúa el aprendizaje previsto.</span>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="rubrica-table">
+                    <thead>
+                        <tr>
+                            <th style="width:18%;">Criterio y Peso</th><th style="width:17%;">4: Logrado con profundidad</th>
+                            <th style="width:17%;">3: Logrado</th><th style="width:16%;">2: En proceso</th>
+                            <th style="width:15%;">1: Inicial</th><th style="width:17%;">Estado / Nivel (0 = Sin evidencia)</th>
+                        </tr>
+                    </thead>
+                    <tbody>${filas}</tbody>
+                </table>
+            </div>
+            <div class="nota-panel" id="panelNota_${grupoIdx}">${calculo.html}</div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:10px; margin-top:12px;">
+                <div><label style="font-size:0.82rem; font-weight:700;">Evidencia grupal verificada:</label><textarea rows="2" style="width:100%;" oninput="guardarCampoEval(${grupoIdx}, 'evidenciaGrupal', this.value)">${est.evidenciaGrupal}</textarea></div>
+                <div><label style="font-size:0.82rem; font-weight:700;">Registro de participación individual (por rol):</label><textarea rows="2" style="width:100%;" oninput="guardarCampoEval(${grupoIdx}, 'participacionIndividual', this.value)">${est.participacionIndividual}</textarea></div>
+                <div><label style="font-size:0.82rem; font-weight:700;">Fortalezas observadas:</label><textarea rows="2" style="width:100%;" oninput="guardarCampoEval(${grupoIdx}, 'fortalezas', this.value)">${est.fortalezas}</textarea></div>
+                <div><label style="font-size:0.82rem; font-weight:700;">Observaciones y siguiente paso de mejora:</label><textarea rows="2" style="width:100%;" oninput="guardarCampoEval(${grupoIdx}, 'siguientePaso', this.value)">${est.siguientePaso}</textarea></div>
+            </div>
+        </div>`;
+}
+
+function actualizarNivelCriterio(grupoIdx, critId, valor) {
+    const est = inicializarEstadoGrupo(grupoIdx);
+    est.niveles[critId] = valor;
+    const panel = document.getElementById(`panelNota_${grupoIdx}`);
+    if (panel) panel.innerHTML = calcularNotaSobreDiez(est.niveles).html;
+}
+
+function guardarCampoEval(grupoIdx, campo, valor) {
+    inicializarEstadoGrupo(grupoIdx)[campo] = valor;
+}
+
+function calcularNotaSobreDiez(niveles) {
+    let pendientes = 0, sumaPonderada = 0;
+    CRITERIOS_RUBRICA_FASE1.forEach(c => {
+        const val = niveles[c.id];
+        if (val === "pendiente") pendientes++;
+        else sumaPonderada += (parseFloat(val) / 4) * c.peso;
+    });
+    const nota = (sumaPonderada / 10).toFixed(2);
+    if (pendientes > 0) {
+        return { definitiva: false, nota: null, html: `<span class="nota-pendiente">⏳ Evaluación en curso: Faltan ${pendientes} criterio(s) por calificar. La nota definitiva sobre 10 se mostrará al completar todos los criterios (Puntaje parcial acumulado: ${nota} / 10).</span>` };
+    }
+    return { definitiva: true, nota: nota, html: `<span class="nota-valor">✅ Nota Definitiva Fase 1: ${nota} / 10</span><span style="font-size:0.84rem; color:#334155;">Fórmula aplicada: &Sigma;[(nivel &divide; 4) &times; peso %] &divide; 10</span>` };
+}
+
+function abrirVentanaImpresionA4(tituloDoc, cuerpoHtml) {
+    const accesible = document.getElementById('pdfAccesible') && document.getElementById('pdfAccesible').checked;
+    const fontSize = accesible ? (document.getElementById('pdfFontSize').value + "pt") : "12pt";
+    const lineHeight = accesible ? document.getElementById('pdfLineHeight').value : "1.35";
+    const v = window.open('', '_blank', 'width=920,height=780');
+    v.document.write(`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>${tituloDoc}</title>
+        <style>
+            @page { size: A4 portrait; margin: 1.5cm; }
+            * { box-sizing: border-box; font-family: 'Times New Roman', Times, serif !important; color: #000000 !important; }
+            body { margin: 0; padding: 0; background: #ffffff; font-size: ${fontSize}; line-height: ${lineHeight}; }
+            h1, h2, h3, h4, strong, th, .sec-title { font-weight: bold !important; color: #000000 !important; }
+            .header-sheet { border: 2px solid #000000; padding: 10px 12px; margin-bottom: 12px; }
+            .header-sheet h1 { margin: 0 0 4px 0; font-size: 14pt; text-transform: uppercase; }
+            .meta-table, .work-table { width: 100%; border-collapse: collapse; margin-top: 6px; margin-bottom: 10px; }
+            .meta-table td, .meta-table th, .work-table td, .work-table th { border: 1px solid #000000; padding: 5px 7px; text-align: left; vertical-align: top; }
+            .sec-box { border: 1px solid #000000; padding: 9px 11px; margin-bottom: 11px; break-inside: avoid; page-break-inside: avoid; }
+            .sec-title { border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 6px; font-size: 12pt; text-transform: uppercase; }
+            .reading-box { border: 1px solid #000000; padding: 7px 9px; margin-bottom: 8px; }
+            .mcq-item { margin-bottom: 7px; break-inside: avoid; }
+            .mcq-options { list-style: none; padding-left: 12px; margin: 3px 0; }
+            .write-lines { border-bottom: 1px solid #000000; height: 22px; margin-top: 5px; }
+            .math-grid-box { border: 1px solid #000000; height: 95px; margin-top: 6px; margin-bottom: 8px; }
+            tr, p { break-inside: avoid; page-break-inside: avoid; }
+        </style></head><body>${cuerpoHtml}
+        <script>window.onload = function() { setTimeout(function() { window.print(); }, 250); };<\/script>
+        </body></html>`);
+    v.document.close();
+}
+
+function imprimirGuiaCompleta(grupoIdx, materia) {
+    const g = gruposGeneradosActuales[grupoIdx];
+    const guia = g.guiasPorMateria[materia];
+    const grado = document.getElementById('grado').value;
+    const duracion = document.getElementById('duracion').value;
+    const numSesiones = document.getElementById('numSesiones').value;
+    const minPorSesion = document.getElementById('minPorSesion').value;
+    const selTitulo = document.getElementById('selectorTitulo');
+    const tituloProyecto = selTitulo.options[selTitulo.selectedIndex].text.replace(/^Propuesta \d+:\s*/, '');
+    const apoyosGrupo = perfilesApoyo.filter(p => p.grupoIdx === grupoIdx);
+    const rolesHtml = guia.rolesEquipo.map(r => `<tr><td><strong>${r.rol}</strong></td><td>${r.tarea}</td><td style="width:28%;"></td></tr>`).join('');
+    const html = `
+        <div class="header-sheet">
+            <h1>GUÍA DE INVESTIGACIÓN (FASE 1) — ${materia.toUpperCase()}</h1>
+            <div><strong>Proyecto:</strong> ${tituloProyecto}</div>
+            <table class="meta-table">
+                <tr><td><strong>Año EGB:</strong> ${grado} Año</td><td><strong>Equipo:</strong> ${g.letra}</td><td><strong>Región / Enfoque:</strong> ${g.enfoque}</td></tr>
+                <tr><td><strong>Asignatura:</strong> ${materia}</td><td><strong>Duración Proyecto:</strong> ${duracion}</td><td><strong>Tiempo Fase 1:</strong> ${numSesiones} sesiones (${minPorSesion} min c/u)</td></tr>
+            </table>
+        </div>
+        <div class="sec-box"><div class="sec-title">ORGANIZACIÓN DEL EQUIPO Y ROLES ELEGIBLES</div>
+            <table class="work-table"><thead><tr><th style="width:28%;">Rol del Equipo</th><th>Responsabilidad concreta en esta guía</th><th>Estudiante responsable</th></tr></thead><tbody>${rolesHtml}</tbody></table>
+        </div>
+        ${generarHtmlApoyosConcretos(apoyosGrupo)}
+        ${guia.contenidoCompleto}`;
+    abrirVentanaImpresionA4(`Guia_Fase1_${g.letra}_${materia}`, html);
+}
+
+function imprimirSesionIndividual(grupoIdx, sesionIdx) {
+    const g = gruposGeneradosActuales[grupoIdx];
+    const grado = document.getElementById('grado').value;
+    const numSesiones = parseInt(document.getElementById('numSesiones').value) || 6;
+    const minPorSesion = parseInt(document.getElementById('minPorSesion').value) || 45;
+    const materias = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
+    const ses = construirCronogramaSesiones(numSesiones, minPorSesion, materias)[sesionIdx];
+    const apoyosGrupo = perfilesApoyo.filter(p => p.grupoIdx === grupoIdx);
+    const html = `
+        <div class="header-sheet"><h1>FICHA DE TRABAJO POR SESIÓN — FASE 1: INVESTIGACIÓN</h1>
+            <table class="meta-table">
+                <tr><td><strong>Año EGB:</strong> ${grado} Año</td><td><strong>Equipo:</strong> ${g.letra} (${g.enfoque})</td><td><strong>Sesión:</strong> ${ses.numero} de ${numSesiones} (${ses.minutos} min)</td></tr>
+                <tr><td colspan="3"><strong>Asignatura responsable en esta sesión:</strong> ${ses.asignatura}</td></tr>
+            </table>
+        </div>
+        ${generarHtmlApoyosConcretos(apoyosGrupo)}
+        <div class="sec-box"><div class="sec-title">SESIÓN ${ses.numero}: ${ses.titulo.toUpperCase()}</div>
+            <p><strong>Propósito de la sesión:</strong> ${ses.proposito}</p>
+            <p><strong>Secuencia de actividades:</strong> ${ses.actividades}</p>
+            <p><strong>Evidencia esperada al finalizar la sesión:</strong> ${ses.evidencia}</p>
+            <p><strong>Registro de avances y acuerdos del equipo:</strong></p>
+            <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+        </div>`;
+    abrirVentanaImpresionA4(`Sesion_${ses.numero}_${g.letra}`, html);
+}
+
+function imprimirRubrica(grupoIdx) {
+    const g = gruposGeneradosActuales[grupoIdx];
+    const est = inicializarEstadoGrupo(grupoIdx);
+    const grado = document.getElementById('grado').value;
+    const materias = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
+    const calculo = calcularNotaSobreDiez(est.niveles);
+    const filas = CRITERIOS_RUBRICA_FASE1.map(c => {
+        const val = est.niveles[c.id];
+        return `<tr><td><strong>${c.nombre}</strong> (${c.peso}%)<br><em>${c.evidenciaVinculada}</em></td><td>${c.n4}</td><td>${c.n3}</td><td>${c.n2}</td><td>${c.n1}</td><td style="text-align:center;"><strong>${val === "pendiente" ? "Pendiente" : val + " / 4"}</strong></td></tr>`;
+    }).join('');
+    const html = `
+        <div class="header-sheet"><h1>RÚBRICA ANALÍTICA DE EVALUACIÓN — FASE 1: INVESTIGACIÓN</h1>
+            <table class="meta-table"><tr><td><strong>Año EGB:</strong> ${grado} Año</td><td><strong>Equipo:</strong> ${g.letra} (${g.enfoque})</td><td><strong>Asignaturas:</strong> ${materias.join(', ')}</td></tr></table>
+        </div>
+        <table class="work-table"><thead><tr><th>Criterio y Peso</th><th>4: Logrado con profundidad</th><th>3: Logrado</th><th>2: En proceso</th><th>1: Inicial</th><th>Nivel (0 = Sin evidencia)</th></tr></thead><tbody>${filas}</tbody></table>
+        <div class="sec-box">
+            <p><strong>Resultado de Evaluación:</strong> ${calculo.definitiva ? `Nota Definitiva: ${calculo.nota} / 10` : 'Evaluación en curso (existen criterios pendientes).'}</p>
+            <p><strong>Evidencia grupal:</strong> ${est.evidenciaGrupal || '________________________________________________'}</p>
+            <p><strong>Participación individual:</strong> ${est.participacionIndividual || '________________________________________________'}</p>
+            <p><strong>Fortalezas y siguiente paso de mejora:</strong> ${est.fortalezas || ''} ${est.siguientePaso || ''}</p>
+        </div>`;
+    abrirVentanaImpresionA4(`Rubrica_Fase1_${g.letra}`, html);
+}
+
+function imprimirSolucionario(grupoIdx) {
+    const g = gruposGeneradosActuales[grupoIdx];
+    const materias = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
+    const solGrupo = SOLUCIONARIO_DOCENTE[g.letra] || {};
+    const bloques = materias.map(mat => `<div class="sec-box"><div class="sec-title">CLAVES Y RESPUESTAS ORIENTATIVAS — ${mat.toUpperCase()}</div><p>${solGrupo[mat] || 'Revisar coherencia con las evidencias de las Fuentes A y B.'}</p></div>`).join('');
+    abrirVentanaImpresionA4(`Solucionario_Docente_${g.letra}`, `<div class="header-sheet"><h1>SOLUCIONARIO DOCENTE (USO EXCLUSIVO DEL PROFESORADO) — ${g.letra}</h1><div><strong>Enfoque Regional:</strong> ${g.enfoque} — ${g.nombreCreativo}</div></div>${bloques}`);
+}
+
+function obtenerDatosGrupos(grado) {
+    const esQuinto = grado === "5to";
+    function armarGuiaCompleta(cfg) {
+        return {
+            preguntaCentral: cfg.preguntaCentral,
+            rolesEquipo: cfg.rolesEquipo,
+            contenidoCompleto: `
+                <div class="sec-box"><div class="sec-title">1. OBJETIVO DE APRENDIZAJE Y PREGUNTA CENTRAL DE INVESTIGACIÓN</div>
+                    <p><strong>Objetivo:</strong> ${cfg.objetivo}</p>
+                    <p><strong>Pregunta central de investigación:</strong> ${cfg.preguntaCentral}</p>
+                    <p><strong>Materiales necesarios:</strong> ${cfg.materiales}</p>
+                </div>
+                <div class="sec-box"><div class="sec-title">2. EXPLORACIÓN DE CONOCIMIENTOS PREVIOS (Tiempo estimado: 10 min)</div>
+                    <p><strong>Instrucción:</strong> Antes de leer el texto de referencia, dialoguen en equipo y respondan con sus propias ideas:</p>
+                    <p>a) ${cfg.previos[0]}</p><div class="write-lines"></div>
+                    <p>b) ${cfg.previos[1]}</p><div class="write-lines"></div>
+                </div>
+                <div class="sec-box"><div class="sec-title">3. INFORMACIÓN DE REFERENCIA Y GLOSARIO (Tiempo estimado: 15 min)</div>
+                    <div class="reading-box">${cfg.lecturaApartados}</div>
+                    <table class="work-table"><thead><tr><th style="width:28%;">Término del Glosario</th><th>Definición contextualizada</th></tr></thead>
+                    <tbody>${cfg.glosario.map(g => `<tr><td><strong>${g.term}</strong></td><td>${g.def}</td></tr>`).join('')}</tbody></table>
+                </div>
+                <div class="sec-box"><div class="sec-title">4. COMPRENSIÓN LITERAL E INFERENCIAL (Tiempo estimado: 15 min)</div>
+                    <p><strong>Instrucción:</strong> Marquen con una X la opción correcta y respondan la pregunta inferencial.</p>
+                    ${cfg.preguntasMcq.map(q => `<div class="mcq-item"><p>${q.enunciado}</p><ul class="mcq-options">${q.opciones.map(op => `<li>${op}</li>`).join('')}</ul></div>`).join('')}
+                    <p style="margin-top:8px;"><strong>Pregunta inferencial (deduce a partir de las pistas del texto):</strong> ${cfg.inferencial}</p>
+                    <div class="write-lines"></div><div class="write-lines"></div>
+                </div>
+                <div class="sec-box"><div class="sec-title">5. REGISTRO Y COMPARACIÓN DE DOS FUENTES (Tiempo estimado: 20 min)</div>
+                    <p><strong>Instrucción:</strong> Contrasten la <em>Fuente A (Lectura base)</em> con la <em>Fuente B (Dato complementario)</em>:</p>
+                    <div class="reading-box"><strong>Fuente B:</strong> ${cfg.fuenteB}</div>
+                    <table class="work-table"><thead><tr><th style="width:24%;">Criterio de comparación</th><th style="width:38%;">Hallazgo en Fuente A</th><th style="width:38%;">Hallazgo en Fuente B</th></tr></thead>
+                    <tbody>${cfg.criteriosComparacion.map(c => `<tr><td><strong>${c}</strong></td><td style="height:34px;"></td><td></td></tr>`).join('')}</tbody></table>
+                </div>
+                <div class="sec-box"><div class="sec-title">6. PENSAMIENTO CRÍTICO: JUICIO FUNDAMENTADO CON EVIDENCIAS (Tiempo estimado: 15 min)</div>
+                    <p><strong>Instrucción:</strong> ${cfg.pensamientoCritico}</p>
+                    <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                </div>
+                <div class="sec-box"><div class="sec-title">7. APLICACIÓN DISCIPLINAR (${cfg.asignatura.toUpperCase()}) (Tiempo estimado: 25 min)</div>
+                    ${cfg.aplicacionHtml}
+                </div>
+                <div class="sec-box"><div class="sec-title">8. SÍNTESIS DE HALLAZGOS (INSUMO PARA FASE 2) Y AUTOEVALUACIÓN</div>
+                    <p><strong>Ficha de transferencia a la Fase 2 (Desarrollo):</strong> Escriban 3 datos o ideas clave que deberán reflejarse en el producto de la Fase 2:</p>
+                    <div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>
+                    <table class="work-table" style="margin-top:10px;">
+                        <thead><tr><th>Lista de Comprobación del Equipo</th><th style="width:14%; text-align:center;">Logrado</th><th style="width:14%; text-align:center;">En proceso</th></tr></thead>
+                        <tbody>
+                            <tr><td>Cumplimos los roles acordados al inicio de la guía.</td><td></td><td></td></tr>
+                            <tr><td>Comparamos información de las dos fuentes utilizando evidencias.</td><td></td><td></td></tr>
+                            <tr><td>Revisamos que las operaciones o redacciones sean claras y completas.</td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>`
+        };
+    }
+
+    return [
+        {
+            letra: "Grupo A", nombreCreativo: "Producción Acuícola y Ecosistema del Manglar (Región Costa)", enfoque: "Región Litoral o Costa",
+            productoFinal: "Maqueta Topográfica del Criadero Sostenible y Ficha Informativa Regional",
+            guiasPorMateria: {
+                "Lengua y Literatura": armarGuiaCompleta({
+                    asignatura: "Lengua y Literatura",
+                    objetivo: esQuinto ? "Comprender textos informativos sobre la producción camaronera de la Costa e identificar ideas principales y vocabulario nuevo." : "Analizar críticamente fuentes sobre la industria camaronera ecuatoriana, contrastar perspectivas y producir un texto argumentado con evidencias.",
+                    preguntaCentral: "¿Cómo equilibrar el desarrollo económico de la producción camaronera en la Costa ecuatoriana con la protección de los manglares y el bienestar laboral?",
+                    materiales: "Guía impresa, lápiz, resaltadores de dos colores y diccionario escolar.",
+                    previos: ["¿Qué productos del mar o de los ríos de la Costa ecuatoriana conocen y cómo llegan a nuestros hogares?", "¿Qué saben sobre los manglares y por qué son importantes para los animales y las personas de la Costa?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Origen e importancia económica:</strong> El camarón (<em>Litopenaeus vannamei</em>) es un crustáceo decápodo que constituye uno de los principales rubros de exportación no petrolera del Ecuador. Su cultivo comercial en la Costa comenzó en las décadas de 1960 y 1970 en provincias como El Oro y Guayas, expandiéndose luego a Manabí, Esmeraldas y Santa Elena.</p><p><strong>Apartado 2. Desafíos socioambientales:</strong> Aunque genera miles de empleos directos e indirectos, la expansión de piscinas sin planificación afectó zonas de manglar en décadas pasadas. Actualmente se promven certificaciones sostenibles, control de calidad del agua y mejoras laborales.</p>`,
+                    glosario: [{ term: "Crustáceo", def: "Animal invertebrado acuático con exoesqueleto articulado, como el camarón." }, { term: "Estuario", def: "Desembocadura de un río caudaloso en el mar donde se mezcla agua dulce y salada." }, { term: "Sostenibilidad", def: "Aprovechamiento de recursos naturales sin agotar el ecosistema." }],
+                    preguntasMcq: [
+                        { enunciado: "1. (Literal) ¿En qué décadas comenzó el desarrollo comercial del cultivo de camarón en Ecuador?", opciones: ["A) Años 20 y 30", "B) Años 60 y 70", "C) Años 90", "D) Después del 2010"] },
+                        { enunciado: "2. (Literal) ¿Qué provincias costeras concentran la producción camaronera?", opciones: ["A) Cotopaxi y Tungurahua", "B) Napo y Pastaza", "C) El Oro, Guayas, Manabí, Esmeraldas y Santa Elena", "D) Loja y Azuay"] },
+                        { enunciado: "3. (Inferencial) ¿Por qué el estuario es un ambiente clave para esta actividad?", opciones: ["A) Tiene nieve", "B) Combina agua dulce y salada rica en nutrientes", "C) Carece de vegetación", "D) Está a más de 3.000 m"] }
+                    ],
+                    inferencial: "Si una granja camaronera obtiene una certificación de sostenibilidad, ¿qué cambios concretos esperas observar en su relación con el manglar vecino?",
+                    fuenteB: "Informe técnico del sector acuícola (2023): Ecuador superó el millón de toneladas exportadas gracias a la tecnificación con alimentadores automáticos, pero los estudios ecológicos advierten que cada hectárea de manglar perdida reduce la protección natural contra inundaciones costeras.",
+                    criteriosComparacion: ["Beneficio económico destacado", "Riesgo o desafío señalado", "Solución o medida propuesta"],
+                    pensamientoCritico: "Formula una conclusión fundamentada en evidencias de las Fuentes A y B respondiendo: ¿Es posible aumentar las exportaciones sin destruir el manglar? Justifica con al menos dos datos.",
+                    rolesEquipo: [{ rol: "Lector/a de Referencia", tarea: "Dirige la lectura por apartados y consulta el glosario." }, { rol: "Analista de Comprensión", tarea: "Modera el acuerdo en las preguntas literales e inferenciales." }, { rol: "Contrastador/a de Fuentes", tarea: "Completa la tabla comparativa entre Fuente A y Fuente B." }, { rol: "Redactor/a de Síntesis", tarea: "Escribe el juicio fundamentado y la transferencia para Fase 2." }],
+                    aplicacionHtml: `<p><strong>Producción escrita vinculada con la investigación (${esQuinto ? "Párrafo descriptivo de 5 líneas" : "Texto argumentativo de 2 párrafos"}):</strong> Redacta un boletín informativo dirigido a las familias de la Costa explicando la importancia del camarón y cómo proteger los manglares, integrando al menos 2 palabras del glosario:</p><div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Matemática": armarGuiaCompleta({
+                    asignatura: "Matemática",
+                    objetivo: esQuinto ? "Interpretar tablas de producción camaronera, resolver operaciones con decimales y calcular áreas rectangulares." : "Analizar series estadísticas de exportación, calcular la media aritmética, resolver problemas con decimales y determinar áreas compuestas.",
+                    preguntaCentral: "¿Qué revelan las cifras históricas de exportación y los cálculos de superficie y alimentación sobre la eficiencia de un criadero camaronero?",
+                    materiales: "Guía impresa, regla graduada, lápiz, borrador y calculadora (solo si consta como apoyo autorizado).",
+                    previos: ["¿Para qué sirve calcular el promedio (media aritmética) cuando tenemos datos de producción de varios años?", "¿Cómo se calcula el área de un terreno rectangular y qué unidades de medida se usan?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Evolución cuantitativa:</strong> Entre 2017 y 2022, las exportaciones ecuatorianas de camarón registraron: 2017 (441.539 t), 2018 (512.108 t), 2019 (645.043 t), 2020 (688.489 t), 2021 (847.982 t) y 2022 (1.068.961 t).</p><p><strong>Apartado 2. Parámetros técnicos:</strong> En un criadero modelo de 60 m de largo por 30 m de ancho se instalan piscinas cuadradas de 10 m de lado.</p>`,
+                    glosario: [{ term: "Tonelada (t)", def: "Unidad de masa equivalente a 1.000 kilogramos." }, { term: "Media aritmética", def: "Cociente que resulta de dividir la suma de todos los datos entre el número total de datos." }, { term: "Área libre", def: "Superficie resultante de restar el área ocupada por estructuras internas al área total." }],
+                    preguntasMcq: [
+                        { enunciado: "1. (Literal) ¿En qué año del periodo 2017-2022 se registró la mayor exportación?", opciones: ["A) 2018", "B) 2020", "C) 2021", "D) 2022"] },
+                        { enunciado: "2. (Literal) ¿Cuánto aumentó aproximadamente la exportación entre 2017 y 2022?", opciones: ["A) Menos de 100.000 t", "B) Más de 600.000 t", "C) Exactamente 50.000 t", "D) Disminuyó"] },
+                        { enunciado: "3. (Inferencial) Si se duplica el número de camarones manteniendo la ración por camarón, ¿qué ocurre con el gasto diario de alimento?", opciones: ["A) Se mantiene igual", "B) Se reduce a la mitad", "C) Se duplica", "D) No se puede saber"] }
+                    ],
+                    inferencial: "Observando los datos de 2019 (645.043 t) y 2020 (688.489 t), ¿el sector detuvo su crecimiento durante el año 2020? Explica con la diferencia numérica.",
+                    fuenteB: "Registro de control de granja experimental: Un estanque con 12.350 camarones utiliza 0,15 g de alimento por camarón al día a un costo de $0,02 por gramo.",
+                    criteriosComparacion: ["Variable medida (toneladas vs. gramos/costo)", "Escala (nacional vs. estanque)", "Utilidad para tomar decisiones"],
+                    pensamientoCritico: "Con base en los cálculos realizados, formula una conclusión fundamentada sobre por qué el control exacto de gramos de alimento evita pérdidas económicas y contaminación del agua.",
+                    rolesEquipo: [{ rol: "Analista Estadístico/a", tarea: "Organiza los datos de exportación y calcula la media aritmética." }, { rol: "Calculista de Decimales", tarea: "Resuelve los problemas de ración y costo de alimentación." }, { rol: "Geómetra de Superficies", tarea: "Calcula el área total del terreno y el área libre de las piscinas." }, { rol: "Verificador/a de Procedimientos", tarea: "Revisa que cada operación tenga procedimiento y respuesta." }],
+                    aplicacionHtml: esQuinto ? `<p><strong>1. Diferencia de exportaciones:</strong> Calcula cuántas toneladas más se exportaron en 2022 (1.068.961 t) respecto a 2020 (688.489 t):</p><div class="math-grid-box"></div><p><strong>2. Área del criadero:</strong> Calcula el área total de un criadero rectangular de <strong>60 m × 30 m</strong> (A = b × h):</p><div class="math-grid-box"></div>` : `<p><strong>1. Media aritmética (2017 - 2022):</strong> Suma las exportaciones de los 6 años y divide para 6:</p><div class="math-grid-box"></div><p><strong>2. Decimales en alimentación:</strong> Cada camarón consume <strong>0,15 g</strong> al día. Si hay <strong>12.350 camarones</strong>, ¿cuántos gramos se necesitan al día y cuánto cuestan a <strong>$0,02</strong> por gramo?</p><div class="math-grid-box"></div><p><strong>3. Área libre:</strong> En el terreno de <strong>60 m × 30 m</strong> se colocan <strong>dos piscinas cuadradas de 10 m de lado</strong>. Calcula el área libre exterior:</p><div class="math-grid-box"></div>`
+                }),
+                "Ciencias Naturales": armarGuiaCompleta({
+                    asignatura: "Ciencias Naturales",
+                    objetivo: "Explicar el ciclo de vida del camarón, sus requerimientos de hábitat y el impacto ecológico en los manglares.",
+                    preguntaCentral: "¿Qué condiciones biológicas requiere el camarón y cómo prevenir la alteración del ecosistema de manglar?",
+                    materiales: "Guía impresa y lápices de colores.",
+                    previos: ["¿Qué etapas de crecimiento creen que atraviesa un camarón?", "¿Qué animales viven en los manglares?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Ciclo biológico:</strong> El camarón atraviesa cinco etapas: huevo, nauplio, zoea, mysis y postlarva/adulto (28 °C a 30 °C).</p><p><strong>Apartado 2. Función ecológica del manglar:</strong> Los manglares actúan como biofiltros naturales que depuran el agua y refugian especies costeras.</p>`,
+                    glosario: [{ term: "Salinidad", def: "Concentración de sales minerales disueltas en el agua." }, { term: "Biofiltro", def: "Ecosistema capaz de retener contaminantes de forma natural." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Cuál es la primera fase larvaria tras eclosionar el huevo?", opciones: ["A) Adulto", "B) Nauplio", "C) Juvenil", "D) Pupa"] }],
+                    inferencial: "¿Por qué el control del oxígeno disuelto y la temperatura es indispensable en los estanques?",
+                    fuenteB: "Monitoreo ambiental costero: Las granjas con franjas de reforestación de mangle rojo reducen en un 40% la descarga de materia orgánica.",
+                    criteriosComparacion: ["Rol del manglar", "Manejo del agua", "Efecto en la biodiversidad"],
+                    pensamientoCritico: "Redacta una conclusión científica justificando por qué la reforestación del manglar beneficia al ecosistema y a la producción.",
+                    rolesEquipo: [{ rol: "Biólogo/a de Ciclo Vital", tarea: "Describe las etapas del camarón." }, { rol: "Analista de Hábitat", tarea: "Registra temperatura y salinidad." }, { rol: "Auditor/a Ecológico/a", tarea: "Compara fuentes sobre el manglar." }, { rol: "Sintetizador/a", tarea: "Redacta medidas de prevención." }],
+                    aplicacionHtml: `<p><strong>Esquema y explicación causal:</strong> Dibuja las 5 etapas del ciclo de vida del camarón y escribe dos medidas de prevención ambiental:</p><div class="math-grid-box"></div>`
+                }),
+                "Ciencias Sociales": armarGuiaCompleta({
+                    asignatura: "Estudios Sociales",
+                    objetivo: "Analizar el desarrollo histórico y territorial de la actividad camaronera en la Costa ecuatoriana.",
+                    preguntaCentral: "¿Cómo transformó el auge camaronero desde los años 60 el territorio y las comunidades de la Costa ecuatoriana?",
+                    materiales: "Guía impresa y mapa del Ecuador.",
+                    previos: ["¿Qué actividades económicas existían en la Costa antes del auge camaronero?", "¿Qué cambios ocurren cuando llega una industria exportadora?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Transformación territorial:</strong> Inició en Santa Rosa (El Oro) a finales de los años 60 y se expandió al golfo de Guayaquil y Manabí.</p>`,
+                    glosario: [{ term: "Divisas", def: "Moneda extranjera que ingresa al país producto de las exportaciones." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿En qué provincia se originaron los primeros estanques a finales de los años 60?", opciones: ["A) Esmeraldas", "B) El Oro", "C) Carchi", "D) Sucumbíos"] }],
+                    inferencial: "¿Qué relación existe entre la ubicación del golfo de Guayas y el liderazgo exportador de esa provincia?",
+                    fuenteB: "Testimonio de cangrejeros del Golfo de Guayaquil: Los acuerdos de custodia de manglar protegen el ecosistema y el sustento familiar.",
+                    criteriosComparacion: ["Perspectiva económica nacional", "Perspectiva comunitaria local", "Acuerdo territorial"],
+                    pensamientoCritico: "Elabora un juicio histórico-social explicando dos causas de la expansión camaronera desde los años 60 y dos consecuencias en las comunidades.",
+                    rolesEquipo: [{ rol: "Cartógrafo/a Regional", tarea: "Identifica provincias y estuarios." }, { rol: "Historiador/a", tarea: "Ordena cambios desde los años 60." }, { rol: "Analista de Perspectivas", tarea: "Contrasta actores sociales." }, { rol: "Redactor/a", tarea: "Formula el juicio histórico." }],
+                    aplicacionHtml: `<p><strong>Línea de tiempo:</strong> Completa tres hitos (1968 → 1985 → Actualidad) y señala qué provincias deben aparecer en el mapa de la Fase 2:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Educación Cultural y Artística": armarGuiaCompleta({
+                    asignatura: "Educación Cultural y Artística",
+                    objetivo: "Investigar referentes visuales de la cultura costera y diseñar bocetos fundamentados.",
+                    preguntaCentral: "¿Cómo representar mediante texturas y colores la relación entre la cultura costera y el manglar?",
+                    materiales: "Guía impresa, lápiz y colores.",
+                    previos: ["¿Qué colores predominan en un paisaje de manglar?", "¿Qué materiales reciclados imitan raíces y agua?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Estética del litoral:</strong> Los artesanos emplean madera balsa, fibras naturales y pigmentos térreos y aguamarina.</p>`,
+                    glosario: [{ term: "Boceto fundamentado", def: "Dibujo previo que justifica proporciones, paleta cromática y materiales." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Qué materiales destacan en la artesanía costera?", opciones: ["A) Lana", "B) Madera balsa, fibras naturales y conchas", "C) Mármol", "D) Piedra volcánica"] }],
+                    inferencial: "¿Por qué es importante planificar la escala y leyenda visual antes de construir una maqueta?",
+                    fuenteB: "Guía museográfica: El contraste cromático entre agua, vegetación y estructuras facilita la lectura visual.",
+                    criteriosComparacion: ["Paleta cromática", "Materiales sugeridos", "Claridad comunicativa"],
+                    pensamientoCritico: "Justifica por qué el uso de materiales reutilizables refuerza el mensaje ecológico de la investigación.",
+                    rolesEquipo: [{ rol: "Investigador/a Visual", tarea: "Define paleta de colores." }, { rol: "Diseñador/a", tarea: "Crea símbolos de leyenda." }, { rol: "Bocetista", tarea: "Traza el boceto a escala." }, { rol: "Gestor/a de Materiales", tarea: "Selecciona materiales reciclados." }],
+                    aplicacionHtml: `<p><strong>Boceto fundamentado a escala:</strong> Dibuja la vista superior de la maqueta indicando colores y materiales:</p><div class="math-grid-box"></div>`
+                })
+            }
+        },
+        {
+            letra: "Grupo B", nombreCreativo: "Arte Ancestral, Geometría y Cosmovisión en Tigua (Región Sierra)", enfoque: "Región Interandina o Sierra",
+            productoFinal: "Máscara de Tigua en Relieve Geométrico y Ficha Cultural",
+            guiasPorMateria: {
+                "Lengua y Literatura": armarGuiaCompleta({
+                    asignatura: "Lengua y Literatura",
+                    objetivo: "Interpretar textos culturales sobre las máscaras de Tigua y producir un relato fundamentado en la cosmovisión andina.",
+                    preguntaCentral: "¿De qué manera las máscaras de Tigua comunican la cosmovisión andina y la memoria cultural de Cotopaxi?",
+                    materiales: "Guía impresa, lápiz y resaltadores.",
+                    previos: ["¿Qué celebraciones tradicionales de la Sierra conocen donde se utilicen máscaras?", "¿Qué animales de los Andes aparecen en artesanías?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Origen en Tigua (Cotopaxi):</strong> Las máscaras de Tigua son originarias de Cotopaxi y representan animales sagrados (cóndor, puma, lobo de páramo) en festividades como el <em>Inti Raymi</em>.</p>`,
+                    glosario: [{ term: "Cosmovisión", def: "Manera de ver e interpretar el mundo y la naturaleza propia de una cultura." }, { term: "Inti Raymi", def: "Festividad andina dedicada a agradecer al Sol y a la tierra por las cosechas." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿En qué provincia se ubica la parroquia Tigua?", opciones: ["A) Imbabura", "B) Cotopaxi", "C) Chimborazo", "D) Azuay"] }],
+                    inferencial: "¿Qué ocurriría con el significado cultural de las máscaras si se fabricaran en serie con plástico sin conocer su simbolismo?",
+                    fuenteB: "Entrevista a artesanos de Tigua (2023): Cada patrón geométrico del rostro representa las montañas, los surcos de cultivo y el equilibrio comunitario.",
+                    criteriosComparacion: ["Materiales y técnica", "Significado de diseños", "Transmisión del saber"],
+                    pensamientoCritico: "Redacta un juicio fundamentado explicando por qué las máscaras de Tigua constituyen un lenguaje cultural vivo.",
+                    rolesEquipo: [{ rol: "Lector/a Cultural", tarea: "Dirige la lectura sobre Tigua." }, { rol: "Analista", tarea: "Coordina preguntas." }, { rol: "Contrastador/a", tarea: "Compara fuentes." }, { rol: "Narrador/a", tarea: "Redacta el relato." }],
+                    aplicacionHtml: `<p><strong>Relato cultural fundamentado:</strong> Escribe una leyenda breve protagonizada por un animal andino durante el Inti Raymi, integrando 2 términos del glosario:</p><div class="write-lines"></div><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Matemática": armarGuiaCompleta({
+                    asignatura: "Matemática",
+                    objetivo: "Comparar presupuestos, calcular promedios estadísticos y determinar áreas cuadradas, circulares y porcentajes.",
+                    preguntaCentral: "¿Cómo aplicar presupuestos, promedios y cálculo de áreas en el diseño de una máscara de Tigua?",
+                    materiales: "Guía impresa, regla, compás y calculadora (si está autorizada).",
+                    previos: ["¿Cómo comparamos dos presupuestos?", "¿Cómo se calcula el área de un cuadrado y de un círculo?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Tiempos artesanales:</strong> Cinco artesanos registraron los días para elaborar una máscara: María (10,5), Carlos (20,8), Ana (18,2), Pablo (27,8) y Sofía (16,5).</p><p><strong>Apartado 2. Geometría:</strong> Una máscara base cuadrada mide <strong>12,5 cm de lado</strong> y lleva dos ojos circulares de <strong>2,8 cm de radio</strong>.</p>`,
+                    glosario: [{ term: "Presupuesto comparativo", def: "Tabla que contrasta precios de distintos proveedores." }, { term: "Radio (r)", def: "Segmento del centro del círculo a su borde." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Quién tardó menos días?", opciones: ["A) Carlos", "B) María (10,5 días)", "C) Pablo", "D) Ana"] }],
+                    inferencial: "¿Por qué existe diferencia en los días de elaboración entre María y Pablo?",
+                    fuenteB: "Cotización: Distribuidor 1 ($3,50 + $4,80 + $2,25) vs. Distribuidor 2 ($2,90 + $5,20 + $1,95).",
+                    criteriosComparacion: ["Costo total", "Rubro más económico", "Diferencia neta"],
+                    pensamientoCritico: "Argumenta cuál distribuidor conviene elegir y cuánto dinero ahorra el equipo.",
+                    rolesEquipo: [{ rol: "Cotizador/a", tarea: "Completa tabla de precios." }, { rol: "Estadístico/a", tarea: "Calcula media aritmética." }, { rol: "Geómetra", tarea: "Calcula áreas y porcentajes." }, { rol: "Verificador/a", tarea: "Revisa unidades." }],
+                    aplicacionHtml: `<p><strong>1. Tiempo promedio de los 5 artesanos:</strong> Calcula la media aritmética:</p><div class="math-grid-box"></div><p><strong>2. Geometría:</strong> Calcula el área de la base cuadrada de <strong>12,5 cm de lado</strong>, cuántos cm² quedan sin pintar si se pinta el <strong>75%</strong>, y el área de un ojo circular de <strong>2,8 cm de radio</strong> (π ≈ 3,14):</p><div class="math-grid-box"></div>`
+                }),
+                "Ciencias Naturales": armarGuiaCompleta({
+                    asignatura: "Ciencias Naturales",
+                    objetivo: "Analizar el uso de tintes naturales frente a sintéticos y las medidas contra la deforestación.",
+                    preguntaCentral: "¿Cómo aprovechar madera y tintes naturales de la Sierra sin contribuir a la deforestación?",
+                    materiales: "Guía impresa y colores.",
+                    previos: ["¿De qué plantas se obtienen colores naturales?", "¿Qué ocurre con el suelo al talar árboles?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Tintes locales:</strong> Se emplean plantas como nogal (café), chilca (verde) o cochinilla (rojo) y madera certificada.</p>`,
+                    glosario: [{ term: "Tinte natural", def: "Pigmento extraído de plantas o minerales sin químicos." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Qué planta andina produce tonos verdes?", opciones: ["A) Chilca", "B) Mangle", "C) Cacao", "D) Palma"] }],
+                    inferencial: "¿Por qué la reforestación protege las fuentes de agua de la Sierra?",
+                    fuenteB: "Manejo forestal: Usar madera certificada y cartón reciclado reduce la presión sobre bosques nativos.",
+                    criteriosComparacion: ["Recurso usado", "Impacto ambiental", "Alternativa sostenible"],
+                    pensamientoCritico: "Propón dos medidas concretas para disminuir la deforestación en la Sierra fundamentadas en las fuentes.",
+                    rolesEquipo: [{ rol: "Botánico/a", tarea: "Identifica plantas tintóreas." }, { rol: "Ecólogo/a", tarea: "Analiza impacto." }, { rol: "Contrastador/a", tarea: "Compara tintes." }, { rol: "Redactor/a", tarea: "Propone medidas." }],
+                    aplicacionHtml: `<p><strong>Cuadro de pigmentos y prevención:</strong> Escribe 2 fuentes de tintes naturales y el material sostenible para la Fase 2:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Ciencias Sociales": armarGuiaCompleta({
+                    asignatura: "Estudios Sociales",
+                    objetivo: "Comprender el origen histórico de las tradiciones festivas de la Sierra ecuatoriana.",
+                    preguntaCentral: "¿Por qué el Inti Raymi y el arte de Tigua han permanecido vigentes en la historia andina?",
+                    materiales: "Guía impresa y mapa de la Sierra.",
+                    previos: ["¿Qué significa agradecer a la tierra por las cosechas?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Continuidad histórica:</strong> Los pueblos andinos celebran los solsticios vinculando astronomía, agricultura y arte.</p>`,
+                    glosario: [{ term: "Solsticio", def: "Momento del año en que el Sol alcanza su mayor o menor altura aparente." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Con qué actividad se vincula el Inti Raymi?", opciones: ["A) Pesca", "B) Ciclo agrícola", "C) Minería", "D) Navegación"] }],
+                    inferencial: "¿Cómo mantienen las comunidades sus tradiciones vivas mientras participan en el comercio actual?",
+                    fuenteB: "Registro de Cotopaxi: Los talleres familiares enseñan pintura y tallado a niños y jóvenes.",
+                    criteriosComparacion: ["Práctica ancestral", "Adaptación actual", "Valor identitario"],
+                    pensamientoCritico: "Explica una causa histórica y una consecuencia social de la transmisión del arte de Tigua.",
+                    rolesEquipo: [{ rol: "Historiador/a", tarea: "Contextualiza el Inti Raymi." }, { rol: "Analista", tarea: "Identifica talleres familiares." }, { rol: "Contrastador/a", tarea: "Compara épocas." }, { rol: "Sintetizador/a", tarea: "Redacta conclusiones." }],
+                    aplicacionHtml: `<p><strong>Síntesis histórica:</strong> Explica la relación entre el calendario agrícola andino y las máscaras de Tigua:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Educación Cultural y Artística": armarGuiaCompleta({
+                    asignatura: "Educación Cultural y Artística",
+                    objetivo: "Analizar la simetría y cromatismo de Tigua para elaborar un boceto fundamentado.",
+                    preguntaCentral: "¿Cómo estructurar simétricamente los rasgos animales en una máscara de Tigua?",
+                    materiales: "Guía impresa, compás y colores.",
+                    previos: ["¿Qué es un eje de simetría?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Simetría y color:</strong> Combinan simetría bilateral con contrastes cálidos y fríos.</p>`,
+                    glosario: [{ term: "Simetría bilateral", def: "Correspondencia exacta a ambos lados de un eje central." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Qué tipo de simetría organiza los ojos de la máscara?", opciones: ["A) Asimetría", "B) Simetría bilateral", "C) Espiral", "D) Aleatoria"] }],
+                    inferencial: "¿Qué efecto visual producen los colores vibrantes sobre un fondo oscuro?",
+                    fuenteB: "Ficha de taller: Los pinceles finos permiten delinear plumas y montañas en relieve.",
+                    criteriosComparacion: ["Uso del color", "Geometría", "Relieve"],
+                    pensamientoCritico: "Justifica los colores y figuras geométricas de tu boceto.",
+                    rolesEquipo: [{ rol: "Colorista", tarea: "Define paleta vibrante." }, { rol: "Trazador/a", tarea: "Marca ejes." }, { rol: "Bocetista", tarea: "Dibuja diseño." }, { rol: "Curador/a", tarea: "Redacta explicación." }],
+                    aplicacionHtml: `<p><strong>Boceto simétrico:</strong> Traza el eje vertical y dibuja tu propuesta de máscara:</p><div class="math-grid-box"></div>`
+                })
+            }
+        },
+        {
+            letra: "Grupo C", nombreCreativo: "Saberes Ancestrales, Botánica y Cálculos en la Selva (Región Amazonía)", enfoque: "Región Amazónica u Oriente",
+            productoFinal: "Herbario Técnico Tridimensional y Ficha Etnobotánica",
+            guiasPorMateria: {
+                "Lengua y Literatura": armarGuiaCompleta({
+                    asignatura: "Lengua y Literatura",
+                    objetivo: "Comprender textos expositivos sobre biodiversidad amazónica y saberes ancestrales.",
+                    preguntaCentral: "¿Cómo protegen los pueblos amazónicos los conocimientos sobre plantas como la uña de gato?",
+                    materiales: "Guía impresa y resaltadores.",
+                    previos: ["¿Qué plantas medicinales usan en sus hogares?", "¿Qué nacionalidades amazónicas conocen?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Etnobotánica:</strong> Nacionalidades como Kichwa, Shuar y Waorani transmiten saberes sobre la <em>uña de gato</em> (<em>Uncaria tomentosa</em>), cortando segmentos maduros sin arrancar la raíz.</p>`,
+                    glosario: [{ term: "Etnobotánica", def: "Estudio de la relación tradicional entre pueblos y plantas." }, { term: "Liana trepadora", def: "Planta de tallo largo que trepa hacia la luz." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Por qué se llama uña de gato?", opciones: ["A) Por sus flores", "B) Por sus espinas curvas", "C) Por sus semillas", "D) Por su olor"] }],
+                    inferencial: "¿Por qué la pérdida de lenguas amazónicas pondría en riesgo el conocimiento médico de la selva?",
+                    fuenteB: "Boletín fitoterapéutico: La ciencia confirma compuestos bioactivos, pero advierte sobre la sobreexplotación sin cultivo controlado.",
+                    criteriosComparacion: ["Valor reconocido", "Riesgo identificado", "Práctica de cuidado"],
+                    pensamientoCritico: "Redacta una conclusión sobre por qué la ciencia moderna necesita dialogar con los saberes ancestrales.",
+                    rolesEquipo: [{ rol: "Lector/a", tarea: "Lee apartados y glosario." }, { rol: "Analista", tarea: "Coordina preguntas." }, { rol: "Contrastador/a", tarea: "Compara fuentes." }, { rol: "Redactor/a", tarea: "Escribe artículo." }],
+                    aplicacionHtml: `<p><strong>Artículo divulgativo:</strong> Escribe un texto breve sobre el cuidado de la farmacia viva amazónica usando el glosario:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Matemática": armarGuiaCompleta({
+                    asignatura: "Matemática",
+                    objetivo: "Resolver problemas de costos, porcentajes y áreas circulares aplicados a la conservación amazónica.",
+                    preguntaCentral: "¿Cómo calcular costos de extractos, porcentajes y áreas circulares de reserva botánica?",
+                    materiales: "Guía impresa, compás y calculadora (si está autorizada).",
+                    previos: ["¿Cómo calculamos el 45% de una cantidad?", "¿Cuál es la fórmula del área del círculo?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Producción:</strong> Se cosechan <strong>125 kg</strong> (costo $0,50/kg, venta $0,80/kg). Se envasan <strong>15 L</strong> en frascos de <strong>0,25 L</strong> y el jardín circular tiene <strong>4 m de radio</strong>.</p>`,
+                    glosario: [{ term: "Ganancia neta", def: "Ingreso total menos costo total." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Cuánto se gana por cada kg vendido ($0,80 - $0,50)?", opciones: ["A) $1,30", "B) $0,30", "C) $0,50", "D) $0,80"] }],
+                    inferencial: "¿Qué ocurre con la ganancia neta si aumenta el transporte en $12,50?",
+                    fuenteB: "Distribución: De 200 unidades, el 45% va a centros de salud comunitarios.",
+                    criteriosComparacion: ["Datos de producción", "Porcentajes", "Beneficio comunitario"],
+                    pensamientoCritico: "Justifica por qué conocer costos y ganancia neta permite fijar precios justos.",
+                    rolesEquipo: [{ rol: "Calculista de Costos", tarea: "Determina ganancia neta." }, { rol: "Analista de Capacidad", tarea: "Calcula frascos de 0,25 L." }, { rol: "Geómetra", tarea: "Calcula área circular." }, { rol: "Verificador/a", tarea: "Revisa porcentajes." }],
+                    aplicacionHtml: `<p><strong>1. Costo y ganancia:</strong> Con 125 kg (costo $0,50/kg, venta $0,80/kg), calcula costo total, ingreso y ganancia neta:</p><div class="math-grid-box"></div><p><strong>2. Envasado, porcentaje y círculo:</strong> Calcula cuántos frascos de 0,25 L salen de 15 L, el 45% de 200 unidades, y el área de un círculo de 4 m de radio (π ≈ 3,14):</p><div class="math-grid-box"></div>`
+                }),
+                "Ciencias Naturales": armarGuiaCompleta({
+                    asignatura: "Ciencias Naturales",
+                    objetivo: "Identificar factores climáticos del bosque húmedo tropical y efectos de la deforestación.",
+                    preguntaCentral: "¿Qué factores abióticos permiten la biodiversidad amazónica y qué ocurre al talar el bosque?",
+                    materiales: "Guía impresa.",
+                    previos: ["¿Por qué llueve tanto en la Amazonía?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Clima amazónico:</strong> Temperaturas de 24 °C a 28 °C y alta humedad favorecen bosques estratificados.</p>`,
+                    glosario: [{ term: "Factores abióticos", def: "Temperatura, humedad, luz y suelo de un ecosistema." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Cuál es la temperatura media del bosque húmedo tropical?", opciones: ["A) 5 °C", "B) 24 °C a 28 °C", "C) 40 °C", "D) 0 °C"] }],
+                    inferencial: "¿Por qué las lianas trepan hasta las copas de los árboles?",
+                    fuenteB: "Informe ecológico: La deforestación fragmenta el hábitat de polinizadores.",
+                    criteriosComparacion: ["Condiciones originales", "Alteración", "Mitigación"],
+                    pensamientoCritico: "Explica las consecuencias de la tala indiscriminada en el ciclo del agua amazónico.",
+                    rolesEquipo: [{ rol: "Climatólogo/a", tarea: "Describe clima." }, { rol: "Botánico/a", tarea: "Explica lianas." }, { rol: "Ecólogo/a", tarea: "Analiza impacto." }, { rol: "Sintetizador/a", tarea: "Prepara ficha." }],
+                    aplicacionHtml: `<p><strong>Diagrama causal:</strong> Escribe la cadena de efectos al talar una hectárea de bosque:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Ciencias Sociales": armarGuiaCompleta({
+                    asignatura: "Estudios Sociales",
+                    objetivo: "Reconocer las provincias y nacionalidades indígenas de la Amazonía ecuatoriana.",
+                    preguntaCentral: "¿Cómo defienden las nacionalidades amazónicas su territorio y equilibrio ambiental?",
+                    materiales: "Guía impresa y mapa.",
+                    previos: ["¿Qué provincias conforman la Amazonía?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Territorio:</strong> Seis provincias (Sucumbíos, Orellana, Napo, Pastaza, Morona Santiago y Zamora Chinchipe) albergan 10 nacionalidades indígenas.</p>`,
+                    glosario: [{ term: "Territorio ancestral", def: "Espacio históricamente ocupado y cuidado por un pueblo indígena." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Cuántas provincias tiene la Amazonía ecuatoriana?", opciones: ["A) 4", "B) 6", "C) 10", "D) 2"] }],
+                    inferencial: "¿Por qué se reconocen derechos colectivos a los pueblos amazónicos?",
+                    fuenteB: "Relato de Pastaza: Los bioemprendimientos generan ingresos sin destruir la selva.",
+                    criteriosComparacion: ["Actividad extractiva", "Bioemprendimiento", "Impacto"],
+                    pensamientoCritico: "Compara actividades extractivas no reguladas frente a bioemprendimientos comunitarios.",
+                    rolesEquipo: [{ rol: "Geógrafo/a", tarea: "Ubica 6 provincias." }, { rol: "Analista", tarea: "Identifica nacionalidades." }, { rol: "Comparador/a", tarea: "Contrasta modelos." }, { rol: "Redactor/a", tarea: "Consolida conclusiones." }],
+                    aplicacionHtml: `<p><strong>Ficha territorial:</strong> Enumera las 6 provincias amazónicas y una propuesta sostenible:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Educación Cultural y Artística": armarGuiaCompleta({
+                    asignatura: "Educación Cultural y Artística",
+                    objetivo: "Diseñar un herbario técnico ilustrado de la flora amazónica.",
+                    preguntaCentral: "¿Cómo registrar mediante ilustración botánica una especie amazónica?",
+                    materiales: "Guía impresa y colores.",
+                    previos: ["¿Qué detalles necesita una ilustración científica?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Ilustración botánica:</strong> Detalla nervaduras, tallos, espinas y proporciones.</p>`,
+                    glosario: [{ term: "Ilustración botánica", def: "Representación detallada de una planta con fines educativos." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Qué detalla la ilustración botánica?", opciones: ["A) Precios", "B) Nervaduras, tallos y espinas", "C) Edificios", "D) Autos"] }],
+                    inferencial: "¿Por qué la ilustración botánica complementa a la fotografía?",
+                    fuenteB: "Manual museográfico: El relieve ayuda a distinguir las partes de la planta.",
+                    criteriosComparacion: ["Detalle anatómico", "Color", "Etiquetas"],
+                    pensamientoCritico: "Explica cómo la ilustración ayuda a proteger la biodiversidad.",
+                    rolesEquipo: [{ rol: "Ilustrador/a", tarea: "Dibuja planta." }, { rol: "Diseñador/a", tarea: "Define relieve." }, { rol: "Rotulador/a", tarea: "Coloca etiquetas." }, { rol: "Curador/a", tarea: "Verifica orden." }],
+                    aplicacionHtml: `<p><strong>Boceto botánico:</strong> Dibuja la liana, hojas y espinas curvas:</p><div class="math-grid-box"></div>`
+                })
+            }
+        },
+        {
+            letra: "Grupo D", nombreCreativo: "Evolución, Conservación y Capacidad de Carga en Galápagos (Región Insular)", enfoque: "Región Insular o Galápagos",
+            productoFinal: "Diorama del Hábitat Insular y Propuesta de Turismo Sostenible",
+            guiasPorMateria: {
+                "Lengua y Literatura": armarGuiaCompleta({
+                    asignatura: "Lengua y Literatura",
+                    objetivo: "Analizar textos sobre conservación en Galápagos y redactar una propuesta de turismo responsable.",
+                    preguntaCentral: "¿Cómo conciliar la conservación de especies únicas en Galápagos con el turismo?",
+                    materiales: "Guía impresa y resaltadores.",
+                    previos: ["¿Por qué Galápagos es Patrimonio Natural?", "¿Qué reglas cumple un visitante?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Endemismo:</strong> Situado a 1.000 km de la costa, alberga tortugas gigantes e iguanas marinas. Exige bioseguridad contra especies invasoras.</p>`,
+                    glosario: [{ term: "Especie endémica", def: "Especie que habita exclusivamente en una región." }, { term: "Bioseguridad", def: "Medidas para evitar el ingreso de especies invasoras." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿A qué distancia de la costa está Galápagos?", opciones: ["A) 100 km", "B) 1.000 km", "C) 5.000 km", "D) 50 km"] }],
+                    inferencial: "¿Por qué prohibir semillas en el equipaje protege a las tortugas gigantes?",
+                    fuenteB: "Parque Nacional Galápagos: El turismo regulado financia la conservación si se respeta la capacidad de carga.",
+                    criteriosComparacion: ["Importancia ecológica", "Principal amenaza", "Regulación"],
+                    pensamientoCritico: "Sustenta con evidencias si debe prohibirse el turismo o regularse estrictamente.",
+                    rolesEquipo: [{ rol: "Lector/a", tarea: "Dirige lectura." }, { rol: "Analista", tarea: "Modera preguntas." }, { rol: "Contrastador/a", tarea: "Compara fuentes." }, { rol: "Redactor/a", tarea: "Escribe manifiesto." }],
+                    aplicacionHtml: `<p><strong>Manifiesto del visitante responsable:</strong> Redacta un texto persuasivo usando <em>especie endémica</em> y <em>bioseguridad</em>:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Matemática": armarGuiaCompleta({
+                    asignatura: "Matemática",
+                    objetivo: "Resolver problemas de porcentajes poblacionales, conversión de unidades y capacidad de carga.",
+                    preguntaCentral: "¿Cómo aplican los biólogos porcentajes y capacidad de carga en Galápagos?",
+                    materiales: "Guía impresa y calculadora (si está autorizada).",
+                    previos: ["¿Cómo calculamos un aumento del 35%?", "¿Cuántos metros tiene 1 km?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Población y senderos:</strong> Una población de <strong>400 tortugas</strong> creció un <strong>35%</strong>. Un sendero de <strong>2,4 km</strong> admite grupos de <strong>16 visitantes</strong>.</p>`,
+                    glosario: [{ term: "Capacidad de carga", def: "Número máximo de visitantes sin deteriorar el entorno." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿A cuántos metros equivale 2,4 km?", opciones: ["A) 240 m", "B) 2.400 m", "C) 24.000 m", "D) 24 m"] }],
+                    inferencial: "¿Por qué dividir visitas en grupos de 16 personas protege el sendero?",
+                    fuenteB: "Monitoreo: De 1.200 nidos, el 85% eclosionó exitosamente.",
+                    criteriosComparacion: ["Muestra inicial", "Porcentaje", "Resultado final"],
+                    pensamientoCritico: "Argumenta por qué los datos cuantitativos evalúan si la conservación funciona.",
+                    rolesEquipo: [{ rol: "Estadístico/a", tarea: "Calcula aumento del 35%." }, { rol: "Calculista", tarea: "Calcula 85% de 1.200." }, { rol: "Analista", tarea: "Calcula flujo de 6 grupos." }, { rol: "Verificador/a", tarea: "Revisa unidades." }],
+                    aplicacionHtml: `<p><strong>1. Crecimiento:</strong> Una población de 400 tortugas aumentó un 35%. Calcula el total actual:</p><div class="math-grid-box"></div><p><strong>2. Nidos y capacidad:</strong> Calcula el 85% de 1.200 nidos y cuántos turistas pasan en 6 grupos de 16 personas:</p><div class="math-grid-box"></div>`
+                }),
+                "Ciencias Naturales": armarGuiaCompleta({
+                    asignatura: "Ciencias Naturales",
+                    objetivo: "Explicar las adaptaciones evolutivas de las tortugas gigantes.",
+                    preguntaCentral: "¿Cómo se adaptaron las tortugas a cada isla de Galápagos?",
+                    materiales: "Guía impresa.",
+                    previos: ["¿Por qué existen caparazones en cúpula y en silla de montar?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Adaptación:</strong> Islas húmedas → caparazón en cúpula; islas áridas con cactus altos → silla de montar.</p>`,
+                    glosario: [{ term: "Adaptación evolutiva", def: "Característica que mejora la supervivencia en un ambiente." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Qué caparazón tienen tortugas de islas áridas?", opciones: ["A) Plano", "B) Silla de montar", "C) Triangular", "D) Esférico"] }],
+                    inferencial: "¿Qué ocurriría si las cabras invasoras consumieran los cactus?",
+                    fuenteB: "Corrientes marinas: Humboldt, Panamá y Cromwell determinan el clima.",
+                    criteriosComparacion: ["Tipo de isla", "Caparazón", "Amenaza"],
+                    pensamientoCritico: "Explica cómo clima y vegetación originaron distintas subespecies.",
+                    rolesEquipo: [{ rol: "Evolucionista", tarea: "Compara caparazones." }, { rol: "Oceanógrafo/a", tarea: "Identifica corrientes." }, { rol: "Analista", tarea: "Evalúa bioseguridad." }, { rol: "Sintetizador/a", tarea: "Redacta conclusiones." }],
+                    aplicacionHtml: `<p><strong>Comparación:</strong> Contrasta tortugas de islas húmedas vs. áridas:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Ciencias Sociales": armarGuiaCompleta({
+                    asignatura: "Estudios Sociales",
+                    objetivo: "Analizar los hitos históricos y legales de conservación de Galápagos.",
+                    preguntaCentral: "¿Qué decisiones permitieron proteger el 97% de Galápagos?",
+                    materiales: "Guía impresa y mapa.",
+                    previos: ["¿Por qué Galápagos tiene leyes ambientales especiales?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Hitos:</strong> 1832 (incorporación), 1959 (Parque Nacional 97%), 1978 (Patrimonio UNESCO).</p>`,
+                    glosario: [{ term: "Régimen especial", def: "Normativa que prioriza la conservación ambiental." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Qué porcentaje es Parque Nacional desde 1959?", opciones: ["A) 30%", "B) 50%", "C) 97%", "D) 10%"] }],
+                    inferencial: "¿Qué habría pasado sin limitar la urbanización al 3%?",
+                    fuenteB: "Ley Especial: Regula residencia y carga.",
+                    criteriosComparacion: ["Antes de 1959", "Cambio legal", "Consecuencia"],
+                    pensamientoCritico: "Formula un juicio histórico sobre la declaratoria de 1959 y 1978.",
+                    rolesEquipo: [{ rol: "Historiador/a", tarea: "Ordena hitos." }, { rol: "Cartógrafo/a", tarea: "Ubica islas." }, { rol: "Analista", tarea: "Explica leyes." }, { rol: "Sintetizador/a", tarea: "Redacta conclusiones." }],
+                    aplicacionHtml: `<p><strong>Línea de tiempo:</strong> Explica los hitos 1832, 1959 y 1978:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Educación Cultural y Artística": armarGuiaCompleta({
+                    asignatura: "Educación Cultural y Artística",
+                    objetivo: "Diseñar un diorama del hábitat volcánico de Galápagos.",
+                    preguntaCentral: "¿Cómo representar mediante relieve y escala el hábitat insular?",
+                    materiales: "Guía impresa y colores.",
+                    previos: ["¿Qué colores caracterizan el paisaje volcánico?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Diorama:</strong> Combina fondo en perspectiva con primer plano 3D.</p>`,
+                    glosario: [{ term: "Diorama", def: "Representación tridimensional de una escena en una caja escénica." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Qué combina un diorama?", opciones: ["A) Solo texto", "B) Fondo en perspectiva y elementos 3D", "C) Solo números", "D) Audio"] }],
+                    inferencial: "¿Cómo ayuda la perspectiva a dar sensación de profundidad?",
+                    fuenteB: "Modelado ecológico: Usar cartón y papel maché evita plásticos.",
+                    criteriosComparacion: ["Fondo", "Primer plano", "Materiales"],
+                    pensamientoCritico: "Justifica el diseño de tu diorama.",
+                    rolesEquipo: [{ rol: "Escenógrafo/a", tarea: "Diseña fondo." }, { rol: "Modelador/a", tarea: "Planifica 3D." }, { rol: "Rotulador/a", tarea: "Prepara fichas." }, { rol: "Gestor/a", tarea: "Organiza reciclados." }],
+                    aplicacionHtml: `<p><strong>Boceto de diorama:</strong> Dibuja el esquema frontal:</p><div class="math-grid-box"></div>`
+                })
+            }
+        },
+        {
+            letra: "Grupo E", nombreCreativo: "Interdependencia Regional, Comercio Justo y Transporte en Ecuador (4 Regiones)", enfoque: "Integración Nacional (Costa, Sierra, Amazonía y Galápagos)",
+            productoFinal: "Mapa Interactivo en Relieve de Intercambio Regional y Balance Comercial",
+            guiasPorMateria: {
+                "Lengua y Literatura": armarGuiaCompleta({
+                    asignatura: "Lengua y Literatura",
+                    objetivo: "Sintetizar información de las cuatro regiones y redactar un reportaje integrador.",
+                    preguntaCentral: "¿Cómo fortalece el intercambio de productos y saberes entre las 4 regiones la identidad del Ecuador?",
+                    materiales: "Guía impresa y resaltadores.",
+                    previos: ["¿Qué alimentos consumimos de otras regiones?", "¿Por qué Ecuador es megadiverso?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Complementariedad:</strong> Los Andes, corrientes marinas y Amazonía generan producción diversa en distancias cortas, impulsada por el comercio justo.</p>`,
+                    glosario: [{ term: "Complementariedad", def: "Aporte mutuo de recursos distintos entre regiones." }, { term: "Comercio justo", def: "Intercambio transparente y pago equitativo al productor." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Qué factores explican la diversidad productiva en distancias cortas?", opciones: ["A) Desierto", "B) Cordillera de los Andes, corrientes y Amazonía", "C) Ausencia de ríos", "D) Un solo clima"] }],
+                    inferencial: "¿Qué ocurriría si se interrumpiera el transporte entre Sierra y Costa?",
+                    fuenteB: "Crónica de mercados: Las ferias directas mejoran ingresos agrícolas y precios familiares.",
+                    criteriosComparacion: ["Productos por región", "Papel del transporte", "Comercio justo"],
+                    pensamientoCritico: "Sustenta por qué la cooperación interregional y el comercio justo son clave para el país.",
+                    rolesEquipo: [{ rol: "Lector/a", tarea: "Dirige lectura." }, { rol: "Analista", tarea: "Coordina preguntas." }, { rol: "Contrastador/a", tarea: "Compara fuentes." }, { rol: "Periodista", tarea: "Redacta reportaje." }],
+                    aplicacionHtml: `<p><strong>Reportaje interregional:</strong> Escribe un reportaje breve integrando <em>complementariedad</em> y <em>comercio justo</em>:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Matemática": armarGuiaCompleta({
+                    asignatura: "Matemática",
+                    objetivo: "Resolver problemas de transporte, porcentajes de carga y descuentos asociativos.",
+                    preguntaCentral: "¿Cómo calcular tiempos de traslado, porcentajes de carga y fletes interregionales?",
+                    materiales: "Guía impresa, regla y calculadora (si está autorizada).",
+                    previos: ["¿Cuántos kg tiene 1 tonelada?", "¿Cómo calculamos un 10% de descuento?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Logística:</strong> Un camión lleva <strong>8,5 toneladas</strong> (40% papas, 35% hortalizas, 25% frutas) recorriendo <strong>420 km</strong> a <strong>60 km/h</strong>.</p>`,
+                    glosario: [{ term: "Escala cartográfica", def: "Relación matemática entre distancia en mapa y distancia real." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Cuántos kg equivalen a 8,5 toneladas?", opciones: ["A) 85 kg", "B) 850 kg", "C) 8.500 kg", "D) 85.000 kg"] }],
+                    inferencial: "¿Por qué calcular porcentajes de carga evita sobrepeso en carreteras?",
+                    fuenteB: "Fletes: $18,50 por tonelada, con 10% de descuento por envío asociativo.",
+                    criteriosComparacion: ["Variable", "Procedimiento", "Resultado"],
+                    pensamientoCritico: "Justifica cuánto ahorra una asociación con el descuento del 10%.",
+                    rolesEquipo: [{ rol: "Calculista de Rutas", tarea: "Determina tiempo de viaje." }, { rol: "Analista de Carga", tarea: "Calcula kg por porcentaje." }, { rol: "Calculista de Fletes", tarea: "Determina costo y descuento." }, { rol: "Verificador/a", tarea: "Revisa unidades." }],
+                    aplicacionHtml: `<p><strong>1. Carga en kg:</strong> Convierte 8,5 t a kg y calcula el 40%, 35% y 25%:</p><div class="math-grid-box"></div><p><strong>2. Flete:</strong> Calcula el costo de 8,5 t a $18,50/t y el total con 10% de descuento:</p><div class="math-grid-box"></div>`
+                }),
+                "Ciencias Naturales": armarGuiaCompleta({
+                    asignatura: "Ciencias Naturales",
+                    objetivo: "Comparar los pisos climáticos del Ecuador y la función hídrica del páramo.",
+                    preguntaCentral: "¿Por qué Ecuador posee diversos pisos climáticos en la zona ecuatorial?",
+                    materiales: "Guía impresa.",
+                    previos: ["¿Cómo cambia la temperatura al subir una montaña?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Pisos climáticos:</strong> Cálido, templado, frío, páramo (3.000 - 4.500 m) y glacial.</p>`,
+                    glosario: [{ term: "Piso climático", def: "Franja altitudinal con temperatura y vegetación propias." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Entre qué altitudes está el páramo?", opciones: ["A) 0-1.000 m", "B) 1.000-2.000 m", "C) 3.000-4.500 m", "D) >5.000 m"] }],
+                    inferencial: "¿Qué papel cumple el páramo como reserva de agua?",
+                    fuenteB: "Hidrografía: Los páramos alimentan ríos hacia el Pacífico y el Amazonas.",
+                    criteriosComparacion: ["Altitud", "Vegetación", "Importancia hídrica"],
+                    pensamientoCritico: "Explica por qué proteger los páramos garantiza agua para todo el país.",
+                    rolesEquipo: [{ rol: "Climatólogo/a", tarea: "Clasifica pisos." }, { rol: "Hidrólogo/a", tarea: "Explica páramos." }, { rol: "Ecólogo/a", tarea: "Relaciona cultivos." }, { rol: "Sintetizador/a", tarea: "Redacta conclusiones." }],
+                    aplicacionHtml: `<p><strong>Perfil altitudinal:</strong> Relaciona cada piso climático con un cultivo:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Ciencias Sociales": armarGuiaCompleta({
+                    asignatura: "Estudios Sociales",
+                    objetivo: "Analizar la integración histórica y vial entre las regiones del Ecuador.",
+                    preguntaCentral: "¿Cómo contribuyeron las vías de comunicación a integrar el Ecuador?",
+                    materiales: "Guía impresa y mapa.",
+                    previos: ["¿Qué importancia tuvo el ferrocarril Guayaquil-Quito?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Integración:</strong> El ferrocarril (1908) y las carreteras articularon el comercio entre regiones.</p>`,
+                    glosario: [{ term: "Integración territorial", def: "Articulación económica y vial entre regiones." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿En qué año se inauguró el ferrocarril Guayaquil-Quito?", opciones: ["A) 1830", "B) 1908", "C) 1978", "D) 2000"] }],
+                    inferencial: "¿Por qué las carreteras deben respetar áreas protegidas?",
+                    fuenteB: "Geografía: Ecuador tiene 24 provincias en 4 regiones naturales.",
+                    criteriosComparacion: ["Barrera", "Medio de integración", "Consecuencia"],
+                    pensamientoCritico: "Formula un juicio sobre causas y consecuencias de la integración vial.",
+                    rolesEquipo: [{ rol: "Historiador/a", tarea: "Explica ferrocarril." }, { rol: "Geógrafo/a", tarea: "Ubica 4 regiones." }, { rol: "Analista", tarea: "Evalúa impacto." }, { rol: "Sintetizador/a", tarea: "Prepara ficha." }],
+                    aplicacionHtml: `<p><strong>Síntesis:</strong> Escribe dos beneficios económicos y un cuidado ambiental de las rutas:</p><div class="write-lines"></div><div class="write-lines"></div>`
+                }),
+                "Educación Cultural y Artística": armarGuiaCompleta({
+                    asignatura: "Educación Cultural y Artística",
+                    objetivo: "Diseñar un mapa en relieve con pictogramas de las cuatro regiones.",
+                    preguntaCentral: "¿Cómo representar visualmente en un mapa 3D los cuatro mundos del Ecuador?",
+                    materiales: "Guía impresa y colores.",
+                    previos: ["¿Qué colores diferencian Costa, Sierra, Amazonía y Galápagos?"],
+                    lecturaApartados: `<p><strong>Apartado 1. Cartografía artística:</strong> Usa códigos altitudinales y pictogramas claros.</p>`,
+                    glosario: [{ term: "Pictograma", def: "Signo gráfico sencillo que representa un producto o lugar." }],
+                    preguntasMcq: [{ enunciado: "1. (Literal) ¿Para qué sirven los pictogramas?", opciones: ["A) Decorar", "B) Representar productos o lugares", "C) Ocultar datos", "D) Borrar títulos"] }],
+                    inferencial: "¿Por qué incluir una leyenda en el mapa?",
+                    fuenteB: "Diseño gráfico: Máximo 6 símbolos claros y contrastados.",
+                    criteriosComparacion: ["Código de color", "Relieve", "Pictogramas"],
+                    pensamientoCritico: "Justifica los colores y símbolos elegidos para las 4 regiones.",
+                    rolesEquipo: [{ rol: "Cartógrafo/a", tarea: "Traza relieve." }, { rol: "Diseñador/a", tarea: "Crea pictogramas." }, { rol: "Colorista", tarea: "Define paleta." }, { rol: "Curador/a", tarea: "Organiza leyenda." }],
+                    aplicacionHtml: `<p><strong>Boceto de mapa en relieve:</strong> Dibuja el contorno del Ecuador y 4 pictogramas:</p><div class="math-grid-box"></div>`
+                })
+            }
+        }
+    ];
 }
 </script>
 
