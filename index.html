@@ -20,7 +20,7 @@
         
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white; padding: 28px; border-radius: 12px; text-align: center;
+            color: white; padding: 26px; border-radius: 12px; text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 24px;
         }
         header h1 { margin: 0 0 8px 0; font-size: 2rem; }
@@ -60,7 +60,7 @@
         .btn-generate {
             width: 100%; margin-top: 20px; background: var(--secondary); color: white; border: none;
             padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 8px;
-            cursor: pointer; transition: 0.2s;
+            cursor: pointer; transition: 0.2s; box-shadow: 0 3px 10px rgba(13, 148, 136, 0.3);
         }
         .btn-generate:hover { background: #0f766e; }
 
@@ -80,22 +80,18 @@
         
         .title-selector-box {
             background: #f8fafc; border: 1px solid #cbd5e1; padding: 14px;
-            border-radius: 8px; margin-bottom: 14px;
+            border-radius: 8px; margin-bottom: 16px;
         }
-        .title-selector-box select { width: 100%; font-weight: bold; color: var(--primary); font-size: 1.05rem; margin-top: 6px; }
+        .title-selector-box select { width: 100%; font-weight: bold; color: var(--primary); font-size: 1.04rem; margin-top: 6px; }
 
-        /* Ficha Pedagógica Detallada debajo del título */
-        .pedagogical-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;
-            margin-top: 14px;
+        .justificacion-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px;
+            background: #fffbeb; border: 1px solid #fde68a; border-left: 5px solid var(--accent);
+            padding: 16px; border-radius: 8px; font-size: 0.9rem;
         }
-        .ped-card {
-            background: #fefce8; border: 1px solid #fde047; border-left: 4px solid var(--accent);
-            padding: 12px 14px; border-radius: 6px; font-size: 0.88rem;
-        }
-        .ped-card strong { display: block; color: #854d0e; margin-bottom: 4px; font-size: 0.92rem; }
+        .just-item h4 { margin: 0 0 5px 0; color: #92400e; font-size: 0.92rem; }
+        .just-item p { margin: 0; color: #451a03; }
 
-        /* Pestañas de Grupos */
         .group-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
         .tab-btn {
             padding: 10px 18px; border: 2px solid var(--primary); background: white;
@@ -107,7 +103,6 @@
             background: #10b981; color: white; font-size: 0.75rem; padding: 2px 7px; border-radius: 10px;
         }
 
-        /* Bloques de las 3 Fases */
         .phase-card {
             background: var(--card); border-radius: 12px; padding: 22px;
             box-shadow: 0 3px 12px rgba(0,0,0,0.06); border-top: 6px solid var(--secondary);
@@ -117,63 +112,57 @@
         .phase-card.soc { border-top-color: var(--purple); }
         .phase-header {
             display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
-            border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 16px;
+            border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 16px;
         }
         .phase-header h3 { margin: 0; color: var(--primary); font-size: 1.22rem; }
         .phase-status {
-            font-size: 0.8rem; font-weight: bold; padding: 4px 12px; border-radius: 12px;
+            font-size: 0.8rem; font-weight: bold; padding: 3px 10px; border-radius: 12px;
             background: #ccfbf1; color: #0f766e;
         }
 
-        /* Tarjetas de Guías Escribibles por Materia */
-        .subject-worksheet {
+        .materia-guia-card {
             background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px;
             padding: 18px; margin-bottom: 18px;
         }
-        .worksheet-topbar {
+        .materia-guia-header {
             display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
-            gap: 10px; border-bottom: 2px solid #cbd5e1; padding-bottom: 10px; margin-bottom: 14px;
+            gap: 10px; border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-bottom: 14px;
         }
-        .worksheet-topbar h4 { margin: 0; color: var(--primary); font-size: 1.05rem; }
-        .btn-download-sheet {
+        .materia-guia-header h4 { margin: 0; color: var(--primary); font-size: 1.08rem; }
+        .btn-download-mat {
             background: var(--primary); color: white; border: none; padding: 8px 14px;
-            border-radius: 6px; font-size: 0.88rem; font-weight: 600; cursor: pointer;
+            border-radius: 6px; font-size: 0.86rem; font-weight: 600; cursor: pointer;
             display: inline-flex; align-items: center; gap: 6px;
         }
-        .btn-download-sheet:hover { background: #1e40af; }
+        .btn-download-mat:hover { background: #1e40af; }
 
-        /* Elementos de Hoja de Trabajo (Lectura, Opción Múltiple, Líneas, Cuadrícula, Tablas) */
         .reading-passage {
-            background: #ffffff; border-left: 4px solid var(--secondary);
+            background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #0284c7;
             padding: 14px; border-radius: 6px; margin-bottom: 14px; font-size: 0.92rem;
-            border: 1px solid #e2e8f0; border-left-width: 4px;
         }
         .mcq-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;
-            margin: 12px 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 10px;
         }
         .mcq-item {
-            background: #ffffff; padding: 12px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.88rem;
+            background: #ffffff; border: 1px solid #cbd5e1; padding: 10px 12px; border-radius: 6px; font-size: 0.88rem;
         }
-        .mcq-item p { margin: 0 0 6px 0; font-weight: bold; color: #0f172a; }
+        .mcq-item p { margin: 0 0 6px 0; font-weight: 700; color: #0f172a; }
         .mcq-options { list-style: none; padding: 0; margin: 0; }
         .mcq-options li { margin-bottom: 3px; }
-        .write-lines {
-            border-bottom: 1px solid #94a3b8; height: 24px; margin-bottom: 6px; width: 100%;
-        }
+        
+        .write-lines { border-bottom: 1px dashed #94a3b8; height: 24px; margin: 6px 0; width: 100%; }
         .math-grid-box {
-            background-color: #ffffff;
             background-image: linear-gradient(#cbd5e1 1px, transparent 1px), linear-gradient(90deg, #cbd5e1 1px, transparent 1px);
-            background-size: 18px 18px;
-            border: 1px solid #94a3b8; height: 110px; border-radius: 4px; margin: 8px 0 14px 0;
+            background-size: 18px 18px; background-color: #ffffff;
+            border: 1px solid #94a3b8; height: 90px; border-radius: 4px; margin: 8px 0 14px 0;
         }
         table.work-table {
-            width: 100%; border-collapse: collapse; background: #fff; margin: 10px 0; font-size: 0.86rem;
+            width: 100%; border-collapse: collapse; margin: 10px 0; background: #fff; font-size: 0.86rem;
         }
         table.work-table th, table.work-table td {
             border: 1px solid #94a3b8; padding: 6px 8px; text-align: left;
         }
-        table.work-table th { background: #e2e8f0; }
+        table.work-table th { background: #e2e8f0; color: #1e293b; }
 
         .phases-bottom-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;
@@ -202,7 +191,7 @@
 <div class="container">
     <header>
         <h1>🔬 Laboratorio Metodológico: ProyectaEC</h1>
-        <p>Generador Curricular Interdisciplinario y Repositorio de Guías Escribibles (Subnivel Medio - Ecuador)</p>
+        <p>Generador Curricular Interdisciplinario y Repositorio Inclusivo (Subnivel Medio - Ecuador)</p>
         <div class="motto">"No midamos a los estudiantes por sus discapacidades, sino por las capacidades que tienen"</div>
     </header>
 
@@ -267,771 +256,28 @@
         <div class="project-header">
             <div class="badges" id="badgesContainer"></div>
             <div class="title-selector-box">
-                <label for="selectorTitulo" style="font-size:0.88rem; color:#475569; font-weight:bold;">
-                    📌 Propuestas de Título del Proyecto (Filtradas exactamente para las materias seleccionadas):
+                <label for="selectorTitulo" style="font-size:0.9rem; color:#1e3a8a; font-weight:bold;">
+                    📌 Propuestas de Título del Proyecto (Filtradas exactamente para las asignaturas elegidas):
                 </label>
-                <select id="selectorTitulo" onchange="actualizarDetallePedagogico()"></select>
+                <select id="selectorTitulo" onchange="actualizarJustificacionCurricular()"></select>
             </div>
-            <!-- Ficha detallada: Por qué se vinculan, Qué se quiere, Estrategias y Destrezas -->
-            <div class="pedagogical-grid" id="detallePedagogicoGrid"></div>
+            <div class="justificacion-grid" id="justificacionBox"></div>
         </div>
 
-        <h3>Selecciona el equipo para acceder a sus Guías Escribibles (Fase 1) y ruta metodológica:</h3>
+        <h3>Selecciona el equipo de trabajo para descargar sus Guías de Trabajo (Fase 1) y ver Fases 2 y 3:</h3>
         <div class="group-tabs" id="tabsContainer"></div>
         <div id="contenidoGrupo"></div>
     </section>
 </div>
 
+<!-- Archivos modulares externos -->
+<script src="curriculo.js"></script>
+<script src="datos_grupos.js"></script>
+
 <script>
-// ============================================================================
-// GENERADOR DE PROPUESTAS SEGÚN COMBINACIÓN EXACTA DE MATERIAS
-// ============================================================================
-function obtenerPropuestasPorMaterias(materias, grado) {
-    const key = [...materias].sort().join("+");
-    
-    // Caso específico: Solo Lengua y Literatura + Matemática
-    if (key === "Lengua y Literatura+Matemática") {
-        return {
-            titulos: [
-                "Cifras y Versos del Ecuador: Narrativa y Estadística Regional",
-                "Ecuador en Palabras y Números: Crónicas Productivas",
-                "Poemas, Leyendas y Presupuestos de Nuestras Cuatro Regiones",
-                "Lectores y Calculadores en Acción: Realidades del Territorio",
-                "Matemática Literaria: Mitos, Medidas y Promedios Nacionales"
-            ],
-            porque: "Vincular Lengua y Literatura con Matemática permite que el estudiante comprenda la realidad productiva y cultural del Ecuador desde dos lenguajes complementarios: la comprensión lectora/creación literaria (poesía, leyendas, crónicas) y el razonamiento lógico-numérico (cálculo de áreas, presupuestos con decimales y media aritmética).",
-            queSeQuiere: "Que los estudiantes lean textos informativos sobre recursos y tradiciones del Ecuador, respondan preguntas de comprensión lectora, produzcan textos literarios propios y resuelvan problemas matemáticos reales derivados de esas mismas temáticas.",
-            estrategias: "Lectura comprensiva guiada con reactivos de opción múltiple, talleres de escritura creativa colaborativa (poemas colectivos y leyendas), resolución de casos matemáticos contextualizados y uso de tablas comparativas de costos y promedios.",
-            destrezas: grado === "7mo" 
-                ? "LL.3.5.1 / LL.3.3.4 (Comprensión lectora inferencial y producción de textos literarios: poesía y leyenda) + M.3.3.2 / M.3.1.28 (Cálculo de media aritmética, operaciones con decimales y áreas de polígonos/círculos)."
-                : "LL.3.4.10 / LL.3.3.2 (Comprensión de textos informativos y escritura creativa) + M.3.1.11 / M.3.2.15 (Resolución de problemas con operaciones básicas, decimales y medidas de superficie)."
-        };
-    }
-
-    // Caso específico: Ciencias Naturales + Matemática (como tus guías MATH CCNN)
-    if (key === "Ciencias Naturales+Matemática") {
-        return {
-            titulos: [
-                "Ecuador en Acción: Ciencia, Ecosistemas y Cálculo Productivo",
-                "Bio-Estadística Ecuatoriana: Recursos Naturales en Cifras",
-                "Laboratorio Natural: Medición, Hábitats y Sostenibilidad",
-                "Ciencia y Números de los Cuatro Mundos del Ecuador",
-                "Guardianes Ambientales: Datos Reales y Conservación"
-            ],
-            porque: "La articulación entre Ciencias Naturales y Matemática permite cuantificar los fenómenos biológicos y ambientales: medir superficies de cultivo o hábitats, calcular raciones alimenticias, analizar datos de exportación/sismos mediante la media aritmética y comparar costos de producción.",
-            queSeQuiere: "Que los estudiantes investiguen el ciclo de vida, hábitat e impacto ambiental de un recurso emblemático de cada región y apliquen operaciones con decimales, áreas y estadística para tomar decisiones sostenibles.",
-            estrategias: "Indagación científica guiada, diseño de bocetos técnicos, tabulación de datos reales en tablas comparativas, cálculo de media aritmética y resolución de casos geométricos.",
-            destrezas: "CN.3.1.11 / CN.3.5.5 (Indagación de ecosistemas, adaptaciones e impacto ambiental) + M.3.3.2 / M.3.2.15 (Cálculo de promedio estadístico, áreas y operaciones con decimales)."
-        };
-    }
-
-    // Caso 1 sola materia
-    if (materias.length === 1) {
-        const m = materias[0];
-        const bancosSolo = {
-            "Lengua y Literatura": [
-                "Voces de los Cuatro Mundos: Antología Poética y Narrativa",
-                "El Guardián del Estuario y Leyendas de Mi Tierra",
-                "Crónicas del Ecuador: Lectura Crítica y Creación Literaria",
-                "Poemario Gigante: Versos de Costa, Sierra, Amazonía y Galápagos",
-                "Periodistas Escolares: Entrevistas y Relatos Regionales"
-            ],
-            "Matemática": [
-                "Matemática Productiva: Áreas, Decimales y Promedios del Ecuador",
-                "Estadística en Acción: Exportaciones, Turismo y Cifras Reales",
-                "Geometría Ancestral y Moderna: Diseño de Estructuras",
-                "Presupuestos y Costos: Matemática para Emprender",
-                "Retos Numéricos de las Cuatro Regiones"
-            ],
-            "Ciencias Naturales": [
-                "Ecomundo: Biodiversidad y Ecosistemas del Ecuador",
-                "Ciclos de Vida y Conservación de Recursos Naturales",
-                "Volcanes, Manglares y Selvas: Laboratorio Vivo",
-                "Botánica Medicinal y Fauna Endémica Ecuatoriana",
-                "Guardianes del Equilibrio Ecológico"
-            ],
-            "Ciencias Sociales": [
-                "Ecuador en Acción: Geografía Económica y Cultura",
-                "Cartografía Viva de Nuestras Cuatro Regiones",
-                "Historia, Oficios y Tradiciones del Ecuador",
-                "Pueblos, Nacionalidades y Patrimonio Cultural",
-                "Rutas Comerciales e Identidad Nacional"
-            ],
-            "Educación Cultural y Artística": [
-                "Arte Ancestral y Contemporáneo del Ecuador",
-                "Máscaras, Esculturas y Libros Objeto Regionales",
-                "Colores y Texturas de Nuestros Cuatro Mundos",
-                "Museo Escolar de Identidad Ecuatoriana",
-                "Diseño Tridimensional con Material Sostenible"
-            ]
-        };
-        return {
-            titulos: bancosSolo[m],
-            porque: `Se profundiza de manera disciplinar en ${m} contextualizando los contenidos del currículo nacional de ${grado} EGB en las cuatro regiones del Ecuador.`,
-            queSeQuiere: `Desarrollar dominio conceptual y práctico en ${m} a través de guías de investigación estructuradas y productos tangibles por equipo.`,
-            estrategias: `Aprendizaje basado en proyectos (ABP), análisis de casos contextualizados, trabajo colaborativo por equipos regionales y producción guiada.`,
-            destrezas: `Destrezas imprescindibles del currículo Mineduc Ecuador de ${m} correspondientes a${grado} Año de Educación General Básica.`
-        };
-    }
-
-    // Cualquier otra combinación de 2 o más asignaturas
-    const listaMat = materias.join(", ");
-    return {
-        titulos: [
-            `Ecuador en Acción: Proyecto Integrador (${materias.join(" + ")})`,
-            `Saberes de los Cuatro Mundos: Mirada Interdisciplinaria`,
-            `Exploradores del Ecuador: Ciencia, Cultura y Razonamiento`,
-            `Territorio Vivo: Investigación y Creación por Regiones`,
-            `ProyectaEC: Soluciones Creativas desde ${materias[0]} y${materias[1]}`
-        ],
-        porque: `Se articulan ${listaMat} para evitar el aprendizaje fragmentado, permitiendo que un mismo fenómeno regional (producción costera, artesanía andina, botánica amazónica o geología insular) sea analizado desde múltiples disciplinas.`,
-        queSeQuiere: `Que cada grupo investigue una región del Ecuador resolviendo actividades específicas de ${listaMat} en hojas de trabajo estructuradas antes de construir su producto final.`,
-        estrategias: `Aprendizaje Basado en Proyectos (ABP), fichas de trabajo interdisciplinarias con comprensión lectora, resolución de problemas aplicados y creación colaborativa.`,
-        destrezas: `Articulación de Destrezas con Criterio de Desempeño de ${listaMat} para${grado} EGB (Currículo Priorizado Mineduc Ecuador).`
-    };
-}
-
-// ============================================================================
-// BASE DE DATOS DE GUÍAS ESCRIBIBLES REALES POR GRUPO (BASADAS EN TUS PDF)
-// ============================================================================
-function obtenerDatosGrupos(grado) {
-    return [
-        {
-            letra: "Grupo A",
-            region: "Región Litoral o Costa",
-            tituloEquipo: grado === "7mo" ? "El Poemario al Camarón: El Guardián del Estuario" : "Conociendo el Camarón y su Importancia en la Costa",
-            productoFinal: grado === "7mo" ? "Maqueta del Criadero + Poemario Ilustrado 'El Guardián del Estuario'" : "Maqueta del Ciclo de Vida y Criadero de Camarón",
-            guiasPorMateria: {
-                "Lengua y Literatura": {
-                    titulo: "Ficha de Comprensión Lectora y Creación Poética — Región Costa",
-                    html: `
-                        <div class="reading-passage">
-                            <strong>Lectura Base: Conociendo el Camarón y su Importancia en la Costa Ecuatoriana</strong><br>
-                            El camarón es un crustáceo que vive en ambientes marinos y de agua dulce. En la Costa ecuatoriana, se cría principalmente en estanques y granjas especializadas en Guayas, El Oro, Manabí, Santa Elena y Esmeraldas. La industria camaronera comenzó a desarrollarse significativamente en los años 60 y 70, evolucionando de métodos artesanales a sistemas modernos que hoy convierten al Ecuador en uno de los mayores exportadores del mundo, generando empleo rural pero exigiendo el cuidado de los manglares y buenas condiciones laborales.
-                        </div>
-                        <p><strong>I. Comprensión Lectora (Encierra la respuesta correcta):</strong></p>
-                        <div class="mcq-grid">
-                            <div class="mcq-item">
-                                <p>1. ¿Qué es el camarón?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Un tipo de mamífero marino</li>
-                                    <li>B) Un crustáceo que vive en ambientes marinos y de agua dulce</li>
-                                    <li>C) Un tipo de pez de agua salada</li>
-                                    <li>D) Un molusco de playa</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>2. ¿Cuándo comenzó a desarrollarse significativamente esta industria en Ecuador?</p>
-                                <ul class="mcq-options">
-                                    <li>A) En los años 40</li>
-                                    <li>B) En los años 50</li>
-                                    <li>C) En los años 60 y 70</li>
-                                    <li>D) En los años 80</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>3. ¿Cuál es uno de los principales beneficios sociales de esta industria?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Proporciona empleo en las zonas rurales</li>
-                                    <li>B) Aumenta la producción de energía</li>
-                                    <li>C) Mejora la calidad del aire</li>
-                                    <li>D) Construye carreteras</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>4. ¿Cuál es uno de los desafíos que enfrenta la industria camaronera?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Escasez de tierra</li>
-                                    <li>B) Condiciones laborales en las granjas y gestión sostenible</li>
-                                    <li>C) Falta de demanda internacional</li>
-                                    <li>D) Escasez de agua urbana</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p><strong>II. Producción Literaria — Poema Colectivo "El Guardián del Estuario":</strong><br>
-                        Escribe una estrofa de 4 versos con rima e imágenes poéticas sobre el camarón, los pescadores y la vida en el estuario:</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Matemática": {
-                    titulo: "Taller Matemático Aplicado: Exportaciones, Áreas y Alimentación del Camarón",
-                    html: `
-                        <p><strong>1. Estadística (La Media o Promedio):</strong> <em>La media aritmética se obtiene sumando todos los datos y dividiendo entre la cantidad total de datos.</em><br>
-                        Observa los datos reales de exportación de camarón del Ecuador (Boletín Anuario, en toneladas):<br>
-                        <strong>2017:</strong> 441.539 t | <strong>2018:</strong> 512.108 t | <strong>2019:</strong> 645.043 t | <strong>2020:</strong> 688.489 t | <strong>2021:</strong> 847.982 t | <strong>2022:</strong> 1.068.961 t.<br>
-                        a) ¿En qué año hubo menor y mayor exportación? ___________________________<br>
-                        b) Calcula la <strong>media aritmética</strong> de exportación de estos últimos 6 años en la cuadrícula:</p>
-                        <div class="math-grid-box"></div>
-
-                        <p><strong>2. Caso #1 — Cálculo del Área de un Criadero Artificial:</strong><br>
-                        Un criadero rectangular mide <strong>60 m de ancho y 30 m de alto</strong>. Dentro se colocan dos piscinas cuadradas para larvas de <strong>10 m de lado</strong> cada una. Calcula el área libre alrededor de las piscinas:</p>
-                        <div class="math-grid-box"></div>
-
-                        <p><strong>3. Caso #2 — Operaciones Decimales (Alimentación):</strong><br>
-                        Cada camarón consume <strong>0,15 gramos</strong> de alimento al día. Si el criadero tiene <strong>12.350 camarones</strong>:<br>
-                        a) ¿Cuántos gramos de alimento se necesitan en total durante un día?<br>
-                        b) Si el costo del alimento es de <strong>$0,02 por gramo</strong>, ¿cuánto costará alimentar a todos los camarones al día?</p>
-                        <div class="math-grid-box"></div>
-                    `
-                },
-                "Ciencias Naturales": {
-                    titulo: "Guía de Indagación Científica: Ciclo de Vida y Hábitat del Camarón",
-                    html: `
-                        <p><strong>1. Ciclo de Vida del Camarón:</strong> Investiga y escribe las 5 etapas desde el nacimiento hasta la adultez:</p>
-                        <p>1. _______________________ 2. _______________________ 3. _______________________ 4. _______________________ 5. _______________________</p>
-                        <p><strong>2. Hábitat y Parámetros del Agua:</strong> ¿Qué temperatura y salinidad necesita el agua de un criadero artificial para que los camarones crezcan saludables?</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <p><strong>3. Impacto Ambiental y Prevención:</strong> ¿Qué efectos ocasionan los criaderos en los manglares y qué medidas de prevención ambiental propones?</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Ciencias Sociales": {
-                    titulo: "Cartografía Económica: Zonas Camaroneras de la Costa Ecuatoriana",
-                    html: `
-                        <p><strong>1. Mapa Físico de Zonas Camaroneras:</strong> Dibuja el contorno de la Costa ecuatoriana y ubica con colores, símbolos y leyenda las 5 provincias clave: <em>Guayas, El Oro, Manabí, Santa Elena y Esmeraldas</em>.</p>
-                        <div class="math-grid-box" style="height:130px; background-image:none;"></div>
-                        <p><strong>2. Análisis Histórico:</strong> Resume cómo evolucionó la producción de camarón desde los años 60 hasta la actualidad:</p>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Educación Cultural y Artística": {
-                    titulo: "Diseño Visual: Señalética y Portada del Poemario Costero",
-                    html: `
-                        <p>Diseña 4 íconos representativos (camarón, manglar, estanque, barco exportador) y boceta la portada del Poemario:</p>
-                        <div class="math-grid-box" style="height:120px; background-image:none;"></div>
-                    `
-                }
-            },
-            fase2: {
-                formato: "Maqueta del Criadero (60 × 40 cm) + Poemario Ilustrado",
-                medidas: "Base rígida de 60 cm × 40 cm (Escala 1:100 del terreno 60m × 30m).",
-                bocetoSVG: `<svg width="240" height="105" viewBox="0 0 240 105">
-                    <rect x="10" y="10" width="220" height="85" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-                    <rect x="20" y="18" width="60" height="32" fill="#bae6fd" stroke="#0369a1"/>
-                    <text x="50" y="37" font-size="8" text-anchor="middle" fill="#0c4a6e">Piscina 1</text>
-                    <rect x="90" y="18" width="60" height="32" fill="#bae6fd" stroke="#0369a1"/>
-                    <text x="120" y="37" font-size="8" text-anchor="middle" fill="#0c4a6e">Piscina 2</text>
-                    <rect x="160" y="18" width="60" height="32" fill="#fef3c7" stroke="#b45309"/>
-                    <text x="190" y="37" font-size="8" text-anchor="middle" fill="#78350f">Empacadora</text>
-                    <path d="M 10 68 Q 120 56 230 68 L 230 95 L 10 95 Z" fill="#0d9488"/>
-                    <text x="120" y="85" font-size="9" text-anchor="middle" fill="white" font-weight="bold">Manglar y Estuario (60 × 40 cm)</text>
-                </svg>`,
-                instrucciones: "Representar las dos piscinas de larvas, la zona de manglar y exhibir junto a la maqueta el Poemario 'El Guardián del Estuario'."
-            },
-            fase3: {
-                guion: "«Bienvenidos a la Región Costa. Nuestro equipo presenta el proyecto 'El Poemario al Camarón'. En esta maqueta de 60×40 cm les explicaremos el ciclo del camarón, los cálculos de alimentación y recitaremos nuestros versos al estuario...»",
-                dinamica: "Exposición en dos tiempos: demostración técnica/matemática en la maqueta y lectura coral del poema colectivo."
-            }
-        },
-        {
-            letra: "Grupo B",
-            region: "Región Interandina o Sierra",
-            tituloEquipo: "Las Máscaras de Tigua: Cultura Ancestral, Tintes Naturales y Geometría",
-            productoFinal: "Máscara Artesanal de Tigua + Leyenda Andina Ilustrada",
-            guiasPorMateria: {
-                "Lengua y Literatura": {
-                    titulo: "Ficha de Comprensión Lectora y Leyenda Andina — Las Máscaras de Tigua",
-                    html: `
-                        <div class="reading-passage">
-                            <strong>Lectura Base: Las Máscaras de Tigua: Un Tesoro Cultural Andino</strong><br>
-                            Originarias de la parroquia Tigua, en la provincia de Cotopaxi, estas máscaras son conocidas por su vibrante colorido y representaciones de animales andinos (cóndor, puma, lobo, serpiente) y figuras míticas. Tienen sus raíces en festividades indígenas como el <em>Inti Raymi</em> (Fiesta del Sol), donde celebran el ciclo agrícola y agradecen por las cosechas. Los artesanos las elaboran con madera de pino o papel maché y pigmentos naturales.
-                        </div>
-                        <p><strong>I. Comprensión Lectora (Encierra la respuesta correcta):</strong></p>
-                        <div class="mcq-grid">
-                            <div class="mcq-item">
-                                <p>1. ¿Qué representa principalmente una máscara de Tigua?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Personajes modernos</li>
-                                    <li>B) Figuras mitológicas y fauna local andina</li>
-                                    <li>C) Comida típica</li>
-                                    <li>D) Edificios urbanos</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>2. ¿En qué festividad tradicional se utilizan principalmente?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Navidad y Año Nuevo</li>
-                                    <li>B) Fiesta del Inti Raymi y celebraciones agrícolas</li>
-                                    <li>C) Día del Padre</li>
-                                    <li>D) Feria del Libro</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>3. ¿Qué materiales tradicionales se utilizan para fabricarlas?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Plástico y metal</li>
-                                    <li>B) Madera (pino) y papel maché con pigmentos</li>
-                                    <li>C) Vidrio y cerámica</li>
-                                    <li>D) Aluminio</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>4. ¿Cuál es el propósito de estas máscaras en las festividades?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Solo decorar oficinas</li>
-                                    <li>B) Representar personajes míticos y conectar con la naturaleza</li>
-                                    <li>C) Exportar madera</li>
-                                    <li>D) Competir en carreras</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p><strong>II. Creación Literaria — Mito o Leyenda de Tigua:</strong><br>
-                        Escribe un relato corto o leyenda inspirado en el cóndor o el puma de las máscaras de Tigua y su conexión con la naturaleza:</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Matemática": {
-                    titulo: "Taller Matemático: Costos de Fabricación, Promedio de Tiempos y Geometría de la Máscara",
-                    html: `
-                        <p><strong>1. Comparación de Costos de Materiales (2 Distribuidores):</strong> Completa 5 materiales para fabricar la máscara, suma cada columna y calcula la diferencia de precios:</p>
-                        <table class="work-table">
-                            <tr><th>Material</th><th>Distribuidor 1 ($)</th><th>Distribuidor 2 ($)</th></tr>
-                            <tr><td>1. Madera de pino / base</td><td></td><td></td></tr>
-                            <tr><td>2. Pigmentos / pinturas</td><td></td><td></td></tr>
-                            <tr><td>3. Pinceles y lija</td><td></td><td></td></tr>
-                            <tr><td>4. Barniz protector</td><td></td><td></td></tr>
-                            <tr><td><strong>VALOR TOTAL ($)</strong></td><td></td><td></td></tr>
-                        </table>
-                        <p>La diferencia de precios entre el Distribuidor 1 y 2 es: $_____________________</p>
-
-                        <p><strong>2. Media Aritmética (Tiempos de Elaboración):</strong><br>
-                        Cinco artesanos registraron los días que tardaron en tallar y pintar su máscara: <strong>María: 10,5 días | Carlos: 20,8 días | Ana: 18,2 días | Pablo: 27,8 días | Sofía: 16,5 días</strong>. Calcula el tiempo promedio:</p>
-                        <div class="math-grid-box"></div>
-
-                        <p><strong>3. Caso Geométrico — Fabricación de una Máscara de Tigua:</strong><br>
-                        a) La base de madera tiene forma cuadrada de <strong>12,5 cm de lado</strong>. ¿Cuál es el área total de la base? ($A = l \times l$)<br>
-                        b) Los ojos son dos círculos idénticos con un <strong>radio de 2,8 cm</strong> cada uno. Calcula el área de un ojo ($A = \pi \times r^2$).<br>
-                        c) Si deciden pintar solo el <strong>75%</strong> del área total de la base, ¿cuántos $cm^2$ quedarán sin pintar?</p>
-                        <div class="math-grid-box"></div>
-                    `
-                },
-                "Ciencias Naturales": {
-                    titulo: "Indagación Científica: Madera de Pino, Tintes Naturales y Deforestación",
-                    html: `
-                        <p><strong>1. Árboles de la Sierra y Madera de Pino:</strong> ¿Qué características tiene la madera de pino para el tallado y qué beneficios aportan los bosques andinos?</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <p><strong>2. Experimentación con Tintes Naturales:</strong> ¿Qué plantas o minerales locales permiten obtener colores naturales (ej. nogal, achote, remolacha) y en qué se diferencian de los tintes sintéticos?</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <p><strong>3. Prevención de la Deforestación:</strong> Propón 2 medidas para evitar la tala indiscriminada en la Sierra ecuatoriana:</p>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Ciencias Sociales": {
-                    titulo: "Patrimonio Andino: Tigua (Cotopaxi) y la Fiesta del Inti Raymi",
-                    html: `
-                        <p>Investiga cómo se celebra el Inti Raymi en Cotopaxi y describe el significado cultural de los personajes con máscaras de Tigua:</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Educación Cultural y Artística": {
-                    titulo: "Boceto Artístico: Diseño Geométrico de la Máscara de Tigua",
-                    html: `
-                        <p>Dibuja el boceto de tu máscara de Tigua empleando colores vibrantes, simetría y figuras geométricas:</p>
-                        <div class="math-grid-box" style="height:130px; background-image:none;"></div>
-                    `
-                }
-            },
-            fase2: {
-                formato: "Máscara Tridimensional de Tigua + Libreto de Leyenda",
-                medidas: "Base cuadrada o ovalada de 12.5 cm × 12.5 cm (o escala 25 × 25 cm para exhibición).",
-                bocetoSVG: `<svg width="220" height="105" viewBox="0 0 220 105">
-                    <rect x="65" y="10" width="90" height="85" rx="15" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
-                    <circle cx="92" cy="40" r="10" fill="#0284c7" stroke="#1e3a8a" stroke-width="2"/>
-                    <circle cx="128" cy="40" r="10" fill="#0284c7" stroke="#1e3a8a" stroke-width="2"/>
-                    <polygon points="110,48 103,62 117,62" fill="#dc2626"/>
-                    <path d="M 90 74 Q 110 86 130 74" fill="none" stroke="#92400e" stroke-width="2.5"/>
-                    <text x="110" y="103" font-size="8.5" text-anchor="middle" fill="#451a03">Base 12.5 cm | Ojos r = 2.8 cm</text>
-                </svg>`,
-                instrucciones: "Elaborar la máscara con papel maché o cartón prensado, pintarla con colores vivos y adjuntar la ficha matemática de áreas y costos."
-            },
-            fase3: {
-                guion: "«Desde la parroquia Tigua en Cotopaxi presentamos nuestras Máscaras Ancestrales. Les explicaremos su significado en el Inti Raymi, los cálculos geométricos de su diseño y narraremos nuestra leyenda andina...»",
-                dinamica: "Dramatización breve usando las máscaras elaboradas y explicación de los cálculos geométricos."
-            }
-        },
-        {
-            letra: "Grupo C",
-            region: "Región Amazónica",
-            tituloEquipo: "La Uña de Gato (Uncaria tomentosa): Tesoro Medicinal y Exportación Amazónica",
-            productoFinal: "Maqueta de Hábitat Amazónico + Relato de Saberes Ancestrales",
-            guiasPorMateria: {
-                "Lengua y Literatura": {
-                    titulo: "Ficha de Comprensión Lectora y Relato Ancestral — La Uña de Gato",
-                    html: `
-                        <div class="reading-passage">
-                            <strong>Lectura Base: La Uña de Gato: Un Regalo de la Amazonía y Pie de Monte Andino</strong><br>
-                            La uña de gato (<em>Uncaria tomentosa</em>) es una planta trepadora medicinal originaria de las regiones tropicales de América del Sur, conocida por las espinas curvas en forma de garras en sus tallos. Durante siglos, los pueblos indígenas amazónicos han transmitido oralmente su uso en infusiones de corteza y raíz por sus propiedades antiinflamatorias, antioxidantes y fortalecedoras del sistema inmunológico. Hoy enfrenta el desafío de la deforestación y la recolección insostenible.
-                        </div>
-                        <p><strong>I. Comprensión Lectora (Encierra la respuesta correcta):</strong></p>
-                        <div class="mcq-grid">
-                            <div class="mcq-item">
-                                <p>1. ¿Cuál es el nombre científico de la uña de gato?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Uncaria tomentosa</li>
-                                    <li>B) Uncaria montana</li>
-                                    <li>C) Litopenaeus vannamei</li>
-                                    <li>D) Rosa andina</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>2. ¿Cómo se transmite el conocimiento sobre esta planta en las culturas indígenas?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Mediante contratos escritos</li>
-                                    <li>B) Mediante relatos orales, rituales y charlas entre generaciones</li>
-                                    <li>C) Solo en universidades</li>
-                                    <li>D) Por televisión</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>3. ¿Por qué propiedades es reconocida internacionalmente?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Como planta ornamental</li>
-                                    <li>B) Propiedades antiinflamatorias y fortalecimiento inmunológico</li>
-                                    <li>C) Para fabricar plásticos</li>
-                                    <li>D) Como combustible</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>4. ¿Qué desafío ambiental enfrenta esta planta?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Crecimiento excesivo</li>
-                                    <li>B) Deforestación y explotación insostenible</li>
-                                    <li>C) Falta de lluvia</li>
-                                    <li>D) Clima demasiado frío</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p><strong>II. Redacción de Relato Corto:</strong><br>
-                        Escribe un relato breve basado en las creencias y saberes de los chamanes o abuelos amazónicos sobre el poder curativo de la uña de gato:</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Matemática": {
-                    titulo: "Taller Matemático: Madurez de Cultivo, Áreas de Plantación y Ganancia Neta",
-                    html: `
-                        <p><strong>1. Media Aritmética (Tiempo de Madurez y Producción):</strong><br>
-                        a) Cinco plantas de uña de gato tardaron en madurar: <strong>3,8 años | 4,5 años | 4,2 años | 5,1 años | 3,9 años</strong>. Calcula la media aritmética de madurez.<br>
-                        b) Una planta procesadora registró en 6 días: <strong>142,5 kg | 155,8 kg | 168,3 kg | 140,2 kg | 170,7 kg | 160,4 kg</strong>. Calcula el promedio diario:</p>
-                        <div class="math-grid-box"></div>
-
-                        <p><strong>2. Caso #1 — Área de Plantación en el Bosque:</strong><br>
-                        Se ha delimitado una sección rectangular en la Amazonía de <strong>120 metros de largo por 85 metros de ancho</strong> para cultivo sostenible de uña de gato. Calcula el área total en $m^2$:</p>
-                        <div class="math-grid-box"></div>
-
-                        <p><strong>3. Caso #2 — Ingresos, Costos y Ganancia Neta de Exportación:</strong><br>
-                        Una asociación exportadora produjo <strong>8.750 kg</strong> de uña de gato al mes. El precio de venta es de <strong>$9,25 por kg</strong> y el costo de producción es de <strong>$3,40 por kg</strong>.<br>
-                        a) ¿Cuál es el ingreso total por exportación?<br>
-                        b) ¿Cuál es el costo total de producción?<br>
-                        c) ¿Cuál es la <strong>ganancia neta</strong> obtenida?</p>
-                        <div class="math-grid-box"></div>
-                    `
-                },
-                "Ciencias Naturales": {
-                    titulo: "Indagación Botánica: Morfología y Beneficios de la Uña de Gato",
-                    html: `
-                        <p><strong>1. Características Físicas y Hábitat:</strong> Describe por qué recibe el nombre de "uña de gato" y qué condiciones requiere para crecer en la Amazonía:</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <p><strong>2. Beneficios Medicinales y Formas de Uso:</strong> Enumera 4 beneficios para la salud y explica cómo se prepara tradicionalmente:</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Ciencias Sociales": {
-                    titulo: "Mapa de Distribución y Comercio Justo Amazónico",
-                    html: `
-                        <p>Ubica las provincias amazónicas donde se cultiva la uña de gato y explica cómo el comercio responsable beneficia a las comunidades locales:</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Educación Cultural y Artística": {
-                    titulo: "Boceto Botánico: Ilustración Científica de la Uncaria tomentosa",
-                    html: `
-                        <p>Dibuja el tallo con sus espinas características, hojas y hábitat selvático:</p>
-                        <div class="math-grid-box" style="height:120px; background-image:none;"></div>
-                    `
-                }
-            },
-            fase2: {
-                formato: "Maqueta de Hábitat Selvático + Herbario/Ficha Económica",
-                medidas: "Base de 60 cm × 42.5 cm (Escala 1:200 de la parcela de 120m × 85m).",
-                bocetoSVG: `<svg width="240" height="105" viewBox="0 0 240 105">
-                    <rect x="15" y="10" width="210" height="85" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
-                    <path d="M 40 85 Q 70 40 110 25" fill="none" stroke="#166534" stroke-width="5"/>
-                    <circle cx="110" cy="25" r="14" fill="#22c55e"/>
-                    <rect x="145" y="35" width="65" height="40" fill="#fef9c3" stroke="#ca8a04"/>
-                    <text x="177" y="58" font-size="8" text-anchor="middle" fill="#854d0e">Parcela 120×85m</text>
-                    <text x="120" y="92" font-size="8.5" text-anchor="middle" fill="#14532d">Hábitat Amazónico (60 × 42.5 cm)</text>
-                </svg>`,
-                instrucciones: "Modelar la planta trepadora sobre árboles amazónicos y adjuntar el balance financiero de exportación."
-            },
-            fase3: {
-                guion: "«Bienvenidos a la Región Amazónica. Presentamos nuestro estudio sobre la Uña de Gato: su valor medicinal ancestral, el cálculo de ganancias sostenibles de exportación y nuestro relato amazónico...»",
-                dinamica: "Explicación del balance matemático de exportación y lectura del relato sobre medicina ancestral."
-            }
-        },
-        {
-            letra: "Grupo D",
-            region: "Región Insular (Galápagos)",
-            tituloEquipo: "El Rugido del Volcán Sierra Negra: Geología, Sismos y Conservación",
-            productoFinal: "Maqueta de la Caldera del Sierra Negra + Entrevista Simulada",
-            guiasPorMateria: {
-                "Lengua y Literatura": {
-                    titulo: "Ficha de Comprensión Lectora y Guion de Entrevista — Volcán Sierra Negra",
-                    html: `
-                        <div class="reading-passage">
-                            <strong>Lectura Base: El Volcán Sierra Negra en la Isla Isabela</strong><br>
-                            Ubicado al sur de la isla Isabela, el volcán Sierra Negra es uno de los más activos de Galápagos. Posee una de las calderas volcánicas más grandes del mundo, con un diámetro aproximado de <strong>9 kilómetros</strong> y una altitud de <strong>1.093 metros</strong>. Sus erupciones notables en 2005 y 2018 alteraron hábitats existentes pero también crearon suelos para especies pioneras. El Instituto Charles Darwin y el Parque Nacional Galápagos realizan monitoreo constante y planes de emergencia.
-                        </div>
-                        <p><strong>I. Comprensión Lectora (Encierra la respuesta correcta):</strong></p>
-                        <div class="mcq-grid">
-                            <div class="mcq-item">
-                                <p>1. ¿En qué isla se ubica el Volcán Sierra Negra?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Isla Santa Cruz</li>
-                                    <li>B) Isla Isabela</li>
-                                    <li>C) Isla Española</li>
-                                    <li>D) Isla Floreana</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>2. ¿Cuál es la característica más destacada de su caldera?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Mide 1 km de ancho</li>
-                                    <li>B) Es una de las más grandes del mundo (9 km de diámetro)</li>
-                                    <li>C) Está bajo el océano</li>
-                                    <li>D) Está extinta</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>3. ¿Cuándo ocurrieron sus dos erupciones recientes más notables?</p>
-                                <ul class="mcq-options">
-                                    <li>A) 1990 y 1995</li>
-                                    <li>B) 2005 y 2018</li>
-                                    <li>C) 2010 y 2012</li>
-                                    <li>D) 2000 y 2001</li>
-                                </ul>
-                            </div>
-                            <div class="mcq-item">
-                                <p>4. ¿Qué medida de protección se implementa en la zona?</p>
-                                <ul class="mcq-options">
-                                    <li>A) Construir un muro</li>
-                                    <li>B) Monitoreo volcánico constante y planes de emergencia</li>
-                                    <li>C) Cerrar toda la isla</li>
-                                    <li>D) Ninguna</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p><strong>II. Entrevista Simulada (Científico y Habitante de Isabela):</strong><br>
-                        Redacta 3 preguntas y respuestas para simular una entrevista sobre los riesgos volcánicos y la protección de especies endémicas:</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Matemática": {
-                    titulo: "Taller Matemático: Sismos, Turismo y Geometría Circular de la Caldera",
-                    html: `
-                        <p><strong>1. Media Aritmética (Magnitud Sísmica y Turismo):</strong><br>
-                        a) Durante la erupción de 2018 se registraron 7 sismos de magnitudes: <strong>5,1 | 4,8 | 4,2 | 3,9 | 4,0 | 3,7 | 5,3</strong>. Calcula la magnitud promedio.<br>
-                        b) Visitantes al Sierra Negra: <strong>2019:</strong> 18.600 | <strong>2020:</strong> 25.200 | <strong>2021:</strong> 34.850 | <strong>2022:</strong> 36.750 | <strong>2023:</strong> 38.100. Calcula la media aritmética:</p>
-                        <div class="math-grid-box"></div>
-
-                        <p><strong>2. Caso #1 — Longitud y Área Circular de la Caldera:</strong><br>
-                        La caldera del volcán Sierra Negra tiene forma circular con un <strong>diámetro de 9 kilómetros</strong> (radio = $4,5\text{ km}$).<br>
-                        a) Calcula la <strong>longitud de la circunferencia</strong> de la caldera ($L = \pi \times d$).<br>
-                        b) Calcula el <strong>área del cráter</strong> ($A = \pi \times r^2$):</p>
-                        <div class="math-grid-box"></div>
-
-                        <p><strong>3. Caso #2 — Turismo Nacional e Internacional en Galápagos:</strong><br>
-                        En 2023 ingresaron <strong>267.688 turistas</strong> en total; de ellos, <strong>150.000 fueron internacionales</strong> y el resto nacionales. Un turista internacional gastó $300/día por 5 días y un nacional $150/día por 3 días. Calcula cuántos turistas nacionales llegaron y el gasto total de cada tipo de turista:</p>
-                        <div class="math-grid-box"></div>
-                    `
-                },
-                "Ciencias Naturales": {
-                    titulo: "Indagación Geológica y Ecológica: Volcanes de Galápagos",
-                    html: `
-                        <p><strong>1. Origen Volcánico:</strong> ¿Cómo se formaron las Islas Galápagos y cuántos volcanes activos existen actualmente?</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <p><strong>2. Especies Pioneras y Conservación:</strong> ¿Cómo ayuda el suelo volcánico al crecimiento de plantas y qué especies endémicas habitan cerca del Sierra Negra?</p>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Ciencias Sociales": {
-                    titulo: "Línea de Tiempo Eruptiva y Cartografía de Isabela",
-                    html: `
-                        <p>Elabora una línea de tiempo con las erupciones del Sierra Negra (especialmente 2005 y 2018) y ubica el volcán en el mapa de Galápagos:</p>
-                        <div class="math-grid-box" style="height:110px; background-image:none;"></div>
-                    `
-                },
-                "Educación Cultural y Artística": {
-                    titulo: "Diseño Estructural: Corte Transversal del Volcán Sierra Negra",
-                    html: `
-                        <p>Boceta el perfil del volcán mostrando su caldera de 9 km de diámetro y flujos de lava:</p>
-                        <div class="math-grid-box" style="height:110px; background-image:none;"></div>
-                    `
-                }
-            },
-            fase2: {
-                formato: "Maqueta Topográfica de la Caldera (9 km a escala)",
-                medidas: "Base de 50 × 50 cm. Diámetro de la caldera en maqueta: 30 cm.",
-                bocetoSVG: `<svg width="220" height="105" viewBox="0 0 220 105">
-                    <polygon points="20,90 70,30 150,30 200,90" fill="#78716c" stroke="#44403c" stroke-width="2"/>
-                    <ellipse cx="110" cy="30" rx="40" ry="10" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
-                    <text x="110" y="65" font-size="8.5" text-anchor="middle" fill="white" font-weight="bold">Caldera d = 9 km</text>
-                    <text x="110" y="102" font-size="8.5" text-anchor="middle" fill="#1e293b">Altitud: 1.093 m s. n. m.</text>
-                </svg>`,
-                instrucciones: "Construir el volcán con relieve en papel maché destacando la amplitud de su caldera circular y las zonas de monitoreo."
-            },
-            fase3: {
-                guion: "«Bienvenidos a la Isla Isabela en Galápagos. Presentamos nuestra maqueta del Volcán Sierra Negra, cuya caldera mide 9 km de diámetro. Escuchen nuestra entrevista simulada con un científico y los cálculos sísmicos y turísticos...»",
-                dinamica: "Representación de la entrevista simulada entre un guardaparque/científico y un habitante de Isabela."
-            }
-        },
-        {
-            letra: "Grupo E",
-            region: "Integración Nacional (Los 4 Mundos)",
-            tituloEquipo: "Travesía por los 4 Mundos: Síntesis Interdisciplinaria del Ecuador",
-            productoFinal: "Tablero Interactivo de Piso (1.20 × 1.20 m) con Retos de las 4 Regiones",
-            guiasPorMateria: {
-                "Lengua y Literatura": {
-                    titulo: "Reglamento Oficial y Tarjetas Literarias de los 4 Mundos",
-                    html: `
-                        <p>Redacta el reglamento claro y ordenado del juego de mesa nacional y crea 4 tarjetas de reto poético (una por cada región del Ecuador):</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Matemática": {
-                    titulo: "Cálculo de Superficie del Tablero e Intercambio Comercial",
-                    html: `
-                        <p><strong>1. Área y Perímetro:</strong> Calcula el área y el perímetro de nuestro tablero cuadrado de piso de <strong>1,20 m × 1,20 m</strong>.<br>
-                        <strong>2. Comercio Regional:</strong> Un transporte lleva <strong>1.500 kg</strong> de productos de la Sierra a la Costa. Descarga <strong>645,5 kg</strong> en Guayaquil y el resto en Machala. ¿Cuántos kg llegaron a Machala?</p>
-                        <div class="math-grid-box"></div>
-                    `
-                },
-                "Ciencias Naturales": {
-                    titulo: "Comparativa de Ecosistemas Ecuatorianos",
-                    html: `
-                        <p>Elabora 4 tarjetas de trivia científica comparando el manglar (Costa), páramo (Sierra), bosque húmedo (Amazonía) y zona volcánica (Galápagos):</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Ciencias Sociales": {
-                    titulo: "Intercambio Comercial y Vías del Ecuador",
-                    html: `
-                        <p>Explica qué productos intercambian las 4 regiones del Ecuador para fortalecer la economía nacional:</p>
-                        <div class="write-lines"></div>
-                        <div class="write-lines"></div>
-                    `
-                },
-                "Educación Cultural y Artística": {
-                    titulo: "Diseño Gráfico del Tablero y Dado Gigante",
-                    html: `
-                        <p>Boceta la distribución de casillas de 4 colores y las caras del dado gigante de 20 × 20 cm:</p>
-                        <div class="math-grid-box" style="height:110px; background-image:none;"></div>
-                    `
-                }
-            },
-            fase2: {
-                formato: "Tablero de Piso (1.20 × 1.20 m) + Dado Gigante",
-                medidas: "Tablero cuadrado de 1.20 m × 1.20 m (Área = 1.44 m²). Dado de 20 × 20 cm.",
-                bocetoSVG: `<svg width="220" height="105" viewBox="0 0 220 105">
-                    <rect x="65" y="10" width="90" height="85" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
-                    <line x1="65" y1="38" x2="155" y2="38" stroke="#ca8a04"/>
-                    <line x1="65" y1="66" x2="155" y2="66" stroke="#ca8a04"/>
-                    <line x1="95" y1="10" x2="95" y2="95" stroke="#ca8a04"/>
-                    <line x1="125" y1="10" x2="125" y2="95" stroke="#ca8a04"/>
-                    <text x="110" y="103" font-size="8.5" text-anchor="middle" fill="#854d0e">Tablero 1.20 m × 1.20 m</text>
-                </svg>`,
-                instrucciones: "Incluir tarjetas de retos matemáticos, literarios y científicos recopilados de los otros grupos."
-            },
-            fase3: {
-                guion: "«Ecuador es un país megadiverso unido en cuatro mundos. Los invitamos a lanzar nuestro dado gigante y demostrar todo lo aprendido...»",
-                dinamica: "Los estudiantes dirigen la partida interactiva con los visitantes."
-            }
-        }
-    ];
-}
-
-const ADAPTACIONES_CAPACIDADES = {
-    dislexia: {
-        nombre: "Dislexia",
-        capacidadClave: "Pensamiento Visual, Comprensión Global y Oralidad",
-        rol: "Director/a de Diseño Espacial y Vocero/a Principal",
-        recursosNecesarios: "Hoja de trabajo impresa con fuente limpia (Arial 14pt), interlineado amplio y lectura compartida de los textos base.",
-        fases: [
-            "Fase 1: Realiza la lectura base con apoyo auditivo o lectura compartida con un compañero tutor antes de marcar las opciones múltiples.",
-            "Fase 2: Lidera el ensamblaje tridimensional de la maqueta o máscara.",
-            "Fase 3: Expone señalando las piezas visuales con palabras clave (sin lectura improvisada de párrafos largos)."
-        ]
-    },
-    discalculia: {
-        nombre: "Discalculia",
-        capacidadClave: "Narrativa Verbal, Creatividad Literaria y Síntesis",
-        rol: "Guionista Principal y Editor/a Literario",
-        recursosNecesarios: "Calculadora básica de apoyo para verificación de decimales/áreas y plantillas físicas pre-medidas.",
-        fases: [
-            "Fase 1: Lidera la comprensión lectora y creación literaria (poema/leyenda), resolviendo las cuadrículas matemáticas con apoyo de calculadora y esquemas visuales.",
-            "Fase 2: Usa plantillas pre-cortadas para medir piezas de la maqueta sin ansiedad numérica.",
-            "Fase 3: Lidera la narración del guion de apertura y cierre."
-        ]
-    },
-    disgrafia: {
-        nombre: "Disgrafía",
-        capacidadClave: "Agilidad Mental, Oratoria y Manejo Digital",
-        rol: "Coordinador/a de Rotulación Digital y Oratoria",
-        recursosNecesarios: "Computadora o tablet para completar las fichas digitales o imprimir etiquetas.",
-        fases: [
-            "Fase 1: Completa las respuestas escritas en formato digital o mediante dictado por voz.",
-            "Fase 2: Diseña e imprime las etiquetas del proyecto.",
-            "Fase 3: Modera la ronda de preguntas del público."
-        ]
-    },
-    tdah: {
-        nombre: "TDAH",
-        capacidadClave: "Energía Dinámica, Resolución Rápida y Liderazgo Activo",
-        rol: "Jefe/a de Logística, Ensamblaje y Demostración en Vivo",
-        recursosNecesarios: "Guía dividida en bloques cortos de 15 minutos con pausas activas.",
-        fases: [
-            "Fase 1: Alterna entre los reactivos de opción múltiple y los casos prácticos en bloques cortos.",
-            "Fase 2: Gestiona los materiales y arma la estructura principal.",
-            "Fase 3: Dirige la demostración práctica frente al público."
-        ]
-    },
-    altas_capacidades: {
-        nombre: "Dotación Superior / Altas Capacidades",
-        capacidadClave: "Pensamiento Sistémico, Análisis Crítico y Mentoría",
-        rol: "Arquitecto/a de Retos Avanzados y Mentor/a de Equipo",
-        recursosNecesarios: "Reto de profundización estadística/geométrica y rol de tutoría entre pares.",
-        fases: [
-            "Fase 1: Resuelve los casos avanzados (ej. los 10 años completos de exportaciones o áreas compuestas) y apoya como tutor de su grupo.",
-            "Fase 2: Añade un mecanismo de escala o interactividad extra.",
-            "Fase 3: Responde preguntas de profundización de los docentes visitantes."
-        ]
-    }
-};
-
 let configuracionNEEActual = [];
 let gruposGeneradosActuales = [];
-let propuestaCurricularActual = null;
+let propuestaActual = null;
 
 window.onload = function() {
     actualizarMatrizGrupos();
@@ -1079,6 +325,11 @@ function toggleFilaNEE(index) {
 }
 
 function generarPlanificacion() {
+    if (typeof generarPropuestasCurriculares === "undefined" || typeof obtenerDatosGrupos === "undefined") {
+        alert("Asegúrate de haber creado los archivos 'curriculo.js' y 'datos_grupos.js' en tu repositorio de GitHub.");
+        return;
+    }
+
     const grado = document.getElementById('grado').value;
     const duracion = document.getElementById('duracion').value;
     const numGrupos = parseInt(document.getElementById('numGrupos').value);
@@ -1090,7 +341,6 @@ function generarPlanificacion() {
     }
 
     gruposGeneradosActuales = obtenerDatosGrupos(grado);
-    propuestaCurricularActual = obtenerPropuestasPorMaterias(materias, grado);
 
     configuracionNEEActual = [];
     for (let i = 0; i < numGrupos; i++) {
@@ -1104,27 +354,27 @@ function generarPlanificacion() {
         });
     }
 
-    const badgesDiv = document.getElementById('badgesContainer');
-    const tipoBadge = materias.length === 1 
-        ? `<span class="badge disc">Proyecto Disciplinar: ${materias[0]}</span>` 
-        : `<span class="badge inter">Proyecto Interdisciplinario (${materias.join(" + ")})</span>`;
+    propuestaActual = generarPropuestasCurriculares(materias, grado);
 
+    const badgesDiv = document.getElementById('badgesContainer');
     badgesDiv.innerHTML = `
         <span class="badge">${grado} Año EGB</span>
-        ${tipoBadge}
-        <span class="badge" style="background:#0d9488;">Duración: ${duracion}</span>
+        <span class="badge ${materias.length > 1 ? 'inter' : 'disc'}">
+            ${materias.length > 1 ? 'Articulación: ' + materias.join(' + ') : 'Área: ' + materias[0]}
+        </span>
+        <span class="badge" style="background:#0d9488;">${duracion}</span>
     `;
 
     const selectorTitulo = document.getElementById('selectorTitulo');
     selectorTitulo.innerHTML = "";
-    propuestaCurricularActual.titulos.forEach((tit, idx) => {
+    propuestaActual.titulos.forEach((tit, idx) => {
         const opt = document.createElement('option');
         opt.value = idx;
         opt.innerText = `Propuesta ${idx + 1}: ${tit}`;
         selectorTitulo.appendChild(opt);
     });
 
-    actualizarDetallePedagogico();
+    actualizarJustificacionCurricular();
 
     const tabsContainer = document.getElementById('tabsContainer');
     tabsContainer.innerHTML = "";
@@ -1133,7 +383,7 @@ function generarPlanificacion() {
         const badgeNEE = neeInfo.tiene ? `<span class="nee-dot">+${neeInfo.cantidad} NEE</span>` : "";
         const btn = document.createElement('button');
         btn.className = "tab-btn" + (i === 0 ? " active" : "");
-        btn.innerHTML = `${gruposGeneradosActuales[i].letra} (${gruposGeneradosActuales[i].region.split(" ").pop()}) ${badgeNEE}`;
+        btn.innerHTML = `${gruposGeneradosActuales[i].letra} ${badgeNEE}`;
         btn.onclick = () => mostrarGrupo(i);
         tabsContainer.appendChild(btn);
     }
@@ -1144,24 +394,24 @@ function generarPlanificacion() {
     resSection.scrollIntoView({ behavior: 'smooth' });
 }
 
-function actualizarDetallePedagogico() {
-    const p = propuestaCurricularActual;
-    document.getElementById('detallePedagogicoGrid').innerHTML = `
-        <div class="ped-card">
-            <strong>🔗 ¿Por qué vinculamos estas asignaturas?</strong>
-            ${p.porque}
+function actualizarJustificacionCurricular() {
+    if (!propuestaActual) return;
+    document.getElementById('justificacionBox').innerHTML = `
+        <div class="just-item">
+            <h4>🔗 ¿Por qué se vinculan estas asignaturas?</h4>
+            <p>${propuestaActual.porQue}</p>
         </div>
-        <div class="ped-card">
-            <strong>🎯 ¿Qué se quiere lograr con los estudiantes?</strong>
-            ${p.queSeQuiere}
+        <div class="just-item">
+            <h4>🎯 ¿Qué se busca lograr?</h4>
+            <p>${propuestaActual.queQuiere}</p>
         </div>
-        <div class="ped-card">
-            <strong>🧭 Estrategias Metodológicas Activas:</strong>
-            ${p.estrategias}
+        <div class="just-item">
+            <h4>🧭 Estrategias Metodológicas:</h4>
+            <p>${propuestaActual.estrategias}</p>
         </div>
-        <div class="ped-card">
-            <strong>📚 Destrezas con Criterio de Desempeño (Mineduc):</strong>
-            ${p.destrezas}
+        <div class="just-item">
+            <h4>📚 Destrezas Mineduc (DCD):</h4>
+            <p>${propuestaActual.dcd}</p>
         </div>
     `;
 }
@@ -1174,23 +424,20 @@ function mostrarGrupo(index) {
     const neeGrupo = configuracionNEEActual[index];
     const materiasSeleccionadas = Array.from(document.querySelectorAll('input[name="materia"]:checked')).map(el => el.value);
 
-    // Generar hojas de trabajo individuales por cada materia seleccionada con su botón de descarga/impresión
-    let hojasTrabajoHTML = "";
+    let guiasHTML = "";
     materiasSeleccionadas.forEach((mat, mIdx) => {
-        const guia = g.guiasPorMateria[mat];
-        if (guia) {
-            const sheetId = `hoja_${index}_${mIdx}`;
-            hojasTrabajoHTML += `
-                <div class="subject-worksheet">
-                    <div class="worksheet-topbar">
-                        <h4>📘 ${mat}: ${guia.titulo}</h4>
-                        <button class="btn-download-sheet" onclick="imprimirHojaMateria('${sheetId}', '${mat}', '${g.letra}', '${g.tituloEquipo}')">
-                            🖨️ Descargar / Imprimir Guía de ${mat}
+        const contenidoMat = g.guiasPorMateria[mat];
+        if (contenidoMat) {
+            const idGuiaMat = `guia_${index}_${mIdx}`;
+            guiasHTML += `
+                <div class="materia-guia-card">
+                    <div class="materia-guia-header">
+                        <h4>📘 Guía de Investigación: ${mat} — ${g.letra} (${g.enfoque})</h4>
+                        <button class="btn-download-mat" onclick="imprimirGuiaMateria('${idGuiaMat}', '${mat}', '${g.letra}')">
+                            📥 Descargar / Imprimir Guía de ${mat} (PDF)
                         </button>
                     </div>
-                    <div id="${sheetId}">
-                        ${guia.html}
-                    </div>
+                    <div id="${idGuiaMat}">${contenidoMat}</div>
                 </div>
             `;
         }
@@ -1205,9 +452,7 @@ function mostrarGrupo(index) {
                 <p><strong>Capacidad clave que potenciamos:</strong> ${ad.capacidadClave}</p>
                 <p><strong>Rol asignado en el equipo:</strong> ${ad.rol}</p>
                 <p><strong>Recursos diferenciados necesarios:</strong> ${ad.recursosNecesarios}</p>
-                <ul>
-                    ${ad.fases.map(f => `<li>${f}</li>`).join('')}
-                </ul>
+                <ul>${ad.fases.map(f => `<li>${f}</li>`).join('')}</ul>
             </div>
         `;
     } else {
@@ -1220,24 +465,22 @@ function mostrarGrupo(index) {
 
     document.getElementById('contenidoGrupo').innerHTML = `
         <div style="background:white; padding:16px 20px; border-radius:10px; margin-bottom:20px; border:1px solid #cbd5e1; border-left: 6px solid #0d9488;">
-            <span style="color:#0d9488; font-weight:bold; font-size:0.88rem;">${g.region}</span>
-            <h3 style="margin:4px 0; color:var(--primary); font-size:1.25rem;">🏷️ ${g.letra}: "${g.tituloEquipo}"</h3>
+            <span style="color:#0d9488; font-weight:bold; font-size:0.88rem;">${g.enfoque}</span>
+            <h3 style="margin:4px 0; color:var(--primary); font-size:1.25rem;">🏷️ ${g.letra}: "${g.nombreCreativo}"</h3>
             <p style="margin:4px 0 0 0; font-size:0.95rem;"><strong>🎯 Producto Final Esperado:</strong> ${g.productoFinal}</p>
         </div>
 
-        <!-- BLOQUE 1: FASE DE INVESTIGACIÓN CON HOJAS ESCRIBIBLES POR MATERIA -->
         <div class="phase-card">
             <div class="phase-header">
-                <h3>🔍 Fase 1: Investigación Preliminar (Guías Escribibles por Asignatura)</h3>
-                <span class="phase-status">Etapa 1 en Evaluación</span>
+                <h3>🔍 Fase 1: Investigación Preliminar (Guías de Trabajo por Asignatura)</h3>
+                <span class="phase-status">Etapa 1 de Evaluación</span>
             </div>
-            ${hojasTrabajoHTML}
+            ${guiasHTML}
             <div class="rubrica-placeholder">
-                📊 <strong>Espacio para Rúbrica de Evaluación (Fase 1):</strong> <em>Preparado para integrar los criterios e indicadores de evaluación en el siguiente paso.</em>
+                📊 <strong>Módulo de Rúbrica de Evaluación (Fase 1):</strong> <em>Estructura reservada para la siguiente etapa.</em>
             </div>
         </div>
 
-        <!-- BLOQUES 2 Y 3 -->
         <div class="phases-bottom-grid">
             <div class="phase-card dev">
                 <div class="phase-header">
@@ -1246,10 +489,7 @@ function mostrarGrupo(index) {
                 </div>
                 <p><strong>Formato del Producto:</strong> ${g.fase2.formato}</p>
                 <p><strong>Dimensiones sugeridas:</strong> ${g.fase2.medidas}</p>
-                <div class="sketch-box">
-                    <strong>Boceto Referencial:</strong><br>
-                    ${g.fase2.bocetoSVG}
-                </div>
+                <div class="sketch-box"><strong>Boceto Referencial:</strong><br>${g.fase2.bocetoSVG}</div>
                 <p><strong>Orientación creativa:</strong> ${g.fase2.instrucciones}</p>
             </div>
 
@@ -1268,27 +508,47 @@ function mostrarGrupo(index) {
     `;
 }
 
-function imprimirHojaMateria(elementId, materia, grupo, tituloEquipo) {
+function imprimirGuiaMateria(elementId, materia, grupo) {
     const contenido = document.getElementById(elementId).innerHTML;
-    const grado = document.getElementById('grado').value;
-    const ventana = window.open('', '', 'height=750,width=900');
+    const grado = document.getElementById('grado').options[document.getElementById('grado').selectedIndex].text;
+    const ventana = window.open('', '', 'height=750,width=880');
     ventana.document.write(`
         <html>
         <head>
             <title>Guía de Trabajo - ${materia} (${grupo})</title>
             <style>
-                body { font-family: Arial, sans-serif; padding: 28px; line-height: 1.5; color: #1e293b; }
-                .header-sheet { border-bottom: 2px solid #1e3a8a; padding-bottom: 10px; margin-bottom: 16px; }
-                .header-sheet h2 { margin: 0 0 6px 0; color: #1e3a8a; font-size: 18px; }
-                .student-fields { display: flex; justify-content: space-between; font-size: 13px; margin-top: 8px; }
-                .reading-passage { background: #f8fafc; border-left: 4px solid #0d9488; padding: 12px; margin-bottom: 14px; font-size: 13.5px; }
-                .mcq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
-                .mcq-item { border: 1px solid #cbd5e1; padding: 10px; border-radius: 4px; font-size: 13px; }
-                .mcq-item p { margin: 0 0 5px 0; font-weight: bold; }
-                .mcq-options { list-style: none; padding: 0; margin: 0; }
-                .write-lines { border-bottom: 1px solid #64748b; height: 24px; margin-bottom: 6px; }
+                body { font-family: Arial, sans-serif; padding: 30px; line-height: 1.5; color: #1e293b; }
+                .header-ficha { border: 1px solid #94a3b8; padding: 12px; margin-bottom: 18px; border-radius: 6px; font-size: 13px; }
+                h2 { color: #1e3a8a; margin: 0 0 6px 0; font-size: 18px; border-bottom: 2px solid #0d9488; padding-bottom: 4px; }
+                .reading-passage { background: #f8fafc; border-left: 4px solid #0284c7; padding: 12px; margin-bottom: 14px; }
+                .mcq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+                .mcq-item { border: 1px solid #cbd5e1; padding: 8px; border-radius: 4px; font-size: 12px; }
+                .mcq-options { list-style: none; padding: 0; margin: 4px 0 0 0; }
+                .write-lines { border-bottom: 1px dashed #64748b; height: 24px; margin: 6px 0; }
                 .math-grid-box {
                     background-image: linear-gradient(#cbd5e1 1px, transparent 1px), linear-gradient(90deg, #cbd5e1 1px, transparent 1px);
-                    background-size: 16px 16px; border: 1px solid #64748b; height: 120px; margin: 8px 0 14px 0;
+                    background-size: 16px 16px; border: 1px solid #64748b; height: 95px; margin: 8px 0 14px 0;
                 }
-                table.work-table { width: 100%; border-collapse: collapse; margin: 1
+                table.work-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12px; }
+                table.work-table th, table.work-table td { border: 1px solid #64748b; padding: 6px; }
+                table.work-table th { background: #e2e8f0; }
+            </style>
+        </head>
+        <body>
+            <div class="header-ficha">
+                <h2>Proyecto Interdisciplinario — ${materia} (${grupo})</h2>
+                <strong>Nombre y Apellido:</strong> _______________________________________ &nbsp;&nbsp;
+                <strong>Año Básico:</strong> ${grado} &nbsp;&nbsp;
+                <strong>Fecha:</strong> ______________
+            </div>
+            ${contenido}
+        </body>
+        </html>
+    `);
+    ventana.document.close();
+    ventana.print();
+}
+</script>
+
+</body>
+</html>
